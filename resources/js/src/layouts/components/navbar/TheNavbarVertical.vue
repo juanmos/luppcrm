@@ -11,7 +11,7 @@
 
 <template>
   <div class="relative">
-
+    <!--Algo2-->
     <div class="vx-navbar-wrapper" :class="classObj">
 
       <vs-navbar class="vx-navbar navbar-custom navbar-skelton" :color="navbarColorLocal" :class="textColor">

@@ -10,11 +10,10 @@
 
 import Vue from 'vue'
 import Router from 'vue-router'
+import store from './store/store';
+import Ls from '@/services/ls'
 
 Vue.use(Router)
-
-//PAGES
-import Login from './views/auth/Login.vue';
 
 const router = new Router({
     mode: 'history',
@@ -30,7 +29,7 @@ const router = new Router({
         // Auth pages
         // =============================================================================
         {
-            path: '',
+            path: '/',
             component: () =>
                 import ('@/layouts/full-page/FullPage.vue'),
             meta: {
@@ -43,7 +42,14 @@ const router = new Router({
                 {
                     path: '/login',
                     name: 'auth.login',
-                    component: Login
+                    component: () =>
+                        import ('./views/auth/Login.vue')
+                },
+                {
+                    path: '/register',
+                    name: 'auth.register',
+                    component: () =>
+                        import ('./views/auth/Register.vue')
                 },
                 {
                     path: '/pages/error-404',
@@ -57,27 +63,78 @@ const router = new Router({
             // =============================================================================
             // MAIN LAYOUT ROUTES
             // =============================================================================
-            path: '',
+            path: '/admin',
             component: () =>
                 import ('./layouts/main/Main.vue'),
             meta: {
                 auth: true
+            },
+            beforeEnter(to, from, next) {
+                console.log('be', store.state.auth.access_token);
+
+                store.dispatch('auth/tryAutoLogin').then(() => {
+                    next();
+                }).catch(() => {
+                    next('/login');
+                });
             },
             children: [
                 // =============================================================================
                 // Theme Routes
                 // =============================================================================
                 {
-                    path: '/',
+                    path: '/home',
                     name: 'home',
                     component: () =>
                         import ('./views/Home.vue')
                 },
                 {
-                    path: '/page2',
-                    name: 'page-2',
+                    path: '/invoices',
+                    name: 'admin.invoices',
                     component: () =>
-                        import ('./views/Page2.vue')
+                        import ('./views/invoices/Invoices.vue')
+                },
+                {
+                    path: '/payments',
+                    name: 'admin.payments',
+                    component: () =>
+                        import ('./views/payments/Payments.vue')
+                },
+                {
+                    path: '/estimates',
+                    name: 'admin.estimates',
+                    component: () =>
+                        import ('./views/estimates/Estimates.vue')
+                },
+                {
+                    path: '/expenses',
+                    name: 'admin.expenses',
+                    component: () =>
+                        import ('./views/expenses/Expenses.vue')
+                },
+                {
+                    path: '/deductions',
+                    name: 'admin.deductions',
+                    component: () =>
+                        import ('./views/deductions/Deductions.vue')
+                },
+                {
+                    path: '/clients',
+                    name: 'admin.clients',
+                    component: () =>
+                        import ('./views/clients/Clients.vue')
+                },
+                {
+                    path: '/help',
+                    name: 'admin.help',
+                    component: () =>
+                        import ('./views/help/Help.vue')
+                },
+                {
+                    path: '/configurations',
+                    name: 'admin.configurations',
+                    component: () =>
+                        import ('./views/configurations/Configurations.vue')
                 },
             ],
         },
