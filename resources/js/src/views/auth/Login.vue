@@ -79,7 +79,7 @@ import { mapActions } from "vuex";
 export default {
   data() {
     return {
-      email: "juan.moscoso@primme.tech",
+      email: "juan@factu.app",
       password: "123456",
       checkbox_remember_me: false,
       errorLogin: false

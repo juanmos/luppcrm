@@ -7077,38 +7077,38 @@ __webpack_require__.r(__webpack_exports__);
   Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
 /* harmony default export */ __webpack_exports__["default"] = ([{
-  url: "/home",
+  url: "/admin/home",
   name: "Inicio",
   slug: "home",
   icon: "HomeIcon"
 }, {
-  url: "/invoices",
+  url: "/admin/invoices",
   name: "Facturacion",
   slug: "invoices",
   icon: "FileTextIcon"
 }, {
-  url: "/payments",
+  url: "/admin/payments",
   name: "Pagos",
   slug: "payments",
   icon: "DollarSignIcon"
 }, {
   name: 'Presupuestos',
-  url: '/estimates',
+  url: '/admin/estimates',
   icon: 'ClipboardIcon',
   slug: 'estimates'
 }, {
   name: 'Compras',
-  url: '/expenses',
+  url: '/admin/expenses',
   icon: 'CreditCardIcon',
   slug: 'expenses'
 }, {
   name: 'Retenciones',
-  url: '/deductions',
+  url: '/admin/deductions',
   icon: 'FileMinusIcon',
   slug: 'deductions'
 }, {
   name: 'Clientes',
-  url: '/clients',
+  url: '/admin/clients',
   icon: 'UsersIcon',
   slug: 'clients'
 }, {
@@ -7118,23 +7118,23 @@ __webpack_require__.r(__webpack_exports__);
   icon: 'SettingsIcon',
   submenu: [{
     name: 'Configuraciones',
-    url: '/configurations',
+    url: '/admin/configurations',
     icon: 'SettingsIcon',
     slug: 'configurations'
   }, {
     name: 'Usuarios',
-    url: '/users',
+    url: '/admin/users',
     icon: 'UserIcon',
     slug: 'users'
   }, {
     name: 'Importar factura',
-    url: '/import-invoice',
+    url: '/admin/import-invoice',
     icon: 'FilePlusIcon',
     slug: 'import-invoice'
   }]
 }, {
   name: 'Ayuda',
-  url: '/help',
+  url: '/admin/help',
   icon: 'HelpCircleIcon',
   slug: 'help'
 }]);

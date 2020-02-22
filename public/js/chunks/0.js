@@ -9,6 +9,13 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -91,22 +98,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -117,17 +109,26 @@ __webpack_require__.r(__webpack_exports__);
       password_confirmation: ""
     };
   },
-  methods: {
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])("auth", ["signup"]), {
     register: function register() {
-      this.$store.dispatch("login", {
+      var _this = this;
+
+      this.signup({
         first_name: this.first_name,
         last_name: this.last_name,
         email: this.email,
         password: this.password,
         password_confirmation: this.password_confirmation
-      });
+      }).then(function (res) {
+        _this.$store.dispatch("updateUserRole", {
+          aclChangeRole: _this.$acl.change,
+          userRole: "Empresa"
+        });
+
+        _this.$router.push("/wizard/company");
+      }).catch(function (err) {});
     }
-  }
+  })
 });
 
 /***/ }),
@@ -200,13 +201,11 @@ var render = function() {
                         _c("div", { staticClass: "p-8 login-tabs-container" }, [
                           _c("div", { staticClass: "vx-card__title mb-4" }, [
                             _c("h4", { staticClass: "mb-4" }, [
-                              _vm._v("Crear una nueva cuenta")
+                              _vm._v(_vm._s(_vm.$t("createNewAccount")))
                             ]),
                             _vm._v(" "),
                             _c("p", [
-                              _vm._v(
-                                "\n                                    Crea una nueva cuenta en LuppCRM\n                                    ingresando los siguientes pasos.\n                                "
-                              )
+                              _vm._v(_vm._s(_vm.$t("createNewAccountDetails")))
                             ])
                           ]),
                           _vm._v(" "),
@@ -220,7 +219,7 @@ var render = function() {
                                   "icon-no-border": "",
                                   icon: "icon icon-user",
                                   "icon-pack": "feather",
-                                  "label-placeholder": "Nombres"
+                                  "label-placeholder": _vm.$t("firstName")
                                 },
                                 model: {
                                   value: _vm.first_name,
@@ -238,7 +237,7 @@ var render = function() {
                                   "icon-no-border": "",
                                   icon: "icon icon-user",
                                   "icon-pack": "feather",
-                                  "label-placeholder": "Apellidos"
+                                  "label-placeholder": _vm.$t("lastName")
                                 },
                                 model: {
                                   value: _vm.last_name,
@@ -256,7 +255,7 @@ var render = function() {
                                   "icon-no-border": "",
                                   icon: "icon icon-user",
                                   "icon-pack": "feather",
-                                  "label-placeholder": "Email"
+                                  "label-placeholder": _vm.$t("email")
                                 },
                                 model: {
                                   value: _vm.email,
@@ -275,7 +274,7 @@ var render = function() {
                                   "icon-no-border": "",
                                   icon: "icon icon-lock",
                                   "icon-pack": "feather",
-                                  "label-placeholder": "Password"
+                                  "label-placeholder": _vm.$t("password")
                                 },
                                 model: {
                                   value: _vm.password,
@@ -294,7 +293,9 @@ var render = function() {
                                   "icon-no-border": "",
                                   icon: "icon icon-lock",
                                   "icon-pack": "feather",
-                                  "label-placeholder": "Reingrese su Password"
+                                  "label-placeholder": _vm.$t(
+                                    "passwordConfirmation"
+                                  )
                                 },
                                 model: {
                                   value: _vm.password_confirmation,
@@ -313,7 +314,7 @@ var render = function() {
                                     to: { name: "auth.login" }
                                   }
                                 },
-                                [_vm._v("Ir a inicio de sesión")]
+                                [_vm._v(_vm._s(_vm.$t("gotoLogin")))]
                               ),
                               _vm._v(" "),
                               _c(
@@ -322,7 +323,7 @@ var render = function() {
                                   staticClass: "float-right",
                                   on: { click: _vm.register }
                                 },
-                                [_vm._v("Crear mi cuenta")]
+                                [_vm._v(_vm._s(_vm.$t("register")))]
                               )
                             ],
                             1

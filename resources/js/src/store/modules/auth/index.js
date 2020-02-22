@@ -85,6 +85,8 @@ export default {
                     root: true
                 })
                 commit('changeRol', data.role);
+                // console.log(data.user.first_login);
+
                 // dispatch('updateUserRole', {
                 //     aclChangeRole: this.$acl.change,
                 //     userRole: data.role
@@ -111,6 +113,9 @@ export default {
             });
             dispatch('me');
             console.log('auto');
+            // if (state.AppActiveUser.first_login) {
+            //     router.push('wizard/company');
+            // }
         },
         logoutUser({
             dispatch,
