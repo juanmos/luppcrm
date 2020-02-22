@@ -34,7 +34,16 @@
                                         Ingresa con tu email y contraseña.
                                     </p>
                                 </div>
-
+                                <vs-alert
+                                    :active="errorLogin"
+                                    color="danger"
+                                    icon="new_releases"
+                                >
+                                    <span
+                                        >El email o la contraseña son
+                                        incorrectos</span
+                                    >
+                                </vs-alert>
                                 <div>
                                     <vs-input
                                         name="email"
@@ -63,17 +72,23 @@
                                         <vs-checkbox
                                             v-model="checkbox_remember_me"
                                             class="mb-3"
-                                            >Remember Me</vs-checkbox
+                                            >Recordarme</vs-checkbox
                                         >
                                         <router-link to=""
-                                            >Forgot Password?</router-link
+                                            >Olvidaste tu
+                                            contraseña?</router-link
                                         >
                                     </div>
-                                    <vs-button type="border"
-                                        >Register</vs-button
+                                    <vs-button
+                                        type="border"
+                                        :to="{ name: 'auth.register' }"
+                                        >Crear una cuenta</vs-button
                                     >
-                                    <vs-button class="float-right"
-                                        >Login</vs-button
+
+                                    <vs-button
+                                        class="float-right"
+                                        @click="loginUser"
+                                        >Iniciar sesión</vs-button
                                     >
                                 </div>
                             </div>
@@ -86,13 +101,31 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
     data() {
         return {
-            email: "",
-            password: "",
-            checkbox_remember_me: false
+            email: "juan.moscoso@primme.tech",
+            password: "123456",
+            checkbox_remember_me: false,
+            errorLogin: false
         };
+    },
+    methods: {
+        ...mapActions("auth", ["login"]),
+        loginUser() {
+            this.errorLogin = false;
+            this.login({
+                email: this.email,
+                password: this.password
+            })
+                .then(res => {
+                    this.$router.push("/admin");
+                })
+                .catch(err => {
+                    this.errorLogin = true;
+                });
+        }
     }
 };
 </script>

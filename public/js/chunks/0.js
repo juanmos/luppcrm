@@ -968,6 +968,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -994,7 +1004,7 @@ __webpack_require__.r(__webpack_exports__);
   computed: {
     navbarColor: function navbarColor() {
       var color = "#fff";
-      if (this.navbarType === "sticky") color = "#f7f7f7";else if (this.navbarType === 'static') {
+      if (this.navbarType === "sticky") color = "#f7f7f7";else if (this.navbarType === "static") {
         if (this.scrollY < 50) {
           color = "#f7f7f7";
         }
@@ -1477,114 +1487,126 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/index.cjs.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/auth */ "./node_modules/firebase/auth/dist/index.esm.js");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
-    return {};
+    return {
+      displayName: ""
+    };
   },
   computed: {
     activeUserInfo: function activeUserInfo() {
-      return this.$store.state.AppActiveUser;
+      var user = this.$store.state.AppActiveUser;
+      this.displayName = user.first_name + " " + user.last_name;
+      return user;
     }
   },
-  methods: {
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])("auth", ["logoutUser"]), {
     logout: function logout() {
-      var _this = this;
+      this.logoutUser(); // Change role on logout. Same value as initialRole of acj.js
+      //this.$acl.change("admin");
+      // This is just for demo Purpose. If user clicks on logout -> redirect
 
-      // if user is logged in via auth0
-      if (this.$auth.profile) this.$auth.logOut(); // if user is logged in via firebase
-
-      var firebaseCurrentUser = firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.auth().currentUser;
-
-      if (firebaseCurrentUser) {
-        firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.auth().signOut().then(function () {
-          _this.$router.push('/pages/login').catch(function () {});
-        });
-      } // If JWT login
-
-
-      if (localStorage.getItem("accessToken")) {
-        localStorage.removeItem("accessToken");
-        this.$router.push('/pages/login').catch(function () {});
-      } // Change role on logout. Same value as initialRole of acj.js
-
-
-      this.$acl.change('admin');
-      localStorage.removeItem('userInfo'); // This is just for demo Purpose. If user clicks on logout -> redirect
-
-      this.$router.push('/pages/login').catch(function () {});
+      this.$router.push("/login").catch(function () {});
     }
-  }
+  })
 });
 
 /***/ }),
@@ -2595,6 +2617,86 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2614,18 +2716,18 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      footerType: _themeConfig_js__WEBPACK_IMPORTED_MODULE_6__["default"].footerType || 'static',
+      footerType: _themeConfig_js__WEBPACK_IMPORTED_MODULE_6__["default"].footerType || "static",
       hideScrollToTop: _themeConfig_js__WEBPACK_IMPORTED_MODULE_6__["default"].hideScrollToTop,
       isNavbarDark: false,
-      navbarColor: _themeConfig_js__WEBPACK_IMPORTED_MODULE_6__["default"].navbarColor || '#fff',
-      navbarType: _themeConfig_js__WEBPACK_IMPORTED_MODULE_6__["default"].navbarType || 'floating',
+      navbarColor: _themeConfig_js__WEBPACK_IMPORTED_MODULE_6__["default"].navbarColor || "#fff",
+      navbarType: _themeConfig_js__WEBPACK_IMPORTED_MODULE_6__["default"].navbarType || "floating",
       navMenuItems: _layouts_components_vertical_nav_menu_navMenuItems_js__WEBPACK_IMPORTED_MODULE_2__["default"],
-      routerTransition: _themeConfig_js__WEBPACK_IMPORTED_MODULE_6__["default"].routerTransition || 'none',
+      routerTransition: _themeConfig_js__WEBPACK_IMPORTED_MODULE_6__["default"].routerTransition || "none",
       routeTitle: this.$route.meta.pageTitle
     };
   },
   watch: {
-    "$route": function $route() {
+    $route: function $route() {
       this.routeTitle = this.$route.meta.pageTitle;
     },
     isThemeDark: function isThemeDark(val) {
@@ -2648,16 +2750,16 @@ __webpack_require__.r(__webpack_exports__);
     },
     footerClasses: function footerClasses() {
       return {
-        'footer-hidden': this.footerType == 'hidden',
-        'footer-sticky': this.footerType == 'sticky',
-        'footer-static': this.footerType == 'static'
+        "footer-hidden": this.footerType == "hidden",
+        "footer-sticky": this.footerType == "sticky",
+        "footer-static": this.footerType == "static"
       };
     },
     isAppPage: function isAppPage() {
       return this.$route.meta.no_scroll;
     },
     isThemeDark: function isThemeDark() {
-      return this.$store.state.theme == 'dark';
+      return this.$store.state.theme == "dark";
     },
     layoutTypeClass: function layoutTypeClass() {
       return "main-".concat(this.mainLayoutType);
@@ -2667,10 +2769,10 @@ __webpack_require__.r(__webpack_exports__);
     },
     navbarClasses: function navbarClasses() {
       return {
-        'navbar-hidden': this.navbarType == 'hidden',
-        'navbar-sticky': this.navbarType == 'sticky',
-        'navbar-static': this.navbarType == 'static',
-        'navbar-floating': this.navbarType == 'floating'
+        "navbar-hidden": this.navbarType == "hidden",
+        "navbar-sticky": this.navbarType == "sticky",
+        "navbar-static": this.navbarType == "static",
+        "navbar-floating": this.navbarType == "floating"
       };
     },
     verticalNavMenuWidth: function verticalNavMenuWidth() {
@@ -2696,11 +2798,11 @@ __webpack_require__.r(__webpack_exports__);
       this.footerType = val;
     },
     setNavMenuVisibility: function setNavMenuVisibility(layoutType) {
-      if (layoutType === 'horizontal' && this.windowWidth >= 1200 || layoutType === "vertical" && this.windowWidth < 1200) {
-        this.$store.commit('TOGGLE_IS_VERTICAL_NAV_MENU_ACTIVE', false);
-        this.$store.dispatch('updateVerticalNavMenuWidth', 'no-nav-menu');
+      if (layoutType === "horizontal" && this.windowWidth >= 1200 || layoutType === "vertical" && this.windowWidth < 1200) {
+        this.$store.commit("TOGGLE_IS_VERTICAL_NAV_MENU_ACTIVE", false);
+        this.$store.dispatch("updateVerticalNavMenuWidth", "no-nav-menu");
       } else {
-        this.$store.commit('TOGGLE_IS_VERTICAL_NAV_MENU_ACTIVE', true);
+        this.$store.commit("TOGGLE_IS_VERTICAL_NAV_MENU_ACTIVE", true);
       }
     },
     toggleHideScrollToTop: function toggleHideScrollToTop(val) {
@@ -4022,7 +4124,7 @@ var render = function() {
                 }),
                 _vm._v(" "),
                 _c("span", { staticClass: "vx-logo-text text-primary" }, [
-                  _vm._v("Vuexy")
+                  _vm._v("LuppCRM")
                 ])
               ],
               1
@@ -4555,7 +4657,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.activeUserInfo.displayName
+  return _vm.activeUserInfo.active
     ? _c(
         "div",
         { staticClass: "the-navbar__user-meta flex items-center" },
@@ -4565,7 +4667,7 @@ var render = function() {
             { staticClass: "text-right leading-tight hidden sm:block" },
             [
               _c("p", { staticClass: "font-semibold" }, [
-                _vm._v(_vm._s(_vm.activeUserInfo.displayName))
+                _vm._v(_vm._s(_vm.displayName))
               ]),
               _vm._v(" "),
               _c("small", [_vm._v("Available")])
@@ -5468,7 +5570,7 @@ var render = function() {
       _c("v-nav-menu", {
         attrs: {
           navMenuItems: _vm.navMenuItems,
-          title: "Vuexy",
+          title: "Lupp CRM",
           parent: ".layout--main"
         }
       }),
@@ -6973,15 +7075,66 @@ __webpack_require__.r(__webpack_exports__);
   Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
 /* harmony default export */ __webpack_exports__["default"] = ([{
-  url: "/",
-  name: "Home",
+  url: "/home",
+  name: "Inicio",
   slug: "home",
   icon: "HomeIcon"
 }, {
-  url: "/page2",
-  name: "Page 2",
-  slug: "page2",
-  icon: "FileIcon"
+  url: "/invoices",
+  name: "Facturacion",
+  slug: "invoices",
+  icon: "FileTextIcon"
+}, {
+  url: "/payments",
+  name: "Pagos",
+  slug: "payments",
+  icon: "DollarSignIcon"
+}, {
+  name: 'Presupuestos',
+  url: '/estimates',
+  icon: 'ClipboardIcon',
+  slug: 'estimates'
+}, {
+  name: 'Compras',
+  url: '/expenses',
+  icon: 'CreditCardIcon',
+  slug: 'expenses'
+}, {
+  name: 'Retenciones',
+  url: '/deductions',
+  icon: 'FileMinusIcon',
+  slug: 'deductions'
+}, {
+  name: 'Clientes',
+  url: '/clients',
+  icon: 'UsersIcon',
+  slug: 'clients'
+}, {
+  url: null,
+  name: 'Adminsitration',
+  slug: 'administration',
+  icon: 'SettingsIcon',
+  submenu: [{
+    name: 'Configuraciones',
+    url: '/configurations',
+    icon: 'SettingsIcon',
+    slug: 'configurations'
+  }, {
+    name: 'Usuarios',
+    url: '/users',
+    icon: 'UserIcon',
+    slug: 'users'
+  }, {
+    name: 'Importar factura',
+    url: '/import-invoice',
+    icon: 'FilePlusIcon',
+    slug: 'import-invoice'
+  }]
+}, {
+  name: 'Ayuda',
+  url: '/help',
+  icon: 'HelpCircleIcon',
+  slug: 'help'
 }]);
 
 /***/ }),

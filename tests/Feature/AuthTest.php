@@ -32,7 +32,6 @@ class AuthTest extends TestCase
      */
     public function testLoginUser()
     {
-        $this->withoutExceptionHandling();
         $response = $this->post('api/auth/login', [
             'email'    => 'test@email.com',
             'password' => '123456'
@@ -58,5 +57,35 @@ class AuthTest extends TestCase
         ]);
         
         $response->assertJsonFragment(['error'=>'Unauthorized']);
+    }
+
+    /** @test */
+    public function testRegisterNewUser()
+    {
+        $this->withoutExceptionHandling();
+
+        $response = $this->post('/api/auth/signup', [
+            
+            'last_name'  =>  'Moscoso',
+            'email'     =>  'test31@email.com',
+            'password'  =>  '123456',
+            'password_confirmation' => '123456',
+            'first_name'    =>  "Juan"
+        ]);
+        $response->assertJsonStructure([
+            'token',
+            'token_type',
+            'expires_in'
+        ]);
+        $this->assertAuthenticated('api');
+    }
+
+    /** @test */
+    public function testGetLogginUserData()
+    {
+        $this->actingAs(User::first(), 'api');
+        $response = $this->get('/api/auth/me', $this->headers);
+        $response->assertOk();
+        $response->assertJsonStructure(['user']);
     }
 }
