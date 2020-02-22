@@ -32,12 +32,16 @@ import router from "./router";
 import store from "./store/store";
 
 // Vuejs - Vue wrapper for hammerjs
-import { VueHammer } from "vue2-hammer";
+import {
+    VueHammer
+} from "vue2-hammer";
 Vue.use(VueHammer);
 
 // PrismJS
 import "prismjs";
 import "prismjs/themes/prism-tomorrow.css";
+
+import acl from './acl/acl'
 
 // Vue select css
 // Note: In latest version you have to add it separately
@@ -48,5 +52,6 @@ Vue.config.productionTip = false;
 new Vue({
     router,
     store,
+    acl,
     render: h => h(App)
 }).$mount("#app");

@@ -41,7 +41,7 @@ class LoginController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password'])
         ]);
-
+        $user->assignRole('Empresa');
         $credentials = request(['email', 'password']);
 
         if (! $token = auth()->attempt($credentials)) {
@@ -54,7 +54,8 @@ class LoginController extends Controller
     public function me()
     {
         $user=auth('api')->user();
-        return response()->json(compact('user'));
+        $role=$user->getRoleNames()->implode('');
+        return response()->json(compact('user', 'role'));
     }
 
     protected function respondWithToken($token)
