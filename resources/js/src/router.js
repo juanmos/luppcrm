@@ -33,7 +33,8 @@ const router = new Router({
             component: () =>
                 import ('@/layouts/full-page/FullPage.vue'),
             meta: {
-                auth: false
+                auth: false,
+                rule: 'public'
             },
             children: [
                 // =============================================================================
@@ -42,12 +43,18 @@ const router = new Router({
                 {
                     path: '/login',
                     name: 'auth.login',
+                    meta: {
+                        rule: 'public'
+                    },
                     component: () =>
                         import ('./views/auth/Login.vue')
                 },
                 {
                     path: '/register',
                     name: 'auth.register',
+                    meta: {
+                        rule: 'public'
+                    },
                     component: () =>
                         import ('./views/auth/Register.vue')
                 },
@@ -56,6 +63,15 @@ const router = new Router({
                     name: 'page-error-404',
                     component: () =>
                         import ('@/views/pages/Error404.vue')
+                },
+                {
+                    path: '/pages/not-authorized',
+                    name: 'page-not-authorized',
+                    component: () =>
+                        import ('@/views/pages/NotAuthorized.vue'),
+                    meta: {
+                        rule: 'Empresa'
+                    }
                 },
             ]
         },
@@ -67,7 +83,8 @@ const router = new Router({
             component: () =>
                 import ('./layouts/main/Main.vue'),
             meta: {
-                auth: true
+                auth: true,
+                rule: 'Comun'
             },
             beforeEnter(to, from, next) {
                 console.log('be', store.state.auth.access_token);
@@ -83,62 +100,135 @@ const router = new Router({
                 // Theme Routes
                 // =============================================================================
                 {
-                    path: '/home',
+                    path: 'home',
                     name: 'home',
+                    meta: {
+                        rule: 'Comun'
+                    },
                     component: () =>
                         import ('./views/Home.vue')
                 },
                 {
                     path: '/invoices',
                     name: 'admin.invoices',
+                    meta: {
+                        rule: 'Empresa'
+                    },
                     component: () =>
                         import ('./views/invoices/Invoices.vue')
                 },
                 {
                     path: '/payments',
                     name: 'admin.payments',
+                    meta: {
+                        rule: 'Empresa'
+                    },
                     component: () =>
                         import ('./views/payments/Payments.vue')
                 },
                 {
                     path: '/estimates',
                     name: 'admin.estimates',
+                    meta: {
+                        rule: 'Empresa'
+                    },
                     component: () =>
                         import ('./views/estimates/Estimates.vue')
                 },
                 {
                     path: '/expenses',
                     name: 'admin.expenses',
+                    meta: {
+                        rule: 'Empresa'
+                    },
                     component: () =>
                         import ('./views/expenses/Expenses.vue')
                 },
                 {
                     path: '/deductions',
                     name: 'admin.deductions',
+                    meta: {
+                        rule: 'Empresa'
+                    },
                     component: () =>
                         import ('./views/deductions/Deductions.vue')
                 },
                 {
                     path: '/clients',
                     name: 'admin.clients',
+                    meta: {
+                        rule: 'Empresa'
+                    },
                     component: () =>
                         import ('./views/clients/Clients.vue')
                 },
                 {
                     path: '/help',
                     name: 'admin.help',
+                    meta: {
+                        rule: 'Empresa'
+                    },
                     component: () =>
                         import ('./views/help/Help.vue')
                 },
                 {
                     path: '/configurations',
                     name: 'admin.configurations',
+                    meta: {
+                        rule: 'Empresa'
+                    },
                     component: () =>
                         import ('./views/configurations/Configurations.vue')
                 },
             ],
         },
-
+        {
+            path: '/wizard',
+            component: () =>
+                import ('@/layouts/full-page/FullPage.vue'),
+            meta: {
+                auth: false,
+                rule: 'Empresa'
+            },
+            children: [
+                // =============================================================================
+                // PAGES
+                // =============================================================================
+                {
+                    path: '/userData',
+                    name: 'wizard.user',
+                    meta: {
+                        rule: 'Empresa'
+                    },
+                    component: () =>
+                        import ('./views/wizard/User.vue')
+                },
+                {
+                    path: '/register',
+                    name: 'auth.register',
+                    meta: {
+                        rule: 'public'
+                    },
+                    component: () =>
+                        import ('./views/auth/Register.vue')
+                },
+                {
+                    path: '/pages/error-404',
+                    name: 'page-error-404',
+                    component: () =>
+                        import ('@/views/pages/Error404.vue')
+                },
+                {
+                    path: '/pages/not-authorized',
+                    name: 'page-not-authorized',
+                    component: () =>
+                        import ('@/views/pages/NotAuthorized.vue'),
+                    meta: {
+                        rule: 'Empresa'
+                    }
+                },
+            ]
+        },
         // Redirect to 404 page, if no match found
         {
             path: '*',

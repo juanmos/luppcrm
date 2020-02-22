@@ -92,32 +92,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -137,6 +111,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         email: this.email,
         password: this.password
       }).then(function (res) {
+        // console.log(this.$store.state.auth.rol);
+        // this.$acl.change("Empresa");
+        _this.$store.dispatch("updateUserRole", {
+          aclChangeRole: _this.$acl.change,
+          userRole: "Empresa"
+        });
+
         _this.$router.push("/admin");
       }).catch(function (err) {
         _this.errorLogin = true;
@@ -271,9 +252,7 @@ var render = function() {
                               ]),
                               _vm._v(" "),
                               _c("p", [
-                                _vm._v(
-                                  "\n                                    Ingresa con tu email y contraseña.\n                                "
-                                )
+                                _vm._v("Ingresa con tu email y contraseña.")
                               ])
                             ]),
                             _vm._v(" "),
@@ -289,7 +268,7 @@ var render = function() {
                               [
                                 _c("span", [
                                   _vm._v(
-                                    "El email o la contraseña son\n                                    incorrectos"
+                                    "\n                  El email o la contraseña son\n                  incorrectos\n                "
                                   )
                                 ])
                               ]
@@ -359,7 +338,7 @@ var render = function() {
                                     _vm._v(" "),
                                     _c("router-link", { attrs: { to: "" } }, [
                                       _vm._v(
-                                        "Olvidaste tu\n                                        contraseña?"
+                                        "\n                    Olvidaste tu\n                    contraseña?\n                  "
                                       )
                                     ])
                                   ],

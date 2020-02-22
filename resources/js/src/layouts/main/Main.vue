@@ -201,6 +201,7 @@
 import BackToTop from "vue-backtotop";
 import HNavMenu from "@/layouts/components/horizontal-nav-menu/HorizontalNavMenu.vue";
 import navMenuItems from "@/layouts/components/vertical-nav-menu/navMenuItems.js";
+import navMenuSuper from "@/layouts/components/vertical-nav-menu/navMenuSuper.js";
 import TheNavbarHorizontal from "@/layouts/components/navbar/TheNavbarHorizontal.vue";
 import TheNavbarVertical from "@/layouts/components/navbar/TheNavbarVertical.vue";
 import TheFooter from "@/layouts/components/TheFooter.vue";
@@ -223,7 +224,9 @@ export default {
             isNavbarDark: false,
             navbarColor: themeConfig.navbarColor || "#fff",
             navbarType: themeConfig.navbarType || "floating",
-            navMenuItems: navMenuItems,
+            navMenuItems: this.$acl.check("SuperAdministrador")
+                ? navMenuSuper
+                : navMenuItems,
             routerTransition: themeConfig.routerTransition || "none",
             routeTitle: this.$route.meta.pageTitle
         };

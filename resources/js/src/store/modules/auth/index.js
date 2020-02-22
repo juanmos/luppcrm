@@ -6,6 +6,7 @@ export default {
     namespaced: true,
     state: {
         access_token: null,
+        rol: 'public'
     },
     mutations: {
         authUser(state, userData) {
@@ -14,6 +15,10 @@ export default {
         clearAuthData(state) {
             state.access_token = null;
             state.ttl = null;
+
+        },
+        changeRol(state, rol) {
+            state.rol = rol;
 
         }
     },
@@ -79,6 +84,13 @@ export default {
                 dispatch('updateUserInfo', data.user, {
                     root: true
                 })
+                commit('changeRol', data.role);
+                // dispatch('updateUserRole', {
+                //     aclChangeRole: this.$acl.change,
+                //     userRole: data.role
+                // }, {
+                //     root: true
+                // })
             });
         },
         tryAutoLogin({
@@ -112,6 +124,8 @@ export default {
         }
     },
     getters: {
-
+        getRol(state) {
+            return state.rol;
+        }
     }
 }
