@@ -100,7 +100,9 @@ export default {
             aclChangeRole: this.$acl.change,
             userRole: "Empresa"
           });
-          this.$router.push("/admin");
+          this.$store.state.AppUserData.company_id == 0
+            ? this.$router.push("/admin/home")
+            : this.$router.push("/wizard/company");
         })
         .catch(err => {
           this.errorLogin = true;

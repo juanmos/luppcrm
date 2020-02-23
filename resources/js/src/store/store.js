@@ -17,6 +17,8 @@ import mutations from "./mutations"
 import actions from "./actions"
 
 import auth from "./modules/auth";
+import company from "./modules/company";
+import configuration from "./modules/configuration";
 
 Vue.use(Vuex)
 
@@ -27,7 +29,9 @@ export default new Vuex.Store({
     state,
     actions,
     modules: {
-        auth
+        auth,
+        company,
+        configuration
     },
     strict: process.env.NODE_ENV !== 'production'
 })

@@ -87,8 +87,6 @@ const router = new Router({
                 rule: 'Comun'
             },
             beforeEnter(to, from, next) {
-                console.log('be', store.state.auth.access_token);
-
                 store.dispatch('auth/tryAutoLogin').then(() => {
                     next();
                 }).catch(() => {
@@ -109,7 +107,7 @@ const router = new Router({
                         import ('./views/Home.vue')
                 },
                 {
-                    path: '/invoices',
+                    path: 'invoices',
                     name: 'admin.invoices',
                     meta: {
                         rule: 'Empresa'
@@ -118,7 +116,7 @@ const router = new Router({
                         import ('./views/invoices/Invoices.vue')
                 },
                 {
-                    path: '/payments',
+                    path: 'payments',
                     name: 'admin.payments',
                     meta: {
                         rule: 'Empresa'
@@ -127,7 +125,7 @@ const router = new Router({
                         import ('./views/payments/Payments.vue')
                 },
                 {
-                    path: '/estimates',
+                    path: 'estimates',
                     name: 'admin.estimates',
                     meta: {
                         rule: 'Empresa'
@@ -136,7 +134,7 @@ const router = new Router({
                         import ('./views/estimates/Estimates.vue')
                 },
                 {
-                    path: '/expenses',
+                    path: 'expenses',
                     name: 'admin.expenses',
                     meta: {
                         rule: 'Empresa'
@@ -145,7 +143,7 @@ const router = new Router({
                         import ('./views/expenses/Expenses.vue')
                 },
                 {
-                    path: '/deductions',
+                    path: 'deductions',
                     name: 'admin.deductions',
                     meta: {
                         rule: 'Empresa'
@@ -154,7 +152,7 @@ const router = new Router({
                         import ('./views/deductions/Deductions.vue')
                 },
                 {
-                    path: '/clients',
+                    path: 'clients',
                     name: 'admin.clients',
                     meta: {
                         rule: 'Empresa'
@@ -163,7 +161,7 @@ const router = new Router({
                         import ('./views/clients/Clients.vue')
                 },
                 {
-                    path: '/help',
+                    path: 'help',
                     name: 'admin.help',
                     meta: {
                         rule: 'Empresa'
@@ -172,7 +170,7 @@ const router = new Router({
                         import ('./views/help/Help.vue')
                 },
                 {
-                    path: '/configurations',
+                    path: 'configurations',
                     name: 'admin.configurations',
                     meta: {
                         rule: 'Empresa'
@@ -190,12 +188,19 @@ const router = new Router({
                 auth: false,
                 rule: 'Empresa'
             },
+            beforeEnter(to, from, next) {
+                store.dispatch('auth/tryAutoLogin').then(() => {
+                    next();
+                }).catch(() => {
+                    next('/login');
+                });
+            },
             children: [
                 // =============================================================================
                 // PAGES
                 // =============================================================================
                 {
-                    path: '/userData',
+                    path: 'company',
                     name: 'wizard.user',
                     meta: {
                         rule: 'Empresa'

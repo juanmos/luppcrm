@@ -62,8 +62,6 @@ class AuthTest extends TestCase
     /** @test */
     public function testRegisterNewUser()
     {
-        $this->withoutExceptionHandling();
-
         $response = $this->post('/api/auth/signup', [
             
             'last_name'  =>  'Moscoso',

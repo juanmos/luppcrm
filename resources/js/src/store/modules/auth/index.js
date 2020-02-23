@@ -85,6 +85,13 @@ export default {
                     root: true
                 })
                 commit('changeRol', data.role);
+                if (data.user.company != null) {
+                    dispatch('company/setCompanyData', data.user.company, {
+                        root: true
+                    });
+                }
+                // console.log(data.user.first_login);
+
                 // dispatch('updateUserRole', {
                 //     aclChangeRole: this.$acl.change,
                 //     userRole: data.role
@@ -99,18 +106,21 @@ export default {
         }) {
             const token = Ls.get('auth.token');
             if (!token) {
-                return
+                return false
             }
             const expirationDate = Ls.get('expirationDate');
             const now = new Date();
             if (now >= expirationDate) {
-                return
+                return false
             }
             commit('authUser', {
                 token: token,
             });
             dispatch('me');
             console.log('auto');
+            // if (state.AppActiveUser.first_login) {
+            //     router.push('wizard/company');
+            // }
         },
         logoutUser({
             dispatch,

@@ -6,7 +6,7 @@
   Author: Pixinvent
   Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
-
+import axios from "@/axios";
 const actions = {
 
     // /////////////////////////////////////////////
@@ -74,9 +74,21 @@ const actions = {
 
         // Change userInfo in localStorage and store
         dispatch('updateUserInfo', {
-            userRole: payload.userRole
+            role: payload.userRole
         })
     },
+    updateProfile({
+        commit,
+        dispatch
+    }, payload) {
+        axios.put('api/profile/user', payload).then(({
+            data
+        }) => {
+            dispatch('updateUserInfo', payload);
+        }).catch((err) => {
+
+        })
+    }
 }
 
 export default actions

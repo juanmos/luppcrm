@@ -34,7 +34,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('123456'),
             'phone' => '0991704980',
             'identification' => '0103086773',
-            'company_id'=>1
+            'company_id'=>0
         ]);
         DB::table('model_has_roles')->insert([
             'role_id' => '1',

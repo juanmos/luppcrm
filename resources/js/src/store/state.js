@@ -18,12 +18,16 @@ import colors from "@/../themeConfig.js"
 
 const userDefaults = {
     id: 0, // From Auth
-    first_name: "John", // From Auth
-    last_name: 'Doe',
+    first_name: "", // From Auth
+    last_name: '',
     about: "Dessert chocolate cake lemon drops jujubes. Biscuit cupcake ice cream bear claw brownie brownie marshmallow.",
     photoURL: require("@assets/images/portrait/small/avatar-s-11.jpg"), // From Auth
     status: "online",
-    userRole: "admin"
+    role: "Empresa",
+    active: 1,
+    mobile: '',
+    phone: '',
+    first_login: 1
 }
 
 // /////////////////////////////////////////////
