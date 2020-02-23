@@ -11,7 +11,7 @@ import Vue from "vue";
 import App from "./App.vue";
 
 //acl
-// import acl from './acl/acl'
+import acl from './acl/acl'
 
 // i18n
 import i18n from './i18n/i18n'
@@ -94,6 +94,6 @@ new Vue({
     router,
     store,
     i18n,
-    // acl,
+    acl,
     render: h => h(App)
 }).$mount("#app");

@@ -1,6 +1,7 @@
 import axios from "@/axios";
 import Ls from '@/services/ls'
 import router from '@/router';
+import acl from '../../../acl/acl';
 
 export default {
     namespaced: true,
@@ -53,8 +54,10 @@ export default {
                     .then(({
                         data
                     }) => {
-                        dispatch('saveTokenData', data);
-                        resolve(data);
+                        dispatch('saveTokenData', data).then(() => {
+                            resolve(data);
+                        });
+
                     })
                     .catch(err => {
                         Ls.remove('auth.token');
@@ -81,6 +84,7 @@ export default {
             axios.get('api/auth/me').then(({
                 data
             }) => {
+                data.user.role = data.role;
                 dispatch('updateUserInfo', data.user, {
                     root: true
                 })
@@ -90,10 +94,18 @@ export default {
                         root: true
                     });
                 }
-                // console.log(data.user.first_login);
+                if (data.role == 'Empresa') {
+                    data.user.company != null ?
+                        router.push("/admin/home") :
+                        router.push("/wizard/company");
+                } else {
+                    router.push("/admin/home")
+                }
 
+                // console.log(data.role);
+                // acl.change(data.role);
                 // dispatch('updateUserRole', {
-                //     aclChangeRole: this.$acl.change,
+                //     aclChangeRole: acl.change,
                 //     userRole: data.role
                 // }, {
                 //     root: true

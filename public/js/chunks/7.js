@@ -102,6 +102,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       errorLogin: false
     };
   },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(["userData"])),
   methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])("auth", ["login"]), {
     loginUser: function loginUser() {
       var _this = this;
@@ -118,7 +119,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           userRole: "Empresa"
         });
 
-        _this.$store.state.AppUserData.company_id == 0 ? _this.$router.push("/admin/home") : _this.$router.push("/wizard/company");
+        var theUser = _this.userData;
+        console.log(theUser);
       }).catch(function (err) {
         _this.errorLogin = true;
       });

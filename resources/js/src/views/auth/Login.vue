@@ -75,7 +75,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 export default {
   data() {
     return {
@@ -84,6 +84,9 @@ export default {
       checkbox_remember_me: false,
       errorLogin: false
     };
+  },
+  computed: {
+    ...mapGetters(["userData"])
   },
   methods: {
     ...mapActions("auth", ["login"]),
@@ -100,9 +103,8 @@ export default {
             aclChangeRole: this.$acl.change,
             userRole: "Empresa"
           });
-          this.$store.state.AppUserData.company_id == 0
-            ? this.$router.push("/admin/home")
-            : this.$router.push("/wizard/company");
+          const theUser = this.userData;
+          console.log(theUser);
         })
         .catch(err => {
           this.errorLogin = true;
