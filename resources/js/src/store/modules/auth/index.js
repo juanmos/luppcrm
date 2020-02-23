@@ -1,7 +1,7 @@
 import axios from "@/axios";
 import Ls from '@/services/ls'
 import router from '@/router';
-import acl from '../../../acl/acl';
+// import acl from '../../../acl/acl';
 
 export default {
     namespaced: true,
@@ -94,13 +94,13 @@ export default {
                         root: true
                     });
                 }
-                if (data.role == 'Empresa') {
-                    data.user.company != null ?
-                        router.push("/admin/home") :
-                        router.push("/wizard/company");
-                } else {
-                    router.push("/admin/home")
-                }
+                // if (data.role == 'Empresa') {
+                //     data.user.company != null ?
+                //         router.push("/company/home") :
+                //         router.push("/wizard/company");
+                // } else {
+                //     router.push("/admin/home")
+                // }
 
                 // console.log(data.role);
                 // acl.change(data.role);
