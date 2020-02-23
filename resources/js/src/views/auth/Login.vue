@@ -99,12 +99,10 @@ export default {
         .then(res => {
           // console.log(this.$store.state.auth.rol);
           // this.$acl.change("Empresa");
-          this.$store.dispatch("updateUserRole", {
-            aclChangeRole: this.$acl.change,
-            userRole: "Empresa"
-          });
-          const theUser = this.userData;
-          console.log(theUser);
+          // this.$store.dispatch("updateUserRole", {
+          //   aclChangeRole: this.$acl.change,
+          //   userRole: "Empresa"
+          // });
         })
         .catch(err => {
           this.errorLogin = true;

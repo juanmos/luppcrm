@@ -9,72 +9,97 @@
 
 
 export default [{
-        url: "/admin/home",
-        name: "Inicio",
+        url: "/company/home",
+        name: "Dashboad",
         slug: "home",
         icon: "HomeIcon",
+        i18n: "Dashboard",
     },
     {
-        url: "/admin/invoices",
+        url: "/company/invoices",
         name: "Facturacion",
         slug: "invoices",
         icon: "FileTextIcon",
+        i18n: "Invoices",
     },
     {
-        url: "/admin/payments",
+        url: "/company/payments",
         name: "Pagos",
         slug: "payments",
         icon: "DollarSignIcon",
+        i18n: "Payments",
     },
     {
         name: 'Presupuestos',
-        url: '/admin/estimates',
+        url: '/company/estimates',
         icon: 'ClipboardIcon',
-        slug: 'estimates'
+        slug: 'estimates',
+        i18n: "Estimates",
     }, {
         name: 'Compras',
-        url: '/admin/expenses',
+        url: '/company/expenses',
         icon: 'CreditCardIcon',
-        slug: 'expenses'
+        slug: 'expenses',
+        i18n: "Expenses",
     }, {
         name: 'Retenciones',
-        url: '/admin/deductions',
+        url: '/company/deductions',
         icon: 'FileMinusIcon',
-        slug: 'deductions'
+        slug: 'deductions',
+        i18n: "Deductions",
     }, {
         name: 'Clientes',
-        url: '/admin/clients',
+        url: '/company/clients',
         icon: 'UsersIcon',
-        slug: 'clients'
+        slug: 'clients',
+        i18n: "Clients",
     }, {
         url: null,
         name: 'Adminsitration',
         slug: 'administration',
         icon: 'SettingsIcon',
+        i18n: "Administration",
         submenu: [{
                 name: 'Configuraciones',
-                url: '/admin/configurations',
+                url: '/company/configurations',
                 icon: 'SettingsIcon',
-                slug: 'configurations'
+                slug: 'configurations',
+                i18n: "Settings",
             },
             {
                 name: 'Usuarios',
-                url: '/admin/users',
+                url: '/company/users',
                 icon: 'UserIcon',
-                slug: 'users'
+                slug: 'users',
+                i18n: "Users",
             }, {
                 name: 'Importar factura',
-                url: '/admin/import-invoice',
+                url: '/company/import-invoice',
                 icon: 'FilePlusIcon',
-                slug: 'import-invoice'
+                slug: 'import-invoice',
+                i18n: "ImportInvoice",
             }
 
         ]
     },
     {
         name: 'Ayuda',
-        url: '/admin/help',
+        url: '/help',
         icon: 'HelpCircleIcon',
-        slug: 'help'
+        slug: 'help',
+        i18n: "Help",
+    },
+    {
+        url: "/admin/companies",
+        name: "Empresas",
+        slug: "companies",
+        icon: "UsersIcon",
+        i18n: "Companies",
+    }, {
+        name: 'Usuarios',
+        url: '/admin/users',
+        icon: 'UserIcon',
+        slug: 'users',
+        i18n: "Users",
     }
 ]

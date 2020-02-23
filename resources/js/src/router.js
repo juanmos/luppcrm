@@ -79,7 +79,7 @@ const router = new Router({
             // =============================================================================
             // MAIN LAYOUT ROUTES
             // =============================================================================
-            path: '/admin',
+            path: '/company',
             component: () =>
                 import ('./layouts/main/Main.vue'),
             meta: {
@@ -87,6 +87,8 @@ const router = new Router({
                 rule: 'Comun'
             },
             beforeEnter(to, from, next) {
+                console.log(to)
+                console.log(from)
                 store.dispatch('auth/tryAutoLogin').then(() => {
                     next();
                 }).catch(() => {
@@ -99,7 +101,7 @@ const router = new Router({
                 // =============================================================================
                 {
                     path: 'home',
-                    name: 'home',
+                    name: 'company.home',
                     meta: {
                         rule: 'Comun'
                     },
@@ -108,7 +110,7 @@ const router = new Router({
                 },
                 {
                     path: 'invoices',
-                    name: 'admin.invoices',
+                    name: 'company.invoices',
                     meta: {
                         rule: 'Empresa'
                     },
@@ -117,7 +119,7 @@ const router = new Router({
                 },
                 {
                     path: 'payments',
-                    name: 'admin.payments',
+                    name: 'company.payments',
                     meta: {
                         rule: 'Empresa'
                     },
@@ -126,7 +128,7 @@ const router = new Router({
                 },
                 {
                     path: 'estimates',
-                    name: 'admin.estimates',
+                    name: 'company.estimates',
                     meta: {
                         rule: 'Empresa'
                     },
@@ -135,7 +137,7 @@ const router = new Router({
                 },
                 {
                     path: 'expenses',
-                    name: 'admin.expenses',
+                    name: 'company.expenses',
                     meta: {
                         rule: 'Empresa'
                     },
@@ -144,7 +146,7 @@ const router = new Router({
                 },
                 {
                     path: 'deductions',
-                    name: 'admin.deductions',
+                    name: 'company.deductions',
                     meta: {
                         rule: 'Empresa'
                     },
@@ -153,7 +155,7 @@ const router = new Router({
                 },
                 {
                     path: 'clients',
-                    name: 'admin.clients',
+                    name: 'company.clients',
                     meta: {
                         rule: 'Empresa'
                     },
@@ -161,8 +163,8 @@ const router = new Router({
                         import ('./views/clients/Clients.vue')
                 },
                 {
-                    path: 'help',
-                    name: 'admin.help',
+                    path: '/help',
+                    name: 'company.help',
                     meta: {
                         rule: 'Empresa'
                     },
@@ -171,7 +173,7 @@ const router = new Router({
                 },
                 {
                     path: 'configurations',
-                    name: 'admin.configurations',
+                    name: 'company.configurations',
                     meta: {
                         rule: 'Empresa'
                     },
@@ -179,6 +181,46 @@ const router = new Router({
                         import ('./views/configurations/Configurations.vue')
                 },
             ],
+        },
+        {
+            // =============================================================================
+            // MAIN LAYOUT ROUTES
+            // =============================================================================
+            path: '/admin',
+            component: () =>
+                import ('./layouts/main/Main.vue'),
+            meta: {
+                auth: true,
+                rule: 'Comun'
+            },
+            beforeEnter(to, from, next) {
+                console.log(to)
+                console.log(from)
+                store.dispatch('auth/tryAutoLogin').then(() => {
+                    next();
+                }).catch(() => {
+                    next('/login');
+                });
+            },
+            children: [{
+                    path: 'companies',
+                    name: 'admin.companies',
+                    meta: {
+                        rule: 'Empresa'
+                    },
+                    component: () =>
+                        import ('./views/companies/Companies.vue')
+                },
+                {
+                    path: 'users',
+                    name: 'admin.users',
+                    meta: {
+                        rule: 'Empresa'
+                    },
+                    component: () =>
+                        import ('./views/configurations/Configurations.vue')
+                },
+            ]
         },
         {
             path: '/wizard',
@@ -207,31 +249,7 @@ const router = new Router({
                     },
                     component: () =>
                         import ('./views/wizard/User.vue')
-                },
-                {
-                    path: '/register',
-                    name: 'auth.register',
-                    meta: {
-                        rule: 'public'
-                    },
-                    component: () =>
-                        import ('./views/auth/Register.vue')
-                },
-                {
-                    path: '/pages/error-404',
-                    name: 'page-error-404',
-                    component: () =>
-                        import ('@/views/pages/Error404.vue')
-                },
-                {
-                    path: '/pages/not-authorized',
-                    name: 'page-not-authorized',
-                    component: () =>
-                        import ('@/views/pages/NotAuthorized.vue'),
-                    meta: {
-                        rule: 'Empresa'
-                    }
-                },
+                }
             ]
         },
         // Redirect to 404 page, if no match found

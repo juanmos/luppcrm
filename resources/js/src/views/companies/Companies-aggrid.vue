@@ -10,18 +10,23 @@
 
 <template>
   <div id="ag-grid-demo">
+    <company-sidebar
+      :isSidebarActive="addNewDataSidebar"
+      @closeSidebar="toggleDataSidebar"
+      :data="sidebarData"
+    />
     <vx-card>
       <!-- TABLE ACTION ROW -->
       <div class="flex flex-wrap justify-between items-center">
         <!-- ITEMS PER PAGE -->
-        <div class="mb-4 md:mb-0 mr-4 ag-grid-table-actions-left">
+        <div class="flex flex-wrap items-center mb-4 md:mb-0 mr-4 ag-grid-table-actions-left">
           <vs-dropdown vs-trigger-click class="cursor-pointer">
             <div
               class="p-4 border border-solid d-theme-border-grey-light rounded-full d-theme-dark-bg cursor-pointer flex items-center justify-between font-medium"
             >
               <span
                 class="mr-2"
-              >{{ currentPage * paginationPageSize - (paginationPageSize - 1) }} - {{ contacts.length - currentPage * paginationPageSize > 0 ? currentPage * paginationPageSize : contacts.length }} of {{ contacts.length }}</span>
+              >{{ currentPage * paginationPageSize - (paginationPageSize - 1) }} - {{ companies.length - currentPage * paginationPageSize > 0 ? currentPage * paginationPageSize : companies.length }} of {{ companies.length }}</span>
               <feather-icon icon="ChevronDownIcon" svgClasses="h-4 w-4" />
             </div>
             <!-- <vs-button class="btn-drop" type="line" color="primary" icon-pack="feather" icon="icon-chevron-down"></vs-button> -->
@@ -40,6 +45,13 @@
               </vs-dropdown-item>
             </vs-dropdown-menu>
           </vs-dropdown>
+          <div
+            class="btn-add-new p-3 ml-4 rounded-lg cursor-pointer flex items-center justify-center text-lg font-medium text-base text-primary border border-solid border-primary"
+            @click="addNewData"
+          >
+            <feather-icon icon="PlusIcon" svgClasses="h-4 w-4" />
+            <span class="ml-2 text-base text-primary">Add New</span>
+          </div>
         </div>
 
         <!-- TABLE ACTION COL-2: SEARCH & EXPORT AS CSV -->
@@ -59,7 +71,7 @@
         class="ag-theme-material w-100 my-4 ag-grid-table"
         :columnDefs="columnDefs"
         :defaultColDef="defaultColDef"
-        :rowData="contacts"
+        :rowData="companies"
         rowSelection="multiple"
         colResizeDefault="shift"
         :animateRows="true"
@@ -67,7 +79,6 @@
         :pagination="true"
         :paginationPageSize="paginationPageSize"
         :suppressPaginationPanel="true"
-        :enableRtl="$vs.rtl"
       ></ag-grid-vue>
       <vs-pagination :total="totalPages" :max="maxPageNumbers" v-model="currentPage" />
     </vx-card>
@@ -76,13 +87,15 @@
 
 <script>
 import { AgGridVue } from "ag-grid-vue";
-import contacts from "./data.json";
-
+import axios from "@/axios";
+import CompanySidebar from "./CompanySidebar.vue";
 import "@sass/vuexy/extraComponents/agGridStyleOverride.scss";
+import { mapActions, mapGetters, mapState } from "vuex";
 
 export default {
   components: {
-    AgGridVue
+    AgGridVue,
+    CompanySidebar
   },
   data() {
     return {
@@ -98,73 +111,52 @@ export default {
       },
       columnDefs: [
         {
-          headerName: "First Name",
-          field: "firstname",
-          width: 175,
+          headerName: this.$t("companyName"),
+          field: "company_name",
+          width: 350,
           filter: true,
           checkboxSelection: true,
           headerCheckboxSelectionFilteredOnly: true,
           headerCheckboxSelection: true
         },
         {
-          headerName: "Last Name",
-          field: "lastname",
+          headerName: this.$t("companyAlias"),
+          field: "company_alias",
           filter: true,
-          width: 175
+          width: 350
         },
         {
-          headerName: "Email",
-          field: "email",
+          headerName: this.$t("identification"),
+          field: "ruc",
           filter: true,
-          width: 250,
+          width: 190,
           pinned: "left"
         },
         {
-          headerName: "Company",
-          field: "company",
+          headerName: this.$t("companyAddress"),
+          field: "address",
           filter: true,
-          width: 250
+          width: 350
         },
         {
-          headerName: "City",
-          field: "city",
-          filter: true,
-          width: 150
-        },
-        {
-          headerName: "Country",
-          field: "country",
+          headerName: this.$t("companyPhone"),
+          field: "phone",
           filter: true,
           width: 150
-        },
-        {
-          headerName: "State",
-          field: "state",
-          filter: true,
-          width: 125
-        },
-        {
-          headerName: "Zip",
-          field: "zip",
-          filter: true,
-          width: 125
-        },
-        {
-          headerName: "Followers",
-          field: "followers",
-          filter: "agNumberColumnFilter",
-          width: 125
         }
       ],
-      contacts: contacts
+      companies: [],
+      // Data Sidebar
+      addNewDataSidebar: false,
+      sidebarData: {}
     };
   },
   watch: {
     "$store.state.windowWidth"(val) {
       if (val <= 576) {
         this.maxPageNumbers = 4;
-        this.gridOptions.columnApi.setColumnPinned("email", null);
-      } else this.gridOptions.columnApi.setColumnPinned("email", "left");
+        this.gridOptions.columnApi.setColumnPinned("ruc", null);
+      } else this.gridOptions.columnApi.setColumnPinned("ruc", "left");
     }
   },
   computed: {
@@ -184,15 +176,35 @@ export default {
       set(val) {
         this.gridApi.paginationGoToPage(val - 1);
       }
-    }
+    },
+    ...mapGetters("companies", { companyList: "companies" })
   },
   methods: {
+    addNewData() {
+      this.sidebarData = {};
+      this.toggleDataSidebar(true);
+    },
     updateSearchQuery(val) {
       this.gridApi.setQuickFilter(val);
+    },
+    toggleDataSidebar(val = false) {
+      this.addNewDataSidebar = val;
+    },
+    ...mapActions("companies", ["fetchCompanies"]),
+    onCellValueChanged(params) {
+      console.log(params);
     }
   },
   mounted() {
     this.gridApi = this.gridOptions.api;
+  },
+  beforeMount() {
+    this.fetchCompanies().then(
+      () => {
+        this.companies = this.companyList;
+      }
+      //   ({ data }) => (this.companies = this.$store.state.companies.companies)
+    );
   }
 };
 </script>
