@@ -13,7 +13,12 @@ Route::group(['prefix' => 'profile','middleware'=>'api'], function () {
 
 
 Route::group(['middleware' => 'api'], function () {
+    //COMPANIES
     Route::get('/companies', 'CompanyController@index')->name('company.index');
     Route::post('/company', 'CompanyController@store')->name('company.store');
     Route::put('/company/{company}', 'CompanyController@update')->name('company.update');
+
+    //USERS
+    Route::get('/users', 'UserController@index')->name('user.index');
+    Route::post('/users', 'UserController@store')->name('user.store');
 });

@@ -68063,6 +68063,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     companyPhone: 'Phone',
     companyAddress: 'Address',
     companyType: 'Company type',
+    noCompany: 'No company selected',
+    company: 'Company',
     establishment: 'Establishment #',
     salePoint: 'Sale point #',
     secuence: 'Secuence',
@@ -68084,6 +68086,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     Companies: 'Companies',
     newCompany: 'New company',
     updateCompany: 'Update company',
+    newUser: 'New user',
+    updateUser: 'Update user',
     save: 'Save',
     cancel: 'Cancel',
     Checkout: 'Checkout',
@@ -68183,6 +68187,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     companyPhone: 'Teléfono',
     companyAddress: 'Dirección',
     companyType: 'Tipo de compañia',
+    noCompany: 'Sin compañia seleccionada',
+    company: 'Compañia',
     establishment: 'Establecimiento',
     salePoint: 'Punto de venta',
     secuence: 'Secuencia de factura',
@@ -68207,6 +68213,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     updateCompany: 'Editar compañia',
     save: 'Guardar',
     cancel: 'Cancelar',
+    newUser: 'Nuevo usuario',
+    updateUser: 'Editar usuario',
     UI: 'UI',
     DataList: 'Data List',
     ListView: 'List View',
@@ -68627,7 +68635,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   {
     path: '/',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! @/layouts/full-page/FullPage.vue */ "./resources/js/src/layouts/full-page/FullPage.vue"));
+      return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! @/layouts/full-page/FullPage.vue */ "./resources/js/src/layouts/full-page/FullPage.vue"));
     },
     meta: {
       auth: false,
@@ -68643,7 +68651,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'public'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! ./views/auth/Login.vue */ "./resources/js/src/views/auth/Login.vue"));
+        return __webpack_require__.e(/*! import() */ 8).then(__webpack_require__.bind(null, /*! ./views/auth/Login.vue */ "./resources/js/src/views/auth/Login.vue"));
       }
     }, {
       path: '/register',
@@ -68652,19 +68660,19 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'public'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 17).then(__webpack_require__.bind(null, /*! ./views/auth/Register.vue */ "./resources/js/src/views/auth/Register.vue"));
+        return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ./views/auth/Register.vue */ "./resources/js/src/views/auth/Register.vue"));
       }
     }, {
       path: '/pages/error-404',
       name: 'page-error-404',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! @/views/pages/Error404.vue */ "./resources/js/src/views/pages/Error404.vue"));
+        return __webpack_require__.e(/*! import() */ 18).then(__webpack_require__.bind(null, /*! @/views/pages/Error404.vue */ "./resources/js/src/views/pages/Error404.vue"));
       }
     }, {
       path: '/pages/not-authorized',
       name: 'page-not-authorized',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! @/views/pages/NotAuthorized.vue */ "./resources/js/src/views/pages/NotAuthorized.vue"));
+        return __webpack_require__.e(/*! import() */ 19).then(__webpack_require__.bind(null, /*! @/views/pages/NotAuthorized.vue */ "./resources/js/src/views/pages/NotAuthorized.vue"));
       },
       meta: {
         rule: 'Empresa'
@@ -68676,7 +68684,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     // =============================================================================
     path: '/company',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(18), __webpack_require__.e(4), __webpack_require__.e(19)]).then(__webpack_require__.bind(null, /*! ./layouts/main/Main.vue */ "./resources/js/src/layouts/main/Main.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ./layouts/main/Main.vue */ "./resources/js/src/layouts/main/Main.vue"));
     },
     meta: {
       auth: true,
@@ -68701,7 +68709,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Comun'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 8).then(__webpack_require__.bind(null, /*! ./views/Home.vue */ "./resources/js/src/views/Home.vue"));
+        return __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ./views/Home.vue */ "./resources/js/src/views/Home.vue"));
       }
     }, {
       path: 'invoices',
@@ -68710,7 +68718,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 15).then(__webpack_require__.bind(null, /*! ./views/invoices/Invoices.vue */ "./resources/js/src/views/invoices/Invoices.vue"));
+        return __webpack_require__.e(/*! import() */ 16).then(__webpack_require__.bind(null, /*! ./views/invoices/Invoices.vue */ "./resources/js/src/views/invoices/Invoices.vue"));
       }
     }, {
       path: 'payments',
@@ -68719,7 +68727,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 16).then(__webpack_require__.bind(null, /*! ./views/payments/Payments.vue */ "./resources/js/src/views/payments/Payments.vue"));
+        return __webpack_require__.e(/*! import() */ 17).then(__webpack_require__.bind(null, /*! ./views/payments/Payments.vue */ "./resources/js/src/views/payments/Payments.vue"));
       }
     }, {
       path: 'estimates',
@@ -68728,7 +68736,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! ./views/estimates/Estimates.vue */ "./resources/js/src/views/estimates/Estimates.vue"));
+        return __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! ./views/estimates/Estimates.vue */ "./resources/js/src/views/estimates/Estimates.vue"));
       }
     }, {
       path: 'expenses',
@@ -68737,7 +68745,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! ./views/expenses/Expenses.vue */ "./resources/js/src/views/expenses/Expenses.vue"));
+        return __webpack_require__.e(/*! import() */ 14).then(__webpack_require__.bind(null, /*! ./views/expenses/Expenses.vue */ "./resources/js/src/views/expenses/Expenses.vue"));
       }
     }, {
       path: 'deductions',
@@ -68746,7 +68754,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ./views/deductions/Deductions.vue */ "./resources/js/src/views/deductions/Deductions.vue"));
+        return __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! ./views/deductions/Deductions.vue */ "./resources/js/src/views/deductions/Deductions.vue"));
       }
     }, {
       path: 'clients',
@@ -68755,7 +68763,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(9), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, /*! ./views/clients/Clients.vue */ "./resources/js/src/views/clients/Clients.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(5), __webpack_require__.e(9)]).then(__webpack_require__.bind(null, /*! ./views/clients/Clients.vue */ "./resources/js/src/views/clients/Clients.vue"));
       }
     }, {
       path: '/help',
@@ -68764,7 +68772,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 14).then(__webpack_require__.bind(null, /*! ./views/help/Help.vue */ "./resources/js/src/views/help/Help.vue"));
+        return __webpack_require__.e(/*! import() */ 15).then(__webpack_require__.bind(null, /*! ./views/help/Help.vue */ "./resources/js/src/views/help/Help.vue"));
       }
     }, {
       path: 'configurations',
@@ -68773,7 +68781,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ./views/configurations/Configurations.vue */ "./resources/js/src/views/configurations/Configurations.vue"));
+        return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ./views/configurations/Configurations.vue */ "./resources/js/src/views/configurations/Configurations.vue"));
       }
     }]
   }, {
@@ -68782,7 +68790,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     // =============================================================================
     path: '/admin',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(18), __webpack_require__.e(4), __webpack_require__.e(19)]).then(__webpack_require__.bind(null, /*! ./layouts/main/Main.vue */ "./resources/js/src/layouts/main/Main.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ./layouts/main/Main.vue */ "./resources/js/src/layouts/main/Main.vue"));
     },
     meta: {
       auth: true,
@@ -68804,7 +68812,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(18), __webpack_require__.e(0)]).then(__webpack_require__.bind(null, /*! ./views/companies/Companies.vue */ "./resources/js/src/views/companies/Companies.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(6)]).then(__webpack_require__.bind(null, /*! ./views/companies/Companies.vue */ "./resources/js/src/views/companies/Companies.vue"));
       }
     }, {
       path: 'users',
@@ -68813,13 +68821,13 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ./views/configurations/Configurations.vue */ "./resources/js/src/views/configurations/Configurations.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(21)]).then(__webpack_require__.bind(null, /*! ./views/users/Users.vue */ "./resources/js/src/views/users/Users.vue"));
       }
     }]
   }, {
     path: '/wizard',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! @/layouts/full-page/FullPage.vue */ "./resources/js/src/layouts/full-page/FullPage.vue"));
+      return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! @/layouts/full-page/FullPage.vue */ "./resources/js/src/layouts/full-page/FullPage.vue"));
     },
     meta: {
       auth: false,
@@ -68842,7 +68850,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(22), __webpack_require__.e(6)]).then(__webpack_require__.bind(null, /*! ./views/wizard/User.vue */ "./resources/js/src/views/wizard/User.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(20), __webpack_require__.e(7)]).then(__webpack_require__.bind(null, /*! ./views/wizard/User.vue */ "./resources/js/src/views/wizard/User.vue"));
       }
     }]
   }, // Redirect to 404 page, if no match found
@@ -69528,6 +69536,222 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/src/store/modules/users/actions.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/src/store/modules/users/actions.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _axios_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/axios.js */ "./resources/js/src/axios.js");
+/*=========================================================================================
+  File Name: moduleCalendarActions.js
+  Description: Calendar Module Actions
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  addUser: function addUser(_ref, item) {
+    var commit = _ref.commit;
+    return new Promise(function (resolve, reject) {
+      _axios_js__WEBPACK_IMPORTED_MODULE_0__["default"].post("/api/users/", item).then(function (response) {
+        commit('ADD_USER', Object.assign(item, {
+          id: response.data.id
+        }));
+        resolve(response);
+      }).catch(function (error) {
+        reject(error);
+      });
+    });
+  },
+  fetchUsers: function fetchUsers(_ref2) {
+    var commit = _ref2.commit;
+    return new Promise(function (resolve, reject) {
+      _axios_js__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/users").then(function (response) {
+        commit('SET_USERS', response.data.users.data);
+        commit('SET_ROLES', response.data.roles);
+        resolve(response);
+      }).catch(function (error) {
+        reject(error);
+      });
+    });
+  },
+  updateUser: function updateUser(_ref3, item) {
+    var commit = _ref3.commit;
+    return new Promise(function (resolve, reject) {
+      _axios_js__WEBPACK_IMPORTED_MODULE_0__["default"].put("/api/users/".concat(item.id), item).then(function (response) {
+        commit('UPDATE_USER', response.data.user);
+        resolve(response);
+      }).catch(function (error) {
+        reject(error);
+      });
+    });
+  },
+  removeItem: function removeItem(_ref4, itemId) {
+    var commit = _ref4.commit;
+    return new Promise(function (resolve, reject) {
+      _axios_js__WEBPACK_IMPORTED_MODULE_0__["default"].delete("/api/data-list/products/".concat(itemId)).then(function (response) {
+        commit('REMOVE_ITEM', itemId);
+        resolve(response);
+      }).catch(function (error) {
+        reject(error);
+      });
+    });
+  } // eventDragged({ commit }, payload) {
+  //   return new Promise((resolve, reject) => {
+  //     axios.post(`/api/apps/calendar/event/dragged/${payload.event.id}`, {payload: payload})
+  //       .then((response) => {
+  //         // Convert Date String to Date Object
+  //         let event = response.data
+  //         event.startDate = new Date(event.startDate)
+  //         event.endDate = new Date(event.endDate)
+  //         commit('UPDATE_EVENT', event)
+  //         resolve(response)
+  //       })
+  //       .catch((error) => { reject(error) })
+  //   })
+  // },
+
+});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/modules/users/getters.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/src/store/modules/users/getters.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/*=========================================================================================
+  File Name: moduleCalendarGetters.js
+  Description: Calendar Module Getters
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+/* harmony default export */ __webpack_exports__["default"] = ({
+  users: function users(state) {
+    return state.users;
+  } // getItem: state => (productId) => state.products.find((product) => product.id == productId),
+
+});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/modules/users/index.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/src/store/modules/users/index.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./state */ "./resources/js/src/store/modules/users/state.js");
+/* harmony import */ var _mutations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mutations */ "./resources/js/src/store/modules/users/mutations.js");
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./actions */ "./resources/js/src/store/modules/users/actions.js");
+/* harmony import */ var _getters__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getters */ "./resources/js/src/store/modules/users/getters.js");
+/*=========================================================================================
+  File Name: moduleDataList.js
+  Description: Calendar Module
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  namespaced: true,
+  state: _state__WEBPACK_IMPORTED_MODULE_0__["default"],
+  mutations: _mutations__WEBPACK_IMPORTED_MODULE_1__["default"],
+  actions: _actions__WEBPACK_IMPORTED_MODULE_2__["default"],
+  getters: _getters__WEBPACK_IMPORTED_MODULE_3__["default"]
+});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/modules/users/mutations.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/src/store/modules/users/mutations.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/*=========================================================================================
+  File Name: moduleCalendarMutations.js
+  Description: Calendar Module Mutations
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+/* harmony default export */ __webpack_exports__["default"] = ({
+  ADD_USER: function ADD_USER(state, item) {
+    state.users.unshift(item);
+  },
+  SET_USERS: function SET_USERS(state, users) {
+    state.users = users;
+  },
+  // SET_LABELS(state, labels) {
+  //   state.eventLabels = labels
+  // },
+  UPDATE_USER: function UPDATE_USER(state, user) {
+    var userIndex = state.users.findIndex(function (p) {
+      return p.id == user.id;
+    });
+    Object.assign(state.users[userIndex], user);
+  },
+  REMOVE_USER: function REMOVE_USER(state, itemId) {
+    var ItemIndex = state.users.findIndex(function (p) {
+      return p.id == itemId;
+    });
+    state.users.splice(ItemIndex, 1);
+  },
+  SET_ROLES: function SET_ROLES(state, roles) {
+    state.roles = roles;
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/modules/users/state.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/src/store/modules/users/state.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/*=========================================================================================
+  File Name: moduleCalendarState.js
+  Description: Calendar Module State
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+/* harmony default export */ __webpack_exports__["default"] = ({
+  users: [],
+  roles: []
+});
+
+/***/ }),
+
 /***/ "./resources/js/src/store/mutations.js":
 /*!*********************************************!*\
   !*** ./resources/js/src/store/mutations.js ***!
@@ -69736,6 +69960,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_company__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/company */ "./resources/js/src/store/modules/company/index.js");
 /* harmony import */ var _modules_companies__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/companies */ "./resources/js/src/store/modules/companies/index.js");
 /* harmony import */ var _modules_configuration__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/configuration */ "./resources/js/src/store/modules/configuration/index.js");
+/* harmony import */ var _modules_users__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/users */ "./resources/js/src/store/modules/users/index.js");
 /*=========================================================================================
   File Name: store.js
   Description: Vuex store
@@ -69744,6 +69969,7 @@ __webpack_require__.r(__webpack_exports__);
   Author: Pixinvent
   Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
+
 
 
 
@@ -69764,7 +69990,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     auth: _modules_auth__WEBPACK_IMPORTED_MODULE_6__["default"],
     company: _modules_company__WEBPACK_IMPORTED_MODULE_7__["default"],
     companies: _modules_companies__WEBPACK_IMPORTED_MODULE_8__["default"],
-    configuration: _modules_configuration__WEBPACK_IMPORTED_MODULE_9__["default"]
+    configuration: _modules_configuration__WEBPACK_IMPORTED_MODULE_9__["default"],
+    users: _modules_users__WEBPACK_IMPORTED_MODULE_10__["default"]
   },
   strict: "development" !== 'production'
 }));

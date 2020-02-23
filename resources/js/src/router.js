@@ -218,7 +218,7 @@ const router = new Router({
                         rule: 'Empresa'
                     },
                     component: () =>
-                        import ('./views/configurations/Configurations.vue')
+                        import ('./views/users/Users.vue')
                 },
             ]
         },
