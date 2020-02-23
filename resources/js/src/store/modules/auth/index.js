@@ -85,6 +85,11 @@ export default {
                     root: true
                 })
                 commit('changeRol', data.role);
+                if (data.user.company != null) {
+                    dispatch('company/setCompanyData', data.user.company, {
+                        root: true
+                    });
+                }
                 // console.log(data.user.first_login);
 
                 // dispatch('updateUserRole', {
@@ -101,12 +106,12 @@ export default {
         }) {
             const token = Ls.get('auth.token');
             if (!token) {
-                return
+                return false
             }
             const expirationDate = Ls.get('expirationDate');
             const now = new Date();
             if (now >= expirationDate) {
-                return
+                return false
             }
             commit('authUser', {
                 token: token,

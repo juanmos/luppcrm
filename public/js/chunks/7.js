@@ -96,7 +96,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      email: "juan@factu.app",
+      email: "juan.moscoso@primme.tech",
       password: "123456",
       checkbox_remember_me: false,
       errorLogin: false
@@ -118,7 +118,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           userRole: "Empresa"
         });
 
-        _this.$router.push("/admin");
+        _this.$store.state.AppUserData.company_id == 0 ? _this.$router.push("/admin/home") : _this.$router.push("/wizard/company");
       }).catch(function (err) {
         _this.errorLogin = true;
       });

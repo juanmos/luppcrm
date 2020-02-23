@@ -107,30 +107,53 @@
         <div class="vx-row">
           <div class="vx-col md:w-1/2 w-full">
             <vs-input
-              label="Proposal Title"
-              v-model="proposalTitle"
+              :label="$t('companyName')"
+              v-model="company.company_name"
               class="w-full mt-4"
-              name="proposal_title"
+              name="company_name"
               v-validate="'required|alpha_spaces'"
             />
-            <span class="text-danger"></span>
-
-            <vs-input
-              label="Job Title"
-              v-model="jobTitle"
-              class="w-full mt-4"
-              name="job_title"
-              v-validate="'required|alpha_spaces'"
-            />
-            <span class="text-danger"></span>
+            <span class="text-danger">{{ errors.first('step-2.company_name') }}</span>
           </div>
           <div class="vx-col md:w-1/2 w-full">
-            <vs-textarea
-              v-model="textarea"
-              label="Short discription"
-              class="md:mt-10 mt-6 mb-0"
-              rows="3"
+            <vs-input
+              :label="$t('companyAlias')"
+              v-model="company.company_alias"
+              class="w-full mt-4"
+              name="company_alias"
+              v-validate="'required|alpha_spaces'"
             />
+            <span class="text-danger">{{ errors.first('step-2.company_alias') }}</span>
+          </div>
+          <div class="vx-col md:w-1/2 w-full">
+            <vs-input
+              :label="$t('companyPhone')"
+              v-model="company.phone"
+              class="w-full mt-4"
+              name="company_phone"
+              v-validate="'required|integer|min:6'"
+            />
+            <span class="text-danger">{{ errors.first('step-2.company_phone') }}</span>
+          </div>
+          <div class="vx-col md:w-1/2 w-full">
+            <vs-input
+              :label="$t('companyAddress')"
+              v-model="company.address"
+              class="w-full mt-4"
+              name="company_address"
+              v-validate="'required'"
+            />
+            <span class="text-danger">{{ errors.first('step-2.company_address') }}</span>
+          </div>
+          <div class="vx-col md:w-1/2 w-full">
+            <vs-input
+              :label="$t('identification')"
+              v-model="company.ruc"
+              class="w-full mt-4"
+              name="identification"
+              v-validate="'required|integer|min:10'"
+            />
+            <span class="text-danger">{{ errors.first('step-2.identification') }}</span>
           </div>
         </div>
       </form>
@@ -144,49 +167,45 @@
       :before-change="validateStep3"
     >
       <form data-vv-scope="step-3">
-        <!-- <div class="vx-row">
-          <div class="vx-col md:w-1/2 w-full">
+        <div class="vx-row">
+          <h3 class="vx-col w-full">Fill the information to start making invoices</h3>
+          <div class="vx-col md:w-1/3 w-full">
             <vs-input
-              label="Event Name"
-              v-model="eventName"
+              :label="$t('establishment')"
+              v-model="config.establishment"
               class="w-full mt-5"
-              name="event_name"
-              v-validate="'required|alpha_spaces'"
+              name="establishment"
             />
             <span class="text-danger"></span>
           </div>
-          <div class="vx-col md:w-1/2 w-full">
-            <vs-select v-model="" class="w-full select-large mt-5" label="Event Location">
-              <vs-select-item
-                :key="index"
-                :value="item.value"
-                :text="item.text"
-                v-for="(item,index) in cityOptions"
-                class="w-full"
-              />
-            </vs-select>
+          <div class="vx-col md:w-1/3 w-full">
+            <vs-input
+              :label="$t('salePoint')"
+              v-model="config.salePoint"
+              class="w-full mt-5"
+              name="salePoint"
+            />
+            <span class="text-danger"></span>
           </div>
-          <div class="vx-col md:w-1/2 w-full mt-5">
-            <vs-select v-model="status" class="w-full select-large" label="Event Status">
-              <vs-select-item
-                :key="index"
-                :value="item.value"
-                :text="item.text"
-                v-for="(item,index) in statusOptions"
-                class="w-full"
-              />
-            </vs-select>
+          <div class="vx-col md:w-1/3 w-full">
+            <vs-input
+              :label="$t('secuence')"
+              v-model="config.secuence"
+              class="w-full mt-5"
+              name="secuence"
+            />
+            <span class="text-danger"></span>
           </div>
           <div class="vx-col md:w-1/2 w-full md:mt-8">
             <div class="demo-alignment">
-              <span>Requirements:</span>
+              <span>{{$t('modeInvoicing')}}</span>
               <div class="flex">
-                <vs-checkbox>Staffing</vs-checkbox>
-                <vs-checkbox>Catering</vs-checkbox>
+                <vs-radio v-model="config.mode" vs-value="2">{{$t('modeProduction')}}</vs-radio>
+                <vs-radio v-model="config.mode" vs-vaule="1">{{$t('modeTest')}}</vs-radio>
               </div>
             </div>
           </div>
-        </div>-->
+        </div>
       </form>
     </tab-content>
   </form-wizard>
@@ -228,9 +247,21 @@ const dict = {
       integer: "Please enter only digits",
       min: "Must be at least 6 digits"
     },
-    job_title: {
-      required: "Job title name is required",
-      alpha: "Job title may only contain alphabetic characters"
+    compnay_name: {
+      required: "Company name is required",
+      alpha: "Company name may only contain alphabetic characters"
+    },
+    compnay_alias: {
+      required: "Company alias is required",
+      alpha: "Company alias may only contain alphabetic characters"
+    },
+    compnay_phone: {
+      required: "Company phone is required",
+      alpha: "Company phone may only contain alphabetic characters"
+    },
+    compnay_address: {
+      required: "Company address is required",
+      alpha: "Company address may only contain alphabetic characters"
     },
     proposal_title: {
       required: "Proposal title name is required",
@@ -250,15 +281,8 @@ Validator.localize("es", dict);
 export default {
   data() {
     return {
-      // userData: {
-      // first_name: "",
-      // last_name: "",
-      // email: "",
-      // identification: "",
-      // mobile: "",
-      // phone: "",
-      // city: "new-york",
-      // },
+      company: null,
+      config: null,
       proposalTitle: "",
       jobTitle: "",
       textarea: "",
@@ -284,11 +308,18 @@ export default {
       // ]
     };
   },
+  created() {
+    this.company = this.$store.state.company.company;
+    this.config = this.$store.state.configuration.configuration;
+    // if(this.$store.state.AppActiveUser.identification.length>9 &&)
+  },
   computed: {
     ...mapGetters(["userData"])
   },
   methods: {
     ...mapActions(["updateProfile"]),
+    ...mapActions("company", ["saveCompanyData"]),
+    ...mapActions("configuration", ["saveConfigData"]),
     validateStep1() {
       return new Promise((resolve, reject) => {
         this.$validator.validateAll("step-1").then(result => {
@@ -305,6 +336,7 @@ export default {
       return new Promise((resolve, reject) => {
         this.$validator.validateAll("step-2").then(result => {
           if (result) {
+            this.saveCompanyData(this.company);
             resolve(true);
           } else {
             reject("correct all values");
@@ -316,7 +348,8 @@ export default {
       return new Promise((resolve, reject) => {
         this.$validator.validateAll("step-3").then(result => {
           if (result) {
-            alert("Form submitted!");
+            // this.saveConfigData(this.config);
+            this.$router.replace("/admin/home");
             resolve(true);
           } else {
             reject("correct all values");

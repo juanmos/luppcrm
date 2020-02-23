@@ -10,40 +10,35 @@ use Illuminate\Contracts\Auth\CanResetPassword;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Notifications\ResetPasswordNotification;
+use App\Models\Company;
 
 class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
     use SoftDeletes;
     use HasRoles;
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    
+    
     protected $fillable = [
         'first_name','last_name', 'email', 'password','phone','mobile','token_and',
         'token_ios','company_id','photo','active','first_login','latitude','longitude','identification',
         'birthday'
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
         'password', 'remember_token','token_and','token_ios','email_verified_at','created_at','updated_at','deleted_at'
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected $with =['company'];
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class, 'company_id');
+    }
 
     public function getFullNameAttribute()
     {

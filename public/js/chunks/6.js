@@ -215,6 +215,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
  // For custom error message
@@ -249,9 +268,21 @@ var dict = {
       integer: "Please enter only digits",
       min: "Must be at least 6 digits"
     },
-    job_title: {
-      required: "Job title name is required",
-      alpha: "Job title may only contain alphabetic characters"
+    compnay_name: {
+      required: "Company name is required",
+      alpha: "Company name may only contain alphabetic characters"
+    },
+    compnay_alias: {
+      required: "Company alias is required",
+      alpha: "Company alias may only contain alphabetic characters"
+    },
+    compnay_phone: {
+      required: "Company phone is required",
+      alpha: "Company phone may only contain alphabetic characters"
+    },
+    compnay_address: {
+      required: "Company address is required",
+      alpha: "Company address may only contain alphabetic characters"
     },
     proposal_title: {
       required: "Proposal title name is required",
@@ -269,15 +300,8 @@ vee_validate__WEBPACK_IMPORTED_MODULE_3__["Validator"].localize("es", dict);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      // userData: {
-      // first_name: "",
-      // last_name: "",
-      // email: "",
-      // identification: "",
-      // mobile: "",
-      // phone: "",
-      // city: "new-york",
-      // },
+      company: null,
+      config: null,
       proposalTitle: "",
       jobTitle: "",
       textarea: "",
@@ -303,8 +327,12 @@ vee_validate__WEBPACK_IMPORTED_MODULE_3__["Validator"].localize("es", dict);
 
     };
   },
+  created: function created() {
+    this.company = this.$store.state.company.company;
+    this.config = this.$store.state.configuration.configuration; // if(this.$store.state.AppActiveUser.identification.length>9 &&)
+  },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_2__["mapGetters"])(["userData"])),
-  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_2__["mapActions"])(["updateProfile"]), {
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_2__["mapActions"])(["updateProfile"]), {}, Object(vuex__WEBPACK_IMPORTED_MODULE_2__["mapActions"])("company", ["saveCompanyData"]), {}, Object(vuex__WEBPACK_IMPORTED_MODULE_2__["mapActions"])("configuration", ["saveConfigData"]), {
     validateStep1: function validateStep1() {
       var _this = this;
 
@@ -326,6 +354,8 @@ vee_validate__WEBPACK_IMPORTED_MODULE_3__["Validator"].localize("es", dict);
       return new Promise(function (resolve, reject) {
         _this2.$validator.validateAll("step-2").then(function (result) {
           if (result) {
+            _this2.saveCompanyData(_this2.company);
+
             resolve(true);
           } else {
             reject("correct all values");
@@ -339,7 +369,9 @@ vee_validate__WEBPACK_IMPORTED_MODULE_3__["Validator"].localize("es", dict);
       return new Promise(function (resolve, reject) {
         _this3.$validator.validateAll("step-3").then(function (result) {
           if (result) {
-            alert("Form submitted!");
+            // this.saveConfigData(this.config);
+            _this3.$router.replace("/admin/home");
+
             resolve(true);
           } else {
             reject("correct all values");
@@ -658,18 +690,30 @@ var render = function() {
                       }
                     ],
                     staticClass: "w-full mt-4",
-                    attrs: { label: "Proposal Title", name: "proposal_title" },
+                    attrs: {
+                      label: _vm.$t("companyName"),
+                      name: "company_name"
+                    },
                     model: {
-                      value: _vm.proposalTitle,
+                      value: _vm.company.company_name,
                       callback: function($$v) {
-                        _vm.proposalTitle = $$v
+                        _vm.$set(_vm.company, "company_name", $$v)
                       },
-                      expression: "proposalTitle"
+                      expression: "company.company_name"
                     }
                   }),
                   _vm._v(" "),
-                  _c("span", { staticClass: "text-danger" }),
-                  _vm._v(" "),
+                  _c("span", { staticClass: "text-danger" }, [
+                    _vm._v(_vm._s(_vm.errors.first("step-2.company_name")))
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "vx-col md:w-1/2 w-full" },
+                [
                   _c("vs-input", {
                     directives: [
                       {
@@ -680,17 +724,22 @@ var render = function() {
                       }
                     ],
                     staticClass: "w-full mt-4",
-                    attrs: { label: "Job Title", name: "job_title" },
+                    attrs: {
+                      label: _vm.$t("companyAlias"),
+                      name: "company_alias"
+                    },
                     model: {
-                      value: _vm.jobTitle,
+                      value: _vm.company.company_alias,
                       callback: function($$v) {
-                        _vm.jobTitle = $$v
+                        _vm.$set(_vm.company, "company_alias", $$v)
                       },
-                      expression: "jobTitle"
+                      expression: "company.company_alias"
                     }
                   }),
                   _vm._v(" "),
-                  _c("span", { staticClass: "text-danger" })
+                  _c("span", { staticClass: "text-danger" }, [
+                    _vm._v(_vm._s(_vm.errors.first("step-2.company_alias")))
+                  ])
                 ],
                 1
               ),
@@ -699,17 +748,100 @@ var render = function() {
                 "div",
                 { staticClass: "vx-col md:w-1/2 w-full" },
                 [
-                  _c("vs-textarea", {
-                    staticClass: "md:mt-10 mt-6 mb-0",
-                    attrs: { label: "Short discription", rows: "3" },
+                  _c("vs-input", {
+                    directives: [
+                      {
+                        name: "validate",
+                        rawName: "v-validate",
+                        value: "required|integer|min:6",
+                        expression: "'required|integer|min:6'"
+                      }
+                    ],
+                    staticClass: "w-full mt-4",
+                    attrs: {
+                      label: _vm.$t("companyPhone"),
+                      name: "company_phone"
+                    },
                     model: {
-                      value: _vm.textarea,
+                      value: _vm.company.phone,
                       callback: function($$v) {
-                        _vm.textarea = $$v
+                        _vm.$set(_vm.company, "phone", $$v)
                       },
-                      expression: "textarea"
+                      expression: "company.phone"
                     }
-                  })
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "text-danger" }, [
+                    _vm._v(_vm._s(_vm.errors.first("step-2.company_phone")))
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "vx-col md:w-1/2 w-full" },
+                [
+                  _c("vs-input", {
+                    directives: [
+                      {
+                        name: "validate",
+                        rawName: "v-validate",
+                        value: "required",
+                        expression: "'required'"
+                      }
+                    ],
+                    staticClass: "w-full mt-4",
+                    attrs: {
+                      label: _vm.$t("companyAddress"),
+                      name: "company_address"
+                    },
+                    model: {
+                      value: _vm.company.address,
+                      callback: function($$v) {
+                        _vm.$set(_vm.company, "address", $$v)
+                      },
+                      expression: "company.address"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "text-danger" }, [
+                    _vm._v(_vm._s(_vm.errors.first("step-2.company_address")))
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "vx-col md:w-1/2 w-full" },
+                [
+                  _c("vs-input", {
+                    directives: [
+                      {
+                        name: "validate",
+                        rawName: "v-validate",
+                        value: "required|integer|min:10",
+                        expression: "'required|integer|min:10'"
+                      }
+                    ],
+                    staticClass: "w-full mt-4",
+                    attrs: {
+                      label: _vm.$t("identification"),
+                      name: "identification"
+                    },
+                    model: {
+                      value: _vm.company.ruc,
+                      callback: function($$v) {
+                        _vm.$set(_vm.company, "ruc", $$v)
+                      },
+                      expression: "company.ruc"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "text-danger" }, [
+                    _vm._v(_vm._s(_vm.errors.first("step-2.identification")))
+                  ])
                 ],
                 1
               )
@@ -728,7 +860,124 @@ var render = function() {
             "before-change": _vm.validateStep3
           }
         },
-        [_c("form", { attrs: { "data-vv-scope": "step-3" } })]
+        [
+          _c("form", { attrs: { "data-vv-scope": "step-3" } }, [
+            _c("div", { staticClass: "vx-row" }, [
+              _c("h3", { staticClass: "vx-col w-full" }, [
+                _vm._v("Fill the information to start making invoices")
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "vx-col md:w-1/3 w-full" },
+                [
+                  _c("vs-input", {
+                    staticClass: "w-full mt-5",
+                    attrs: {
+                      label: _vm.$t("establishment"),
+                      name: "establishment"
+                    },
+                    model: {
+                      value: _vm.config.establishment,
+                      callback: function($$v) {
+                        _vm.$set(_vm.config, "establishment", $$v)
+                      },
+                      expression: "config.establishment"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "text-danger" })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "vx-col md:w-1/3 w-full" },
+                [
+                  _c("vs-input", {
+                    staticClass: "w-full mt-5",
+                    attrs: { label: _vm.$t("salePoint"), name: "salePoint" },
+                    model: {
+                      value: _vm.config.salePoint,
+                      callback: function($$v) {
+                        _vm.$set(_vm.config, "salePoint", $$v)
+                      },
+                      expression: "config.salePoint"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "text-danger" })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "vx-col md:w-1/3 w-full" },
+                [
+                  _c("vs-input", {
+                    staticClass: "w-full mt-5",
+                    attrs: { label: _vm.$t("secuence"), name: "secuence" },
+                    model: {
+                      value: _vm.config.secuence,
+                      callback: function($$v) {
+                        _vm.$set(_vm.config, "secuence", $$v)
+                      },
+                      expression: "config.secuence"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "text-danger" })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "vx-col md:w-1/2 w-full md:mt-8" }, [
+                _c("div", { staticClass: "demo-alignment" }, [
+                  _c("span", [_vm._v(_vm._s(_vm.$t("modeInvoicing")))]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "flex" },
+                    [
+                      _c(
+                        "vs-radio",
+                        {
+                          attrs: { "vs-value": "2" },
+                          model: {
+                            value: _vm.config.mode,
+                            callback: function($$v) {
+                              _vm.$set(_vm.config, "mode", $$v)
+                            },
+                            expression: "config.mode"
+                          }
+                        },
+                        [_vm._v(_vm._s(_vm.$t("modeProduction")))]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "vs-radio",
+                        {
+                          attrs: { "vs-vaule": "1" },
+                          model: {
+                            value: _vm.config.mode,
+                            callback: function($$v) {
+                              _vm.$set(_vm.config, "mode", $$v)
+                            },
+                            expression: "config.mode"
+                          }
+                        },
+                        [_vm._v(_vm._s(_vm.$t("modeTest")))]
+                      )
+                    ],
+                    1
+                  )
+                ])
+              ])
+            ])
+          ])
+        ]
       )
     ],
     1
