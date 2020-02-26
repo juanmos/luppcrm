@@ -20,6 +20,7 @@ import auth from "./modules/auth";
 import company from "./modules/company";
 import companies from "./modules/companies";
 import configuration from "./modules/configuration";
+import users from "./modules/users";
 
 Vue.use(Vuex)
 
@@ -33,7 +34,8 @@ export default new Vuex.Store({
         auth,
         company,
         companies,
-        configuration
+        configuration,
+        users
     },
     strict: process.env.NODE_ENV !== 'production'
 })

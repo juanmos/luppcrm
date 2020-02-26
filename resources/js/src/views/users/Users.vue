@@ -9,7 +9,7 @@
 
 <template>
   <div id="data-list-list-view" class="data-list-container">
-    <company-sidebar
+    <user-sidebar
       :isSidebarActive="addNewDataSidebar"
       @closeSidebar="toggleDataSidebar"
       :data="sidebarData"
@@ -17,12 +17,11 @@
 
     <vs-table
       ref="table"
-      multiple
       v-model="selected"
       pagination
       :max-items="itemsPerPage"
       search
-      :data="products"
+      :data="users"
     >
       <div slot="header" class="flex flex-wrap-reverse items-center flex-grow justify-between">
         <div class="flex flex-wrap-reverse items-center data-list-btn-container">
@@ -43,7 +42,7 @@
           >
             <span
               class="mr-2"
-            >{{ currentPage * itemsPerPage - (itemsPerPage - 1) }} - {{ products.length - currentPage * itemsPerPage > 0 ? currentPage * itemsPerPage : products.length }} of {{ queriedItems }}</span>
+            >{{ currentPage * itemsPerPage - (itemsPerPage - 1) }} - {{ users.length - currentPage * itemsPerPage > 0 ? currentPage * itemsPerPage : users.length }} of {{ queriedItems }}</span>
             <feather-icon icon="ChevronDownIcon" svgClasses="h-4 w-4" />
           </div>
           <!-- <vs-button class="btn-drop" type="line" color="primary" icon-pack="feather" icon="icon-chevron-down"></vs-button> -->
@@ -65,11 +64,12 @@
       </div>
 
       <template slot="thead">
-        <vs-th sort-key="name">{{$t('companyName')}}</vs-th>
-        <vs-th sort-key="alias">{{$t('companyAlias')}}</vs-th>
-        <vs-th sort-key="ruc">{{$t('identification')}}</vs-th>
-        <vs-th>{{$t('companyAddress')}}</vs-th>
-        <vs-th>{{$t('companyPhone')}}</vs-th>
+        <vs-th sort-key="name">{{$t('firstName')}}</vs-th>
+        <vs-th sort-key="alias">{{$t('lastName')}}</vs-th>
+        <vs-th sort-key="ruc">{{$t('email')}}</vs-th>
+        <vs-th>{{$t('phone')}}</vs-th>
+        <vs-th>{{$t('mobile')}}</vs-th>
+        <vs-th>{{$t('company')}}</vs-th>
         <vs-th>Action</vs-th>
       </template>
 
@@ -77,37 +77,48 @@
         <tbody>
           <vs-tr :data="tr" :key="indextr" v-for="(tr, indextr) in data">
             <vs-td>
-              <p class="product-name font-medium truncate">{{ tr.company_name }}</p>
+              <p class="product-name font-medium truncate">{{ tr.first_name }}</p>
             </vs-td>
 
             <vs-td>
-              <p class="product-category">{{ tr.company_alias }}</p>
+              <p class="product-category">{{ tr.last_name }}</p>
             </vs-td>
 
             <vs-td>
-              <p class="product-category">{{ tr.ruc }}</p>
+              <p class="product-category">{{ tr.email }}</p>
             </vs-td>
 
             <vs-td>
-              <p class="product-category">{{ tr.address }}</p>
+              <p class="product-category">{{ tr.phone }}</p>
             </vs-td>
 
             <vs-td>
-              <p class="product-price">{{ tr.phone }}</p>
+              <p class="product-price">{{ tr.mobile }}</p>
+            </vs-td>
+            <vs-td>
+              <p
+                class="product-price"
+              >{{ (tr.company!=null)?tr.company.company_name:$t('noCompany') }}</p>
             </vs-td>
 
             <vs-td class="whitespace-no-wrap">
               <feather-icon
+                icon="EyeIcon"
+                svgClasses="w-5 h-5 hover:text-primary stroke-current"
+                @click.stop="viewUser(tr)"
+              />
+              <feather-icon
                 icon="EditIcon"
                 svgClasses="w-5 h-5 hover:text-primary stroke-current"
+                class="ml-2"
                 @click.stop="editData(tr)"
               />
-              <!-- <feather-icon
+              <feather-icon
                 icon="TrashIcon"
                 svgClasses="w-5 h-5 hover:text-danger stroke-current"
                 class="ml-2"
                 @click.stop="deleteData(tr.id)"
-              />-->
+              />
             </vs-td>
           </vs-tr>
         </tbody>
@@ -117,11 +128,11 @@
 </template>
 
 <script>
-import CompanySidebar from "./CompanySidebar.vue";
+import UserSidebar from "./UserSidebar.vue";
 
 export default {
   components: {
-    CompanySidebar
+    UserSidebar
   },
   data() {
     return {
@@ -132,7 +143,9 @@ export default {
 
       // Data Sidebar
       addNewDataSidebar: false,
-      sidebarData: {}
+      sidebarData: {},
+      activeConfirm: false,
+      userToDelete: null
     };
   },
   computed: {
@@ -142,13 +155,13 @@ export default {
       }
       return 0;
     },
-    products() {
-      return this.$store.state.companies.companies;
+    users() {
+      return this.$store.state.users.users;
     },
     queriedItems() {
       return this.$refs.table
         ? this.$refs.table.queriedResults.length
-        : this.products.length;
+        : this.users.length;
     }
   },
   methods: {
@@ -157,9 +170,27 @@ export default {
       this.toggleDataSidebar(true);
     },
     deleteData(id) {
-      this.$store.dispatch("dataList/removeItem", id).catch(err => {
-        console.error(err);
+      this.userToDelete = id;
+      this.$vs.dialog({
+        type: "confirm",
+        color: "danger",
+        title: this.$t("confirmDeleteTitle"),
+        text: this.$t("confirmDeleteText"),
+        accept: this.acceptAlert,
+        acceptText: this.$t("delete")
       });
+    },
+    acceptAlert() {
+      this.$store.dispatch("users/removeUser", this.userToDelete).catch(err => {
+        this.$vs.notify({
+          color: "danger",
+          title: this.$t("userDeletedTitle"),
+          text: this.$t("userDeletedText")
+        });
+      });
+    },
+    viewUser(data) {
+      this.$router.push({ name: "admin.users.view", params: { id: data.id } });
     },
     editData(data) {
       this.sidebarData = data;
@@ -183,7 +214,7 @@ export default {
     }
   },
   created() {
-    this.$store.dispatch("companies/fetchCompanies");
+    this.$store.dispatch("users/fetchUsers");
   },
   mounted() {
     this.isMounted = true;
