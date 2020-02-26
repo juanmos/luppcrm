@@ -55,6 +55,43 @@ class UserTest extends TestCase
         $response->assertJsonStructure(['user']);
     }
 
+    public function testUpdateUserAdmin()
+    {
+        $user = factory(User::class)->create();
+        $response = $this->put('api/users/'.$user->id, $this->userData(), $this->headers);
+        $response->assertOk();
+        $response->assertJsonStructure(['user']);
+        $this->assertEquals('Moscoso', $user->fresh()->last_name);
+    }
+
+    /** @test */
+    public function testShowUser()
+    {
+        $user = factory(User::class)->create();
+        $response = $this->get('api/users/'.$user->id, $this->headers);
+        $response->assertOk();
+        $response->assertJsonStructure(['user']);
+    }
+    
+
+    /** @test */
+    public function testDeleteUser()
+    {
+        $user = factory(User::class)->create();
+        $response = $this->delete('api/users/'.$user->id, $this->headers);
+        $response->assertOk();
+        $response->assertJsonStructure(['deleted']);
+    }
+
+    /** @test */
+    public function testRolesUser()
+    {
+        $response = $this->get('api/roles/', $this->headers);
+        $response->assertOk();
+        $response->assertJsonStructure(['roles']);
+    }
+    
+    
 
     private function userData()
     {

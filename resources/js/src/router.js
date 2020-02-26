@@ -219,7 +219,13 @@ const router = new Router({
                     },
                     component: () =>
                         import ('./views/users/Users.vue')
-                },
+                }, {
+                    path: 'users/user/:id',
+                    props: true,
+                    name: 'admin.users.view',
+                    component: () =>
+                        import ('./views/users/UserView.vue')
+                }
             ]
         },
         {

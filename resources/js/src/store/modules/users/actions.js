@@ -41,6 +41,34 @@ export default {
                 })
         })
     },
+    fetchRoles({
+        commit
+    }) {
+        return new Promise((resolve, reject) => {
+            axios.get("/api/roles")
+                .then((response) => {
+                    commit('SET_ROLES', response.data.roles)
+                    resolve(response)
+                })
+                .catch((error) => {
+                    reject(error)
+                })
+        })
+    },
+    fetchUser({
+        commit
+    }, userId) {
+        return new Promise((resolve, reject) => {
+            axios.get(`/api/users/${userId}`)
+                .then((response) => {
+                    commit('SET_USERS', [response.data.user])
+                    resolve(response)
+                })
+                .catch((error) => {
+                    reject(error)
+                })
+        })
+    },
     updateUser({
         commit
     }, item) {
@@ -57,13 +85,13 @@ export default {
                 })
         })
     },
-    removeItem({
+    removeUser({
         commit
     }, itemId) {
         return new Promise((resolve, reject) => {
-            axios.delete(`/api/data-list/products/${itemId}`)
+            axios.delete(`/api/users/${itemId}`)
                 .then((response) => {
-                    commit('REMOVE_ITEM', itemId)
+                    commit('REMOVE_USER', itemId)
                     resolve(response)
                 })
                 .catch((error) => {
@@ -71,20 +99,15 @@ export default {
                 })
         })
     },
-    // eventDragged({ commit }, payload) {
-    //   return new Promise((resolve, reject) => {
-    //     axios.post(`/api/apps/calendar/event/dragged/${payload.event.id}`, {payload: payload})
-    //       .then((response) => {
-
-    //         // Convert Date String to Date Object
-    //         let event = response.data
-    //         event.startDate = new Date(event.startDate)
-    //         event.endDate = new Date(event.endDate)
-
-    //         commit('UPDATE_EVENT', event)
-    //         resolve(response)
-    //       })
-    //       .catch((error) => { reject(error) })
-    //   })
-    // },
+    showUser({
+        commit
+    }, userId) {
+        return new Promise((resolve, reject) => {
+            axios.get(`/api/users/${userId}`).then((response) => {
+                resolve(response);
+            }).catch((error) => {
+                reject(error)
+            })
+        })
+    }
 }

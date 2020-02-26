@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use \Spatie\Permission\Models\Role;
+use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Hash;
@@ -68,9 +69,14 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        if (in_array('Empresa', auth('api')->user()->getRoleNames()->toArray())) {
+            return response()->json([ 'error'=> 403, 'message'=> 'Forbidden' ], 403);
+        }
+        $user->role=$user->getRoleNames()->implode('');
+
+        return response()->json(compact('user'));
     }
 
     /**
@@ -91,9 +97,33 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        if (in_array('Empresa', auth('api')->user()->getRoleNames()->toArray()) && auth('api')->user()->company_id!=$company->id) {
+            return response()->json([ 'error'=> 401, 'message'=> 'Not Authorized' ], 401);
+        }
+        $request->validate([
+            'first_name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
+            'email' => [
+                'required','string', 'email', 'max:255',
+                Rule::unique('users')->ignore($user->id)
+            ],
+            // 'password' => ['required', 'string', 'min:6', 'confirmed'],
+        ]);
+        $data=$request->except(['password']);
+        if ($request->has('password')) {
+            $data['password']=Hash::make($request->get('password'));
+        }
+        
+        $user->update(
+            $data
+        );
+        if ($request->has('role')) {
+            $user->syncRoles([$request->get('role')]);
+        }
+        
+        return response()->json(compact('user'));
     }
 
     /**
@@ -102,8 +132,18 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        if (in_array('Empresa', auth('api')->user()->getRoleNames()->toArray()) && auth('api')->user()->company_id!=$company->id) {
+            return response()->json([ 'error'=> 401, 'message'=> 'Not Authorized' ], 401);
+        }
+        $user->delete();
+        return response()->json(['deleted'=>true]);
+    }
+
+    public function roles()
+    {
+        $roles = Role::all()->pluck('name');
+        return response()->json(compact('roles'));
     }
 }

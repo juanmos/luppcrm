@@ -117,7 +117,7 @@
 
 <script>
 import VuePerfectScrollbar from "vue-perfect-scrollbar";
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 export default {
   props: {
@@ -144,7 +144,8 @@ export default {
           phone,
           mobile,
           email,
-          identification
+          identification,
+          role
         } = JSON.parse(JSON.stringify(this.data));
         this.dataId = id;
         this.first_name = first_name;
@@ -153,6 +154,7 @@ export default {
         this.mobile = mobile;
         this.email = email;
         this.identification = identification;
+        this.role = role;
         this.initValues();
       }
       // Object.entries(this.data).length === 0 ? this.initValues() : { this.dataId, this.dataName, this.dataCategory, this.dataOrder_status, this.dataPrice } = JSON.parse(JSON.stringify(this.data))
@@ -199,6 +201,7 @@ export default {
     ...mapState("users", ["roles"])
   },
   methods: {
+    ...mapActions("users", ["fetchRoles"]),
     initValues() {
       if (this.data.id) return;
       this.dataId = null;
@@ -246,6 +249,9 @@ export default {
   },
   components: {
     VuePerfectScrollbar
+  },
+  mounted() {
+    this.fetchRoles();
   }
 };
 </script>

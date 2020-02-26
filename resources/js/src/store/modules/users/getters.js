@@ -10,5 +10,5 @@
 
 export default {
     users: state => state.users,
-    // getItem: state => (productId) => state.products.find((product) => product.id == productId),
+    getUser: state => (userId) => state.users.find((user) => user.id == userId),
 }

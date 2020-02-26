@@ -20,5 +20,9 @@ Route::group(['middleware' => 'api'], function () {
 
     //USERS
     Route::get('/users', 'UserController@index')->name('user.index');
+    Route::get('/users/{user}', 'UserController@show')->name('user.show');
+    Route::get('/roles', 'UserController@roles')->name('user.show');
     Route::post('/users', 'UserController@store')->name('user.store');
+    Route::put('/users/{user}', 'UserController@update')->name('user.update');
+    Route::delete('/users/{user}', 'UserController@destroy')->name('user.destroy');
 });

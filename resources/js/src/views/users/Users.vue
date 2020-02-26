@@ -103,8 +103,14 @@
 
             <vs-td class="whitespace-no-wrap">
               <feather-icon
+                icon="EyeIcon"
+                svgClasses="w-5 h-5 hover:text-primary stroke-current"
+                @click.stop="viewUser(tr)"
+              />
+              <feather-icon
                 icon="EditIcon"
                 svgClasses="w-5 h-5 hover:text-primary stroke-current"
+                class="ml-2"
                 @click.stop="editData(tr)"
               />
               <feather-icon
@@ -137,7 +143,9 @@ export default {
 
       // Data Sidebar
       addNewDataSidebar: false,
-      sidebarData: {}
+      sidebarData: {},
+      activeConfirm: false,
+      userToDelete: null
     };
   },
   computed: {
@@ -162,9 +170,27 @@ export default {
       this.toggleDataSidebar(true);
     },
     deleteData(id) {
-      this.$store.dispatch("dataList/removeItem", id).catch(err => {
-        console.error(err);
+      this.userToDelete = id;
+      this.$vs.dialog({
+        type: "confirm",
+        color: "danger",
+        title: this.$t("confirmDeleteTitle"),
+        text: this.$t("confirmDeleteText"),
+        accept: this.acceptAlert,
+        acceptText: this.$t("delete")
       });
+    },
+    acceptAlert() {
+      this.$store.dispatch("users/removeUser", this.userToDelete).catch(err => {
+        this.$vs.notify({
+          color: "danger",
+          title: this.$t("userDeletedTitle"),
+          text: this.$t("userDeletedText")
+        });
+      });
+    },
+    viewUser(data) {
+      this.$router.push({ name: "admin.users.view", params: { id: data.id } });
     },
     editData(data) {
       this.sidebarData = data;
