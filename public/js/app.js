@@ -68657,7 +68657,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   {
     path: '/',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! @/layouts/full-page/FullPage.vue */ "./resources/js/src/layouts/full-page/FullPage.vue"));
+      return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! @/layouts/full-page/FullPage.vue */ "./resources/js/src/layouts/full-page/FullPage.vue"));
     },
     meta: {
       auth: false,
@@ -68682,19 +68682,19 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'public'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ./views/auth/Register.vue */ "./resources/js/src/views/auth/Register.vue"));
+        return __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ./views/auth/Register.vue */ "./resources/js/src/views/auth/Register.vue"));
       }
     }, {
       path: '/pages/error-404',
       name: 'page-error-404',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 19).then(__webpack_require__.bind(null, /*! @/views/pages/Error404.vue */ "./resources/js/src/views/pages/Error404.vue"));
+        return __webpack_require__.e(/*! import() */ 22).then(__webpack_require__.bind(null, /*! @/views/pages/Error404.vue */ "./resources/js/src/views/pages/Error404.vue"));
       }
     }, {
       path: '/pages/not-authorized',
       name: 'page-not-authorized',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 20).then(__webpack_require__.bind(null, /*! @/views/pages/NotAuthorized.vue */ "./resources/js/src/views/pages/NotAuthorized.vue"));
+        return __webpack_require__.e(/*! import() */ 23).then(__webpack_require__.bind(null, /*! @/views/pages/NotAuthorized.vue */ "./resources/js/src/views/pages/NotAuthorized.vue"));
       },
       meta: {
         rule: 'Empresa'
@@ -68706,7 +68706,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     // =============================================================================
     path: '/company',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(22), __webpack_require__.e(2), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ./layouts/main/Main.vue */ "./resources/js/src/layouts/main/Main.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ./layouts/main/Main.vue */ "./resources/js/src/layouts/main/Main.vue"));
     },
     meta: {
       auth: true,
@@ -68731,7 +68731,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Comun'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ./views/Home.vue */ "./resources/js/src/views/Home.vue"));
+        return __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! ./views/Home.vue */ "./resources/js/src/views/Home.vue"));
       }
     }, {
       path: 'invoices',
@@ -68740,7 +68740,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 17).then(__webpack_require__.bind(null, /*! ./views/invoices/Invoices.vue */ "./resources/js/src/views/invoices/Invoices.vue"));
+        return __webpack_require__.e(/*! import() */ 19).then(__webpack_require__.bind(null, /*! ./views/invoices/Invoices.vue */ "./resources/js/src/views/invoices/Invoices.vue"));
       }
     }, {
       path: 'payments',
@@ -68749,7 +68749,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 18).then(__webpack_require__.bind(null, /*! ./views/payments/Payments.vue */ "./resources/js/src/views/payments/Payments.vue"));
+        return __webpack_require__.e(/*! import() */ 20).then(__webpack_require__.bind(null, /*! ./views/payments/Payments.vue */ "./resources/js/src/views/payments/Payments.vue"));
       }
     }, {
       path: 'estimates',
@@ -68758,7 +68758,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 14).then(__webpack_require__.bind(null, /*! ./views/estimates/Estimates.vue */ "./resources/js/src/views/estimates/Estimates.vue"));
+        return __webpack_require__.e(/*! import() */ 16).then(__webpack_require__.bind(null, /*! ./views/estimates/Estimates.vue */ "./resources/js/src/views/estimates/Estimates.vue"));
       }
     }, {
       path: 'expenses',
@@ -68767,7 +68767,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 15).then(__webpack_require__.bind(null, /*! ./views/expenses/Expenses.vue */ "./resources/js/src/views/expenses/Expenses.vue"));
+        return __webpack_require__.e(/*! import() */ 17).then(__webpack_require__.bind(null, /*! ./views/expenses/Expenses.vue */ "./resources/js/src/views/expenses/Expenses.vue"));
       }
     }, {
       path: 'deductions',
@@ -68776,7 +68776,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! ./views/deductions/Deductions.vue */ "./resources/js/src/views/deductions/Deductions.vue"));
+        return __webpack_require__.e(/*! import() */ 15).then(__webpack_require__.bind(null, /*! ./views/deductions/Deductions.vue */ "./resources/js/src/views/deductions/Deductions.vue"));
       }
     }, {
       path: 'clients',
@@ -68785,7 +68785,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(4), __webpack_require__.e(9)]).then(__webpack_require__.bind(null, /*! ./views/clients/Clients.vue */ "./resources/js/src/views/clients/Clients.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(5), __webpack_require__.e(9)]).then(__webpack_require__.bind(null, /*! ./views/clients/Clients.vue */ "./resources/js/src/views/clients/Clients.vue"));
       }
     }, {
       path: '/help',
@@ -68794,7 +68794,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 16).then(__webpack_require__.bind(null, /*! ./views/help/Help.vue */ "./resources/js/src/views/help/Help.vue"));
+        return __webpack_require__.e(/*! import() */ 18).then(__webpack_require__.bind(null, /*! ./views/help/Help.vue */ "./resources/js/src/views/help/Help.vue"));
       }
     }, {
       path: 'configurations',
@@ -68803,7 +68803,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! ./views/configurations/Configurations.vue */ "./resources/js/src/views/configurations/Configurations.vue"));
+        return __webpack_require__.e(/*! import() */ 14).then(__webpack_require__.bind(null, /*! ./views/configurations/Configurations.vue */ "./resources/js/src/views/configurations/Configurations.vue"));
       }
     }]
   }, {
@@ -68812,7 +68812,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     // =============================================================================
     path: '/admin',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(22), __webpack_require__.e(2), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ./layouts/main/Main.vue */ "./resources/js/src/layouts/main/Main.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ./layouts/main/Main.vue */ "./resources/js/src/layouts/main/Main.vue"));
     },
     meta: {
       auth: true,
@@ -68834,8 +68834,28 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(22), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, /*! ./views/companies/Companies.vue */ "./resources/js/src/views/companies/Companies.vue"));
-      }
+        return __webpack_require__.e(/*! import() */ 25).then(__webpack_require__.bind(null, /*! ./views/companies/CompanyMain.vue */ "./resources/js/src/views/companies/CompanyMain.vue"));
+      },
+      children: [{
+        path: '',
+        name: 'admin.companies.list',
+        meta: {
+          rule: 'Empresa'
+        },
+        component: function component() {
+          return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(6)]).then(__webpack_require__.bind(null, /*! ./views/companies/Companies.vue */ "./resources/js/src/views/companies/Companies.vue"));
+        }
+      }, {
+        path: 'details/:id',
+        props: true,
+        name: 'admin.companies.details',
+        meta: {
+          rule: 'Empresa'
+        },
+        component: function component() {
+          return __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! ./views/companies/CompanyDetail.vue */ "./resources/js/src/views/companies/CompanyDetail.vue"));
+        }
+      }]
     }, {
       path: 'users',
       name: 'admin.users',
@@ -68843,20 +68863,20 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(22), __webpack_require__.e(6), __webpack_require__.e(23)]).then(__webpack_require__.bind(null, /*! ./views/users/Users.vue */ "./resources/js/src/views/users/Users.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(3), __webpack_require__.e(10)]).then(__webpack_require__.bind(null, /*! ./views/users/Users.vue */ "./resources/js/src/views/users/Users.vue"));
       }
     }, {
       path: 'users/user/:id',
       props: true,
       name: 'admin.users.view',
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(22), __webpack_require__.e(6), __webpack_require__.e(24)]).then(__webpack_require__.bind(null, /*! ./views/users/UserView.vue */ "./resources/js/src/views/users/UserView.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(3), __webpack_require__.e(21)]).then(__webpack_require__.bind(null, /*! ./views/users/UserView.vue */ "./resources/js/src/views/users/UserView.vue"));
       }
     }]
   }, {
     path: '/wizard',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! @/layouts/full-page/FullPage.vue */ "./resources/js/src/layouts/full-page/FullPage.vue"));
+      return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! @/layouts/full-page/FullPage.vue */ "./resources/js/src/layouts/full-page/FullPage.vue"));
     },
     meta: {
       auth: false,
@@ -68879,7 +68899,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(21), __webpack_require__.e(7)]).then(__webpack_require__.bind(null, /*! ./views/wizard/User.vue */ "./resources/js/src/views/wizard/User.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(24), __webpack_require__.e(7)]).then(__webpack_require__.bind(null, /*! ./views/wizard/User.vue */ "./resources/js/src/views/wizard/User.vue"));
       }
     }]
   }, // Redirect to 404 page, if no match found
@@ -69297,8 +69317,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   companies: function companies(state) {
     return state.companies;
-  } // getItem: state => (productId) => state.products.find((product) => product.id == productId),
-
+  },
+  getCompany: function getCompany(state) {
+    return function (companyId) {
+      return state.companies.find(function (company) {
+        return company.id == companyId;
+      });
+    };
+  }
 });
 
 /***/ }),

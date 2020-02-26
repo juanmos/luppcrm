@@ -10,5 +10,5 @@
 
 export default {
     companies: state => state.companies,
-    // getItem: state => (productId) => state.products.find((product) => product.id == productId),
+    getCompany: state => (companyId) => state.companies.find((company) => company.id == companyId),
 }

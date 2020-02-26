@@ -98,8 +98,14 @@
 
             <vs-td class="whitespace-no-wrap">
               <feather-icon
+                icon="EyeIcon"
+                svgClasses="w-5 h-5 hover:text-primary stroke-current"
+                @click.stop="viewCompany(tr)"
+              />
+              <feather-icon
                 icon="EditIcon"
                 svgClasses="w-5 h-5 hover:text-primary stroke-current"
+                class="ml-2"
                 @click.stop="editData(tr)"
               />
               <!-- <feather-icon
@@ -180,6 +186,12 @@ export default {
     },
     toggleDataSidebar(val = false) {
       this.addNewDataSidebar = val;
+    },
+    viewCompany(data) {
+      this.$router.push({
+        name: "admin.companies.details",
+        params: { id: data.id }
+      });
     }
   },
   created() {
