@@ -191,9 +191,7 @@ export default {
       this.addNewDataSidebar = val;
     },
     ...mapActions("companies", ["fetchCompanies"]),
-    onCellValueChanged(params) {
-      console.log(params);
-    }
+    onCellValueChanged(params) {}
   },
   mounted() {
     this.gridApi = this.gridOptions.api;

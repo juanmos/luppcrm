@@ -24,6 +24,7 @@ class CreateCompanyContactsTable extends Migration
             $table->string('email')->nullable();
             $table->string('position')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -10,14 +10,13 @@
 import axios from "@/axios.js"
 
 export default {
-
-    fetchCompanyContact({
+    fetchCompanyContacts({
         commit
     }, companyId) {
         return new Promise((resolve, reject) => {
-            axios.get("/api/companies")
+            axios.get(`/api/company/${companyId}/contacts`)
                 .then((response) => {
-                    commit('SET_COMPANIES', response.data.companies.data)
+                    commit('SET_CONTACTS', response.data.contacts)
                     resolve(response)
                 })
                 .catch((error) => {
@@ -25,13 +24,13 @@ export default {
                 })
         })
     },
-    addCompany({
+    addContact({
         commit
     }, item) {
         return new Promise((resolve, reject) => {
-            axios.post("/api/company/", item)
+            axios.post("/api/company/contact", item)
                 .then((response) => {
-                    commit('ADD_ITEM', Object.assign(item, {
+                    commit('ADD_CONTACT', Object.assign(response.data.contact, {
                         id: response.data.id
                     }))
                     resolve(response)
@@ -41,15 +40,15 @@ export default {
                 })
         })
     },
-    updateCompany({
+    updateContact({
         commit
     }, item) {
         return new Promise((resolve, reject) => {
-            axios.put(`/api/company/${item.id}`,
+            axios.put(`/api/company/contact/${item.id}`,
                     item
                 )
                 .then((response) => {
-                    commit('UPDATE_COMPANY', response.data.company)
+                    commit('UPDATE_CONTACT', response.data.contact)
                     resolve(response)
                 })
                 .catch((error) => {
@@ -57,33 +56,18 @@ export default {
                 })
         })
     },
-    removeItem({
+    removeContact({
         commit
     }, itemId) {
         return new Promise((resolve, reject) => {
-            axios.delete(`/api/data-list/products/${itemId}`)
+            axios.delete(`/api/company/contact/${itemId}`)
                 .then((response) => {
-                    commit('REMOVE_ITEM', itemId)
+                    commit('REMOVE_CONTACT', itemId)
                     resolve(response)
                 })
                 .catch((error) => {
                     reject(error)
                 })
-        })
-    },
-    fetchCompanyUsers({
-        commit
-    }, companyId) {
-        return new Promise((resolve, reject) => {
-            axios.get(`api/company/${companyId}/users`).then((response) => {
-                console.log('set users');
-                commit('users/SET_USERS', response.data.users, {
-                    root: true
-                })
-                resolve(response);
-            }).catch((err) => {
-                reject(error);
-            })
         })
     }
 }

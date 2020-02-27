@@ -75,7 +75,13 @@ export default {
         NotAuthorized: 'Not Authorized',
         Maintenance: 'Maintenance',
         Profile: 'Profile',
-        addNew: 'Add new'
+        addNew: 'Add new',
+        position: 'Position',
+        newContact: 'New contact',
+        updateContact: 'Update contact',
+        confirmContactDeleteText: 'You are going to delete the contact?',
+        contactDeletedTitle: 'Contact deleted!',
+        contactDeletedText: 'The contact has been deleted',
     },
     es: {
         userData: 'Datos de usuario',
@@ -152,6 +158,12 @@ export default {
         NotAuthorized: 'No autorizado',
         Maintenance: 'Mantenimiento',
         Profile: 'Perfil',
-        addNew: 'Crear nuevo'
+        addNew: 'Crear nuevo',
+        position: 'Cargo',
+        newContact: 'Nuevo contacto',
+        updateContact: 'Editar contacto',
+        confirmContactDeleteText: 'Vas a eliminar al contacto y no podras recuperarlo?',
+        contactDeletedTitle: 'Contacto eliminado!',
+        contactDeletedText: 'El contacto seleccionado ha sido eliminado',
     },
 }

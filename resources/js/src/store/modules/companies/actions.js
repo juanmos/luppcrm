@@ -75,7 +75,6 @@ export default {
     }, companyId) {
         return new Promise((resolve, reject) => {
             axios.get(`api/company/${companyId}/users`).then((response) => {
-                console.log('set users');
                 commit('users/SET_USERS', response.data.users, {
                     root: true
                 })

@@ -60,7 +60,7 @@
           <vs-th sort-key="ruc">{{$t('email')}}</vs-th>
           <vs-th>{{$t('phone')}}</vs-th>
           <vs-th>{{$t('mobile')}}</vs-th>
-          <vs-th>{{$t('company')}}</vs-th>
+          <vs-th>{{$t('position')}}</vs-th>
           <vs-th>Action</vs-th>
         </template>
 
@@ -87,9 +87,7 @@
                 <p class="product-price">{{ tr.mobile }}</p>
               </vs-td>
               <vs-td>
-                <p
-                  class="product-price"
-                >{{ (tr.company!=null)?tr.company.company_name:$t('noCompany') }}</p>
+                <p class="product-price">{{ tr.position }}</p>
               </vs-td>
 
               <vs-td class="whitespace-no-wrap">
@@ -132,7 +130,7 @@ export default {
       itemsPerPage: 10,
       selected: [],
       isMounted: false,
-
+      userToDelete: 0,
       addNewDataSidebar: false,
       sidebarData: {}
     };
@@ -165,19 +163,21 @@ export default {
         type: "confirm",
         color: "danger",
         title: this.$t("confirmDeleteTitle"),
-        text: this.$t("confirmDeleteText"),
+        text: this.$t("confirmContactDeleteText"),
         accept: this.acceptAlert,
         acceptText: this.$t("delete")
       });
     },
     acceptAlert() {
-      this.$store.dispatch("users/removeUser", this.userToDelete).catch(err => {
-        this.$vs.notify({
-          color: "danger",
-          title: this.$t("userDeletedTitle"),
-          text: this.$t("userDeletedText")
+      this.$store
+        .dispatch("contacts/removeContact", this.userToDelete)
+        .catch(err => {
+          this.$vs.notify({
+            color: "danger",
+            title: this.$t("contactDeletedTitle"),
+            text: this.$t("contactDeletedText")
+          });
         });
-      });
     },
     editData(data) {
       this.sidebarData = data;
@@ -189,7 +189,7 @@ export default {
   },
 
   created() {
-    this.$store.dispatch("contacts/fetchCompanyContact", this.companyId);
+    this.$store.dispatch("contacts/fetchCompanyContacts", this.companyId);
     //   .then(({ data }) => (this.users = data.users));
   },
   mounted() {

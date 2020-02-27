@@ -129,7 +129,6 @@ export default {
                 token: token,
             });
             dispatch('me');
-            console.log('auto');
             // if (state.AppActiveUser.first_login) {
             //     router.push('wizard/company');
             // }

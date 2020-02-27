@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\CompanyContact;
+use App\Models\CompanyContact;
+use App\Models\Company;
 use Illuminate\Http\Request;
 
 class CompanyContactController extends Controller
@@ -12,9 +13,10 @@ class CompanyContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Company $company)
     {
-        //
+        $contacts = $company->contacts()->orderBy('first_name')->get();
+        return response()->json(compact('contacts'));
     }
 
     /**
@@ -35,7 +37,16 @@ class CompanyContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'first_name'=>'required',
+            'last_name'=>'required',
+            'company_id'=>'required'
+        ]);
+        if (in_array('Empresa', auth('api')->user()->getRoleNames()->toArray()) && auth('api')->user()->company_id!=$request->get('company_id')) {
+            return response()->json([ 'error'=> 401, 'message'=> 'Not Authorized' ], 401);
+        }
+        $contact =CompanyContact::create($request->all());
+        return response()->json(compact('contact'));
     }
 
     /**
@@ -67,9 +78,18 @@ class CompanyContactController extends Controller
      * @param  \App\CompanyContact  $companyContact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CompanyContact $companyContact)
+    public function update(Request $request, CompanyContact $contact)
     {
-        //
+        $request->validate([
+            'first_name'=>'required',
+            'last_name'=>'required',
+            'company_id'=>'required'
+        ]);
+        if (in_array('Empresa', auth('api')->user()->getRoleNames()->toArray()) && auth('api')->user()->company_id!=$request->get('company_id')) {
+            return response()->json([ 'error'=> 401, 'message'=> 'Not Authorized' ], 401);
+        }
+        $contact->update($request->all());
+        return response()->json(compact('contact'));
     }
 
     /**
@@ -78,8 +98,12 @@ class CompanyContactController extends Controller
      * @param  \App\CompanyContact  $companyContact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CompanyContact $companyContact)
+    public function destroy(CompanyContact $contact)
     {
-        //
+        if (in_array('Empresa', auth('api')->user()->getRoleNames()->toArray()) && auth('api')->user()->company_id!=$request->get('company_id')) {
+            return response()->json([ 'error'=> 401, 'message'=> 'Not Authorized' ], 401);
+        }
+        $contact->delete();
+        return response()->json(['deleted'=>true]);
     }
 }

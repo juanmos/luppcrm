@@ -9,6 +9,6 @@
 
 
 export default {
-    companies: state => state.companies,
-    getCompany: state => (companyId) => state.companies.find((company) => company.id == companyId),
+    contacts: state => state.contacts,
+    // getCompany: state => (companyId) => state.companies.find((company) => company.id == companyId),
 }

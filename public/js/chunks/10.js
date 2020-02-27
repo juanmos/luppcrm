@@ -1,33 +1,526 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[10],{
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/flatpickr/dist/flatpickr.css":
-/*!***********************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/flatpickr/dist/flatpickr.css ***!
-  \***********************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/clients/Clients.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/clients/Clients.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var ag_grid_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ag-grid-vue */ "./node_modules/ag-grid-vue/main.js");
+/* harmony import */ var ag_grid_vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ag_grid_vue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _data_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data.json */ "./resources/js/src/views/clients/data.json");
+var _data_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./data.json */ "./resources/js/src/views/clients/data.json", 1);
+/* harmony import */ var _sass_vuexy_extraComponents_agGridStyleOverride_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @sass/vuexy/extraComponents/agGridStyleOverride.scss */ "./resources/sass/vuexy/extraComponents/agGridStyleOverride.scss");
+/* harmony import */ var _sass_vuexy_extraComponents_agGridStyleOverride_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_sass_vuexy_extraComponents_agGridStyleOverride_scss__WEBPACK_IMPORTED_MODULE_2__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    AgGridVue: ag_grid_vue__WEBPACK_IMPORTED_MODULE_0__["AgGridVue"]
+  },
+  data: function data() {
+    return {
+      searchQuery: "",
+      gridOptions: {},
+      maxPageNumbers: 7,
+      gridApi: null,
+      defaultColDef: {
+        sortable: true,
+        editable: true,
+        resizable: true,
+        suppressMenu: true
+      },
+      columnDefs: [{
+        headerName: "First Name",
+        field: "firstname",
+        width: 175,
+        filter: true,
+        checkboxSelection: true,
+        headerCheckboxSelectionFilteredOnly: true,
+        headerCheckboxSelection: true
+      }, {
+        headerName: "Last Name",
+        field: "lastname",
+        filter: true,
+        width: 175
+      }, {
+        headerName: "Email",
+        field: "email",
+        filter: true,
+        width: 250,
+        pinned: "left"
+      }, {
+        headerName: "Company",
+        field: "company",
+        filter: true,
+        width: 250
+      }, {
+        headerName: "City",
+        field: "city",
+        filter: true,
+        width: 150
+      }, {
+        headerName: "Country",
+        field: "country",
+        filter: true,
+        width: 150
+      }, {
+        headerName: "State",
+        field: "state",
+        filter: true,
+        width: 125
+      }, {
+        headerName: "Zip",
+        field: "zip",
+        filter: true,
+        width: 125
+      }, {
+        headerName: "Followers",
+        field: "followers",
+        filter: "agNumberColumnFilter",
+        width: 125
+      }],
+      contacts: _data_json__WEBPACK_IMPORTED_MODULE_1__
+    };
+  },
+  watch: {
+    "$store.state.windowWidth": function $storeStateWindowWidth(val) {
+      if (val <= 576) {
+        this.maxPageNumbers = 4;
+        this.gridOptions.columnApi.setColumnPinned("email", null);
+      } else this.gridOptions.columnApi.setColumnPinned("email", "left");
+    }
+  },
+  computed: {
+    paginationPageSize: function paginationPageSize() {
+      if (this.gridApi) return this.gridApi.paginationGetPageSize();else return 50;
+    },
+    totalPages: function totalPages() {
+      if (this.gridApi) return this.gridApi.paginationGetTotalPages();else return 0;
+    },
+    currentPage: {
+      get: function get() {
+        if (this.gridApi) return this.gridApi.paginationGetCurrentPage() + 1;else return 1;
+      },
+      set: function set(val) {
+        this.gridApi.paginationGoToPage(val - 1);
+      }
+    }
+  },
+  methods: {
+    updateSearchQuery: function updateSearchQuery(val) {
+      this.gridApi.setQuickFilter(val);
+    }
+  },
+  mounted: function mounted() {
+    this.gridApi = this.gridOptions.api;
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/sass/vuexy/extraComponents/agGridStyleOverride.scss":
+/*!**********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./resources/sass/vuexy/extraComponents/agGridStyleOverride.scss ***!
+  \**********************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, ".flatpickr-calendar {\n  opacity: 0;\n  display: none;\n  visibility: hidden;\n  font-size: 14px;\n  line-height: 24px;\n  position: absolute;\n  width: 307.875px;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  -ms-touch-action: manipulation;\n  touch-action: manipulation;\n}[dir] .flatpickr-calendar {\n  background: transparent;\n  text-align: center;\n  padding: 0;\n  border: 0;\n  border-radius: 5px;\n  background: #fff;\n}[dir=ltr] .flatpickr-calendar {\n  -webkit-animation: none;\n  animation: none;\n  direction: ltr;\n  -webkit-box-shadow: 1px 0 0 #e6e6e6, -1px 0 0 #e6e6e6, 0 1px 0 #e6e6e6, 0 -1px 0 #e6e6e6, 0 3px 13px rgba(0,0,0,0.08);\n  box-shadow: 1px 0 0 #e6e6e6, -1px 0 0 #e6e6e6, 0 1px 0 #e6e6e6, 0 -1px 0 #e6e6e6, 0 3px 13px rgba(0,0,0,0.08);\n}[dir=rtl] .flatpickr-calendar {\n  -webkit-animation: none;\n  animation: none;\n  direction: rtl;\n  -webkit-box-shadow: -1px 0 0 #e6e6e6, 1px 0 0 #e6e6e6, 0 1px 0 #e6e6e6, 0 -1px 0 #e6e6e6, 0 3px 13px rgba(0,0,0,0.08);\n  box-shadow: -1px 0 0 #e6e6e6, 1px 0 0 #e6e6e6, 0 1px 0 #e6e6e6, 0 -1px 0 #e6e6e6, 0 3px 13px rgba(0,0,0,0.08);\n}\n\n.flatpickr-calendar.open,\n.flatpickr-calendar.inline {\n  opacity: 1;\n  max-height: 640px;\n  visibility: visible;\n}\n\n.flatpickr-calendar.open {\n  display: inline-block;\n  z-index: 99999;\n}\n\n[dir=ltr] .flatpickr-calendar.animate.open {\n  -webkit-animation: fpFadeInDown 300ms cubic-bezier(0.23, 1, 0.32, 1);\n  animation: fpFadeInDown 300ms cubic-bezier(0.23, 1, 0.32, 1);\n}\n\n[dir=rtl] .flatpickr-calendar.animate.open {\n  -webkit-animation: fpFadeInDown 300ms cubic-bezier(0.23, 1, 0.32, 1);\n  animation: fpFadeInDown 300ms cubic-bezier(0.23, 1, 0.32, 1);\n}\n\n.flatpickr-calendar.inline {\n  display: block;\n  position: relative;\n  top: 2px;\n}\n\n.flatpickr-calendar.static {\n  position: absolute;\n  top: calc(100% + 2px);\n}\n\n.flatpickr-calendar.static.open {\n  z-index: 999;\n  display: block;\n}\n\n.flatpickr-calendar.multiMonth .flatpickr-days .dayContainer:nth-child(n+1) .flatpickr-day.inRange:nth-child(7n+7) {\n  -webkit-box-shadow: none !important;\n}\n\n[dir] .flatpickr-calendar.multiMonth .flatpickr-days .dayContainer:nth-child(n+1) .flatpickr-day.inRange:nth-child(7n+7) {\n  -webkit-box-shadow: none !important;\n          box-shadow: none !important;\n}\n\n[dir=ltr] .flatpickr-calendar.multiMonth .flatpickr-days .dayContainer:nth-child(n+2) .flatpickr-day.inRange:nth-child(7n+1) {\n  -webkit-box-shadow: -2px 0 0 #e6e6e6, 5px 0 0 #e6e6e6;\n  box-shadow: -2px 0 0 #e6e6e6, 5px 0 0 #e6e6e6;\n}\n\n[dir=rtl] .flatpickr-calendar.multiMonth .flatpickr-days .dayContainer:nth-child(n+2) .flatpickr-day.inRange:nth-child(7n+1) {\n  -webkit-box-shadow: 2px 0 0 #e6e6e6, -5px 0 0 #e6e6e6;\n  box-shadow: 2px 0 0 #e6e6e6, -5px 0 0 #e6e6e6;\n}\n\n[dir] .flatpickr-calendar .hasWeeks .dayContainer, [dir] .flatpickr-calendar .hasTime .dayContainer {\n  border-bottom: 0;\n}\n\n[dir=ltr] .flatpickr-calendar .hasWeeks .dayContainer, [dir=ltr] .flatpickr-calendar .hasTime .dayContainer {\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n\n[dir=rtl] .flatpickr-calendar .hasWeeks .dayContainer, [dir=rtl] .flatpickr-calendar .hasTime .dayContainer {\n  border-bottom-left-radius: 0;\n  border-bottom-right-radius: 0;\n}\n\n[dir=ltr] .flatpickr-calendar .hasWeeks .dayContainer {\n  border-left: 0;\n}\n\n[dir=rtl] .flatpickr-calendar .hasWeeks .dayContainer {\n  border-right: 0;\n}\n\n.flatpickr-calendar.showTimeInput.hasTime .flatpickr-time {\n  height: 40px;\n}\n\n[dir] .flatpickr-calendar.showTimeInput.hasTime .flatpickr-time {\n  border-top: 1px solid #e6e6e6;\n}\n\n.flatpickr-calendar.noCalendar.hasTime .flatpickr-time {\n  height: auto;\n}\n\n.flatpickr-calendar:before,\n.flatpickr-calendar:after {\n  position: absolute;\n  display: block;\n  pointer-events: none;\n  content: '';\n  height: 0;\n  width: 0;\n}\n\n[dir] .flatpickr-calendar:before, [dir] .flatpickr-calendar:after {\n  border: solid transparent;\n}\n\n[dir=ltr] .flatpickr-calendar:before, [dir=ltr] .flatpickr-calendar:after {\n  left: 22px;\n}\n\n[dir=rtl] .flatpickr-calendar:before, [dir=rtl] .flatpickr-calendar:after {\n  right: 22px;\n}\n\n[dir=ltr] .flatpickr-calendar.rightMost:before, [dir=ltr] .flatpickr-calendar.rightMost:after {\n  left: auto;\n  right: 22px;\n}\n\n[dir=rtl] .flatpickr-calendar.rightMost:before, [dir=rtl] .flatpickr-calendar.rightMost:after {\n  right: auto;\n  left: 22px;\n}\n\n[dir] .flatpickr-calendar:before {\n  border-width: 5px;\n  margin: 0 -5px;\n}\n\n[dir] .flatpickr-calendar:after {\n  border-width: 4px;\n  margin: 0 -4px;\n}\n\n.flatpickr-calendar.arrowTop:before,\n.flatpickr-calendar.arrowTop:after {\n  bottom: 100%;\n}\n\n[dir] .flatpickr-calendar.arrowTop:before {\n  border-bottom-color: #e6e6e6;\n}\n\n[dir] .flatpickr-calendar.arrowTop:after {\n  border-bottom-color: #fff;\n}\n\n.flatpickr-calendar.arrowBottom:before,\n.flatpickr-calendar.arrowBottom:after {\n  top: 100%;\n}\n\n[dir] .flatpickr-calendar.arrowBottom:before {\n  border-top-color: #e6e6e6;\n}\n\n[dir] .flatpickr-calendar.arrowBottom:after {\n  border-top-color: #fff;\n}\n\n.flatpickr-calendar:focus {\n  outline: 0;\n}\n\n.flatpickr-wrapper {\n  position: relative;\n  display: inline-block;\n}\n\n.flatpickr-months {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n.flatpickr-months .flatpickr-month {\n  color: rgba(0,0,0,0.9);\n  fill: rgba(0,0,0,0.9);\n  height: 34px;\n  line-height: 1;\n  position: relative;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  overflow: hidden;\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n  -ms-flex: 1;\n  flex: 1;\n}\n\n[dir] .flatpickr-months .flatpickr-month {\n  background: transparent;\n  text-align: center;\n}\n\n.flatpickr-months .flatpickr-prev-month,\n.flatpickr-months .flatpickr-next-month {\n  text-decoration: none;\n  position: absolute;\n  top: 0;\n  height: 34px;\n  z-index: 3;\n  color: rgba(0,0,0,0.9);\n  fill: rgba(0,0,0,0.9);\n}\n\n[dir] .flatpickr-months .flatpickr-prev-month, [dir] .flatpickr-months .flatpickr-next-month {\n  cursor: pointer;\n  padding: 10px;\n}\n\n.flatpickr-months .flatpickr-prev-month.flatpickr-disabled,\n.flatpickr-months .flatpickr-next-month.flatpickr-disabled {\n  display: none;\n}\n\n.flatpickr-months .flatpickr-prev-month i,\n.flatpickr-months .flatpickr-next-month i {\n  position: relative;\n}\n\n.flatpickr-months .flatpickr-prev-month.flatpickr-prev-month,\n.flatpickr-months .flatpickr-next-month.flatpickr-prev-month {\n  /*\n      /*rtl:begin:ignore*/\n  /*\n      */\n  /*\n      /*rtl:end:ignore*/\n  /*\n      */\n}\n\n[dir=ltr] .flatpickr-months .flatpickr-prev-month.flatpickr-prev-month, [dir=ltr] .flatpickr-months .flatpickr-next-month.flatpickr-prev-month {\n  left: 0;\n}\n\n[dir=rtl] .flatpickr-months .flatpickr-prev-month.flatpickr-prev-month, [dir=rtl] .flatpickr-months .flatpickr-next-month.flatpickr-prev-month {\n  right: 0;\n}\n\n/*\n      /*rtl:begin:ignore*/\n\n/*\n      /*rtl:end:ignore*/\n\n.flatpickr-months .flatpickr-prev-month.flatpickr-next-month,\n.flatpickr-months .flatpickr-next-month.flatpickr-next-month {\n  /*\n      /*rtl:begin:ignore*/\n  /*\n      */\n  /*\n      /*rtl:end:ignore*/\n  /*\n      */\n}\n\n[dir=ltr] .flatpickr-months .flatpickr-prev-month.flatpickr-next-month, [dir=ltr] .flatpickr-months .flatpickr-next-month.flatpickr-next-month {\n  right: 0;\n}\n\n[dir=rtl] .flatpickr-months .flatpickr-prev-month.flatpickr-next-month, [dir=rtl] .flatpickr-months .flatpickr-next-month.flatpickr-next-month {\n  left: 0;\n}\n\n/*\n      /*rtl:begin:ignore*/\n\n/*\n      /*rtl:end:ignore*/\n\n.flatpickr-months .flatpickr-prev-month:hover,\n.flatpickr-months .flatpickr-next-month:hover {\n  color: #959ea9;\n}\n\n.flatpickr-months .flatpickr-prev-month:hover svg,\n.flatpickr-months .flatpickr-next-month:hover svg {\n  fill: #f64747;\n}\n\n.flatpickr-months .flatpickr-prev-month svg,\n.flatpickr-months .flatpickr-next-month svg {\n  width: 14px;\n  height: 14px;\n}\n\n.flatpickr-months .flatpickr-prev-month svg path,\n.flatpickr-months .flatpickr-next-month svg path {\n  -webkit-transition: fill 0.1s;\n  transition: fill 0.1s;\n  fill: inherit;\n}\n\n[dir] .flatpickr-months .flatpickr-prev-month svg path, [dir] .flatpickr-months .flatpickr-next-month svg path {\n  -webkit-transition: fill 0.1s;\n}\n\n.numInputWrapper {\n  position: relative;\n  height: auto;\n}\n\n.numInputWrapper input,\n.numInputWrapper span {\n  display: inline-block;\n}\n\n.numInputWrapper input {\n  width: 100%;\n}\n\n.numInputWrapper input::-ms-clear {\n  display: none;\n}\n\n.numInputWrapper input::-webkit-outer-spin-button,\n.numInputWrapper input::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n}\n\n[dir] .numInputWrapper input::-webkit-outer-spin-button, [dir] .numInputWrapper input::-webkit-inner-spin-button {\n  margin: 0;\n}\n\n.numInputWrapper span {\n  position: absolute;\n  width: 14px;\n  height: 50%;\n  line-height: 50%;\n  opacity: 0;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n}\n\n[dir] .numInputWrapper span {\n  cursor: pointer;\n  border: 1px solid rgba(57,57,57,0.15);\n}\n\n[dir=ltr] .numInputWrapper span {\n  right: 0;\n  padding: 0 4px 0 2px;\n}\n\n[dir=rtl] .numInputWrapper span {\n  left: 0;\n  padding: 0 2px 0 4px;\n}\n\n[dir] .numInputWrapper span:hover {\n  background: rgba(0,0,0,0.1);\n}\n\n[dir] .numInputWrapper span:active {\n  background: rgba(0,0,0,0.2);\n}\n\n.numInputWrapper span:after {\n  display: block;\n  content: \"\";\n  position: absolute;\n}\n\n.numInputWrapper span.arrowUp {\n  top: 0;\n}\n\n[dir] .numInputWrapper span.arrowUp {\n  border-bottom: 0;\n}\n\n.numInputWrapper span.arrowUp:after {\n  top: 26%;\n}\n\n[dir] .numInputWrapper span.arrowUp:after {\n  border-bottom: 4px solid rgba(57,57,57,0.6);\n}\n\n[dir=ltr] .numInputWrapper span.arrowUp:after {\n  border-left: 4px solid transparent;\n  border-right: 4px solid transparent;\n}\n\n[dir=rtl] .numInputWrapper span.arrowUp:after {\n  border-right: 4px solid transparent;\n  border-left: 4px solid transparent;\n}\n\n.numInputWrapper span.arrowDown {\n  top: 50%;\n}\n\n.numInputWrapper span.arrowDown:after {\n  top: 40%;\n}\n\n[dir] .numInputWrapper span.arrowDown:after {\n  border-top: 4px solid rgba(57,57,57,0.6);\n}\n\n[dir=ltr] .numInputWrapper span.arrowDown:after {\n  border-left: 4px solid transparent;\n  border-right: 4px solid transparent;\n}\n\n[dir=rtl] .numInputWrapper span.arrowDown:after {\n  border-right: 4px solid transparent;\n  border-left: 4px solid transparent;\n}\n\n.numInputWrapper span svg {\n  width: inherit;\n  height: auto;\n}\n\n.numInputWrapper span svg path {\n  fill: rgba(0,0,0,0.5);\n}\n\n[dir] .numInputWrapper:hover {\n  background: rgba(0,0,0,0.05);\n}\n\n.numInputWrapper:hover span {\n  opacity: 1;\n}\n\n.flatpickr-current-month {\n  font-size: 135%;\n  line-height: inherit;\n  font-weight: 300;\n  color: inherit;\n  position: absolute;\n  width: 75%;\n  line-height: 1;\n  height: 34px;\n  display: inline-block;\n  -webkit-transform: translate3d(0px, 0px, 0px);\n}\n\n[dir] .flatpickr-current-month {\n  padding: 7.48px 0 0 0;\n  text-align: center;\n  -webkit-transform: translate3d(0px, 0px, 0px);\n          transform: translate3d(0px, 0px, 0px);\n}\n\n[dir=ltr] .flatpickr-current-month {\n  left: 12.5%;\n}\n\n[dir=rtl] .flatpickr-current-month {\n  right: 12.5%;\n}\n\n.flatpickr-current-month span.cur-month {\n  font-family: inherit;\n  font-weight: 700;\n  color: inherit;\n  display: inline-block;\n}\n\n[dir] .flatpickr-current-month span.cur-month {\n  padding: 0;\n}\n\n[dir=ltr] .flatpickr-current-month span.cur-month {\n  margin-left: 0.5ch;\n}\n\n[dir=rtl] .flatpickr-current-month span.cur-month {\n  margin-right: 0.5ch;\n}\n\n[dir] .flatpickr-current-month span.cur-month:hover {\n  background: rgba(0,0,0,0.05);\n}\n\n.flatpickr-current-month .numInputWrapper {\n  width: 6ch;\n  width: 7ch\\0;\n  display: inline-block;\n}\n\n[dir] .flatpickr-current-month .numInputWrapper span.arrowUp:after {\n  border-bottom-color: rgba(0,0,0,0.9);\n}\n\n[dir] .flatpickr-current-month .numInputWrapper span.arrowDown:after {\n  border-top-color: rgba(0,0,0,0.9);\n}\n\n.flatpickr-current-month input.cur-year {\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  color: inherit;\n  display: inline-block;\n  font-size: inherit;\n  font-family: inherit;\n  font-weight: 300;\n  line-height: inherit;\n  height: auto;\n  vertical-align: initial;\n  -webkit-appearance: textfield;\n  -moz-appearance: textfield;\n  appearance: textfield;\n}\n\n[dir] .flatpickr-current-month input.cur-year {\n  background: transparent;\n  cursor: text;\n  margin: 0;\n  border: 0;\n  border-radius: 0;\n}\n\n[dir=ltr] .flatpickr-current-month input.cur-year {\n  padding: 0 0 0 0.5ch;\n}\n\n[dir=rtl] .flatpickr-current-month input.cur-year {\n  padding: 0 0.5ch 0 0;\n}\n\n.flatpickr-current-month input.cur-year:focus {\n  outline: 0;\n}\n\n.flatpickr-current-month input.cur-year[disabled],\n.flatpickr-current-month input.cur-year[disabled]:hover {\n  font-size: 100%;\n  color: rgba(0,0,0,0.5);\n  pointer-events: none;\n}\n\n[dir] .flatpickr-current-month input.cur-year[disabled], [dir] .flatpickr-current-month input.cur-year[disabled]:hover {\n  background: transparent;\n}\n\n.flatpickr-current-month .flatpickr-monthDropdown-months {\n  appearance: menulist;\n  box-sizing: border-box;\n  color: inherit;\n  font-size: inherit;\n  font-family: inherit;\n  font-weight: 300;\n  height: auto;\n  line-height: inherit;\n  outline: none;\n  position: relative;\n  vertical-align: initial;\n  -webkit-box-sizing: border-box;\n  -webkit-appearance: menulist;\n  -moz-appearance: menulist;\n  width: auto;\n}\n\n[dir] .flatpickr-current-month .flatpickr-monthDropdown-months {\n  background: transparent;\n  border: none;\n  border-radius: 0;\n  cursor: pointer;\n  margin: -1px 0 0 0;\n}\n\n[dir=ltr] .flatpickr-current-month .flatpickr-monthDropdown-months {\n  padding: 0 0 0 0.5ch;\n}\n\n[dir=rtl] .flatpickr-current-month .flatpickr-monthDropdown-months {\n  padding: 0 0.5ch 0 0;\n}\n\n.flatpickr-current-month .flatpickr-monthDropdown-months:focus,\n.flatpickr-current-month .flatpickr-monthDropdown-months:active {\n  outline: none;\n}\n\n[dir] .flatpickr-current-month .flatpickr-monthDropdown-months:hover {\n  background: rgba(0,0,0,0.05);\n}\n\n.flatpickr-current-month .flatpickr-monthDropdown-months .flatpickr-monthDropdown-month {\n  outline: none;\n}\n\n[dir] .flatpickr-current-month .flatpickr-monthDropdown-months .flatpickr-monthDropdown-month {\n  background-color: transparent;\n  padding: 0;\n}\n\n.flatpickr-weekdays {\n  overflow: hidden;\n  width: 100%;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -webkit-align-items: center;\n  -ms-flex-align: center;\n  align-items: center;\n  height: 28px;\n}\n\n[dir] .flatpickr-weekdays {\n  background: transparent;\n  text-align: center;\n}\n\n.flatpickr-weekdays .flatpickr-weekdaycontainer {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n  -ms-flex: 1;\n  flex: 1;\n}\n\nspan.flatpickr-weekday {\n  font-size: 90%;\n  color: rgba(0,0,0,0.54);\n  line-height: 1;\n  display: block;\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n  -ms-flex: 1;\n  flex: 1;\n  font-weight: bolder;\n}\n\n[dir] span.flatpickr-weekday {\n  cursor: default;\n  background: transparent;\n  margin: 0;\n  text-align: center;\n}\n\n[dir] .dayContainer, [dir] .flatpickr-weeks {\n  padding: 1px 0 0 0;\n}\n\n.flatpickr-days {\n  position: relative;\n  overflow: hidden;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: start;\n  -webkit-align-items: flex-start;\n  -ms-flex-align: start;\n  align-items: flex-start;\n  width: 307.875px;\n}\n\n.flatpickr-days:focus {\n  outline: 0;\n}\n\n.dayContainer {\n  outline: 0;\n  width: 307.875px;\n  min-width: 307.875px;\n  max-width: 307.875px;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  display: inline-block;\n  display: -ms-flexbox;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: flex;\n  -webkit-flex-wrap: wrap;\n  flex-wrap: wrap;\n  -ms-flex-wrap: wrap;\n  -ms-flex-pack: justify;\n  -webkit-justify-content: space-around;\n  justify-content: space-around;\n  -webkit-transform: translate3d(0px, 0px, 0px);\n  opacity: 1;\n}\n\n[dir] .dayContainer {\n  padding: 0;\n  -webkit-transform: translate3d(0px, 0px, 0px);\n          transform: translate3d(0px, 0px, 0px);\n}\n\n[dir=ltr] .dayContainer {\n  text-align: left;\n}\n\n[dir=rtl] .dayContainer {\n  text-align: right;\n}\n\n[dir=ltr] .dayContainer + .dayContainer {\n  -webkit-box-shadow: -1px 0 0 #e6e6e6;\n  box-shadow: -1px 0 0 #e6e6e6;\n}\n\n[dir=rtl] .dayContainer + .dayContainer {\n  -webkit-box-shadow: 1px 0 0 #e6e6e6;\n  box-shadow: 1px 0 0 #e6e6e6;\n}\n\n.flatpickr-day {\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  color: #393939;\n  font-weight: 400;\n  width: 14.2857143%;\n  -webkit-flex-basis: 14.2857143%;\n  -ms-flex-preferred-size: 14.2857143%;\n  flex-basis: 14.2857143%;\n  max-width: 39px;\n  height: 39px;\n  line-height: 39px;\n  display: inline-block;\n  position: relative;\n  -webkit-box-pack: center;\n  -webkit-justify-content: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n}\n\n[dir] .flatpickr-day {\n  background: none;\n  border: 1px solid transparent;\n  border-radius: 150px;\n  cursor: pointer;\n  margin: 0;\n  text-align: center;\n}\n\n.flatpickr-day.inRange,\n.flatpickr-day.prevMonthDay.inRange,\n.flatpickr-day.nextMonthDay.inRange,\n.flatpickr-day.today.inRange,\n.flatpickr-day.prevMonthDay.today.inRange,\n.flatpickr-day.nextMonthDay.today.inRange,\n.flatpickr-day:hover,\n.flatpickr-day.prevMonthDay:hover,\n.flatpickr-day.nextMonthDay:hover,\n.flatpickr-day:focus,\n.flatpickr-day.prevMonthDay:focus,\n.flatpickr-day.nextMonthDay:focus {\n  outline: 0;\n}\n\n[dir] .flatpickr-day.inRange, [dir] .flatpickr-day.prevMonthDay.inRange, [dir] .flatpickr-day.nextMonthDay.inRange, [dir] .flatpickr-day.today.inRange, [dir] .flatpickr-day.prevMonthDay.today.inRange, [dir] .flatpickr-day.nextMonthDay.today.inRange, [dir] .flatpickr-day:hover, [dir] .flatpickr-day.prevMonthDay:hover, [dir] .flatpickr-day.nextMonthDay:hover, [dir] .flatpickr-day:focus, [dir] .flatpickr-day.prevMonthDay:focus, [dir] .flatpickr-day.nextMonthDay:focus {\n  cursor: pointer;\n  background: #e6e6e6;\n  border-color: #e6e6e6;\n}\n\n[dir] .flatpickr-day.today {\n  border-color: #959ea9;\n}\n\n.flatpickr-day.today:hover,\n.flatpickr-day.today:focus {\n  color: #fff;\n}\n\n[dir] .flatpickr-day.today:hover, [dir] .flatpickr-day.today:focus {\n  border-color: #959ea9;\n  background: #959ea9;\n}\n\n.flatpickr-day.selected,\n.flatpickr-day.startRange,\n.flatpickr-day.endRange,\n.flatpickr-day.selected.inRange,\n.flatpickr-day.startRange.inRange,\n.flatpickr-day.endRange.inRange,\n.flatpickr-day.selected:focus,\n.flatpickr-day.startRange:focus,\n.flatpickr-day.endRange:focus,\n.flatpickr-day.selected:hover,\n.flatpickr-day.startRange:hover,\n.flatpickr-day.endRange:hover,\n.flatpickr-day.selected.prevMonthDay,\n.flatpickr-day.startRange.prevMonthDay,\n.flatpickr-day.endRange.prevMonthDay,\n.flatpickr-day.selected.nextMonthDay,\n.flatpickr-day.startRange.nextMonthDay,\n.flatpickr-day.endRange.nextMonthDay {\n  -webkit-box-shadow: none;\n  color: #fff;\n}\n\n[dir] .flatpickr-day.selected, [dir] .flatpickr-day.startRange, [dir] .flatpickr-day.endRange, [dir] .flatpickr-day.selected.inRange, [dir] .flatpickr-day.startRange.inRange, [dir] .flatpickr-day.endRange.inRange, [dir] .flatpickr-day.selected:focus, [dir] .flatpickr-day.startRange:focus, [dir] .flatpickr-day.endRange:focus, [dir] .flatpickr-day.selected:hover, [dir] .flatpickr-day.startRange:hover, [dir] .flatpickr-day.endRange:hover, [dir] .flatpickr-day.selected.prevMonthDay, [dir] .flatpickr-day.startRange.prevMonthDay, [dir] .flatpickr-day.endRange.prevMonthDay, [dir] .flatpickr-day.selected.nextMonthDay, [dir] .flatpickr-day.startRange.nextMonthDay, [dir] .flatpickr-day.endRange.nextMonthDay {\n  background: #569ff7;\n  -webkit-box-shadow: none;\n          box-shadow: none;\n  border-color: #569ff7;\n}\n\n[dir=ltr] .flatpickr-day.selected.startRange, [dir=ltr] .flatpickr-day.startRange.startRange, [dir=ltr] .flatpickr-day.endRange.startRange {\n  border-radius: 50px 0 0 50px;\n}\n\n[dir=rtl] .flatpickr-day.selected.startRange, [dir=rtl] .flatpickr-day.startRange.startRange, [dir=rtl] .flatpickr-day.endRange.startRange {\n  border-radius: 0 50px 50px 0;\n}\n\n[dir=ltr] .flatpickr-day.selected.endRange, [dir=ltr] .flatpickr-day.startRange.endRange, [dir=ltr] .flatpickr-day.endRange.endRange {\n  border-radius: 0 50px 50px 0;\n}\n\n[dir=rtl] .flatpickr-day.selected.endRange, [dir=rtl] .flatpickr-day.startRange.endRange, [dir=rtl] .flatpickr-day.endRange.endRange {\n  border-radius: 50px 0 0 50px;\n}\n\n[dir=ltr] .flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n+1)), [dir=ltr] .flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n+1)), [dir=ltr] .flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n+1)) {\n  -webkit-box-shadow: -10px 0 0 #569ff7;\n  box-shadow: -10px 0 0 #569ff7;\n}\n\n[dir=rtl] .flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n+1)), [dir=rtl] .flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n+1)), [dir=rtl] .flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n+1)) {\n  -webkit-box-shadow: 10px 0 0 #569ff7;\n  box-shadow: 10px 0 0 #569ff7;\n}\n\n[dir] .flatpickr-day.selected.startRange.endRange, [dir] .flatpickr-day.startRange.startRange.endRange, [dir] .flatpickr-day.endRange.startRange.endRange {\n  border-radius: 50px;\n}\n\n[dir] .flatpickr-day.inRange {\n  border-radius: 0;\n}\n\n[dir=ltr] .flatpickr-day.inRange {\n  -webkit-box-shadow: -5px 0 0 #e6e6e6, 5px 0 0 #e6e6e6;\n  box-shadow: -5px 0 0 #e6e6e6, 5px 0 0 #e6e6e6;\n}\n\n[dir=rtl] .flatpickr-day.inRange {\n  -webkit-box-shadow: 5px 0 0 #e6e6e6, -5px 0 0 #e6e6e6;\n  box-shadow: 5px 0 0 #e6e6e6, -5px 0 0 #e6e6e6;\n}\n\n.flatpickr-day.flatpickr-disabled,\n.flatpickr-day.flatpickr-disabled:hover,\n.flatpickr-day.prevMonthDay,\n.flatpickr-day.nextMonthDay,\n.flatpickr-day.notAllowed,\n.flatpickr-day.notAllowed.prevMonthDay,\n.flatpickr-day.notAllowed.nextMonthDay {\n  color: rgba(57,57,57,0.3);\n}\n\n[dir] .flatpickr-day.flatpickr-disabled, [dir] .flatpickr-day.flatpickr-disabled:hover, [dir] .flatpickr-day.prevMonthDay, [dir] .flatpickr-day.nextMonthDay, [dir] .flatpickr-day.notAllowed, [dir] .flatpickr-day.notAllowed.prevMonthDay, [dir] .flatpickr-day.notAllowed.nextMonthDay {\n  background: transparent;\n  border-color: transparent;\n  cursor: default;\n}\n\n.flatpickr-day.flatpickr-disabled,\n.flatpickr-day.flatpickr-disabled:hover {\n  color: rgba(57,57,57,0.1);\n}\n\n[dir] .flatpickr-day.flatpickr-disabled, [dir] .flatpickr-day.flatpickr-disabled:hover {\n  cursor: not-allowed;\n}\n\n[dir] .flatpickr-day.week.selected {\n  border-radius: 0;\n}\n\n[dir=ltr] .flatpickr-day.week.selected {\n  -webkit-box-shadow: -5px 0 0 #569ff7, 5px 0 0 #569ff7;\n  box-shadow: -5px 0 0 #569ff7, 5px 0 0 #569ff7;\n}\n\n[dir=rtl] .flatpickr-day.week.selected {\n  -webkit-box-shadow: 5px 0 0 #569ff7, -5px 0 0 #569ff7;\n  box-shadow: 5px 0 0 #569ff7, -5px 0 0 #569ff7;\n}\n\n.flatpickr-day.hidden {\n  visibility: hidden;\n}\n\n[dir] .rangeMode .flatpickr-day {\n  margin-top: 1px;\n}\n\n[dir=ltr] .flatpickr-weekwrapper {\n  float: left;\n}\n\n[dir=rtl] .flatpickr-weekwrapper {\n  float: right;\n}\n\n[dir] .flatpickr-weekwrapper .flatpickr-weeks {\n  padding: 0 12px;\n}\n\n[dir=ltr] .flatpickr-weekwrapper .flatpickr-weeks {\n  -webkit-box-shadow: 1px 0 0 #e6e6e6;\n  box-shadow: 1px 0 0 #e6e6e6;\n}\n\n[dir=rtl] .flatpickr-weekwrapper .flatpickr-weeks {\n  -webkit-box-shadow: -1px 0 0 #e6e6e6;\n  box-shadow: -1px 0 0 #e6e6e6;\n}\n\n.flatpickr-weekwrapper .flatpickr-weekday {\n  width: 100%;\n  line-height: 28px;\n}\n\n[dir] .flatpickr-weekwrapper .flatpickr-weekday {\n  float: none;\n}\n\n.flatpickr-weekwrapper span.flatpickr-day,\n.flatpickr-weekwrapper span.flatpickr-day:hover {\n  display: block;\n  width: 100%;\n  max-width: none;\n  color: rgba(57,57,57,0.3);\n}\n\n[dir] .flatpickr-weekwrapper span.flatpickr-day, [dir] .flatpickr-weekwrapper span.flatpickr-day:hover {\n  background: transparent;\n  cursor: default;\n  border: none;\n}\n\n.flatpickr-innerContainer {\n  display: block;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  overflow: hidden;\n}\n\n.flatpickr-rContainer {\n  display: inline-block;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n}\n\n[dir] .flatpickr-rContainer {\n  padding: 0;\n}\n\n.flatpickr-time {\n  outline: 0;\n  display: block;\n  height: 0;\n  line-height: 40px;\n  max-height: 40px;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  overflow: hidden;\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n}\n\n[dir] .flatpickr-time {\n  text-align: center;\n}\n\n.flatpickr-time:after {\n  content: \"\";\n  display: table;\n}\n\n[dir] .flatpickr-time:after {\n  clear: both;\n}\n\n.flatpickr-time .numInputWrapper {\n  -webkit-box-flex: 1;\n  -webkit-flex: 1;\n  -ms-flex: 1;\n  flex: 1;\n  width: 40%;\n  height: 40px;\n}\n\n[dir=ltr] .flatpickr-time .numInputWrapper {\n  float: left;\n}\n\n[dir=rtl] .flatpickr-time .numInputWrapper {\n  float: right;\n}\n\n[dir] .flatpickr-time .numInputWrapper span.arrowUp:after {\n  border-bottom-color: #393939;\n}\n\n[dir] .flatpickr-time .numInputWrapper span.arrowDown:after {\n  border-top-color: #393939;\n}\n\n.flatpickr-time.hasSeconds .numInputWrapper {\n  width: 26%;\n}\n\n.flatpickr-time.time24hr .numInputWrapper {\n  width: 49%;\n}\n\n.flatpickr-time input {\n  -webkit-box-shadow: none;\n  height: inherit;\n  line-height: inherit;\n  color: #393939;\n  font-size: 14px;\n  position: relative;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  -webkit-appearance: textfield;\n  -moz-appearance: textfield;\n  appearance: textfield;\n}\n\n[dir] .flatpickr-time input {\n  background: transparent;\n  -webkit-box-shadow: none;\n          box-shadow: none;\n  border: 0;\n  border-radius: 0;\n  text-align: center;\n  margin: 0;\n  padding: 0;\n}\n\n.flatpickr-time input.flatpickr-hour {\n  font-weight: bold;\n}\n\n.flatpickr-time input.flatpickr-minute,\n.flatpickr-time input.flatpickr-second {\n  font-weight: 400;\n}\n\n.flatpickr-time input:focus {\n  outline: 0;\n}\n\n[dir] .flatpickr-time input:focus {\n  border: 0;\n}\n\n.flatpickr-time .flatpickr-time-separator,\n.flatpickr-time .flatpickr-am-pm {\n  height: inherit;\n  line-height: inherit;\n  color: #393939;\n  font-weight: bold;\n  width: 2%;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  -webkit-align-self: center;\n  -ms-flex-item-align: center;\n  align-self: center;\n}\n\n[dir=ltr] .flatpickr-time .flatpickr-time-separator, [dir=ltr] .flatpickr-time .flatpickr-am-pm {\n  float: left;\n}\n\n[dir=rtl] .flatpickr-time .flatpickr-time-separator, [dir=rtl] .flatpickr-time .flatpickr-am-pm {\n  float: right;\n}\n\n.flatpickr-time .flatpickr-am-pm {\n  outline: 0;\n  width: 18%;\n  font-weight: 400;\n}\n\n[dir] .flatpickr-time .flatpickr-am-pm {\n  cursor: pointer;\n  text-align: center;\n}\n\n[dir] .flatpickr-time input:hover, [dir] .flatpickr-time .flatpickr-am-pm:hover, [dir] .flatpickr-time input:focus, [dir] .flatpickr-time .flatpickr-am-pm:focus {\n  background: #eee;\n}\n\n[dir] .flatpickr-input[readonly] {\n  cursor: pointer;\n}\n\n@-webkit-keyframes fpFadeInDown {\n  from {\n    opacity: 0;\n    -webkit-transform: translate3d(0, -20px, 0);\n    transform: translate3d(0, -20px, 0);\n  }\n\n  to {\n    opacity: 1;\n    -webkit-transform: translate3d(0, 0, 0);\n    transform: translate3d(0, 0, 0);\n  }\n}\n\n@keyframes fpFadeInDown {\n  from {\n    opacity: 0;\n    -webkit-transform: translate3d(0, -20px, 0);\n    transform: translate3d(0, -20px, 0);\n  }\n\n  to {\n    opacity: 1;\n    -webkit-transform: translate3d(0, 0, 0);\n    transform: translate3d(0, 0, 0);\n  }\n}\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n\n/*=========================================================================================\n    File Name: agGridStyleOverride.scss\n    Description: Override ag-grid table style/SASS vars\n    ----------------------------------------------------------------------------------------\n    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template\n    Author: Pixinvent\n    Author URL: http://www.themeforest.net/user/pixinvent\n==========================================================================================*/\n\n/**\n ****************************\n * Generic Styles\n ****************************\n*/\n\nag-grid, ag-grid-angular, ag-grid-ng2, ag-grid-polymer, ag-grid-aurelia {\n  display: block;\n}\n\n.ag-hidden {\n  display: none !important;\n}\n\n.ag-invisible {\n  visibility: hidden !important;\n}\n\n.ag-faded {\n  opacity: 0.3;\n}\n\n.ag-width-half {\n  display: inline-block;\n  width: 50% !important;\n}\n\n.ag-unselectable {\n  -webkit-user-select: none !important;\n     -moz-user-select: none !important;\n      -ms-user-select: none !important;\n          user-select: none !important;\n}\n\n.ag-selectable {\n  -webkit-user-select: text !important;\n     -moz-user-select: text !important;\n      -ms-user-select: text !important;\n          user-select: text !important;\n}\n\n.ag-select-agg-func-popup {\n  position: absolute;\n}\n\n.ag-input-wrapper {\n  display: flex;\n  flex: 1 1 auto;\n  align-items: center;\n  line-height: normal;\n  position: relative;\n  overflow: hidden;\n}\n\n[dir=ltr] .ag-shake-left-to-right {\n  -webkit-animation-direction: alternate;\n          animation-direction: alternate;\n  -webkit-animation-duration: 0.2s;\n          animation-duration: 0.2s;\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n  -webkit-animation-name:  ag-shake-left-to-right-ltr ;\n          animation-name:  ag-shake-left-to-right-ltr ;\n}\n\n[dir=rtl] .ag-shake-left-to-right {\n  -webkit-animation-direction: alternate;\n          animation-direction: alternate;\n  -webkit-animation-duration: 0.2s;\n          animation-duration: 0.2s;\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n  -webkit-animation-name:  ag-shake-left-to-right-rtl ;\n          animation-name:  ag-shake-left-to-right-rtl ;\n}\n\n@-webkit-keyframes ag-shake-left-to-right-ltr {\n  from {\n    padding-left: 6px;\n    padding-right: 2px;\n  }\n\n  to {\n    padding-left: 2px;\n    padding-right: 6px;\n  }\n}\n\n@keyframes ag-shake-left-to-right-ltr {\n  from {\n    padding-left: 6px;\n    padding-right: 2px;\n  }\n\n  to {\n    padding-left: 2px;\n    padding-right: 6px;\n  }\n}\n\n@-webkit-keyframes ag-shake-left-to-right-rtl {\n  from {\n    padding-left: 6px;\n    padding-right: 2px;\n  }\n\n  to {\n    padding-left: 2px;\n    padding-right: 6px;\n  }\n}\n\n@keyframes ag-shake-left-to-right-rtl {\n  from {\n    padding-left: 6px;\n    padding-right: 2px;\n  }\n\n  to {\n    padding-left: 2px;\n    padding-right: 6px;\n  }\n}\n\n.ag-root-wrapper {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n}\n\n.ag-root-wrapper.ag-layout-normal {\n  height: 100%;\n}\n\n.ag-root-wrapper .ag-watermark {\n  position: absolute;\n  bottom: 10px;\n  opacity: 0.5;\n  transition: opacity 1s ease-out 3s;\n}\n\n[dir=ltr] .ag-root-wrapper .ag-watermark {\n  right: 25px;\n}\n\n[dir=rtl] .ag-root-wrapper .ag-watermark {\n  left: 25px;\n}\n\n.ag-root-wrapper .ag-watermark:before {\n  content: \"\";\n  -webkit-filter: invert(50%);\n          filter: invert(50%);\n  display: block;\n  height: 60px;\n  width: 110px;\n}\n\n[dir] .ag-root-wrapper .ag-watermark:before {\n  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNDk0cHgiIGhlaWdodD0iMjM5cHgiIHZpZXdCb3g9IjAgMCA0OTQgMjM5IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA0Ny4xICg0NTQyMikgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+TG9nbzwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPgogICAgICAgIDxwYXRoIGQ9Ik0wLjYxMjg0OTkzMSwxMDggTDAuNjEyODQ5OTMxLDY3LjQ1OTYzNzQgTDAuNjEyODQ5OTMxLDY3LjQ1OTYzNzQgQzAuNjEyODQ5OTMxLDYyLjEwMDY1MzYgMy40NzE4MzM3OCw1Ny4xNDg3NDgzIDguMTEyODQ5OTMsNTQuNDY5MjU2NCBMOTguMzA2NDI1LDIuMzk1OTcxNTcgTDk4LjMwNjQyNSwyLjM5NTk3MTU3IEMxMDIuOTQ3NDQxLC0wLjI4MzUyMDM1OCAxMDguNjY1NDA5LC0wLjI4MzUyMDM1OCAxMTMuMzA2NDI1LDIuMzk1OTcxNTcgTDExMy4zMDY0MjUsMi4zOTU5NzE1NyBMMjAzLjUsNTQuNDY5MjU2NCBMMjAzLjUsNTQuNDY5MjU2NCBDMjA4LjE0MTAxNiw1Ny4xNDg3NDgzIDIxMSw2Mi4xMDA2NTM2IDIxMSw2Ny40NTk2Mzc0IEwyMTEsMTM4IEwxODEsMTM4IEwxODAuOTk3MDQxLDkzLjk5OTk5OTggTDE4MC45OTYwMzIsOTMuOTk5OTk5OSBDMTgwLjk5NTQ3NSw4NS43MTYxMjI2IDE3NC4yNzk5MDksNzkuMDAxMDA4NyAxNjUuOTk2MDMyLDc5LjAwMTAwODcgTDEyMiw3OC45OTk5OTk5IEMxMTMuNzE1NzI5LDc4Ljk5OTk5OTkgMTA3LDg1LjcxNTcyODYgMTA3LDkzLjk5OTk5OTkgTDEwNywxMzYuMDE1NjIzIEwxMDcsMTM2LjAxNTYyMyBDMTA3LDE0NC4yOTk4OTUgMTEzLjcxNTcyOSwxNTEuMDE1NjIzIDEyMiwxNTEuMDE1NjIzIEwxNjgsMTUxLjAxNTYyMyBMMTY4LDE2MyBDMTY4LDE2NC42NTY4NTQgMTY2LjY1Njg1NCwxNjYgMTY1LDE2NiBMMTIwLDE2NiBMMTIwLDE3OSBMMTY1Ljk5NjAzMiwxNzkgTDE2NS45OTYwMzIsMTc4Ljk5Nzg3NyBDMTc0LjI3OTQ3NCwxNzguOTk3ODc3IDE4MC45OTQ4NiwxNzIuMjgzNDQyIDE4MC45OTYwMzIsMTY0IEwxODEsMTUwLjk2MDU1NCBMMjExLDE1MC45NjA1NTQgTDIxMSwxNzEuNjA2MjA3IEwyMTEsMTcxLjYwNjIwNyBDMjExLDE3Ni45NjUxOTEgMjA4LjE0MTAxNiwxODEuOTE3MDk2IDIwMy41LDE4NC41OTY1ODggTDExMy4zMDY0MjUsMjM2LjY2OTg3MyBMMTEzLjMwNjQyNSwyMzYuNjY5ODczIEMxMDguNjY1NDA5LDIzOS4zNDkzNjUgMTAyLjk0NzQ0MSwyMzkuMzQ5MzY1IDk4LjMwNjQyNSwyMzYuNjY5ODczIEw4LjExMjg0OTkzLDE4NC41OTY1ODggTDguMTEyODQ5OTMsMTg0LjU5NjU4OCBDMy40NzE4MzM3OCwxODEuOTE3MDk2IDAuNjEyODQ5OTMxLDE3Ni45NjUxOTEgMC42MTI4NDk5MzEsMTcxLjYwNjIwNyBMMC42MTI4NDk5MzEsMTIxIEwyNywxMjEgTDI3LDEzNiBDMjcsMTQ0LjI4NDI3MSAzMy43MTU3Mjg3LDE1MSA0MiwxNTEgTDQyLDE1MSBMMTAwLDE1MSBMMTAwLDk0IEMxMDAsODUuNzE1NzI4OCA5My4yODQyNzEyLDc5IDg1LDc5IEwyNyw3OSBMMjcsOTIgTDg0LDkyIEM4NS42NTY4NTQyLDkyIDg3LDkzLjM0MzE0NTggODcsOTUgTDg3LDk1IEw4NywxMDggTDAuNjEyODQ5OTMxLDEwOCBaIiBpZD0icGF0aC0xIj48L3BhdGg+CiAgICA8L2RlZnM+CiAgICA8ZyBpZD0iU3ltYm9scyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IkxvZ28iPgogICAgICAgICAgICA8cGF0aCBkPSJNNDc3LDU1IEw0OTQsNTUgTDQ5NCwxNTEgTDQzNSwxNTEgQzQyNi43MTU3MjksMTUxIDQyMCwxNDQuMjg0MjcxIDQyMCwxMzYgTDQyMCw5NiBDNDIwLDg3LjcxNTcyODggNDI2LjcxNTcyOSw4MSA0MzUsODEgTDQzNSw4MSBMNDc3LDgxIEw0NzcsNTUgWiBNNDQwLDk4IEM0MzguMzQzMTQ2LDk4IDQzNyw5OS4zNDMxNDU4IDQzNywxMDEgTDQzNywxMzEgQzQzNywxMzIuNjU2ODU0IDQzOC4zNDMxNDYsMTM0IDQ0MCwxMzQgTDQ3NywxMzQgTDQ3Nyw5OCBMNDQwLDk4IFoiIGlkPSJkIiBmaWxsPSIjRkZGRkZGIj48L3BhdGg+CiAgICAgICAgICAgIDxnIGlkPSJpIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzOTYuMDAwMDAwLCA1NS4wMDAwMDApIj4KICAgICAgICAgICAgICAgIDxwb2x5Z29uIGlkPSJQYXRoLTYiIGZpbGw9IiNGRkZGRkYiIHBvaW50cz0iMCAyNiAxNyAyNiAxNyA5NiAwIDk2Ij48L3BvbHlnb24+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aC03IiBmaWxsPSIjRTExRjIyIiBwb2ludHM9IjAgMS4xMzY4NjgzOGUtMTMgMTcgMS4xMzY4NjgzOGUtMTMgMTcgMTcgMCAxNyI+PC9wb2x5Z29uPgogICAgICAgICAgICA8L2c+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0zMzEsMTUxIEwzNDgsMTUxIEwzNDgsMTAxIEwzNDgsMTAxIEMzNDgsOTkuMzQzMTQ1OCAzNDkuMzQzMTQ2LDk4IDM1MSw5OCBMMzg5LDk4IEwzODksODEgTDM0Niw4MSBMMzQ2LDgxIEMzMzcuNzE1NzI5LDgxIDMzMSw4Ny43MTU3Mjg4IDMzMSw5NiBMMzMxLDE1MSBaIiBpZD0iciIgZmlsbD0iI0ZGRkZGRiI+PC9wYXRoPgogICAgICAgICAgICA8cGF0aCBkPSJNMzI0LDg2IEwzMjQsNzYgTDMyNCw3NiBDMzI0LDY3LjcxNTcyODggMzE3LjI4NDI3MSw2MSAzMDksNjEgTDI0OSw2MSBMMjQ5LDYxIEMyNDAuNzE1NzI5LDYxIDIzNCw2Ny43MTU3Mjg4IDIzNCw3NiBMMjM0LDEzNiBMMjM0LDEzNiBDMjM0LDE0NC4yODQyNzEgMjQwLjcxNTcyOSwxNTEgMjQ5LDE1MSBMMzA5LDE1MSBMMzA5LDE1MSBDMzE3LjI4NDI3MSwxNTEgMzI0LDE0NC4yODQyNzEgMzI0LDEzNiBMMzI0LDEwMCBMMjg3LDEwMCBMMjg3LDExNyBMMzA3LDExNyBMMzA3LDEzMSBMMzA3LDEzMSBDMzA3LDEzMi42NTY4NTQgMzA1LjY1Njg1NCwxMzQgMzA0LDEzNCBMMjU0LDEzNCBMMjU0LDEzNCBDMjUyLjM0MzE0NiwxMzQgMjUxLDEzMi42NTY4NTQgMjUxLDEzMSBMMjUxLDgxIEwyNTEsODEgQzI1MSw3OS4zNDMxNDU4IDI1Mi4zNDMxNDYsNzggMjU0LDc4IEwzMDQsNzggTDMwNCw3OCBDMzA1LjY1Njg1NCw3OCAzMDcsNzkuMzQzMTQ1OCAzMDcsODEgTDMwNyw4NiBMMzI0LDg2IFoiIGlkPSJHIiBmaWxsPSIjRkZGRkZGIj48L3BhdGg+CiAgICAgICAgICAgIDxnIGlkPSJhZyI+CiAgICAgICAgICAgICAgICA8ZyBpZD0iQ29tYmluZWQtU2hhcGUiPgogICAgICAgICAgICAgICAgICAgIDxtYXNrIGlkPSJtYXNrLTIiIGZpbGw9IndoaXRlIj4KICAgICAgICAgICAgICAgICAgICAgICAgPHVzZSB4bGluazpocmVmPSIjcGF0aC0xIj48L3VzZT4KICAgICAgICAgICAgICAgICAgICA8L21hc2s+CiAgICAgICAgICAgICAgICAgICAgPHVzZSBmaWxsPSIjRTExRjIyIiB4bGluazpocmVmPSIjcGF0aC0xIj48L3VzZT4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgIDxyZWN0IGlkPSJnIiBmaWxsPSIjRTExRjIyIiB4PSIxMjAiIHk9IjkyIiB3aWR0aD0iNDgiIGhlaWdodD0iNDYiIHJ4PSIzIj48L3JlY3Q+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNDAsMTIxIEw4NywxMjEgTDg3LDEzOCBMNDMsMTM4IEw0MywxMzggQzQxLjM0MzE0NTgsMTM4IDQwLDEzNi42NTY4NTQgNDAsMTM1IEw0MCwxMjEgWiIgaWQ9IkNvbWJpbmVkLVNoYXBlIiBmaWxsPSIjRTExRjIyIj48L3BhdGg+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==);\n  background-repeat: no-repeat;\n  background-size: 110px 60px;\n}\n\n.ag-root-wrapper .ag-watermark .ag-watermark-text {\n  opacity: 0.5;\n  font-weight: bold;\n  font-family: Impact;\n  font-size: 19px;\n}\n\n.ag-root-wrapper-body {\n  display: flex;\n  flex-direction: row;\n}\n\n.ag-root-wrapper-body.ag-layout-normal {\n  flex: 1 1 auto;\n  height: 0;\n  min-height: 0;\n}\n\n.ag-root {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n}\n\n[dir] .ag-root {\n  cursor: default;\n}\n\n.ag-root.ag-layout-normal, .ag-root.ag-layout-auto-height {\n  overflow: hidden;\n  flex: 1 1 auto;\n  width: 0;\n}\n\n.ag-root.ag-layout-normal {\n  height: 100%;\n}\n\n/**\n ****************************\n * Viewports\n ****************************\n*/\n\n.ag-header-viewport,\n.ag-floating-top-viewport,\n.ag-body-viewport,\n.ag-pinned-left-cols-viewport,\n.ag-center-cols-viewport,\n.ag-pinned-right-cols-viewport,\n.ag-floating-bottom-viewport,\n.ag-body-horizontal-scroll-viewport,\n.ag-virtual-list-viewport {\n  position: relative;\n  height: 100%;\n  min-width: 0px;\n  overflow: hidden;\n  flex: 1 1 auto;\n}\n\n.ag-body-viewport {\n  display: flex;\n}\n\n.ag-body-viewport.ag-layout-normal {\n  overflow-y: auto;\n  -webkit-overflow-scrolling: touch;\n}\n\n.ag-body-viewport:not(.ag-layout-print).ag-force-vertical-scroll {\n  overflow-y: scroll;\n}\n\n.ag-pinned-left-cols-viewport, .ag-pinned-right-cols-viewport {\n  flex-grow: 1000;\n}\n\n.ag-center-cols-viewport {\n  width: 100%;\n  overflow-x: auto;\n}\n\n.ag-body-horizontal-scroll-viewport {\n  overflow-x: scroll;\n}\n\n.ag-virtual-list-viewport {\n  overflow: auto;\n  width: 100%;\n}\n\n/**\n ****************************\n * Containers\n ****************************\n*/\n\n.ag-header-container,\n.ag-floating-top-container,\n.ag-body-container,\n.ag-pinned-right-cols-container,\n.ag-center-cols-container,\n.ag-pinned-left-cols-container,\n.ag-floating-bottom-container,\n.ag-body-horizontal-scroll-container,\n.ag-full-width-container,\n.ag-floating-bottom-full-width-container,\n.ag-virtual-list-container {\n  position: relative;\n}\n\n.ag-header-container, .ag-floating-top-container, .ag-floating-bottom-container {\n  height: 100%;\n  white-space: nowrap;\n}\n\n.ag-body-viewport .ag-center-cols-clipper {\n  min-height: 100%;\n}\n\n.ag-body-viewport.ag-layout-auto-height .ag-center-cols-clipper, .ag-body-viewport.ag-layout-auto-height .ag-center-cols-container {\n  min-height: 50px;\n}\n\n.ag-body-viewport .ag-center-cols-container {\n  display: block;\n}\n\n.ag-body-viewport.ag-layout-print {\n  flex: none;\n}\n\n.ag-body-viewport.ag-layout-print .ag-center-cols-clipper {\n  min-width: 100%;\n}\n\n.ag-pinned-right-cols-container {\n  display: block;\n}\n\n.ag-body-horizontal-scroll-container {\n  height: 100%;\n}\n\n.ag-full-width-container,\n.ag-floating-top-full-width-container,\n.ag-floating-bottom-full-width-container {\n  position: absolute;\n  top: 0px;\n  pointer-events: none;\n}\n\n[dir=ltr] .ag-full-width-container, [dir=ltr] .ag-floating-top-full-width-container, [dir=ltr] .ag-floating-bottom-full-width-container {\n  left: 0px;\n}\n\n[dir=rtl] .ag-full-width-container, [dir=rtl] .ag-floating-top-full-width-container, [dir=rtl] .ag-floating-bottom-full-width-container {\n  right: 0px;\n}\n\n.ag-full-width-container {\n  width: 100%;\n}\n\n.ag-floating-bottom-full-width-container, .ag-floating-top-full-width-container {\n  display: inline-block;\n  overflow: hidden;\n  height: 100%;\n  width: 100%;\n}\n\n.ag-virtual-list-container {\n  overflow: hidden;\n}\n\n/**\n ****************************\n * Scrollers\n ****************************\n*/\n\n.ag-center-cols-clipper {\n  flex: 1;\n  min-width: 0;\n  overflow: hidden;\n}\n\n.ag-body-horizontal-scroll {\n  min-height: 0;\n  min-width: 0;\n  width: 100%;\n  display: flex;\n  position: relative;\n}\n\n.ag-layout-print .ag-body-horizontal-scroll {\n  display: none;\n}\n\n.ag-horizontal-left-spacer, .ag-horizontal-right-spacer {\n  height: 100%;\n  min-width: 0;\n  flex-grow: 1000;\n  overflow-x: scroll;\n}\n\n.ag-horizontal-left-spacer.ag-scroller-corner, .ag-horizontal-right-spacer.ag-scroller-corner {\n  overflow-x: hidden;\n}\n\n/**\n ****************************\n * Headers\n ****************************\n*/\n\n.ag-header, .ag-pinned-left-header, .ag-pinned-right-header {\n  display: inline-block;\n  overflow: hidden;\n}\n\n[dir] .ag-header .ag-header-cell-sortable, [dir] .ag-pinned-left-header .ag-header-cell-sortable, [dir] .ag-pinned-right-header .ag-header-cell-sortable {\n  cursor: pointer;\n}\n\n.ag-header {\n  display: flex;\n  width: 100%;\n  white-space: nowrap;\n}\n\n.ag-header-icon {\n  display: flex;\n}\n\n.ag-pinned-left-header {\n  height: 100%;\n}\n\n.ag-pinned-right-header {\n  height: 100%;\n}\n\n.ag-header-row {\n  position: absolute;\n  overflow: hidden;\n}\n\n.ag-header-overlay {\n  display: block;\n  position: absolute;\n}\n\n.ag-header-cell {\n  display: inline-flex;\n  align-items: center;\n  position: absolute;\n  height: 100%;\n  overflow: hidden;\n}\n\n.ag-header-group-cell-label, .ag-header-cell-label {\n  display: flex;\n  flex: 1 1 auto;\n  overflow: hidden;\n  align-items: center;\n  text-overflow: ellipsis;\n  align-self: stretch;\n}\n\n.ag-header-cell-label .ag-header-cell-text {\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n\n.ag-numeric-header .ag-header-cell-label {\n  flex-direction: row-reverse;\n}\n\n.ag-header-group-text {\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n\n.ag-header-cell-resize {\n  position: absolute;\n  z-index: 1;\n  height: 100%;\n  width: 4px;\n}\n\n[dir=ltr] .ag-header-expand-icon {\n  padding-left: 4px;\n}\n\n[dir=rtl] .ag-header-expand-icon {\n  padding-right: 4px;\n}\n\n.ag-header-select-all {\n  display: flex;\n}\n\n/**\n ****************************\n * Columns\n ****************************\n*/\n\n[dir=ltr] .ag-column-moving .ag-cell {\n  transition: left 0.2s;\n}\n\n[dir=rtl] .ag-column-moving .ag-cell {\n  transition: right 0.2s;\n}\n\n[dir=ltr] .ag-column-moving .ag-header-cell {\n  transition: left 0.2s;\n}\n\n[dir=rtl] .ag-column-moving .ag-header-cell {\n  transition: right 0.2s;\n}\n\n[dir=ltr] .ag-column-moving .ag-header-group-cell {\n  transition: left 0.2s, width 0.2s;\n}\n\n[dir=rtl] .ag-column-moving .ag-header-group-cell {\n  transition: right 0.2s, width 0.2s;\n}\n\n/**\n ****************************\n * Column Panel\n ****************************\n*/\n\n.ag-column-panel {\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  flex: 1 1 auto;\n}\n\n.ag-column-select-panel {\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  flex-grow: 4;\n  flex-shrink: 1;\n  flex-basis: 0;\n}\n\n.ag-column-select-panel .ag-primary-cols-header-panel {\n  display: flex;\n  flex: none;\n}\n\n.ag-column-select-panel .ag-primary-cols-header-panel .ag-column-name-filter {\n  flex: 1 1 auto;\n}\n\n.ag-column-select-panel .ag-primary-cols-header-panel .ag-primary-cols-filter-wrapper {\n  flex: 1 1 auto;\n}\n\n.ag-column-select-panel .ag-primary-cols-header-panel .ag-primary-cols-filter-wrapper input {\n  width: 100%;\n}\n\n.ag-column-select-panel .ag-primary-cols-list-panel {\n  flex: 1 1 auto;\n  overflow: auto;\n}\n\n.ag-column-drop {\n  display: inline-flex;\n  align-items: center;\n  overflow: auto;\n  width: 100%;\n}\n\n.ag-column-drop .ag-column-drop-list {\n  display: flex;\n  align-items: center;\n}\n\n.ag-column-drop .ag-column-drop-list .ag-column-drop-cell {\n  display: flex;\n  align-items: center;\n}\n\n.ag-column-drop .ag-column-drop-list .ag-column-drop-cell .ag-column-drop-cell-text {\n  overflow: hidden;\n  flex: 1 1 auto;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n\n.ag-column-drop.ag-column-drop-vertical {\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  flex: 1 1 0;\n  align-items: stretch;\n}\n\n.ag-column-drop.ag-column-drop-vertical > div {\n  display: flex;\n  align-items: center;\n}\n\n.ag-column-drop.ag-column-drop-vertical .ag-column-drop-list {\n  align-items: stretch;\n  flex-grow: 1;\n  flex-direction: column;\n  overflow-x: auto;\n}\n\n.ag-column-drop.ag-column-drop-vertical .ag-column-drop-empty-message {\n  display: block;\n}\n\n.ag-column-drop.ag-column-drop-horizontal {\n  white-space: nowrap;\n  overflow: hidden;\n}\n\n/**\n ****************************\n * Rows\n ****************************\n*/\n\n.ag-row-animation .ag-row {\n  transition: transform 0.4s, top 0.4s, height 0.4s, background-color 0.1s, opacity 0.2s;\n}\n\n.ag-row-no-animation .ag-row {\n  transition: background-color 0.1s;\n}\n\n.ag-row {\n  white-space: nowrap;\n  width: 100%;\n}\n\n.ag-row-position-absolute {\n  position: absolute;\n}\n\n.ag-row-position-relative {\n  position: relative;\n}\n\n.ag-full-width-row {\n  overflow: hidden;\n  pointer-events: all;\n}\n\n.ag-row-inline-editing {\n  z-index: 1;\n}\n\n.ag-row-dragging {\n  z-index: 2;\n}\n\n.ag-stub-cell {\n  display: flex;\n  align-items: center;\n}\n\n/**\n ****************************\n * Cells\n ****************************\n*/\n\n.ag-cell {\n  display: inline-block;\n  overflow: hidden;\n  position: absolute;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n\n.ag-cell-wrapper {\n  display: flex;\n  align-items: center;\n  width: 100%;\n  height: 100%;\n}\n\n.ag-cell-wrapper.ag-row-group {\n  align-items: flex-start;\n}\n\n.ag-cell-wrapper .ag-cell-value, .ag-cell-wrapper .ag-group-value {\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n\n.ag-full-width-row.ag-row-group .ag-cell-wrapper {\n  align-items: center;\n}\n\n.ag-cell-with-height {\n  height: 100%;\n}\n\n.ag-group-cell-entire-row {\n  display: inline-block;\n  height: 100%;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  width: 100%;\n}\n\n.ag-footer-cell-entire-row {\n  display: inline-block;\n  height: 100%;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  width: 100%;\n}\n\n.ag-cell-inline-editing {\n  z-index: 1;\n}\n\n.ag-cell-inline-editing .ag-cell-edit-input, .ag-cell-inline-editing .ag-input-wrapper {\n  height: 100%;\n  width: 100%;\n  line-height: normal;\n}\n\n/**\n ****************************\n * Filters\n ****************************\n*/\n\n.ag-set-filter-item {\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  display: flex;\n  align-items: center;\n}\n\n.ag-set-filter-item > div, .ag-set-filter-item > span {\n  display: flex;\n}\n\n.ag-filter .ag-filter-checkbox {\n  pointer-events: none;\n}\n\n.ag-filter .ag-filter-body-wrapper {\n  display: flex;\n  flex-direction: column;\n}\n\n.ag-filter .ag-filter-filter {\n  flex: 1 1 auto;\n}\n\n/**\n ****************************\n * Floating Filter\n ****************************\n*/\n\n.ag-floating-filter-full-body .ag-react-container, .ag-floating-filter-body .ag-react-container {\n  height: 100%;\n}\n\n.ag-floating-filter-body {\n  display: flex;\n  flex: 1 1 auto;\n  height: 100%;\n}\n\n.ag-floating-filter-body input {\n  flex: 1 1 auto;\n  max-height: calc(100% - 1px);\n}\n\n[dir] .ag-floating-filter-body input {\n  margin: 0;\n}\n\n.ag-floating-filter-full-body {\n  display: flex;\n  align-items: center;\n  height: 100%;\n  width: 100%;\n}\n\n.ag-floating-filter-full-body > div {\n  flex: 1 1 auto;\n}\n\n.ag-floating-filter-full-body input {\n  width: 100%;\n}\n\n[dir] .ag-floating-filter-full-body input {\n  margin: 0;\n}\n\n.ag-floating-filter-full-body input[type=range] {\n  height: 100%;\n}\n\n.ag-floating-filter {\n  display: inline-block;\n  position: absolute;\n}\n\n.ag-floating-filter-input {\n  width: 100%;\n}\n\n[dir] .ag-floating-filter-input:-moz-read-only {\n  background-color: #eee;\n}\n\n[dir] .ag-floating-filter-input:read-only {\n  background-color: #eee;\n}\n\n.ag-floating-filter-menu {\n  position: absolute;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n\n.ag-floating-filter-button {\n  display: flex;\n  flex: none;\n}\n\n/**\n ****************************\n * Drag & Drop\n ****************************\n*/\n\n.ag-dnd-ghost {\n  display: flex;\n  align-items: center;\n  font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  overflow: hidden;\n  position: absolute;\n  text-overflow: ellipsis;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  z-index: 10;\n}\n\n[dir] .ag-dnd-ghost {\n  background: #e5e5e5;\n  border: 1px solid black;\n  cursor: move;\n  padding: 3px;\n}\n\n[dir] .ag-dnd-ghost-icon {\n  padding: 2px;\n}\n\n/**\n ****************************\n * Overlay\n ****************************\n*/\n\n.ag-overlay {\n  height: 100%;\n  pointer-events: none;\n  position: absolute;\n  top: 0;\n  width: 100%;\n}\n\n[dir=ltr] .ag-overlay {\n  left: 0;\n}\n\n[dir=rtl] .ag-overlay {\n  right: 0;\n}\n\n.ag-overlay-panel {\n  display: flex;\n  height: 100%;\n  pointer-events: none;\n  width: 100%;\n}\n\n.ag-overlay-wrapper {\n  display: flex;\n  flex: none;\n  width: 100%;\n  height: 100%;\n  align-items: center;\n  justify-content: center;\n}\n\n[dir] .ag-overlay-wrapper {\n  text-align: center;\n}\n\n.ag-overlay-wrapper.ag-overlay-loading-wrapper {\n  pointer-events: all;\n}\n\n[dir] .ag-overlay-no-rows-wrapper.ag-layout-auto-height {\n  padding-top: 30px;\n}\n\n/**\n ****************************\n * Popup\n ****************************\n*/\n\n.ag-popup > div {\n  z-index: 5;\n}\n\n.ag-popup-backdrop {\n  height: 100%;\n  position: fixed;\n  top: 0;\n  width: 100%;\n}\n\n[dir=ltr] .ag-popup-backdrop {\n  left: 0;\n}\n\n[dir=rtl] .ag-popup-backdrop {\n  right: 0;\n}\n\n.ag-popup-editor {\n  position: absolute;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  z-index: 1;\n}\n\n/**\n ****************************\n * Virtual Lists\n ****************************\n*/\n\n.ag-virtual-list-item {\n  position: absolute;\n  width: 100%;\n}\n\n[dir=ltr] .ag-virtual-list-item span:empty:not(.ag-icon) {\n  border-left: 1px solid transparent;\n}\n\n[dir=rtl] .ag-virtual-list-item span:empty:not(.ag-icon) {\n  border-right: 1px solid transparent;\n}\n\n/**\n ****************************\n * Floating Top and Bottom\n ****************************\n*/\n\n.ag-floating-top {\n  overflow: hidden;\n  white-space: nowrap;\n  width: 100%;\n  position: relative;\n  display: flex;\n}\n\n.ag-pinned-left-floating-top {\n  display: inline-block;\n  overflow: hidden;\n  position: relative;\n  min-width: 0px;\n  flex-grow: 1000;\n}\n\n.ag-pinned-right-floating-top {\n  display: inline-block;\n  overflow: hidden;\n  position: relative;\n  min-width: 0px;\n  flex-grow: 1000;\n}\n\n.ag-floating-bottom {\n  overflow: hidden;\n  white-space: nowrap;\n  width: 100%;\n  position: relative;\n  display: flex;\n}\n\n.ag-pinned-left-floating-bottom {\n  display: inline-block;\n  overflow: hidden;\n  position: relative;\n  min-width: 0px;\n  flex-grow: 1000;\n}\n\n.ag-pinned-right-floating-bottom {\n  display: inline-block;\n  overflow: hidden;\n  position: relative;\n  min-width: 0px;\n  flex-grow: 1000;\n}\n\n/**\n ****************************\n * Dialog\n ****************************\n*/\n\n.ag-dialog, .ag-panel {\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  overflow: hidden;\n}\n\n.ag-dialog .ag-title-bar, .ag-panel .ag-title-bar {\n  display: flex;\n  flex: none;\n  align-items: center;\n}\n\n[dir] .ag-dialog .ag-title-bar, [dir] .ag-panel .ag-title-bar {\n  cursor: default;\n}\n\n.ag-dialog .ag-title-bar .ag-title-bar-title, .ag-panel .ag-title-bar .ag-title-bar-title {\n  flex: 1 1 auto;\n}\n\n.ag-dialog .ag-title-bar .ag-title-bar-buttons, .ag-panel .ag-title-bar .ag-title-bar-buttons {\n  display: flex;\n}\n\n[dir] .ag-dialog .ag-title-bar .ag-title-bar-buttons .ag-button, [dir] .ag-panel .ag-title-bar .ag-title-bar-buttons .ag-button {\n  cursor: pointer;\n}\n\n.ag-dialog .ag-panel-content-wrapper, .ag-panel .ag-panel-content-wrapper {\n  display: flex;\n  flex: 1 1 auto;\n  position: relative;\n  overflow: hidden;\n}\n\n.ag-dialog .ag-panel-content-wrapper > div, .ag-panel .ag-panel-content-wrapper > div {\n  width: 100%;\n  height: 100%;\n}\n\n.ag-dialog {\n  position: absolute;\n}\n\n.ag-dialog .ag-resizer {\n  position: absolute;\n  pointer-events: none;\n  z-index: 1;\n}\n\n.ag-dialog .ag-resizer.ag-resizer-topLeft {\n  top: 0;\n  height: 5px;\n  width: 5px;\n}\n\n[dir=ltr] .ag-dialog .ag-resizer.ag-resizer-topLeft {\n  left: 0;\n  cursor: nwse-resize;\n}\n\n[dir=rtl] .ag-dialog .ag-resizer.ag-resizer-topLeft {\n  right: 0;\n  cursor: nesw-resize;\n}\n\n.ag-dialog .ag-resizer.ag-resizer-top {\n  top: 0;\n  height: 5px;\n}\n\n[dir] .ag-dialog .ag-resizer.ag-resizer-top {\n  cursor: ns-resize;\n}\n\n[dir=ltr] .ag-dialog .ag-resizer.ag-resizer-top {\n  left: 5px;\n  right: 5px;\n}\n\n[dir=rtl] .ag-dialog .ag-resizer.ag-resizer-top {\n  right: 5px;\n  left: 5px;\n}\n\n.ag-dialog .ag-resizer.ag-resizer-topRight {\n  top: 0;\n  height: 5px;\n  width: 5px;\n}\n\n[dir=ltr] .ag-dialog .ag-resizer.ag-resizer-topRight {\n  right: 0;\n  cursor: nesw-resize;\n}\n\n[dir=rtl] .ag-dialog .ag-resizer.ag-resizer-topRight {\n  left: 0;\n  cursor: nwse-resize;\n}\n\n.ag-dialog .ag-resizer.ag-resizer-right {\n  top: 5px;\n  bottom: 5px;\n  width: 5px;\n}\n\n[dir] .ag-dialog .ag-resizer.ag-resizer-right {\n  cursor: ew-resize;\n}\n\n[dir=ltr] .ag-dialog .ag-resizer.ag-resizer-right {\n  right: 0;\n}\n\n[dir=rtl] .ag-dialog .ag-resizer.ag-resizer-right {\n  left: 0;\n}\n\n.ag-dialog .ag-resizer.ag-resizer-bottomRight {\n  bottom: 0;\n  height: 5px;\n  width: 5px;\n}\n\n[dir=ltr] .ag-dialog .ag-resizer.ag-resizer-bottomRight {\n  right: 0;\n  cursor: nwse-resize;\n}\n\n[dir=rtl] .ag-dialog .ag-resizer.ag-resizer-bottomRight {\n  left: 0;\n  cursor: nesw-resize;\n}\n\n.ag-dialog .ag-resizer.ag-resizer-bottom {\n  bottom: 0;\n  height: 5px;\n}\n\n[dir] .ag-dialog .ag-resizer.ag-resizer-bottom {\n  cursor: ns-resize;\n}\n\n[dir=ltr] .ag-dialog .ag-resizer.ag-resizer-bottom {\n  left: 5px;\n  right: 5px;\n}\n\n[dir=rtl] .ag-dialog .ag-resizer.ag-resizer-bottom {\n  right: 5px;\n  left: 5px;\n}\n\n.ag-dialog .ag-resizer.ag-resizer-bottomLeft {\n  bottom: 0;\n  height: 5px;\n  width: 5px;\n}\n\n[dir=ltr] .ag-dialog .ag-resizer.ag-resizer-bottomLeft {\n  left: 0;\n  cursor: nesw-resize;\n}\n\n[dir=rtl] .ag-dialog .ag-resizer.ag-resizer-bottomLeft {\n  right: 0;\n  cursor: nwse-resize;\n}\n\n.ag-dialog .ag-resizer.ag-resizer-left {\n  top: 5px;\n  bottom: 5px;\n  width: 5px;\n}\n\n[dir] .ag-dialog .ag-resizer.ag-resizer-left {\n  cursor: ew-resize;\n}\n\n[dir=ltr] .ag-dialog .ag-resizer.ag-resizer-left {\n  left: 0;\n}\n\n[dir=rtl] .ag-dialog .ag-resizer.ag-resizer-left {\n  right: 0;\n}\n\n.ag-dialog .ag-message-box {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n}\n\n.ag-dialog .ag-message-box .ag-message-box-content {\n  display: flex;\n  flex: 1 1 auto;\n  justify-content: center;\n  align-items: center;\n}\n\n.ag-dialog .ag-message-box .ag-message-box-button-bar {\n  display: flex;\n  justify-content: center;\n}\n\n/**\n ****************************\n * Tooltip\n ****************************\n*/\n\n.ag-tooltip {\n  position: absolute;\n  pointer-events: none;\n  z-index: 99999;\n}\n\n.ag-chart-tooltip {\n  display: table;\n  position: absolute;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  pointer-events: none;\n  white-space: nowrap;\n  z-index: 99999;\n  font: 12px Verdana, sans-serif;\n  color: black;\n  opacity: 0;\n  transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);\n}\n\n[dir] .ag-chart-tooltip {\n  background: #f4f4f4;\n  border-radius: 5px;\n  transform: scale(0.9);\n  transition-property: opacity, transform;\n}\n\n[dir=ltr] .ag-chart-tooltip {\n  box-shadow: 0 0 1px rgba(3, 3, 3, 0.7), 0.5vh 0.5vh 1vh rgba(3, 3, 3, 0.25);\n}\n\n[dir=rtl] .ag-chart-tooltip {\n  box-shadow: 0 0 1px rgba(3, 3, 3, 0.7), -0.5vh 0.5vh 1vh rgba(3, 3, 3, 0.25);\n}\n\n.ag-chart-tooltip.visible {\n  opacity: 1;\n}\n\n[dir] .ag-chart-tooltip.visible {\n  transform: scale(1);\n}\n\n.ag-chart-tooltip .title {\n  font-weight: bold;\n  color: white;\n}\n\n[dir] .ag-chart-tooltip .title {\n  padding: 7px;\n  background-color: #888888;\n}\n\n[dir=ltr] .ag-chart-tooltip .title {\n  border-top-left-radius: 5px;\n  border-top-right-radius: 5px;\n}\n\n[dir=rtl] .ag-chart-tooltip .title {\n  border-top-right-radius: 5px;\n  border-top-left-radius: 5px;\n}\n\n.ag-chart-tooltip .content {\n  line-height: 1.7em;\n}\n\n[dir] .ag-chart-tooltip .content {\n  padding: 7px;\n}\n\n/**\n ****************************\n * Animations\n ****************************\n*/\n\n.ag-value-slide-out {\n  opacity: 1;\n}\n\n[dir] .ag-value-slide-out {\n  transition-timing-function: linear;\n}\n\n[dir=ltr] .ag-value-slide-out {\n  margin-right: 5px;\n  transition: opacity 3s, margin-right 3s;\n}\n\n[dir=rtl] .ag-value-slide-out {\n  margin-left: 5px;\n  transition: opacity 3s, margin-left 3s;\n}\n\n.ag-value-slide-out-end {\n  opacity: 0;\n}\n\n[dir=ltr] .ag-value-slide-out-end {\n  margin-right: 10px;\n}\n\n[dir=rtl] .ag-value-slide-out-end {\n  margin-left: 10px;\n}\n\n.ag-opacity-zero {\n  opacity: 0 !important;\n}\n\n/**\n ****************************\n * Menu\n ****************************\n*/\n\n.ag-menu {\n  max-height: 100%;\n  overflow-y: auto;\n  position: absolute;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n\n.ag-menu-column-select-wrapper {\n  height: 265px;\n  overflow: auto;\n  width: 200px;\n}\n\n.ag-menu-list {\n  display: table;\n}\n\n.ag-menu-option, .ag-menu-separator {\n  display: table-row;\n}\n\n.ag-menu-option > span, .ag-menu-separator > span {\n  display: table-cell;\n  vertical-align: middle;\n}\n\n.ag-menu-option-text {\n  white-space: nowrap;\n}\n\n.ag-menu-column-select-wrapper .ag-column-select-panel {\n  height: 100%;\n}\n\n/**\n ****************************\n * Rich Select\n ****************************\n*/\n\n.ag-rich-select {\n  outline: none;\n}\n\n[dir] .ag-rich-select {\n  cursor: default;\n}\n\n.ag-rich-select .ag-rich-select-value {\n  display: flex;\n  align-items: center;\n}\n\n.ag-rich-select .ag-rich-select-value > span {\n  flex: 1 1 auto;\n}\n\n.ag-rich-select .ag-rich-select-value > span.ag-icon {\n  order: 1;\n  flex: none;\n}\n\n.ag-rich-select .ag-rich-select-list .ag-virtual-list-item {\n  display: flex;\n}\n\n.ag-rich-select .ag-rich-select-list .ag-virtual-list-item .ag-rich-select-row {\n  display: flex;\n  flex: 1 1 auto;\n  align-items: center;\n  white-space: nowrap;\n}\n\n/**\n ****************************\n * Pagination\n ****************************\n*/\n\n.ag-paging-panel {\n  align-items: center;\n  display: flex;\n  justify-content: flex-end;\n}\n\n.ag-paging-panel .ag-paging-row-summary-panel {\n  display: flex;\n}\n\n[dir] .ag-paging-panel .ag-paging-row-summary-panel span {\n  margin: 0 3px;\n}\n\n.ag-paging-page-summary-panel {\n  display: flex;\n  align-items: center;\n}\n\n.ag-paging-page-summary-panel .ag-disabled {\n  pointer-events: none;\n}\n\n.ag-paging-page-summary-panel .ag-paging-button {\n  position: relative;\n  overflow: hidden;\n}\n\n.ag-paging-page-summary-panel .ag-paging-button button {\n  position: absolute;\n}\n\n/**\n ****************************\n * Tool Panel\n ****************************\n*/\n\n.ag-tool-panel-wrapper {\n  display: flex;\n  overflow-y: auto;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  width: 200px;\n}\n\n[dir] .ag-tool-panel-wrapper {\n  cursor: default;\n}\n\n.ag-tool-panel-wrapper .ag-filter-toolpanel-header {\n  line-height: 1.5;\n}\n\n[dir] .ag-tool-panel-wrapper .ag-filter-toolpanel-header {\n  cursor: pointer;\n}\n\n.ag-column-tool-panel-column,\n.ag-column-tool-panel-column-group {\n  align-items: center;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: nowrap;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n\n.ag-column-tool-panel-column .ag-column-tool-panel-column,\n.ag-column-tool-panel-column .ag-column-tool-panel-column-group,\n.ag-column-tool-panel-column-group .ag-column-tool-panel-column,\n.ag-column-tool-panel-column-group .ag-column-tool-panel-column-group {\n  flex: 1 1 auto;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n\n.ag-column-select-checkbox {\n  display: flex;\n}\n\n.ag-tool-panel-horizontal-resize {\n  height: 100%;\n  position: absolute;\n  top: 0;\n  width: 5px;\n  z-index: 1;\n}\n\n[dir] .ag-tool-panel-horizontal-resize {\n  cursor: col-resize;\n}\n\n[dir=ltr] .ag-rtl .ag-tool-panel-horizontal-resize {\n  transform: translateX(3px);\n}\n\n[dir=rtl] .ag-rtl .ag-tool-panel-horizontal-resize {\n  transform: translateX(-3px);\n}\n\n[dir=ltr] .ag-ltr .ag-tool-panel-horizontal-resize {\n  transform: translateX(-3px);\n}\n\n[dir=rtl] .ag-ltr .ag-tool-panel-horizontal-resize {\n  transform: translateX(3px);\n}\n\n.loading-filter {\n  height: 100%;\n  position: absolute;\n  top: 34px;\n  width: 100%;\n  z-index: 1;\n}\n\n[dir] .loading-filter {\n  background-color: #e6e6e6;\n  padding: 5px;\n}\n\n.ag-details-row {\n  height: 100%;\n  width: 100%;\n}\n\n.ag-details-grid {\n  height: 100%;\n  width: 100%;\n}\n\n.ag-header-group-cell {\n  display: flex;\n  align-items: center;\n  height: 100%;\n  overflow: hidden;\n  position: absolute;\n  text-overflow: ellipsis;\n}\n\n.ag-cell-label-container {\n  display: flex;\n  justify-content: space-between;\n  flex-direction: row-reverse;\n  align-items: center;\n  width: 100%;\n}\n\n.ag-numeric-header .ag-cell-label-container {\n  flex-direction: row;\n}\n\n/**\n ****************************\n * Side Bar\n ****************************\n*/\n\n.ag-side-bar {\n  display: flex;\n  flex-direction: row-reverse;\n}\n\n.ag-side-bar .ag-side-buttons div button {\n  display: block;\n  white-space: nowrap;\n  outline: none;\n}\n\n[dir] .ag-side-bar .ag-side-buttons div button {\n  cursor: pointer;\n}\n\n.ag-side-bar .ag-side-buttons div button span:not(.ag-icon) {\n  -webkit-writing-mode: tb;\n      -ms-writing-mode: tb;\n          writing-mode: tb;\n  -webkit-writing-mode: vertical-lr;\n      -ms-writing-mode: tb-lr;\n          writing-mode: vertical-lr;\n}\n\n.ag-side-bar .panel-container {\n  width: 180px;\n}\n\n.ag-side-bar.full-width .panel-container {\n  width: 200px;\n}\n\n.ag-rtl .ag-side-bar .ag-side-buttons button span:not(.ag-icon) {\n  -webkit-writing-mode: tb-rl;\n      -ms-writing-mode: tb-rl;\n          writing-mode: tb-rl;\n  -webkit-writing-mode: vertical-rl;\n      -ms-writing-mode: tb-rl;\n          writing-mode: vertical-rl;\n}\n\n/**\n ****************************\n * Status Bar\n ****************************\n*/\n\n.ag-status-bar {\n  display: flex;\n  justify-content: space-between;\n  overflow: hidden;\n}\n\n.ag-status-bar .ag-status-panel {\n  display: inline-flex;\n}\n\n.ag-status-bar-left {\n  display: inline-flex;\n}\n\n.ag-status-bar-center {\n  display: inline-flex;\n}\n\n.ag-status-bar-right {\n  display: inline-flex;\n}\n\n/**\n ****************************\n * Widgets\n ****************************\n*/\n\n.ag-group-component {\n  position: relative;\n  flex: 1 1 100%;\n}\n\n.ag-group-component .ag-group-component-title-bar {\n  display: flex;\n  align-items: center;\n}\n\n.ag-group-component .ag-group-component-toolbar {\n  display: flex;\n  align-items: center;\n}\n\n.ag-group-component .ag-group-component-container {\n  display: flex;\n  flex-direction: column;\n}\n\n.ag-group-component .ag-group-component-container .ag-group-subgroup {\n  display: flex;\n  align-self: stretch;\n}\n\n.ag-group-component .ag-group-item {\n  display: flex;\n  flex: 1 1 auto;\n  align-items: center;\n}\n\n.ag-group-component.ag-disabled .ag-group-component-container {\n  pointer-events: none;\n}\n\n.ag-group-component.ag-collapsed .ag-group-component-toolbar, .ag-group-component.ag-collapsed .ag-group-component-container {\n  display: none;\n}\n\n.ag-toggle-button .ag-input-wrapper .ag-icon {\n  position: absolute;\n  top: -1px;\n}\n\n[dir=ltr] .ag-toggle-button .ag-input-wrapper .ag-icon {\n  transition: right 0.3s;\n}\n\n[dir=rtl] .ag-toggle-button .ag-input-wrapper .ag-icon {\n  transition: left 0.3s;\n}\n\n.ag-input-field {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n}\n\n.ag-input-field input, .ag-input-field select, .ag-input-field textarea {\n  flex: 1 1 auto;\n  width: 100%;\n  min-width: 0;\n}\n\n.ag-range-field {\n  display: flex;\n  align-items: center;\n}\n\n.ag-picker-field > .ag-wrapper, .ag-slider > .ag-wrapper, .ag-angle-select > .ag-wrapper {\n  display: flex;\n}\n\n.ag-picker-field > .ag-wrapper > div, .ag-slider > .ag-wrapper > div, .ag-angle-select > .ag-wrapper > div {\n  flex: 1 1 auto;\n}\n\n.ag-angle-select {\n  display: flex;\n  align-items: center;\n}\n\n.ag-angle-select .ag-angle-select-field .ag-parent-circle {\n  display: block;\n  position: relative;\n}\n\n.ag-angle-select .ag-angle-select-field .ag-child-circle {\n  position: absolute;\n}\n\n.ag-picker-field {\n  display: flex;\n  align-items: center;\n}\n\n.ag-picker-field > .ag-wrapper > button {\n  display: flex;\n}\n\n[dir] .ag-picker-field > .ag-wrapper > button {\n  border: 0;\n  padding: 0;\n  margin: 0;\n}\n\n.ag-color-picker > .ag-wrapper {\n  align-items: stretch;\n  overflow: hidden;\n}\n\n[dir] .ag-color-picker button {\n  cursor: pointer;\n}\n\n.ag-labeled.ag-label-align-right label {\n  order: 1;\n}\n\n.ag-labeled.ag-label-align-right > div {\n  flex: none;\n}\n\n.ag-labeled.ag-label-align-top {\n  flex-direction: column;\n  align-items: flex-start;\n}\n\n.ag-labeled.ag-label-align-top > div {\n  align-self: stretch;\n}\n\n.ag-color-panel {\n  display: flex;\n  flex-direction: column;\n}\n\n[dir] .ag-color-panel {\n  text-align: center;\n}\n\n.ag-color-panel .ag-spectrum-color {\n  flex: 1 1 auto;\n  position: relative;\n  overflow: hidden;\n}\n\n[dir] .ag-color-panel .ag-spectrum-color {\n  cursor: default;\n}\n\n.ag-color-panel .ag-fill {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n}\n\n[dir=ltr] .ag-color-panel .ag-fill {\n  left: 0;\n  right: 0;\n}\n\n[dir=rtl] .ag-color-panel .ag-fill {\n  right: 0;\n  left: 0;\n}\n\n[dir] .ag-color-panel .ag-spectrum-val {\n  cursor: pointer;\n}\n\n.ag-color-panel .ag-spectrum-dragger {\n  position: absolute;\n  pointer-events: none;\n}\n\n[dir] .ag-color-panel .ag-spectrum-dragger {\n  cursor: pointer;\n}\n\n[dir] .ag-color-panel .ag-spectrum-hue {\n  cursor: default;\n}\n\n[dir=ltr] .ag-color-panel .ag-spectrum-hue {\n  background: linear-gradient(to left, #ff0000 3%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);\n}\n\n[dir=rtl] .ag-color-panel .ag-spectrum-hue {\n  background: linear-gradient(to right, #ff0000 3%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);\n}\n\n[dir] .ag-color-panel .ag-spectrum-alpha {\n  cursor: default;\n}\n\n.ag-color-panel .ag-spectrum-hue-background {\n  width: 100%;\n  height: 100%;\n}\n\n.ag-color-panel .ag-spectrum-alpha-background {\n  width: 100%;\n  height: 100%;\n}\n\n[dir=ltr] .ag-color-panel .ag-spectrum-alpha-background {\n  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), black);\n}\n\n[dir=rtl] .ag-color-panel .ag-spectrum-alpha-background {\n  background-image: linear-gradient(to left, rgba(0, 0, 0, 0), black);\n}\n\n[dir] .ag-color-panel .ag-hue-alpha {\n  cursor: pointer;\n}\n\n.ag-color-panel .ag-spectrum-slider {\n  position: absolute;\n  pointer-events: none;\n}\n\n.ag-color-panel .ag-spectrum-text-value {\n  display: inline-block;\n  overflow: hidden;\n  white-space: nowrap;\n}\n\n[dir] .ag-color-panel .ag-spectrum-text-value {\n  text-align: center;\n}\n\n.ag-color-panel .ag-spectrum-text-value:focus {\n  outline: none;\n  outline-offset: 0;\n}\n\n.ag-color-panel .ag-recent-colors {\n  display: flex;\n}\n\n[dir] .ag-color-panel .ag-recent-colors > div {\n  cursor: pointer;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-1 {\n  padding-left: 10px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-1 {\n  padding-right: 10px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-1 {\n  padding-right: 10px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-1 {\n  padding-left: 10px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-1 {\n  padding-left: 10px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-1 {\n  padding-right: 10px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-1 {\n  padding-right: 10px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-1 {\n  padding-left: 10px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-2 {\n  padding-left: 20px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-2 {\n  padding-right: 20px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-2 {\n  padding-right: 20px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-2 {\n  padding-left: 20px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-2 {\n  padding-left: 20px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-2 {\n  padding-right: 20px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-2 {\n  padding-right: 20px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-2 {\n  padding-left: 20px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-3 {\n  padding-left: 30px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-3 {\n  padding-right: 30px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-3 {\n  padding-right: 30px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-3 {\n  padding-left: 30px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-3 {\n  padding-left: 30px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-3 {\n  padding-right: 30px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-3 {\n  padding-right: 30px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-3 {\n  padding-left: 30px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-4 {\n  padding-left: 40px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-4 {\n  padding-right: 40px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-4 {\n  padding-right: 40px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-4 {\n  padding-left: 40px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-4 {\n  padding-left: 40px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-4 {\n  padding-right: 40px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-4 {\n  padding-right: 40px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-4 {\n  padding-left: 40px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-5 {\n  padding-left: 50px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-5 {\n  padding-right: 50px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-5 {\n  padding-right: 50px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-5 {\n  padding-left: 50px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-5 {\n  padding-left: 50px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-5 {\n  padding-right: 50px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-5 {\n  padding-right: 50px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-5 {\n  padding-left: 50px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-6 {\n  padding-left: 60px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-6 {\n  padding-right: 60px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-6 {\n  padding-right: 60px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-6 {\n  padding-left: 60px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-6 {\n  padding-left: 60px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-6 {\n  padding-right: 60px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-6 {\n  padding-right: 60px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-6 {\n  padding-left: 60px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-7 {\n  padding-left: 70px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-7 {\n  padding-right: 70px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-7 {\n  padding-right: 70px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-7 {\n  padding-left: 70px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-7 {\n  padding-left: 70px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-7 {\n  padding-right: 70px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-7 {\n  padding-right: 70px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-7 {\n  padding-left: 70px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-8 {\n  padding-left: 80px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-8 {\n  padding-right: 80px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-8 {\n  padding-right: 80px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-8 {\n  padding-left: 80px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-8 {\n  padding-left: 80px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-8 {\n  padding-right: 80px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-8 {\n  padding-right: 80px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-8 {\n  padding-left: 80px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-9 {\n  padding-left: 90px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-9 {\n  padding-right: 90px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-9 {\n  padding-right: 90px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-9 {\n  padding-left: 90px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-9 {\n  padding-left: 90px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-9 {\n  padding-right: 90px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-9 {\n  padding-right: 90px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-9 {\n  padding-left: 90px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-10 {\n  padding-left: 100px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-10 {\n  padding-right: 100px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-10 {\n  padding-right: 100px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-10 {\n  padding-left: 100px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-10 {\n  padding-left: 100px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-10 {\n  padding-right: 100px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-10 {\n  padding-right: 100px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-10 {\n  padding-left: 100px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-11 {\n  padding-left: 110px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-11 {\n  padding-right: 110px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-11 {\n  padding-right: 110px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-11 {\n  padding-left: 110px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-11 {\n  padding-left: 110px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-11 {\n  padding-right: 110px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-11 {\n  padding-right: 110px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-11 {\n  padding-left: 110px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-12 {\n  padding-left: 120px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-12 {\n  padding-right: 120px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-12 {\n  padding-right: 120px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-12 {\n  padding-left: 120px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-12 {\n  padding-left: 120px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-12 {\n  padding-right: 120px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-12 {\n  padding-right: 120px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-12 {\n  padding-left: 120px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-13 {\n  padding-left: 130px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-13 {\n  padding-right: 130px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-13 {\n  padding-right: 130px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-13 {\n  padding-left: 130px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-13 {\n  padding-left: 130px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-13 {\n  padding-right: 130px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-13 {\n  padding-right: 130px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-13 {\n  padding-left: 130px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-14 {\n  padding-left: 140px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-14 {\n  padding-right: 140px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-14 {\n  padding-right: 140px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-14 {\n  padding-left: 140px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-14 {\n  padding-left: 140px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-14 {\n  padding-right: 140px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-14 {\n  padding-right: 140px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-14 {\n  padding-left: 140px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-15 {\n  padding-left: 150px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-15 {\n  padding-right: 150px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-15 {\n  padding-right: 150px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-15 {\n  padding-left: 150px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-15 {\n  padding-left: 150px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-15 {\n  padding-right: 150px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-15 {\n  padding-right: 150px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-15 {\n  padding-left: 150px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-16 {\n  padding-left: 160px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-16 {\n  padding-right: 160px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-16 {\n  padding-right: 160px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-16 {\n  padding-left: 160px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-16 {\n  padding-left: 160px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-16 {\n  padding-right: 160px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-16 {\n  padding-right: 160px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-16 {\n  padding-left: 160px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-17 {\n  padding-left: 170px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-17 {\n  padding-right: 170px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-17 {\n  padding-right: 170px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-17 {\n  padding-left: 170px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-17 {\n  padding-left: 170px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-17 {\n  padding-right: 170px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-17 {\n  padding-right: 170px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-17 {\n  padding-left: 170px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-18 {\n  padding-left: 180px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-18 {\n  padding-right: 180px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-18 {\n  padding-right: 180px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-18 {\n  padding-left: 180px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-18 {\n  padding-left: 180px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-18 {\n  padding-right: 180px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-18 {\n  padding-right: 180px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-18 {\n  padding-left: 180px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-19 {\n  padding-left: 190px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-19 {\n  padding-right: 190px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-19 {\n  padding-right: 190px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-19 {\n  padding-left: 190px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-19 {\n  padding-left: 190px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-19 {\n  padding-right: 190px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-19 {\n  padding-right: 190px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-19 {\n  padding-left: 190px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-20 {\n  padding-left: 200px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-20 {\n  padding-right: 200px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-20 {\n  padding-right: 200px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-20 {\n  padding-left: 200px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-20 {\n  padding-left: 200px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-20 {\n  padding-right: 200px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-20 {\n  padding-right: 200px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-20 {\n  padding-left: 200px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-21 {\n  padding-left: 210px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-21 {\n  padding-right: 210px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-21 {\n  padding-right: 210px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-21 {\n  padding-left: 210px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-21 {\n  padding-left: 210px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-21 {\n  padding-right: 210px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-21 {\n  padding-right: 210px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-21 {\n  padding-left: 210px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-22 {\n  padding-left: 220px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-22 {\n  padding-right: 220px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-22 {\n  padding-right: 220px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-22 {\n  padding-left: 220px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-22 {\n  padding-left: 220px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-22 {\n  padding-right: 220px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-22 {\n  padding-right: 220px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-22 {\n  padding-left: 220px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-23 {\n  padding-left: 230px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-23 {\n  padding-right: 230px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-23 {\n  padding-right: 230px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-23 {\n  padding-left: 230px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-23 {\n  padding-left: 230px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-23 {\n  padding-right: 230px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-23 {\n  padding-right: 230px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-23 {\n  padding-left: 230px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-24 {\n  padding-left: 240px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-24 {\n  padding-right: 240px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-24 {\n  padding-right: 240px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-24 {\n  padding-left: 240px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-24 {\n  padding-left: 240px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-24 {\n  padding-right: 240px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-24 {\n  padding-right: 240px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-24 {\n  padding-left: 240px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-25 {\n  padding-left: 250px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-25 {\n  padding-right: 250px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-25 {\n  padding-right: 250px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-25 {\n  padding-left: 250px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-25 {\n  padding-left: 250px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-25 {\n  padding-right: 250px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-25 {\n  padding-right: 250px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-25 {\n  padding-left: 250px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-26 {\n  padding-left: 260px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-26 {\n  padding-right: 260px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-26 {\n  padding-right: 260px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-26 {\n  padding-left: 260px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-26 {\n  padding-left: 260px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-26 {\n  padding-right: 260px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-26 {\n  padding-right: 260px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-26 {\n  padding-left: 260px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-27 {\n  padding-left: 270px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-27 {\n  padding-right: 270px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-27 {\n  padding-right: 270px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-27 {\n  padding-left: 270px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-27 {\n  padding-left: 270px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-27 {\n  padding-right: 270px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-27 {\n  padding-right: 270px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-27 {\n  padding-left: 270px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-28 {\n  padding-left: 280px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-28 {\n  padding-right: 280px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-28 {\n  padding-right: 280px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-28 {\n  padding-left: 280px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-28 {\n  padding-left: 280px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-28 {\n  padding-right: 280px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-28 {\n  padding-right: 280px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-28 {\n  padding-left: 280px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-29 {\n  padding-left: 290px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-29 {\n  padding-right: 290px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-29 {\n  padding-right: 290px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-29 {\n  padding-left: 290px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-29 {\n  padding-left: 290px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-29 {\n  padding-right: 290px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-29 {\n  padding-right: 290px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-29 {\n  padding-left: 290px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-30 {\n  padding-left: 300px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-30 {\n  padding-right: 300px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-30 {\n  padding-right: 300px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-30 {\n  padding-left: 300px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-30 {\n  padding-left: 300px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-30 {\n  padding-right: 300px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-30 {\n  padding-right: 300px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-30 {\n  padding-left: 300px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-31 {\n  padding-left: 310px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-31 {\n  padding-right: 310px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-31 {\n  padding-right: 310px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-31 {\n  padding-left: 310px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-31 {\n  padding-left: 310px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-31 {\n  padding-right: 310px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-31 {\n  padding-right: 310px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-31 {\n  padding-left: 310px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-32 {\n  padding-left: 320px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-32 {\n  padding-right: 320px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-32 {\n  padding-right: 320px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-32 {\n  padding-left: 320px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-32 {\n  padding-left: 320px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-32 {\n  padding-right: 320px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-32 {\n  padding-right: 320px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-32 {\n  padding-left: 320px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-33 {\n  padding-left: 330px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-33 {\n  padding-right: 330px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-33 {\n  padding-right: 330px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-33 {\n  padding-left: 330px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-33 {\n  padding-left: 330px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-33 {\n  padding-right: 330px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-33 {\n  padding-right: 330px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-33 {\n  padding-left: 330px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-34 {\n  padding-left: 340px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-34 {\n  padding-right: 340px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-34 {\n  padding-right: 340px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-34 {\n  padding-left: 340px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-34 {\n  padding-left: 340px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-34 {\n  padding-right: 340px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-34 {\n  padding-right: 340px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-34 {\n  padding-left: 340px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-35 {\n  padding-left: 350px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-35 {\n  padding-right: 350px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-35 {\n  padding-right: 350px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-35 {\n  padding-left: 350px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-35 {\n  padding-left: 350px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-35 {\n  padding-right: 350px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-35 {\n  padding-right: 350px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-35 {\n  padding-left: 350px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-36 {\n  padding-left: 360px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-36 {\n  padding-right: 360px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-36 {\n  padding-right: 360px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-36 {\n  padding-left: 360px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-36 {\n  padding-left: 360px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-36 {\n  padding-right: 360px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-36 {\n  padding-right: 360px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-36 {\n  padding-left: 360px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-37 {\n  padding-left: 370px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-37 {\n  padding-right: 370px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-37 {\n  padding-right: 370px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-37 {\n  padding-left: 370px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-37 {\n  padding-left: 370px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-37 {\n  padding-right: 370px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-37 {\n  padding-right: 370px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-37 {\n  padding-left: 370px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-38 {\n  padding-left: 380px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-38 {\n  padding-right: 380px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-38 {\n  padding-right: 380px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-38 {\n  padding-left: 380px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-38 {\n  padding-left: 380px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-38 {\n  padding-right: 380px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-38 {\n  padding-right: 380px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-38 {\n  padding-left: 380px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-39 {\n  padding-left: 390px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-39 {\n  padding-right: 390px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-39 {\n  padding-right: 390px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-39 {\n  padding-left: 390px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-39 {\n  padding-left: 390px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-39 {\n  padding-right: 390px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-39 {\n  padding-right: 390px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-39 {\n  padding-left: 390px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-40 {\n  padding-left: 400px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-40 {\n  padding-right: 400px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-40 {\n  padding-right: 400px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-40 {\n  padding-left: 400px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-40 {\n  padding-left: 400px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-40 {\n  padding-right: 400px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-40 {\n  padding-right: 400px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-40 {\n  padding-left: 400px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-41 {\n  padding-left: 410px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-41 {\n  padding-right: 410px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-41 {\n  padding-right: 410px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-41 {\n  padding-left: 410px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-41 {\n  padding-left: 410px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-41 {\n  padding-right: 410px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-41 {\n  padding-right: 410px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-41 {\n  padding-left: 410px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-42 {\n  padding-left: 420px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-42 {\n  padding-right: 420px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-42 {\n  padding-right: 420px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-42 {\n  padding-left: 420px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-42 {\n  padding-left: 420px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-42 {\n  padding-right: 420px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-42 {\n  padding-right: 420px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-42 {\n  padding-left: 420px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-43 {\n  padding-left: 430px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-43 {\n  padding-right: 430px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-43 {\n  padding-right: 430px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-43 {\n  padding-left: 430px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-43 {\n  padding-left: 430px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-43 {\n  padding-right: 430px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-43 {\n  padding-right: 430px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-43 {\n  padding-left: 430px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-44 {\n  padding-left: 440px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-44 {\n  padding-right: 440px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-44 {\n  padding-right: 440px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-44 {\n  padding-left: 440px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-44 {\n  padding-left: 440px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-44 {\n  padding-right: 440px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-44 {\n  padding-right: 440px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-44 {\n  padding-left: 440px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-45 {\n  padding-left: 450px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-45 {\n  padding-right: 450px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-45 {\n  padding-right: 450px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-45 {\n  padding-left: 450px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-45 {\n  padding-left: 450px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-45 {\n  padding-right: 450px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-45 {\n  padding-right: 450px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-45 {\n  padding-left: 450px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-46 {\n  padding-left: 460px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-46 {\n  padding-right: 460px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-46 {\n  padding-right: 460px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-46 {\n  padding-left: 460px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-46 {\n  padding-left: 460px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-46 {\n  padding-right: 460px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-46 {\n  padding-right: 460px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-46 {\n  padding-left: 460px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-47 {\n  padding-left: 470px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-47 {\n  padding-right: 470px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-47 {\n  padding-right: 470px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-47 {\n  padding-left: 470px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-47 {\n  padding-left: 470px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-47 {\n  padding-right: 470px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-47 {\n  padding-right: 470px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-47 {\n  padding-left: 470px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-48 {\n  padding-left: 480px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-48 {\n  padding-right: 480px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-48 {\n  padding-right: 480px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-48 {\n  padding-left: 480px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-48 {\n  padding-left: 480px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-48 {\n  padding-right: 480px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-48 {\n  padding-right: 480px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-48 {\n  padding-left: 480px;\n}\n\n[dir=ltr] .ag-ltr .ag-toolpanel-indent-49 {\n  padding-left: 490px;\n}\n\n[dir=rtl] .ag-ltr .ag-toolpanel-indent-49 {\n  padding-right: 490px;\n}\n\n[dir=ltr] .ag-rtl .ag-toolpanel-indent-49 {\n  padding-right: 490px;\n}\n\n[dir=rtl] .ag-rtl .ag-toolpanel-indent-49 {\n  padding-left: 490px;\n}\n\n[dir=ltr] .ag-ltr .ag-row-group-indent-49 {\n  padding-left: 490px;\n}\n\n[dir=rtl] .ag-ltr .ag-row-group-indent-49 {\n  padding-right: 490px;\n}\n\n[dir=ltr] .ag-rtl .ag-row-group-indent-49 {\n  padding-right: 490px;\n}\n\n[dir=rtl] .ag-rtl .ag-row-group-indent-49 {\n  padding-left: 490px;\n}\n\n[dir=ltr] .ag-ltr {\n  direction: ltr;\n}\n\n[dir=rtl] .ag-ltr {\n  direction: rtl;\n}\n\n.ag-ltr .ag-body, .ag-ltr .ag-floating-top, .ag-ltr .ag-floating-bottom, .ag-ltr .ag-header, .ag-ltr .ag-body-viewport, .ag-ltr .ag-body-horizontal-scroll {\n  flex-direction: row;\n}\n\n[dir=ltr] .ag-ltr .ag-header-cell-resize {\n  right: -4px;\n}\n\n[dir=rtl] .ag-ltr .ag-header-cell-resize {\n  left: -4px;\n}\n\n[dir=ltr] .ag-ltr .ag-pinned-right-header .ag-header-cell-resize {\n  left: -4px;\n}\n\n[dir=rtl] .ag-ltr .ag-pinned-right-header .ag-header-cell-resize {\n  right: -4px;\n}\n\n[dir=ltr] .ag-rtl {\n  direction: rtl;\n}\n\n[dir=rtl] .ag-rtl {\n  direction: ltr;\n}\n\n.ag-rtl .ag-body, .ag-rtl .ag-floating-top, .ag-rtl .ag-floating-bottom, .ag-rtl .ag-header, .ag-rtl .ag-body-viewport, .ag-rtl .ag-body-horizontal-scroll {\n  flex-direction: row-reverse;\n}\n\n[dir=ltr] .ag-rtl .ag-header-cell-resize {\n  left: -4px;\n}\n\n[dir=rtl] .ag-rtl .ag-header-cell-resize {\n  right: -4px;\n}\n\n[dir=ltr] .ag-rtl .ag-pinned-left-header .ag-header-cell-resize {\n  right: -4px;\n}\n\n[dir=rtl] .ag-rtl .ag-pinned-left-header .ag-header-cell-resize {\n  left: -4px;\n}\n\n@media print {\n  .ag-body-viewport {\n    display: block;\n  }\n\n  .ag-row {\n    page-break-inside: avoid;\n  }\n}\n\n.ag-body .ag-pinned-left-cols-viewport, .ag-body .ag-body-viewport, .ag-body .ag-pinned-right-cols-viewport {\n  -webkit-overflow-scrolling: touch;\n}\n\n.ag-chart {\n  position: relative;\n  display: flex;\n  overflow: hidden;\n  width: 100%;\n  height: 100%;\n}\n\n.ag-chart .ag-chart-components-wrapper {\n  position: relative;\n  display: flex;\n  flex: 1 1 auto;\n  overflow: hidden;\n}\n\n.ag-chart .ag-chart-components-wrapper .ag-chart-canvas-wrapper {\n  position: relative;\n  flex: 1 1 auto;\n  overflow: hidden;\n}\n\n.ag-chart .ag-chart-components-wrapper .ag-chart-canvas-wrapper canvas {\n  display: block;\n}\n\n.ag-chart .ag-chart-components-wrapper .ag-chart-menu {\n  position: absolute;\n  top: 10px;\n  width: 24px;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n}\n\n[dir=ltr] .ag-chart .ag-chart-components-wrapper .ag-chart-menu {\n  right: 20px;\n}\n\n[dir=rtl] .ag-chart .ag-chart-components-wrapper .ag-chart-menu {\n  left: 20px;\n}\n\n.ag-chart:not(.ag-has-menu):hover .ag-chart-menu {\n  opacity: 1;\n  pointer-events: all;\n}\n\n.ag-chart .ag-chart-docked-container {\n  position: relative;\n  width: 0;\n  min-width: 0;\n  transition: min-width 0.4s;\n}\n\n[dir=ltr] .ag-chart .ag-chart-docked-container .ag-panel {\n  border-width: 0 0 0 1px;\n}\n\n[dir=rtl] .ag-chart .ag-chart-docked-container .ag-panel {\n  border-width: 0 1px 0 0;\n}\n\n.ag-chart-tabbed-menu > div {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n}\n\n.ag-chart-tabbed-menu .ag-tab-header {\n  flex: none;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n\n[dir] .ag-chart-tabbed-menu .ag-tab-header {\n  cursor: default;\n}\n\n.ag-chart-tabbed-menu .ag-tab-body {\n  display: flex;\n  flex: 1 1 auto;\n  align-items: stretch;\n  overflow: hidden;\n}\n\n.ag-chart-tabbed-menu .ag-tab-body > div {\n  width: 100%;\n  overflow: hidden;\n  overflow-y: auto;\n}\n\n.ag-chart-tabbed-menu .ag-chart-settings {\n  overflow-x: hidden;\n}\n\n.ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper {\n  position: relative;\n  flex-direction: column;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  overflow: hidden;\n}\n\n.ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-nav-bar {\n  width: 100%;\n  display: flex;\n  height: 30px;\n  align-items: center;\n}\n\n.ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-nav-bar .ag-nav-card-selector {\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n  flex: 1 1 auto;\n  height: 100%;\n}\n\n.ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-nav-bar .ag-nav-card-selector .ag-nav-card-item {\n  opacity: 0.2;\n}\n\n.ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-nav-bar .ag-nav-card-selector .ag-nav-card-item.ag-selected {\n  opacity: 1;\n}\n\n.ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-nav-bar .ag-chart-settings-prev-btn, .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-nav-bar .ag-chart-settings-next-btn {\n  position: relative;\n  flex: none;\n}\n\n.ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-nav-bar .ag-chart-settings-prev-btn button, .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-nav-bar .ag-chart-settings-next-btn button {\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  opacity: 0;\n}\n\n[dir] .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-nav-bar .ag-chart-settings-prev-btn button, [dir] .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-nav-bar .ag-chart-settings-next-btn button {\n  cursor: pointer;\n}\n\n[dir=ltr] .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-nav-bar .ag-chart-settings-prev-btn button, [dir=ltr] .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-nav-bar .ag-chart-settings-next-btn button {\n  left: 0;\n}\n\n[dir=rtl] .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-nav-bar .ag-chart-settings-prev-btn button, [dir=rtl] .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-nav-bar .ag-chart-settings-next-btn button {\n  right: 0;\n}\n\n.ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-mini-charts-container {\n  position: relative;\n  flex: 1 1 auto;\n  overflow-x: hidden;\n  overflow-y: auto;\n}\n\n.ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-mini-charts-container .ag-chart-settings-mini-wrapper {\n  position: absolute;\n  top: 0;\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  min-height: 100%;\n  overflow: hidden;\n}\n\n[dir=ltr] .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-mini-charts-container .ag-chart-settings-mini-wrapper {\n  left: 0;\n}\n\n[dir=rtl] .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-mini-charts-container .ag-chart-settings-mini-wrapper {\n  right: 0;\n}\n\n.ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-mini-charts-container .ag-chart-settings-mini-wrapper .ag-group-component {\n  flex: none;\n}\n\n.ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-mini-charts-container .ag-chart-settings-mini-wrapper .ag-group-component-container {\n  flex-direction: row;\n  flex-wrap: wrap;\n}\n\n.ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-mini-charts-container .ag-chart-settings-mini-wrapper .ag-group-component-container .ag-chart-mini-thumbnail {\n  flex: none;\n}\n\n[dir] .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-mini-charts-container .ag-chart-settings-mini-wrapper.ag-animating, [dir] .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-mini-charts-container .ag-chart-settings-mini-wrapper.ag-animating {\n  transition-timing-function: ease-in-out;\n}\n\n[dir=ltr] .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-mini-charts-container .ag-chart-settings-mini-wrapper.ag-animating, [dir=ltr] .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-mini-charts-container .ag-chart-settings-mini-wrapper.ag-animating {\n  transition: left 0.3s;\n}\n\n[dir=rtl] .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-mini-charts-container .ag-chart-settings-mini-wrapper.ag-animating, [dir=rtl] .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-mini-charts-container .ag-chart-settings-mini-wrapper.ag-animating {\n  transition: right 0.3s;\n}\n\n[dir] .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-mini-charts-container .ag-chart-settings-mini-wrapper .ag-chart-mini-thumbnail {\n  cursor: pointer;\n}\n\n.ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-wrapper .ag-chart-settings-mini-charts-container .ag-chart-settings-mini-wrapper .ag-chart-mini-thumbnail canvas {\n  display: block;\n}\n\n.ag-chart-tabbed-menu .ag-chart-data-wrapper, .ag-chart-tabbed-menu .ag-chart-format-wrapper {\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n\n.ag-chart-tabbed-menu .ag-chart-data-wrapper > div, .ag-chart-tabbed-menu .ag-chart-format-wrapper > div {\n  display: flex;\n}\n\n[dir] .ag-chart-tabbed-menu .ag-chart-data-wrapper > div, [dir] .ag-chart-tabbed-menu .ag-chart-format-wrapper > div {\n  margin: 0;\n  padding-bottom: 2px;\n}\n\n[dir] .ag-chart-tabbed-menu .ag-chart-data-wrapper > div:not(:first-child), [dir] .ag-chart-tabbed-menu .ag-chart-format-wrapper > div:not(:first-child) {\n  margin-top: 0;\n}\n\n.ag-chart-tabbed-menu .ag-chart-format-wrapper {\n  overflow-x: hidden;\n}\n\n.ag-chart-tabbed-menu .ag-chart-format-wrapper .ag-group-component .ag-group-subgroup {\n  justify-content: space-between;\n}\n\n.ag-chart .ag-chart-canvas-wrapper.ag-chart-empty > canvas {\n  visibility: hidden;\n}\n\n.ag-chart .ag-chart-canvas-wrapper.ag-chart-empty .ag-chart-empty-text {\n  display: flex;\n}\n\n.ag-chart .ag-chart-empty-text {\n  display: none;\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  align-items: center;\n  justify-content: center;\n}\n\n.ag-chart .ag-chart-menu {\n  opacity: 0;\n  pointer-events: none;\n}\n\n.ag-chart .ag-chart-menu > span {\n  opacity: 0.5;\n  line-height: 24px;\n  font-size: 24px;\n  width: 24px;\n  height: 24px;\n}\n\n[dir] .ag-chart .ag-chart-menu > span {\n  margin: 2px 0;\n  cursor: pointer;\n}\n\n[dir] .ag-chart .ag-chart-menu > span:hover {\n  border-radius: 5px;\n}\n\n.ag-chart .ag-chart-docked-container {\n  min-width: 0;\n  width: 0;\n}\n\n[dir] .ag-chart-tabbed-menu .ag-tab-body {\n  padding: 0;\n}\n\n.ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-nav-bar {\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n\n[dir] .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-nav-bar {\n  padding: 0 10px;\n}\n\n[dir] .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-nav-bar .ag-nav-card-selector {\n  padding: 0 10px;\n}\n\n[dir] .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-nav-bar .ag-nav-card-selector .ag-nav-card-item {\n  cursor: pointer;\n}\n\n@font-face {\n  font-family: \"agGridMaterial\";\n\n  src: url(\"data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBlYAAAC8AAAAYGNtYXAXVtK8AAABHAAAAFRnYXNwAAAAEAAAAXAAAAAIZ2x5ZuX9LmgAAAF4AAASrGhlYWQVtyBHAAAUJAAAADZoaGVhB4kD+wAAFFwAAAAkaG10eN4AJ0kAABSAAAAA6GxvY2GGnoHMAAAVaAAAAHZtYXhwAEQAWQAAFeAAAAAgbmFtZVm8q3EAABYAAAABqnBvc3QAAwAAAAAXrAAAACAAAwP3AZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADpNQPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAOAAAAAoACAACAAIAAQAg6TX//f//AAAAAAAg6QD//f//AAH/4xcEAAMAAQAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAABAQAAawMAAxUACwAAASEVCQEVITUhNychAwD+AAEV/usCAP7V1tYBKwMVVf8A/wBVgNXVAAAAAAQAOf/5A8cDhwAIAA8AFwAfAAABMzUzJwczFTEHIzUHFzUzJScVIxUzFTcFIxUjFzcjNQGrqnLHx3I5csfHcgJVx3Jyx/6OqnLHx3ICTnLHx3I5csfHclXHcqpyx45yx8dyAAABAKsAawNVAxUACQAAExc3ETMRFzcJAas87lbuPP6r/qsBwDzu/fkCB+89AVX+qwACAFUAFQOrA2sAHAAoAAABIgcOAQcGFRQXHgEXFjMyNz4BNzY1NCcuAScmIxMHJwcnNyc3FzcXBwIAWE5OdCEiIiF0Tk5YWE5OdCEiIiF0Tk5Y1TyZmTyZmTyZmTyZA2siIXROTlhYTk50ISIiIXROTlhYTk50ISL9vDyZmTyZmTyZmTyZAAAAAwDVAJUDKwLrAAQACQANAAATMxEjETczESMREzMRI9WAgO94eO94eAI3/l4BorT9qgJW/qr/AAACAIAAQAOAA0AADwAWAAABISIGFREUFjMhMjY1ETQmASc3FwEXAQMr/aojMjIjAlYjMjL+XdY8mgFEPP6AA0AyI/2qIzIyIwJWIzL9q9U8mQFEPP6AAAAAAgCAAEADgANAAA8AEwAAASEiBhURFBYzITI2NRE0JgMhNSEDK/2qIzIyIwJWIzIyef5WAaoDQDIj/aojMjIjAlYjMv5VVgAAAgCAAEADgANAAAMAEwAAAREhESUhIgYVERQWMyEyNjURNCYDK/2qAlb9qiMyMiMCViMyMgLr/aoCVlUyI/2qIzIyIwJWIzIAAwBzAEgDjQM4AAYACgAWAAAJAQcXCQIhNxchBTAGFRQWMzI2NTQmAv3+VTxm/vcBRQFF/e/MzP5oAkxVMiMjMlUBjQGrPGb+9/67AUXNzUBrKiMyMiMqawAAAAACAKsAawFVAxUAAwAHAAAlIxEzNRUjNQFVqqqqawH/q1dXAAAJAKsAawNVAxUAAwAIAAwAEAAVABkAHgAiACYAABMzNSMBMzUjFSEzNSM1MzUjBTM1IxUBFTM1BTM1IxUBMzUjETM1I6uqqgEAqqr/AKqqqqoBAKqqAQCq/laqqgEAqqqqqgJrqv1WqqqqVqqqqqoBqqqqqqqq/wCq/laqAAAAAAEBYgDAAp4CwAAGAAABJwkBNyc3Ap48/wABADzDwwKEPP8A/wA8xMQAAAAAAwBr/+sDlQOVAAgAGQAdAAABISIGFREzESEXISIGFREUFjMhMjY1ETQmIxEhESECwP4AIzJVAgCA/iskMjIkAdUjMjIj/isB1QOVMiP9qwJVVTIk/asjMjIjAlUkMv1VAlUAAAEA1QCVAysC6wAMAAABJwcnBxcHFzcXNyc3Ays87+887+887+887+8Crzzv7zzv7zzv7zzv7wAABQBVABUDqwNrACUAMgA/AEsAUQAAAT4BNTQmIyIGFRQWMzI2NxcHLgEjIgYVFBYzMjY1NCYnNwEzNQEHIiY1NDYzMhYVFAYjESImNTQ2MzIWFRQGIwEiJjU0NjMyFhUUBgkBFwE1IwGbCAhkR0dkZEcTIxBlZRAjE0dkZEdHZAgIZQErgP3wmyMyMiMjMjIjIzIyIyMyMiMBAAkMDAkJDAwBIv8AVQErgAJ6ECMTR2RkR0dkCAhlZQgIZEdHZGRHEyMQZf7VKwIPDzEkJDExJCQx/gAxJCQxMSQkMQFADAkJDAwJCQwBlf8AVQEqKwAABwCXAL8DaQLBAAwAEAAdACEALQA6AD4AABMiBhUUFjMyNjU0JiMFNSEVAyIGFRQWMzI2NTQmIwUhNSEFMhYVFAYjIiY1NDY3MhYVFAYjIiY1NDYzBSE1IcISGRkSEhkZEgKn/dd+EhkZEhIZGRIB0v6sAVT+Lg0TEw0NExMNEhkZEhIZGRICp/3XAikBFRkSERoaERIZVVZWASsZEhIZGRISGVVVCxMNDRMTDQ0T4RoREhkZEhEaVlUAAAABAKsAawNVAxUACQAAAScHESMRJwcJAQNVPO5W7jwBVQFVAcA87gIH/fnvPf6rAVUAAAAAAQFiAMACngLAAAYAAAEHFwcXCQEBnjzDwzwBAP8AAsA8xMQ8AQABAAAAAAABAJMAxwNtArkARwAAAS4BIyIGByc+ATMyFx4BFxYXDgEHJz4BNyMOAQcnIxcOASMiJicjHgEzMjY3Fw4BIyInLgEnJic+ATcXDgEHMyc+ATMyFhczAqMKXD0iPRZPK2M2Pjk5XyQlFRhYOU8SGAVEBA0IK1BGBAkFIjUJRApcPhMjEEghRyY+OTlfJCUVEz4oXgUGAoYpDSQVIjQJRAHdOk8aF08ZHBMSQi4tNz5lIU8SLRoMFQkqRgEBKR86UAgISA0OExJCLi03MFQgXgoUCyoNECgfAAADAJMAxwNtArkAHAApADUAAAEiBw4BBwYHFhceARcWMzI3PgE3NjcmJy4BJyYjESImNTQ2MzIWFRQGIxEiBhUUFjMyNjU0JgIAPjk5XyQlFRUlJF85OT4+OTlfJCUVFSUkXzk5PkVhYUVFYWFFKTs7KSk7OwK5ExJCLi03Ny0uQhITExJCLi03Ny0uQhIT/mFhRUVhYUVFYQEKOykpOzspKTsAAAMAgADAA4ACwAAEAAgADAAAJTM1IxUBFSE1ASE1IQGrqqr+1QMA/YACAP4AwFVVAgBVVf7VVgAAAgD3AMADCQLAAAUACgAAJSc3JwkBATMRIxEDCcTEPP8AAQD+KlZW/MTEPP8A/wACAP4AAgAAAAACAKsBQANVAkAAAwAIAAABIRUhBSE1IRUDVf1WAqr9VgKq/VYCQFWrVVUAAAYAjgCkA3IC3AAHAAwAEwAXABsAIQAAASEUBisBNTElFSE1IScyFhUhNSEBIzUzNSM1MycjNDYzFQJVAR1DL6sBHf7jAR1yL0P+AAGO/uRycnJy5HJDLwEVL0Jx5HJy40Ivcf3IcXJyci9CcQAAAAACAJMAxwNtArkAHAApAAABIgcOAQcGBxYXHgEXFjMyNz4BNzY3JicuAScmIxEiJjU0NjMyFhUUBiMCAD45OV8kJRUVJSRfOTk+Pjk5XyQlFRUlJF85OT5FYWFFRWFhRQK5ExJCLi03Ny0uQhITExJCLi03Ny0uQhIT/mFhRUVhYUVFYQACAPcAwAMJAsAABgAKAAATFwcXCQEHJTMRI/fExDwBAP8APAG8VlYChMTEPAEAAQA8PP4AAAAAAAEAqwBrA1UDFQAJAAABITcnCQE3JyE1A1X9+e89/qsBVTzuAgcB6+48/qv+qzzuVgAAAAACAOQApAMcAtwAHAAmAAABNxcHMxUjHgEXBycVIzUHJzcjNTMnNx4BFzUzFQczNzUnIwcVHgECOWhQaJOTGjQaUGhyaFBok5NoUBo0GnJoXkNDXkMRIQJJaFBocho0GlBok5NoUGhyaFAaNBqTk/tDXkNDXhEhAAABAIAC6wOAA0AAAwAAEyEVIYADAP0AA0BVAAAAAwCAAMADgALAAAMABwALAAA3ITUhNSE1ITUVITWAAwD9AAMA/QADAMBVgFbVVVUAAQEAAEADAACVAAMAACUhFSEBAAIA/gCVVQAAAAEA1QGVAysB6wAEAAATIRUhNdUCVv2qAetWVgABAWIAwAKeAsAABgAAAQcXBxcJAQGePMPDPAEA/wACwDzExDwBAAEAAAAAAAMAgADAA4ACwAADAAcACwAANyE1IREVITUBITUhgAIA/gADAP0AAwD9AMBVAatVVf7VVgADAFUAFQOrA2sAHAArADoAAAEiBw4BBwYVFBceARcWMzI3PgE3NjU0Jy4BJyYjATQ3PgE3NjMyFhcBLgE1ASImJwEeARUUBw4BBwYjAgBYTk50ISIiIXROTlhYTk50ISIiIXROTlj+qxobXT4+RztrK/4iIiYBVTtrKwHeIiYaG10+PkcDayIhdE5OWFhOTnQhIiIhdE5OWFhOTnQhIv5VRz4+XRsaJiL+IitrO/6rJiIB3itrO0c+Pl0bGgAAAAADAID/6wOAA5UAGAAkACwAAAEjLgEjIgYHIyIGFREUFjMhMjY1ETQmIzEhMhYVFAYjIiY1NDYBIREzFSE1MwMrsw1BKipBDbMjMjIjAlYjMjIj/tUSGRkSEhkZAT39qlYBqlYDQCUwMCUyI/1VIzIyIwKrIzIZEhEZGRESGf0AAquAgAACAK0AbwNTAxEABQASAAAlByc3HgETAQcnBxcHJzcXNyc3AWOOKI4KFMYBNB8e9z5Y9lg9ex4e/Y4ojgoUAgr+zB4eez1Y9lg+9x4fAAAAAAkAOf/5A8cDhwAPABMAFwAgACQALgAyADYAOgAABSEiJjURNDYzITIWFREUBgEjFTMBIREhJQcXByc3HgEXJyMVMyUHJwcnNx4BFzEBIxUzJSMVMzcjFTMDVf1WL0NDLwKqL0ND/dGqqgIA/jkBx/7cQkIpaWkKFQrcqqoB+ChBQihqGjUa/giqqgEd5OTjqqoHQy8Cqi9DQy/9Vi9DARyqAY7+crNCQShpagoUCturMShBQShpGjUaAZaqqqqqqgAAAAABANUAlQMrAusACwAAASERIxEhNSERMxEhAyv/AFb/AAEAVgEAAZX/AAEAVgEA/wAAAAAAAQFiAMACngLAAAYAAAEnCQE3JzcCnjz/AAEAPMPDAoQ8/wD/ADzExAAAAAACAFUAFQOrA2sAHAA5AAABIgcOAQcGFRQXHgEXFjMyNz4BNzY1NCcuAScmIxEiJy4BJyY1NDc+ATc2MzIXHgEXFhUUBw4BBwYjAgBYTk50ISIiIXROTlhYTk50ISIiIXROTlhHPj5dGxoaG10+PkdHPj5dGxoaG10+PkcDayIhdE5OWFhOTnQhIiIhdE5OWFhOTnQhIv0AGhtdPj5HRz4+XRsaGhtdPj5HRz4+XRsaAAMAVQAVA6sDawAcADkAVgAAASIHDgEHBhUUFx4BFxYzMjc+ATc2NTQnLgEnJiM1IgcOAQcGFRQXHgEXFjMyNz4BNzY1NCcuAScmIxEiJy4BJyY1NDc+ATc2MzIXHgEXFhUUBw4BBwYjAgAsJyc6ERAQETonJywsJyc6ERAQETonJyxYTk50ISIiIXROTlhYTk50ISIiIXROTlhHPj5dGxoaG10+PkdHPj5dGxoaG10+PkcClRAROicnLCwnJzoREBAROicnLCwnJzoRENYiIXROTlhYTk50ISIiIXROTlhYTk50ISL9ABobXT4+R0c+Pl0bGhobXT4+R0c+Pl0bGgABAKsAawNVAxUACQAAAQcXIRUhBxcJAQIAPO79+QIH7jwBVf6rAxU87lbuPAFVAVUAAAAAAgCAAEADgANAAA4AGQAAAREhESMRFBYzITI2NREjBTcXByc3FxEzETEDK/2qVTIjAlYjMlX/AG481dU8blYBwP7VASv+1SMyMiMBKx1uPNXVPG4Bnf5jAAEBKwFVAtUCKwADAAABFzchASvV1f5WAivW1gABAZUA6wJrApUAAwAAAQcXEQJr1tYCldXVAaoAAQGVAOsCawKVAAMAACU3JxEBldbW69XV/lYAAAEBKwFVAtUCKwADAAABNxchASvV1f5WAVXW1gABAIkAogN3At4ABgAAAScHFwEnAQF3sjzuAgA8/jwBG7I97gIAPP49AAAAAAEBYgDAAp4CwAAGAAABBxcHFwkBAZ48w8M8AQD/AALAPMTEPAEAAQAAAAAAAQDVAZUDKwHrAAQAABMhFSE11QJW/aoB61ZWAAEBAAEiAwACXgAFAAABBycHCQECxMTEPAEAAQACXsPDPP8AAQAAAAADAFUA6wOrApUAGgAeADkAABM0NjsBNSMiBw4BBwYVFBceARcWOwE1IyImNRchNSElIxUzMhYVFAYrARUzMjc+ATc2NTQnLgEnJiOmTjeqqiwnJzoREREROicnLKqqN06vAVb+qgGAqqo3Tk43qqosJyc6ERERETonJywBwDdNURAROicnLCwnJzoREFFNNytWqlFNNzdNURAROicnLCwnJzoREAAAAAADAFUAQAOrA0AAFAAYADgAAAEjFTMyFhUUBgcXPgE1NCcuAScmIwcjFzMBFw4BFRQXHgEXFjsBNSMiJjU0NjcXIxUzFxUzFzcBBwLVqqo3TjgrPjRCERE6JycsKl5WCP2qhTpLERE6Jycsqqo3TkUxWB91YUmsNf03NwKVUU03LkYLPhplPiwnJzoREKpWAXWFGGpDLCcnOhEQUU03M0sFWFZhSas2Aso2AAAAAQAAAAEAAG2khpdfDzz1AAsEAAAAAADZaG3lAAAAANlobeUAAP/rA8cDlQAAAAgAAgAAAAAAAAABAAADwP/AAAAEAAAAAAADxwABAAAAAAAAAAAAAAAAAAAAOgQAAAAAAAAAAAAAAAIAAAAEAAEABAAAOQQAAKsEAABVBAAA1QQAAIAEAACABAAAgAQAAHMEAACrBAAAqwQAAWIEAABrBAAA1QQAAFUEAACXBAAAqwQAAWIEAACTBAAAkwQAAIAEAAD3BAAAqwQAAI4EAACTBAAA9wQAAKsEAADkBAAAgAQAAIAEAAEABAAA1QQAAWIEAACABAAAVQQAAIAEAACtBAAAOQQAANUEAAFiBAAAVQQAAFUEAACrBAAAgAQAASsEAAGVBAABlQQAASsEAACJBAABYgQAANUEAAEABAAAVQQAAFUAAAAAAAoAFAAeADoAbACEAMgA5AEQATQBWAGGAZgB2AHuAiACPAK0AxIDLANCA64EAAQcBDgETgSGBMgE5AT+BToFSAVgBW4FfAWSBawGDAZOBnYG2AbyBwgHYAfgB/oIJgg0CEIIUAheCHQIigiYCKwJAAlWAAAAAQAAADoAVwAJAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA4ArgABAAAAAAABAAoAAAABAAAAAAACAAcAewABAAAAAAADAAoAPwABAAAAAAAEAAoAkAABAAAAAAAFAAsAHgABAAAAAAAGAAoAXQABAAAAAAAKABoArgADAAEECQABABQACgADAAEECQACAA4AggADAAEECQADABQASQADAAEECQAEABQAmgADAAEECQAFABYAKQADAAEECQAGABQAZwADAAEECQAKADQAyEFnTWF0ZXJpYWwAQQBnAE0AYQB0AGUAcgBpAGEAbFZlcnNpb24gMS4wAFYAZQByAHMAaQBvAG4AIAAxAC4AMEFnTWF0ZXJpYWwAQQBnAE0AYQB0AGUAcgBpAGEAbEFnTWF0ZXJpYWwAQQBnAE0AYQB0AGUAcgBpAGEAbFJlZ3VsYXIAUgBlAGcAdQBsAGEAckFnTWF0ZXJpYWwAQQBnAE0AYQB0AGUAcgBpAGEAbEZvbnQgZ2VuZXJhdGVkIGJ5IEljb01vb24uAEYAbwBuAHQAIABnAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAEkAYwBvAE0AbwBvAG4ALgAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=\") format(\"truetype\");\n\n  font-weight: normal;\n\n  font-style: normal;\n}\n\n.ag-theme-material {\n  -webkit-font-smoothing: antialiased;\n  color: rgba(0, 0, 0, 0.87);\n  font-family: inherit;\n  font-weight: inherit;\n  font-size: inherit;\n  line-height: normal;\n}\n\n[dir] .ag-theme-material {\n  background-color: #fff;\n}\n\n[dir] .ag-theme-material .ag-tab-header .ag-tab.ag-tab-selected {\n  border-bottom: 2px solid #7367F0;\n}\n\n[dir] .ag-theme-material label {\n  margin-bottom: 0;\n}\n\n.ag-theme-material * {\n  box-sizing: border-box;\n}\n\n.ag-theme-material *:focus, .ag-theme-material * *:before, .ag-theme-material * *:after {\n  outline: none;\n  box-sizing: border-box;\n}\n\n.ag-theme-material .ag-tab {\n  box-sizing: content-box;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-1 {\n  padding-left: 10px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-1 {\n  padding-right: 10px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-1 {\n  padding-right: 10px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-1 {\n  padding-left: 10px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-1 {\n  padding-left: 10px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-1 {\n  padding-right: 10px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-1 {\n  padding-right: 10px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-1 {\n  padding-left: 10px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-2 {\n  padding-left: 20px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-2 {\n  padding-right: 20px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-2 {\n  padding-right: 20px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-2 {\n  padding-left: 20px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-2 {\n  padding-left: 20px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-2 {\n  padding-right: 20px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-2 {\n  padding-right: 20px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-2 {\n  padding-left: 20px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-3 {\n  padding-left: 30px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-3 {\n  padding-right: 30px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-3 {\n  padding-right: 30px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-3 {\n  padding-left: 30px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-3 {\n  padding-left: 30px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-3 {\n  padding-right: 30px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-3 {\n  padding-right: 30px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-3 {\n  padding-left: 30px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-4 {\n  padding-left: 40px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-4 {\n  padding-right: 40px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-4 {\n  padding-right: 40px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-4 {\n  padding-left: 40px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-4 {\n  padding-left: 40px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-4 {\n  padding-right: 40px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-4 {\n  padding-right: 40px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-4 {\n  padding-left: 40px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-5 {\n  padding-left: 50px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-5 {\n  padding-right: 50px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-5 {\n  padding-right: 50px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-5 {\n  padding-left: 50px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-5 {\n  padding-left: 50px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-5 {\n  padding-right: 50px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-5 {\n  padding-right: 50px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-5 {\n  padding-left: 50px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-6 {\n  padding-left: 60px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-6 {\n  padding-right: 60px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-6 {\n  padding-right: 60px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-6 {\n  padding-left: 60px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-6 {\n  padding-left: 60px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-6 {\n  padding-right: 60px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-6 {\n  padding-right: 60px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-6 {\n  padding-left: 60px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-7 {\n  padding-left: 70px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-7 {\n  padding-right: 70px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-7 {\n  padding-right: 70px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-7 {\n  padding-left: 70px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-7 {\n  padding-left: 70px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-7 {\n  padding-right: 70px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-7 {\n  padding-right: 70px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-7 {\n  padding-left: 70px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-8 {\n  padding-left: 80px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-8 {\n  padding-right: 80px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-8 {\n  padding-right: 80px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-8 {\n  padding-left: 80px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-8 {\n  padding-left: 80px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-8 {\n  padding-right: 80px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-8 {\n  padding-right: 80px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-8 {\n  padding-left: 80px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-9 {\n  padding-left: 90px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-9 {\n  padding-right: 90px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-9 {\n  padding-right: 90px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-9 {\n  padding-left: 90px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-9 {\n  padding-left: 90px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-9 {\n  padding-right: 90px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-9 {\n  padding-right: 90px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-9 {\n  padding-left: 90px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-10 {\n  padding-left: 100px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-10 {\n  padding-right: 100px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-10 {\n  padding-right: 100px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-10 {\n  padding-left: 100px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-10 {\n  padding-left: 100px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-10 {\n  padding-right: 100px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-10 {\n  padding-right: 100px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-10 {\n  padding-left: 100px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-11 {\n  padding-left: 110px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-11 {\n  padding-right: 110px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-11 {\n  padding-right: 110px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-11 {\n  padding-left: 110px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-11 {\n  padding-left: 110px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-11 {\n  padding-right: 110px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-11 {\n  padding-right: 110px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-11 {\n  padding-left: 110px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-12 {\n  padding-left: 120px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-12 {\n  padding-right: 120px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-12 {\n  padding-right: 120px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-12 {\n  padding-left: 120px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-12 {\n  padding-left: 120px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-12 {\n  padding-right: 120px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-12 {\n  padding-right: 120px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-12 {\n  padding-left: 120px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-13 {\n  padding-left: 130px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-13 {\n  padding-right: 130px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-13 {\n  padding-right: 130px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-13 {\n  padding-left: 130px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-13 {\n  padding-left: 130px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-13 {\n  padding-right: 130px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-13 {\n  padding-right: 130px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-13 {\n  padding-left: 130px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-14 {\n  padding-left: 140px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-14 {\n  padding-right: 140px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-14 {\n  padding-right: 140px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-14 {\n  padding-left: 140px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-14 {\n  padding-left: 140px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-14 {\n  padding-right: 140px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-14 {\n  padding-right: 140px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-14 {\n  padding-left: 140px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-15 {\n  padding-left: 150px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-15 {\n  padding-right: 150px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-15 {\n  padding-right: 150px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-15 {\n  padding-left: 150px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-15 {\n  padding-left: 150px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-15 {\n  padding-right: 150px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-15 {\n  padding-right: 150px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-15 {\n  padding-left: 150px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-16 {\n  padding-left: 160px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-16 {\n  padding-right: 160px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-16 {\n  padding-right: 160px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-16 {\n  padding-left: 160px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-16 {\n  padding-left: 160px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-16 {\n  padding-right: 160px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-16 {\n  padding-right: 160px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-16 {\n  padding-left: 160px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-17 {\n  padding-left: 170px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-17 {\n  padding-right: 170px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-17 {\n  padding-right: 170px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-17 {\n  padding-left: 170px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-17 {\n  padding-left: 170px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-17 {\n  padding-right: 170px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-17 {\n  padding-right: 170px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-17 {\n  padding-left: 170px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-18 {\n  padding-left: 180px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-18 {\n  padding-right: 180px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-18 {\n  padding-right: 180px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-18 {\n  padding-left: 180px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-18 {\n  padding-left: 180px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-18 {\n  padding-right: 180px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-18 {\n  padding-right: 180px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-18 {\n  padding-left: 180px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-19 {\n  padding-left: 190px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-19 {\n  padding-right: 190px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-19 {\n  padding-right: 190px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-19 {\n  padding-left: 190px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-19 {\n  padding-left: 190px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-19 {\n  padding-right: 190px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-19 {\n  padding-right: 190px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-19 {\n  padding-left: 190px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-20 {\n  padding-left: 200px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-20 {\n  padding-right: 200px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-20 {\n  padding-right: 200px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-20 {\n  padding-left: 200px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-20 {\n  padding-left: 200px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-20 {\n  padding-right: 200px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-20 {\n  padding-right: 200px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-20 {\n  padding-left: 200px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-21 {\n  padding-left: 210px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-21 {\n  padding-right: 210px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-21 {\n  padding-right: 210px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-21 {\n  padding-left: 210px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-21 {\n  padding-left: 210px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-21 {\n  padding-right: 210px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-21 {\n  padding-right: 210px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-21 {\n  padding-left: 210px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-22 {\n  padding-left: 220px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-22 {\n  padding-right: 220px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-22 {\n  padding-right: 220px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-22 {\n  padding-left: 220px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-22 {\n  padding-left: 220px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-22 {\n  padding-right: 220px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-22 {\n  padding-right: 220px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-22 {\n  padding-left: 220px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-23 {\n  padding-left: 230px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-23 {\n  padding-right: 230px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-23 {\n  padding-right: 230px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-23 {\n  padding-left: 230px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-23 {\n  padding-left: 230px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-23 {\n  padding-right: 230px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-23 {\n  padding-right: 230px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-23 {\n  padding-left: 230px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-24 {\n  padding-left: 240px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-24 {\n  padding-right: 240px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-24 {\n  padding-right: 240px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-24 {\n  padding-left: 240px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-24 {\n  padding-left: 240px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-24 {\n  padding-right: 240px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-24 {\n  padding-right: 240px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-24 {\n  padding-left: 240px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-25 {\n  padding-left: 250px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-25 {\n  padding-right: 250px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-25 {\n  padding-right: 250px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-25 {\n  padding-left: 250px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-25 {\n  padding-left: 250px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-25 {\n  padding-right: 250px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-25 {\n  padding-right: 250px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-25 {\n  padding-left: 250px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-26 {\n  padding-left: 260px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-26 {\n  padding-right: 260px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-26 {\n  padding-right: 260px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-26 {\n  padding-left: 260px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-26 {\n  padding-left: 260px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-26 {\n  padding-right: 260px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-26 {\n  padding-right: 260px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-26 {\n  padding-left: 260px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-27 {\n  padding-left: 270px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-27 {\n  padding-right: 270px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-27 {\n  padding-right: 270px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-27 {\n  padding-left: 270px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-27 {\n  padding-left: 270px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-27 {\n  padding-right: 270px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-27 {\n  padding-right: 270px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-27 {\n  padding-left: 270px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-28 {\n  padding-left: 280px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-28 {\n  padding-right: 280px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-28 {\n  padding-right: 280px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-28 {\n  padding-left: 280px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-28 {\n  padding-left: 280px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-28 {\n  padding-right: 280px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-28 {\n  padding-right: 280px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-28 {\n  padding-left: 280px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-29 {\n  padding-left: 290px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-29 {\n  padding-right: 290px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-29 {\n  padding-right: 290px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-29 {\n  padding-left: 290px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-29 {\n  padding-left: 290px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-29 {\n  padding-right: 290px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-29 {\n  padding-right: 290px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-29 {\n  padding-left: 290px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-30 {\n  padding-left: 300px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-30 {\n  padding-right: 300px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-30 {\n  padding-right: 300px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-30 {\n  padding-left: 300px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-30 {\n  padding-left: 300px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-30 {\n  padding-right: 300px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-30 {\n  padding-right: 300px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-30 {\n  padding-left: 300px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-31 {\n  padding-left: 310px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-31 {\n  padding-right: 310px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-31 {\n  padding-right: 310px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-31 {\n  padding-left: 310px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-31 {\n  padding-left: 310px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-31 {\n  padding-right: 310px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-31 {\n  padding-right: 310px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-31 {\n  padding-left: 310px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-32 {\n  padding-left: 320px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-32 {\n  padding-right: 320px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-32 {\n  padding-right: 320px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-32 {\n  padding-left: 320px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-32 {\n  padding-left: 320px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-32 {\n  padding-right: 320px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-32 {\n  padding-right: 320px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-32 {\n  padding-left: 320px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-33 {\n  padding-left: 330px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-33 {\n  padding-right: 330px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-33 {\n  padding-right: 330px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-33 {\n  padding-left: 330px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-33 {\n  padding-left: 330px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-33 {\n  padding-right: 330px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-33 {\n  padding-right: 330px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-33 {\n  padding-left: 330px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-34 {\n  padding-left: 340px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-34 {\n  padding-right: 340px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-34 {\n  padding-right: 340px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-34 {\n  padding-left: 340px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-34 {\n  padding-left: 340px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-34 {\n  padding-right: 340px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-34 {\n  padding-right: 340px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-34 {\n  padding-left: 340px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-35 {\n  padding-left: 350px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-35 {\n  padding-right: 350px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-35 {\n  padding-right: 350px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-35 {\n  padding-left: 350px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-35 {\n  padding-left: 350px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-35 {\n  padding-right: 350px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-35 {\n  padding-right: 350px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-35 {\n  padding-left: 350px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-36 {\n  padding-left: 360px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-36 {\n  padding-right: 360px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-36 {\n  padding-right: 360px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-36 {\n  padding-left: 360px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-36 {\n  padding-left: 360px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-36 {\n  padding-right: 360px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-36 {\n  padding-right: 360px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-36 {\n  padding-left: 360px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-37 {\n  padding-left: 370px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-37 {\n  padding-right: 370px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-37 {\n  padding-right: 370px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-37 {\n  padding-left: 370px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-37 {\n  padding-left: 370px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-37 {\n  padding-right: 370px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-37 {\n  padding-right: 370px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-37 {\n  padding-left: 370px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-38 {\n  padding-left: 380px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-38 {\n  padding-right: 380px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-38 {\n  padding-right: 380px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-38 {\n  padding-left: 380px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-38 {\n  padding-left: 380px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-38 {\n  padding-right: 380px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-38 {\n  padding-right: 380px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-38 {\n  padding-left: 380px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-39 {\n  padding-left: 390px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-39 {\n  padding-right: 390px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-39 {\n  padding-right: 390px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-39 {\n  padding-left: 390px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-39 {\n  padding-left: 390px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-39 {\n  padding-right: 390px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-39 {\n  padding-right: 390px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-39 {\n  padding-left: 390px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-40 {\n  padding-left: 400px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-40 {\n  padding-right: 400px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-40 {\n  padding-right: 400px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-40 {\n  padding-left: 400px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-40 {\n  padding-left: 400px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-40 {\n  padding-right: 400px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-40 {\n  padding-right: 400px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-40 {\n  padding-left: 400px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-41 {\n  padding-left: 410px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-41 {\n  padding-right: 410px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-41 {\n  padding-right: 410px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-41 {\n  padding-left: 410px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-41 {\n  padding-left: 410px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-41 {\n  padding-right: 410px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-41 {\n  padding-right: 410px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-41 {\n  padding-left: 410px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-42 {\n  padding-left: 420px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-42 {\n  padding-right: 420px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-42 {\n  padding-right: 420px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-42 {\n  padding-left: 420px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-42 {\n  padding-left: 420px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-42 {\n  padding-right: 420px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-42 {\n  padding-right: 420px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-42 {\n  padding-left: 420px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-43 {\n  padding-left: 430px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-43 {\n  padding-right: 430px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-43 {\n  padding-right: 430px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-43 {\n  padding-left: 430px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-43 {\n  padding-left: 430px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-43 {\n  padding-right: 430px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-43 {\n  padding-right: 430px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-43 {\n  padding-left: 430px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-44 {\n  padding-left: 440px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-44 {\n  padding-right: 440px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-44 {\n  padding-right: 440px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-44 {\n  padding-left: 440px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-44 {\n  padding-left: 440px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-44 {\n  padding-right: 440px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-44 {\n  padding-right: 440px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-44 {\n  padding-left: 440px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-45 {\n  padding-left: 450px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-45 {\n  padding-right: 450px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-45 {\n  padding-right: 450px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-45 {\n  padding-left: 450px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-45 {\n  padding-left: 450px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-45 {\n  padding-right: 450px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-45 {\n  padding-right: 450px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-45 {\n  padding-left: 450px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-46 {\n  padding-left: 460px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-46 {\n  padding-right: 460px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-46 {\n  padding-right: 460px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-46 {\n  padding-left: 460px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-46 {\n  padding-left: 460px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-46 {\n  padding-right: 460px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-46 {\n  padding-right: 460px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-46 {\n  padding-left: 460px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-47 {\n  padding-left: 470px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-47 {\n  padding-right: 470px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-47 {\n  padding-right: 470px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-47 {\n  padding-left: 470px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-47 {\n  padding-left: 470px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-47 {\n  padding-right: 470px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-47 {\n  padding-right: 470px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-47 {\n  padding-left: 470px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-48 {\n  padding-left: 480px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-48 {\n  padding-right: 480px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-48 {\n  padding-right: 480px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-48 {\n  padding-left: 480px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-48 {\n  padding-left: 480px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-48 {\n  padding-right: 480px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-48 {\n  padding-right: 480px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-48 {\n  padding-left: 480px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-toolpanel-indent-49 {\n  padding-left: 490px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-toolpanel-indent-49 {\n  padding-right: 490px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-toolpanel-indent-49 {\n  padding-right: 490px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-toolpanel-indent-49 {\n  padding-left: 490px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-indent-49 {\n  padding-left: 490px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-indent-49 {\n  padding-right: 490px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-indent-49 {\n  padding-right: 490px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-indent-49 {\n  padding-left: 490px;\n}\n\n.ag-theme-material .ag-cell .ag-icon {\n  display: inline-block;\n  vertical-align: middle;\n}\n\n.ag-theme-material .ag-checkbox, .ag-theme-material .ag-radio-button, .ag-theme-material .ag-toggle-button {\n  display: flex;\n  align-items: center;\n}\n\n[dir] .ag-theme-material .ag-checkbox, [dir] .ag-theme-material .ag-radio-button, [dir] .ag-theme-material .ag-toggle-button {\n  cursor: default;\n}\n\n[dir] .ag-theme-material .ag-checkbox label, [dir] .ag-theme-material .ag-radio-button label, [dir] .ag-theme-material .ag-toggle-button label {\n  cursor: default;\n}\n\n[dir] .ag-theme-material .ag-checkbox label:empty, [dir] .ag-theme-material .ag-radio-button label:empty, [dir] .ag-theme-material .ag-toggle-button label:empty {\n  margin: 0;\n}\n\n[dir=ltr] .ag-theme-material .ag-checkbox:not(.ag-label-align-left) label, [dir=ltr] .ag-theme-material .ag-radio-button:not(.ag-label-align-left) label, [dir=ltr] .ag-theme-material .ag-toggle-button:not(.ag-label-align-left) label {\n  margin-left: 8px;\n}\n\n[dir=rtl] .ag-theme-material .ag-checkbox:not(.ag-label-align-left) label, [dir=rtl] .ag-theme-material .ag-radio-button:not(.ag-label-align-left) label, [dir=rtl] .ag-theme-material .ag-toggle-button:not(.ag-label-align-left) label {\n  margin-right: 8px;\n}\n\n.ag-theme-material .ag-cell {\n  -webkit-font-smoothing: subpixel-antialiased;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-row-group-leaf-indent {\n  margin-left: 42px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-row-group-leaf-indent {\n  margin-right: 42px;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-cell {\n  border-right: 1px solid transparent;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-cell {\n  border-left: 1px solid transparent;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-cell:not(.ag-cell-focus).ag-cell-first-right-pinned:not(.ag-cell-range-left), [dir=ltr] .ag-theme-material .ag-ltr .ag-cell.ag-cell-range-selected:not(.ag-cell-range-single-cell).ag-cell-first-right-pinned:not(.ag-cell-range-left), [dir=ltr] .ag-theme-material .ag-ltr .ag-root:not(.ag-has-focus) .ag-cell.ag-cell-first-right-pinned:not(.ag-cell-range-left) {\n  border-left: 1px solid #e2e2e2;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-cell:not(.ag-cell-focus).ag-cell-first-right-pinned:not(.ag-cell-range-left), [dir=rtl] .ag-theme-material .ag-ltr .ag-cell.ag-cell-range-selected:not(.ag-cell-range-single-cell).ag-cell-first-right-pinned:not(.ag-cell-range-left), [dir=rtl] .ag-theme-material .ag-ltr .ag-root:not(.ag-has-focus) .ag-cell.ag-cell-first-right-pinned:not(.ag-cell-range-left) {\n  border-right: 1px solid #e2e2e2;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-cell:not(.ag-cell-focus).ag-cell-last-left-pinned:not(.ag-cell-range-right), [dir=ltr] .ag-theme-material .ag-ltr .ag-cell.ag-cell-range-selected:not(.ag-cell-range-single-cell).ag-cell-last-left-pinned:not(.ag-cell-range-right), [dir=ltr] .ag-theme-material .ag-ltr .ag-root:not(.ag-has-focus) .ag-cell.ag-cell-last-left-pinned:not(.ag-cell-range-right) {\n  border-right: 1px solid #e2e2e2;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-cell:not(.ag-cell-focus).ag-cell-last-left-pinned:not(.ag-cell-range-right), [dir=rtl] .ag-theme-material .ag-ltr .ag-cell.ag-cell-range-selected:not(.ag-cell-range-single-cell).ag-cell-last-left-pinned:not(.ag-cell-range-right), [dir=rtl] .ag-theme-material .ag-ltr .ag-root:not(.ag-has-focus) .ag-cell.ag-cell-last-left-pinned:not(.ag-cell-range-right) {\n  border-left: 1px solid #e2e2e2;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-row-group-leaf-indent {\n  margin-right: 42px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-row-group-leaf-indent {\n  margin-left: 42px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-cell {\n  border-left: 1px solid transparent;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-cell {\n  border-right: 1px solid transparent;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-cell:not(.ag-cell-focus).ag-cell-first-right-pinned:not(.ag-cell-range-left), [dir=ltr] .ag-theme-material .ag-rtl .ag-cell.ag-cell-range-selected:not(.ag-cell-range-single-cell).ag-cell-first-right-pinned:not(.ag-cell-range-left), [dir=ltr] .ag-theme-material .ag-rtl .ag-root:not(.ag-has-focus) .ag-cell.ag-cell-first-right-pinned:not(.ag-cell-range-left) {\n  border-left: 1px solid #e2e2e2;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-cell:not(.ag-cell-focus).ag-cell-first-right-pinned:not(.ag-cell-range-left), [dir=rtl] .ag-theme-material .ag-rtl .ag-cell.ag-cell-range-selected:not(.ag-cell-range-single-cell).ag-cell-first-right-pinned:not(.ag-cell-range-left), [dir=rtl] .ag-theme-material .ag-rtl .ag-root:not(.ag-has-focus) .ag-cell.ag-cell-first-right-pinned:not(.ag-cell-range-left) {\n  border-right: 1px solid #e2e2e2;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-cell:not(.ag-cell-focus).ag-cell-last-left-pinned:not(.ag-cell-range-right), [dir=ltr] .ag-theme-material .ag-rtl .ag-cell.ag-cell-range-selected:not(.ag-cell-range-single-cell).ag-cell-last-left-pinned:not(.ag-cell-range-right), [dir=ltr] .ag-theme-material .ag-rtl .ag-root:not(.ag-has-focus) .ag-cell.ag-cell-last-left-pinned:not(.ag-cell-range-right) {\n  border-right: 1px solid #e2e2e2;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-cell:not(.ag-cell-focus).ag-cell-last-left-pinned:not(.ag-cell-range-right), [dir=rtl] .ag-theme-material .ag-rtl .ag-cell.ag-cell-range-selected:not(.ag-cell-range-single-cell).ag-cell-last-left-pinned:not(.ag-cell-range-right), [dir=rtl] .ag-theme-material .ag-rtl .ag-root:not(.ag-has-focus) .ag-cell.ag-cell-last-left-pinned:not(.ag-cell-range-right) {\n  border-left: 1px solid #e2e2e2;\n}\n\n[dir=ltr] .ag-theme-material .ag-value-change-delta {\n  padding-right: 2px;\n}\n\n[dir=rtl] .ag-theme-material .ag-value-change-delta {\n  padding-left: 2px;\n}\n\n.ag-theme-material .ag-value-change-delta-up {\n  color: #43a047;\n}\n\n.ag-theme-material .ag-value-change-delta-down {\n  color: #e53935;\n}\n\n.ag-theme-material .ag-value-change-value {\n  transition: background-color 1s;\n}\n\n[dir] .ag-theme-material .ag-value-change-value {\n  background-color: transparent;\n  border-radius: 1px;\n}\n\n[dir=ltr] .ag-theme-material .ag-value-change-value {\n  padding-left: 1px;\n  padding-right: 1px;\n}\n\n[dir=rtl] .ag-theme-material .ag-value-change-value {\n  padding-right: 1px;\n  padding-left: 1px;\n}\n\n.ag-theme-material .ag-value-change-value-highlight {\n  transition: background-color 0.1s;\n}\n\n[dir] .ag-theme-material .ag-value-change-value-highlight {\n  background-color: #00acc1;\n}\n\n.ag-theme-material .ag-input-wrapper input:not([type]),\n.ag-theme-material .ag-input-wrapper input[type=text],\n.ag-theme-material .ag-input-wrapper input[type=number],\n.ag-theme-material .ag-input-wrapper input[type=tel],\n.ag-theme-material .ag-input-wrapper input[type=date],\n.ag-theme-material .ag-input-wrapper input[type=datetime-local] {\n  color: rgba(0, 0, 0, 0.87);\n  font-family: inherit;\n  font-size: inherit;\n  height: 40px;\n}\n\n[dir] .ag-theme-material .ag-input-wrapper input:not([type]), [dir] .ag-theme-material .ag-input-wrapper input[type=text], [dir] .ag-theme-material .ag-input-wrapper input[type=number], [dir] .ag-theme-material .ag-input-wrapper input[type=tel], [dir] .ag-theme-material .ag-input-wrapper input[type=date], [dir] .ag-theme-material .ag-input-wrapper input[type=datetime-local] {\n  background: transparent;\n  padding-bottom: 8px;\n  border-width: 0;\n  border-bottom: 2px solid #e2e2e2;\n}\n\n.ag-theme-material .ag-input-wrapper input:not([type]):focus,\n.ag-theme-material .ag-input-wrapper input[type=text]:focus,\n.ag-theme-material .ag-input-wrapper input[type=number]:focus,\n.ag-theme-material .ag-input-wrapper input[type=tel]:focus,\n.ag-theme-material .ag-input-wrapper input[type=date]:focus,\n.ag-theme-material .ag-input-wrapper input[type=datetime-local]:focus {\n  outline: none;\n}\n\n[dir] .ag-theme-material .ag-input-wrapper input:not([type]):focus, [dir] .ag-theme-material .ag-input-wrapper input[type=text]:focus, [dir] .ag-theme-material .ag-input-wrapper input[type=number]:focus, [dir] .ag-theme-material .ag-input-wrapper input[type=tel]:focus, [dir] .ag-theme-material .ag-input-wrapper input[type=date]:focus, [dir] .ag-theme-material .ag-input-wrapper input[type=datetime-local]:focus {\n  border-bottom: 2px solid #7367F0;\n}\n\n.ag-theme-material .ag-input-wrapper input:not([type])::-webkit-input-placeholder, .ag-theme-material .ag-input-wrapper input[type=text]::-webkit-input-placeholder, .ag-theme-material .ag-input-wrapper input[type=number]::-webkit-input-placeholder, .ag-theme-material .ag-input-wrapper input[type=tel]::-webkit-input-placeholder, .ag-theme-material .ag-input-wrapper input[type=date]::-webkit-input-placeholder, .ag-theme-material .ag-input-wrapper input[type=datetime-local]::-webkit-input-placeholder {\n  color: rgba(0, 0, 0, 0.38);\n}\n\n.ag-theme-material .ag-input-wrapper input:not([type])::-moz-placeholder, .ag-theme-material .ag-input-wrapper input[type=text]::-moz-placeholder, .ag-theme-material .ag-input-wrapper input[type=number]::-moz-placeholder, .ag-theme-material .ag-input-wrapper input[type=tel]::-moz-placeholder, .ag-theme-material .ag-input-wrapper input[type=date]::-moz-placeholder, .ag-theme-material .ag-input-wrapper input[type=datetime-local]::-moz-placeholder {\n  color: rgba(0, 0, 0, 0.38);\n}\n\n.ag-theme-material .ag-input-wrapper input:not([type]):-ms-input-placeholder, .ag-theme-material .ag-input-wrapper input[type=text]:-ms-input-placeholder, .ag-theme-material .ag-input-wrapper input[type=number]:-ms-input-placeholder, .ag-theme-material .ag-input-wrapper input[type=tel]:-ms-input-placeholder, .ag-theme-material .ag-input-wrapper input[type=date]:-ms-input-placeholder, .ag-theme-material .ag-input-wrapper input[type=datetime-local]:-ms-input-placeholder {\n  color: rgba(0, 0, 0, 0.38);\n}\n\n.ag-theme-material .ag-input-wrapper input:not([type])::-ms-input-placeholder, .ag-theme-material .ag-input-wrapper input[type=text]::-ms-input-placeholder, .ag-theme-material .ag-input-wrapper input[type=number]::-ms-input-placeholder, .ag-theme-material .ag-input-wrapper input[type=tel]::-ms-input-placeholder, .ag-theme-material .ag-input-wrapper input[type=date]::-ms-input-placeholder, .ag-theme-material .ag-input-wrapper input[type=datetime-local]::-ms-input-placeholder {\n  color: rgba(0, 0, 0, 0.38);\n}\n\n.ag-theme-material .ag-input-wrapper input:not([type])::placeholder,\n.ag-theme-material .ag-input-wrapper input[type=text]::placeholder,\n.ag-theme-material .ag-input-wrapper input[type=number]::placeholder,\n.ag-theme-material .ag-input-wrapper input[type=tel]::placeholder,\n.ag-theme-material .ag-input-wrapper input[type=date]::placeholder,\n.ag-theme-material .ag-input-wrapper input[type=datetime-local]::placeholder {\n  color: rgba(0, 0, 0, 0.38);\n}\n\n[dir] .ag-theme-material .ag-input-wrapper input:not([type]):disabled, [dir] .ag-theme-material .ag-input-wrapper input[type=text]:disabled, [dir] .ag-theme-material .ag-input-wrapper input[type=number]:disabled, [dir] .ag-theme-material .ag-input-wrapper input[type=tel]:disabled, [dir] .ag-theme-material .ag-input-wrapper input[type=date]:disabled, [dir] .ag-theme-material .ag-input-wrapper input[type=datetime-local]:disabled {\n  border-bottom: 1px solid #e2e2e2;\n}\n\n.ag-theme-material .ag-input-wrapper input:not([type]):disabled,\n.ag-theme-material .ag-input-wrapper input[type=text]:disabled,\n.ag-theme-material .ag-input-wrapper input[type=number]:disabled,\n.ag-theme-material .ag-input-wrapper input[type=tel]:disabled,\n.ag-theme-material .ag-input-wrapper input[type=date]:disabled,\n.ag-theme-material .ag-input-wrapper input[type=datetime-local]:disabled {\n  color: rgba(0, 0, 0, 0.38);\n}\n\n.ag-theme-material .ag-input-wrapper input[type=date] {\n  flex: 1 1 auto;\n}\n\n[dir] .ag-theme-material .ag-input-wrapper input[type=range] {\n  padding: 0;\n}\n\n.ag-theme-material .ag-input-wrapper textarea {\n  color: rgba(0, 0, 0, 0.87);\n  font-family: inherit;\n  font-size: inherit;\n  height: 40px;\n}\n\n[dir] .ag-theme-material .ag-input-wrapper textarea {\n  background: transparent;\n  padding-bottom: 8px;\n  border-width: 0;\n  border-bottom: 2px solid #e2e2e2;\n}\n\n.ag-theme-material .ag-input-wrapper textarea:focus {\n  outline: none;\n}\n\n[dir] .ag-theme-material .ag-input-wrapper textarea:focus {\n  border-bottom: 2px solid #7367F0;\n}\n\n.ag-theme-material .ag-input-wrapper textarea::-webkit-input-placeholder {\n  color: rgba(0, 0, 0, 0.38);\n}\n\n.ag-theme-material .ag-input-wrapper textarea::-moz-placeholder {\n  color: rgba(0, 0, 0, 0.38);\n}\n\n.ag-theme-material .ag-input-wrapper textarea:-ms-input-placeholder {\n  color: rgba(0, 0, 0, 0.38);\n}\n\n.ag-theme-material .ag-input-wrapper textarea::-ms-input-placeholder {\n  color: rgba(0, 0, 0, 0.38);\n}\n\n.ag-theme-material .ag-input-wrapper textarea::placeholder {\n  color: rgba(0, 0, 0, 0.38);\n}\n\n[dir] .ag-theme-material .ag-input-wrapper textarea:disabled {\n  border-bottom: 1px solid #e2e2e2;\n}\n\n.ag-theme-material .ag-input-wrapper textarea:disabled {\n  color: rgba(0, 0, 0, 0.38);\n}\n\n.ag-theme-material .ag-header {\n  color: rgba(0, 0, 0, 0.54);\n  font-weight: 600;\n  font-size: inherit;\n  font-family: inherit;\n}\n\n[dir] .ag-theme-material .ag-header {\n  background-color: #fff;\n  border-bottom: 1px solid #e2e2e2;\n}\n\n[dir=ltr] .ag-theme-material .ag-pinned-right-header {\n  border-left: 1px solid #e2e2e2;\n}\n\n[dir=rtl] .ag-theme-material .ag-pinned-right-header {\n  border-right: 1px solid #e2e2e2;\n}\n\n[dir=ltr] .ag-theme-material .ag-pinned-left-header {\n  border-right: 1px solid #e2e2e2;\n}\n\n[dir=rtl] .ag-theme-material .ag-pinned-left-header {\n  border-left: 1px solid #e2e2e2;\n}\n\n.ag-theme-material .ag-header-row {\n  height: 56px;\n}\n\n[dir] .ag-theme-material .ag-header-row {\n  border: none;\n}\n\n.ag-theme-material .ag-row {\n  height: 48px;\n}\n\n[dir] .ag-theme-material .ag-row {\n  border-style: solid;\n  border-color: #e2e2e2;\n  border-width: 0;\n}\n\n[dir] .ag-theme-material .ag-row:not(.ag-row-first) {\n  border-width: 1px 0 0;\n}\n\n[dir] .ag-theme-material .ag-row.ag-row-last {\n  border-bottom-width: 1px;\n}\n\n[dir=ltr] .ag-theme-material .ag-horizontal-left-spacer {\n  border-right: 1px solid #e2e2e2;\n}\n\n[dir=rtl] .ag-theme-material .ag-horizontal-left-spacer {\n  border-left: 1px solid #e2e2e2;\n}\n\n[dir=ltr] .ag-theme-material .ag-horizontal-left-spacer.ag-scroller-corner {\n  border-right: none;\n}\n\n[dir=rtl] .ag-theme-material .ag-horizontal-left-spacer.ag-scroller-corner {\n  border-left: none;\n}\n\n[dir=ltr] .ag-theme-material .ag-horizontal-right-spacer {\n  border-left: 1px solid #e2e2e2;\n}\n\n[dir=rtl] .ag-theme-material .ag-horizontal-right-spacer {\n  border-right: 1px solid #e2e2e2;\n}\n\n[dir=ltr] .ag-theme-material .ag-horizontal-right-spacer.ag-scroller-corner {\n  border-left: none;\n}\n\n[dir=rtl] .ag-theme-material .ag-horizontal-right-spacer.ag-scroller-corner {\n  border-right: none;\n}\n\n[dir] .ag-theme-material .ag-row-hover {\n  background-color: #fafafa;\n}\n\n[dir=ltr] .ag-theme-material .ag-numeric-cell {\n  text-align: right;\n}\n\n[dir=rtl] .ag-theme-material .ag-numeric-cell {\n  text-align: left;\n}\n\n.ag-theme-material .ag-header-cell-label .ag-header-icon {\n  opacity: 0.87;\n}\n\n[dir=ltr] .ag-theme-material .ag-header-cell-label .ag-header-icon {\n  margin-left: 8px;\n}\n\n[dir=rtl] .ag-theme-material .ag-header-cell-label .ag-header-icon {\n  margin-right: 8px;\n}\n\n[dir] .ag-theme-material .ag-header-cell, [dir] .ag-theme-material .ag-header-group-cell {\n  border-style: solid;\n  border-color: #e2e2e2;\n  border-width: 0;\n}\n\n[dir=ltr] .ag-theme-material .ag-header-cell, [dir=ltr] .ag-theme-material .ag-header-group-cell {\n  padding-left: 24px;\n  padding-right: 24px;\n}\n\n[dir=rtl] .ag-theme-material .ag-header-cell, [dir=rtl] .ag-theme-material .ag-header-group-cell {\n  padding-right: 24px;\n  padding-left: 24px;\n}\n\n[dir] .ag-theme-material .ag-header-cell.ag-header-cell-moving, [dir] .ag-theme-material .ag-header-group-cell.ag-header-cell-moving {\n  background-color: #f2f2f2;\n}\n\n[dir] .ag-theme-material .ag-header-cell:not(.ag-header-group-cell-no-group), [dir] .ag-theme-material .ag-header-group-cell:not(.ag-header-group-cell-no-group) {\n  border-top-width: 1px;\n}\n\n[dir] .ag-theme-material .ag-header-row:first-child .ag-header-cell, [dir] .ag-theme-material .ag-header-row:first-child .ag-header-group-cell {\n  border-top-width: 0;\n}\n\n[dir] .ag-theme-material .ag-header-group-cell:not(.ag-column-resizing) + .ag-header-group-cell:hover, [dir] .ag-theme-material .ag-header-group-cell:not(.ag-column-resizing) + .ag-header-group-cell.ag-column-resizing, [dir] .ag-theme-material .ag-header-cell:not(.ag-column-resizing) + .ag-header-cell:hover, [dir] .ag-theme-material .ag-header-cell:not(.ag-column-resizing) + .ag-header-cell.ag-column-resizing, [dir] .ag-theme-material .ag-header-group-cell:first-of-type:hover, [dir] .ag-theme-material .ag-header-group-cell:first-of-type.ag-column-resizing, [dir] .ag-theme-material .ag-header-cell:first-of-type:hover, [dir] .ag-theme-material .ag-header-cell:first-of-type.ag-column-resizing {\n  background-color: #f2f2f2;\n}\n\n[dir] .ag-theme-material .ag-header-cell-resize {\n  cursor: col-resize;\n}\n\n[dir=ltr] .ag-theme-material .ag-header-select-all {\n  margin-right: 24px;\n}\n\n[dir=rtl] .ag-theme-material .ag-header-select-all {\n  margin-left: 24px;\n}\n\n.ag-theme-material .ag-cell {\n  line-height: 46px;\n}\n\n[dir] .ag-theme-material .ag-cell {\n  border: 1px solid transparent;\n}\n\n[dir=ltr] .ag-theme-material .ag-cell {\n  padding-left: 24px;\n  padding-right: 24px;\n  padding-left: 23px;\n  padding-right: 23px;\n}\n\n[dir=rtl] .ag-theme-material .ag-cell {\n  padding-right: 24px;\n  padding-left: 24px;\n  padding-right: 23px;\n  padding-left: 23px;\n}\n\n.ag-theme-material .ag-row-drag {\n  min-width: 42px;\n}\n\n[dir] .ag-theme-material .ag-row-drag {\n  cursor: move;\n  cursor: -webkit-grab;\n  cursor: grab;\n}\n\n[dir] .ag-theme-material .ag-row-dragging, [dir] .ag-theme-material .ag-row-dragging .ag-row-drag {\n  cursor: move;\n}\n\n[dir] .ag-theme-material .ag-column-drag {\n  cursor: move;\n  cursor: -webkit-grab;\n  cursor: grab;\n}\n\n.ag-theme-material .ag-row-dragging {\n  opacity: 0.5;\n}\n\n.ag-theme-material .ag-ltr .ag-has-focus .ag-cell-focus:not(.ag-cell-range-selected),\n.ag-theme-material .ag-ltr .ag-has-focus .ag-cell-focus.ag-cell-range-single-cell,\n.ag-theme-material .ag-ltr .ag-cell-focus.ag-cell-range-single-cell.ag-cell-range-handle, .ag-theme-material .ag-rtl .ag-has-focus .ag-cell-focus:not(.ag-cell-range-selected),\n.ag-theme-material .ag-rtl .ag-has-focus .ag-cell-focus.ag-cell-range-single-cell,\n.ag-theme-material .ag-rtl .ag-cell-focus.ag-cell-range-single-cell.ag-cell-range-handle {\n  outline: initial;\n}\n\n[dir] .ag-theme-material .ag-ltr .ag-has-focus .ag-cell-focus:not(.ag-cell-range-selected), [dir] .ag-theme-material .ag-ltr .ag-has-focus .ag-cell-focus.ag-cell-range-single-cell, [dir] .ag-theme-material .ag-ltr .ag-cell-focus.ag-cell-range-single-cell.ag-cell-range-handle, [dir] .ag-theme-material .ag-rtl .ag-has-focus .ag-cell-focus:not(.ag-cell-range-selected), [dir] .ag-theme-material .ag-rtl .ag-has-focus .ag-cell-focus.ag-cell-range-single-cell, [dir] .ag-theme-material .ag-rtl .ag-cell-focus.ag-cell-range-single-cell.ag-cell-range-handle {\n  border: 1px solid #7367F0;\n}\n\n.ag-theme-material .ag-header-cell-resize {\n  width: 16px;\n}\n\n[dir] .ag-theme-material .ag-menu {\n  background: #fff;\n  border-radius: 2px;\n  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);\n  padding: 8px;\n  padding: 0;\n}\n\n.ag-theme-material .ag-menu .ag-menu-list {\n  width: 100%;\n}\n\n[dir] .ag-theme-material .ag-menu .ag-menu-list {\n  cursor: default;\n  margin-bottom: 8px;\n  margin-top: 8px;\n}\n\n[dir] .ag-theme-material .ag-menu .ag-menu-option-active {\n  background-color: #fafafa;\n}\n\n.ag-theme-material .ag-menu .ag-menu-option-disabled {\n  opacity: 0.5;\n}\n\n[dir=ltr] .ag-theme-material .ag-menu .ag-menu-option-text {\n  margin-left: 8px;\n}\n\n[dir=rtl] .ag-theme-material .ag-menu .ag-menu-option-text {\n  margin-right: 8px;\n}\n\n.ag-theme-material .ag-menu .ag-menu-option-icon {\n  min-width: 34px;\n}\n\n[dir=ltr] .ag-theme-material .ag-menu .ag-menu-option-icon {\n  padding-left: 8px;\n  padding-right: 8px;\n}\n\n[dir=rtl] .ag-theme-material .ag-menu .ag-menu-option-icon {\n  padding-right: 8px;\n  padding-left: 8px;\n}\n\n[dir=ltr] .ag-theme-material .ag-menu .ag-menu-option-shortcut {\n  padding-left: 16px;\n}\n\n[dir=rtl] .ag-theme-material .ag-menu .ag-menu-option-shortcut {\n  padding-right: 16px;\n}\n\n.ag-theme-material .ag-menu .ag-menu-separator {\n  height: 16px;\n}\n\n[dir] .ag-theme-material .ag-menu .ag-menu-separator > span {\n  background-image: url(\"data:image/svg+xml,%3Csvg%20width%3D'1'%20height%3D'16px'%20viewBox%3D'0%200%201%2016px'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%3E%3Cline%20x1%3D'0'%20y1%3D'8px'%20x2%3D'1'%20y2%3D'8px'%20stroke-width%3D'1'%20stroke%3D'%23E2E2E2'%2F%3E%3C%2Fsvg%3E\");\n}\n\n.ag-theme-material .ag-menu .ag-menu-option-popup-pointer {\n  width: 34px;\n}\n\n[dir] .ag-theme-material .ag-menu .ag-menu-option-popup-pointer {\n  text-align: center;\n}\n\n.ag-theme-material.ag-dnd-ghost {\n  color: rgba(0, 0, 0, 0.54);\n  font-weight: 600;\n  font-size: inherit;\n  font-family: inherit;\n  height: 56px !important;\n  line-height: 56px;\n}\n\n[dir] .ag-theme-material.ag-dnd-ghost {\n  background: #fff;\n  border-radius: 2px;\n  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);\n  padding: 8px;\n  border: 1px solid #e2e2e2;\n  margin: 0;\n  padding: 0 16px;\n  transform: translateY(16px);\n}\n\n.ag-theme-material.ag-dnd-ghost span,\n.ag-theme-material.ag-dnd-ghost div {\n  height: 100%;\n}\n\n[dir] .ag-theme-material.ag-dnd-ghost span, [dir] .ag-theme-material.ag-dnd-ghost div {\n  margin: 0;\n  padding: 0;\n}\n\n.ag-theme-material.ag-dnd-ghost .ag-dnd-ghost-icon {\n  opacity: 0.87;\n}\n\n[dir=ltr] .ag-theme-material.ag-dnd-ghost .ag-dnd-ghost-icon {\n  margin-right: 8px;\n}\n\n[dir=rtl] .ag-theme-material.ag-dnd-ghost .ag-dnd-ghost-icon {\n  margin-left: 8px;\n}\n\n.ag-theme-material .ag-tab-header {\n  min-width: 220px;\n  width: 100%;\n  display: flex;\n}\n\n[dir] .ag-theme-material .ag-tab-header {\n  background: #eee;\n}\n\n.ag-theme-material .ag-tab-header .ag-tab {\n  display: flex;\n  height: 32px;\n  flex: none;\n  align-items: center;\n  justify-content: center;\n  flex: 1 1 auto;\n}\n\n[dir] .ag-theme-material .ag-tab-header .ag-tab {\n  border-bottom: 2px solid transparent;\n}\n\n[dir] .ag-theme-material .ag-tab-body {\n  padding: 4px 0;\n}\n\n[dir] .ag-theme-material .ag-tab-body .ag-menu-list {\n  margin-bottom: 0;\n  margin-top: 0;\n}\n\n[dir] .ag-theme-material .ag-tab-body .ag-menu-list > div:first-child > span {\n  padding-top: 0;\n}\n\n[dir] .ag-theme-material .ag-tab-body .ag-menu-list > div:last-child > span {\n  padding-bottom: 0;\n}\n\n[dir] .ag-theme-material .ag-tab-body .ag-menu-list > div:last-child > .ag-menu-option-popup-pointer {\n  background-position-y: 0;\n}\n\n[dir] .ag-theme-material .ag-filter .ag-filter-select, [dir] .ag-theme-material .ag-filter .ag-filter-body {\n  margin-bottom: 8px;\n}\n\n[dir] .ag-theme-material .ag-filter .ag-filter-body {\n  margin-top: 0;\n}\n\n[dir=ltr] .ag-theme-material .ag-filter .ag-filter-filter {\n  margin-left: 8px;\n  margin-right: 8px;\n}\n\n[dir=rtl] .ag-theme-material .ag-filter .ag-filter-filter {\n  margin-right: 8px;\n  margin-left: 8px;\n}\n\n[dir] .ag-theme-material .ag-filter .ag-filter-select {\n  margin: 8px;\n}\n\n.ag-theme-material .ag-filter input[type=radio] {\n  width: 12px;\n  height: 17px;\n  vertical-align: top;\n}\n\n[dir=ltr] .ag-theme-material .ag-filter input[type=radio] {\n  margin: 0 3px 0 6px;\n}\n\n[dir=rtl] .ag-theme-material .ag-filter input[type=radio] {\n  margin: 0 6px 0 3px;\n}\n\n[dir=ltr] .ag-theme-material .ag-filter input[type=text], [dir=ltr] .ag-theme-material .ag-filter input[type=date] {\n  padding-left: 8px;\n}\n\n[dir=rtl] .ag-theme-material .ag-filter input[type=text], [dir=rtl] .ag-theme-material .ag-filter input[type=date] {\n  padding-right: 8px;\n}\n\n.ag-theme-material .ag-filter .ag-set-filter-list {\n  height: 240px;\n}\n\n.ag-theme-material .ag-filter .ag-set-filter-item {\n  height: 40px;\n}\n\n[dir=ltr] .ag-theme-material .ag-filter .ag-set-filter-item > div, [dir=ltr] .ag-theme-material .ag-filter .ag-set-filter-item > span {\n  margin-left: 5px;\n}\n\n[dir=rtl] .ag-theme-material .ag-filter .ag-set-filter-item > div, [dir=rtl] .ag-theme-material .ag-filter .ag-set-filter-item > span {\n  margin-right: 5px;\n}\n\n[dir] .ag-theme-material .ag-filter .ag-filter-header-container {\n  border-bottom: 1px solid #e2e2e2;\n  padding-bottom: 4px;\n}\n\n.ag-theme-material .ag-filter .ag-filter-apply-panel {\n  display: flex;\n  justify-content: flex-end;\n}\n\n[dir] .ag-theme-material .ag-filter .ag-filter-apply-panel {\n  padding: 8px;\n  padding-top: 16px;\n}\n\n.ag-theme-material .ag-filter .ag-filter-apply-panel button {\n  line-height: 1.5;\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n  color: #7367F0;\n  font-family: inherit;\n  font-size: inherit;\n  text-transform: uppercase;\n}\n\n[dir] .ag-theme-material .ag-filter .ag-filter-apply-panel button {\n  background-color: transparent;\n  border: 0;\n  margin: 0;\n  padding: 0;\n}\n\n[dir=ltr] .ag-theme-material .ag-filter .ag-filter-apply-panel button + button {\n  margin-left: 16px;\n}\n\n[dir=rtl] .ag-theme-material .ag-filter .ag-filter-apply-panel button + button {\n  margin-right: 16px;\n}\n\n.ag-theme-material .ag-column-select-panel .ag-column-tool-panel-column-group,\n.ag-theme-material .ag-column-select-panel .ag-column-tool-panel-column {\n  height: 32px;\n}\n\n[dir=ltr] .ag-theme-material .ag-column-select-panel .ag-column-tool-panel-column-group .ag-column-select-checkbox, [dir=ltr] .ag-theme-material .ag-column-select-panel .ag-column-tool-panel-column-group .ag-column-tool-panel-column-label, [dir=ltr] .ag-theme-material .ag-column-select-panel .ag-column-tool-panel-column-group .ag-column-group-icons, [dir=ltr] .ag-theme-material .ag-column-select-panel .ag-column-tool-panel-column .ag-column-select-checkbox, [dir=ltr] .ag-theme-material .ag-column-select-panel .ag-column-tool-panel-column .ag-column-tool-panel-column-label, [dir=ltr] .ag-theme-material .ag-column-select-panel .ag-column-tool-panel-column .ag-column-group-icons {\n  margin-left: 8px;\n  margin-right: 8px;\n}\n\n[dir=rtl] .ag-theme-material .ag-column-select-panel .ag-column-tool-panel-column-group .ag-column-select-checkbox, [dir=rtl] .ag-theme-material .ag-column-select-panel .ag-column-tool-panel-column-group .ag-column-tool-panel-column-label, [dir=rtl] .ag-theme-material .ag-column-select-panel .ag-column-tool-panel-column-group .ag-column-group-icons, [dir=rtl] .ag-theme-material .ag-column-select-panel .ag-column-tool-panel-column .ag-column-select-checkbox, [dir=rtl] .ag-theme-material .ag-column-select-panel .ag-column-tool-panel-column .ag-column-tool-panel-column-label, [dir=rtl] .ag-theme-material .ag-column-select-panel .ag-column-tool-panel-column .ag-column-group-icons {\n  margin-right: 8px;\n  margin-left: 8px;\n}\n\n[dir] .ag-theme-material .ag-column-select-panel .ag-primary-cols-list-panel {\n  border-top: 1px solid #e2e2e2;\n  padding-top: 8px;\n}\n\n[dir] .ag-theme-material .ag-column-select-panel .ag-primary-cols-list-panel > div {\n  cursor: pointer;\n}\n\n[dir=ltr] .ag-theme-material .ag-column-select-panel .ag-column-tool-panel-column.ag-toolpanel-add-group-indent {\n  margin-left: 34px;\n}\n\n[dir=rtl] .ag-theme-material .ag-column-select-panel .ag-column-tool-panel-column.ag-toolpanel-add-group-indent {\n  margin-right: 34px;\n}\n\n.ag-theme-material .ag-primary-cols-header-panel {\n  height: 56px;\n  align-items: center;\n}\n\n[dir] .ag-theme-material .ag-primary-cols-header-panel {\n  border-top: 1px solid #e2e2e2;\n}\n\n[dir] .ag-theme-material .ag-primary-cols-header-panel > div {\n  cursor: pointer;\n  margin: 0 8px;\n}\n\n[dir=ltr] .ag-theme-material .ag-primary-cols-header-panel .ag-filter-body {\n  margin-left: 8px;\n  margin-right: 8px;\n}\n\n[dir=rtl] .ag-theme-material .ag-primary-cols-header-panel .ag-filter-body {\n  margin-right: 8px;\n  margin-left: 8px;\n}\n\n[dir=ltr] .ag-theme-material .ag-tool-panel-wrapper {\n  border-right: 0;\n}\n\n[dir=rtl] .ag-theme-material .ag-tool-panel-wrapper {\n  border-left: 0;\n}\n\n.ag-theme-material .ag-tool-panel-wrapper .ag-filter-panel {\n  width: 100%;\n}\n\n.ag-theme-material .ag-tool-panel-wrapper .ag-filter-panel .ag-filter-toolpanel-instance {\n  color: rgba(0, 0, 0, 0.54);\n  font-weight: 600;\n  flex: auto;\n  flex-direction: column;\n  flex-wrap: nowrap;\n  display: flex;\n  flex-flow: column nowrap;\n}\n\n[dir] .ag-theme-material .ag-tool-panel-wrapper .ag-filter-panel .ag-filter-toolpanel-instance .ag-filter-toolpanel-header {\n  padding: 0 5px;\n}\n\n[dir] .ag-theme-material .ag-tool-panel-wrapper .ag-filter-panel .ag-filter-toolpanel-instance .ag-filter-toolpanel-header > div {\n  margin: auto 0;\n}\n\n[dir] .ag-theme-material .ag-tool-panel-wrapper .ag-filter-panel .ag-filter-body-wrapper {\n  padding-top: 5px;\n}\n\n[dir] .ag-theme-material .ag-tool-panel-wrapper .ag-filter-panel .ag-filter-air {\n  border: 1px solid #e2e2e2;\n  padding: 8px 0;\n}\n\n[dir=ltr] .ag-theme-material .ag-tool-panel-wrapper .ag-filter-panel .ag-filter-air {\n  border-left: 0;\n  border-right: 0;\n}\n\n[dir=rtl] .ag-theme-material .ag-tool-panel-wrapper .ag-filter-panel .ag-filter-air {\n  border-right: 0;\n  border-left: 0;\n}\n\n.ag-theme-material .ag-tool-panel-wrapper .ag-pivot-mode-panel {\n  height: 56px;\n  display: flex;\n  flex: none;\n}\n\n.ag-theme-material .ag-tool-panel-wrapper .ag-pivot-mode-panel .ag-pivot-mode-select {\n  display: flex;\n  align-items: center;\n}\n\n[dir=ltr] .ag-theme-material .ag-tool-panel-wrapper .ag-pivot-mode-panel .ag-pivot-mode-select {\n  margin-left: 8px;\n}\n\n[dir=rtl] .ag-theme-material .ag-tool-panel-wrapper .ag-pivot-mode-panel .ag-pivot-mode-select {\n  margin-right: 8px;\n}\n\n[dir] .ag-theme-material .ag-tool-panel-wrapper .ag-column-select-panel {\n  border-bottom: 1px solid #e2e2e2;\n  padding-bottom: 7px;\n  padding-top: 0;\n}\n\n[dir] .ag-theme-material .ag-tool-panel-wrapper .ag-column-drop {\n  border-bottom: 1px solid #e2e2e2;\n  padding: 8px 0;\n  padding-bottom: 16px;\n}\n\n.ag-theme-material .ag-tool-panel-wrapper .ag-column-drop .ag-column-drop-empty-message {\n  color: rgba(0, 0, 0, 0.38);\n  font-weight: 600;\n  font-size: inherit;\n  font-family: inherit;\n}\n\n[dir] .ag-theme-material .ag-tool-panel-wrapper .ag-column-drop .ag-column-drop-empty-message {\n  margin-top: 8px;\n}\n\n[dir=ltr] .ag-theme-material .ag-tool-panel-wrapper .ag-column-drop .ag-column-drop-empty-message {\n  padding-left: 34px;\n  padding-right: 8px;\n}\n\n[dir=rtl] .ag-theme-material .ag-tool-panel-wrapper .ag-column-drop .ag-column-drop-empty-message {\n  padding-right: 34px;\n  padding-left: 8px;\n}\n\n[dir] .ag-theme-material .ag-tool-panel-wrapper .ag-column-drop .ag-column-drop-list {\n  cursor: default;\n  margin-top: 8px;\n}\n\n[dir=ltr] .ag-theme-material .ag-tool-panel-wrapper .ag-column-drop > div:first-child > span:first-child {\n  margin-left: 8px;\n  margin-right: 8px;\n}\n\n[dir=rtl] .ag-theme-material .ag-tool-panel-wrapper .ag-column-drop > div:first-child > span:first-child {\n  margin-right: 8px;\n  margin-left: 8px;\n}\n\n[dir] .ag-theme-material .ag-tool-panel-wrapper .ag-column-drop:last-child {\n  border-bottom: 0;\n}\n\n[dir=ltr] .ag-theme-material .ag-numeric-header .ag-header-cell-label .ag-header-icon {\n  margin-left: 0;\n  margin-right: 8px;\n}\n\n[dir=rtl] .ag-theme-material .ag-numeric-header .ag-header-cell-label .ag-header-icon {\n  margin-right: 0;\n  margin-left: 8px;\n}\n\n.ag-theme-material .ag-paging-panel {\n  color: rgba(0, 0, 0, 0.54);\n  height: 56px;\n}\n\n[dir] .ag-theme-material .ag-paging-panel {\n  border-top: 1px solid #e2e2e2;\n  padding: 0 24px;\n}\n\n[dir=ltr] .ag-theme-material .ag-paging-panel > span {\n  margin-left: 32px;\n}\n\n[dir=rtl] .ag-theme-material .ag-paging-panel > span {\n  margin-right: 32px;\n}\n\n.ag-theme-material .ag-paging-page-summary-panel .ag-icon {\n  width: 18px;\n  height: 18px;\n}\n\n.ag-theme-material .ag-paging-page-summary-panel .ag-paging-button button {\n  opacity: 0;\n  top: 0;\n  bottom: 0;\n}\n\n[dir] .ag-theme-material .ag-paging-page-summary-panel .ag-paging-button button {\n  cursor: pointer;\n  padding: 0;\n}\n\n[dir=ltr] .ag-theme-material .ag-paging-page-summary-panel .ag-paging-button button {\n  right: 0;\n  left: 0;\n}\n\n[dir=rtl] .ag-theme-material .ag-paging-page-summary-panel .ag-paging-button button {\n  left: 0;\n  right: 0;\n}\n\n.ag-theme-material .ag-paging-page-summary-panel .ag-paging-button.ag-disabled .ag-icon {\n  color: rgba(0, 0, 0, 0.38);\n  opacity: 0.38;\n}\n\n[dir] .ag-theme-material .ag-paging-page-summary-panel .ag-paging-button.ag-disabled button {\n  cursor: default;\n}\n\n[dir] .ag-theme-material .ag-paging-page-summary-panel span {\n  margin: 0 8px;\n}\n\n[dir] .ag-theme-material .ag-row-selected {\n  background-color: #eee;\n}\n\n[dir] .ag-theme-material .ag-ltr .ag-cell.ag-cell-range-selected:not(.ag-cell-range-single-cell), [dir] .ag-theme-material .ag-rtl .ag-cell.ag-cell-range-selected:not(.ag-cell-range-single-cell) {\n  border: 1px solid transparent;\n}\n\n[dir] .ag-theme-material .ag-ltr .ag-cell.ag-cell-range-selected:not(.ag-cell-range-single-cell).ag-cell-range-top, [dir] .ag-theme-material .ag-rtl .ag-cell.ag-cell-range-selected:not(.ag-cell-range-single-cell).ag-cell-range-top {\n  border-top-color: #7367F0;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-cell.ag-cell-range-selected:not(.ag-cell-range-single-cell).ag-cell-range-right, [dir=ltr] .ag-theme-material .ag-rtl .ag-cell.ag-cell-range-selected:not(.ag-cell-range-single-cell).ag-cell-range-right {\n  border-right-color: #7367F0;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-cell.ag-cell-range-selected:not(.ag-cell-range-single-cell).ag-cell-range-right, [dir=rtl] .ag-theme-material .ag-rtl .ag-cell.ag-cell-range-selected:not(.ag-cell-range-single-cell).ag-cell-range-right {\n  border-left-color: #7367F0;\n}\n\n[dir] .ag-theme-material .ag-ltr .ag-cell.ag-cell-range-selected:not(.ag-cell-range-single-cell).ag-cell-range-bottom, [dir] .ag-theme-material .ag-rtl .ag-cell.ag-cell-range-selected:not(.ag-cell-range-single-cell).ag-cell-range-bottom {\n  border-bottom-color: #7367F0;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-cell.ag-cell-range-selected:not(.ag-cell-range-single-cell).ag-cell-range-left, [dir=ltr] .ag-theme-material .ag-rtl .ag-cell.ag-cell-range-selected:not(.ag-cell-range-single-cell).ag-cell-range-left {\n  border-left-color: #7367F0;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-cell.ag-cell-range-selected:not(.ag-cell-range-single-cell).ag-cell-range-left, [dir=rtl] .ag-theme-material .ag-rtl .ag-cell.ag-cell-range-selected:not(.ag-cell-range-single-cell).ag-cell-range-left {\n  border-right-color: #7367F0;\n}\n\n[dir] .ag-theme-material .ag-cell-range-selected:not(.ag-cell-focus) {\n  background-color: rgba(122, 134, 203, 0.1);\n}\n\n[dir] .ag-theme-material .ag-cell-range-selected:not(.ag-cell-focus).ag-cell-range-chart {\n  background-color: rgba(0, 88, 255, 0.1);\n}\n\n[dir] .ag-theme-material .ag-cell-range-selected:not(.ag-cell-focus).ag-cell-range-chart.ag-cell-range-chart-category {\n  background-color: rgba(0, 255, 132, 0.1);\n}\n\n[dir] .ag-theme-material .ag-cell-range-selected-1:not(.ag-cell-focus) {\n  background-color: rgba(122, 134, 203, 0.2);\n}\n\n[dir] .ag-theme-material .ag-cell-range-selected-2:not(.ag-cell-focus) {\n  background-color: rgba(122, 134, 203, 0.3);\n}\n\n[dir] .ag-theme-material .ag-cell-range-selected-3:not(.ag-cell-focus) {\n  background-color: rgba(122, 134, 203, 0.4);\n}\n\n[dir] .ag-theme-material .ag-cell-range-selected-4:not(.ag-cell-focus) {\n  background-color: rgba(122, 134, 203, 0.5);\n}\n\n[dir] .ag-theme-material .ag-ltr .ag-selection-fill-top, [dir] .ag-theme-material .ag-rtl .ag-selection-fill-top {\n  border-top: 1px dashed #7367F0;\n}\n\n[dir] .ag-theme-material .ag-ltr .ag-selection-fill-top.ag-cell.ag-cell-range-selected, [dir] .ag-theme-material .ag-rtl .ag-selection-fill-top.ag-cell.ag-cell-range-selected {\n  border-top: 1px dashed #afafaf;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-selection-fill-right, [dir=ltr] .ag-theme-material .ag-rtl .ag-selection-fill-right {\n  border-right: 1px dashed #7367F0;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-selection-fill-right, [dir=rtl] .ag-theme-material .ag-rtl .ag-selection-fill-right {\n  border-left: 1px dashed #7367F0;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-selection-fill-right.ag-cell.ag-cell-range-selected, [dir=ltr] .ag-theme-material .ag-rtl .ag-selection-fill-right.ag-cell.ag-cell-range-selected {\n  border-right: 1px dashed #afafaf;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-selection-fill-right.ag-cell.ag-cell-range-selected, [dir=rtl] .ag-theme-material .ag-rtl .ag-selection-fill-right.ag-cell.ag-cell-range-selected {\n  border-left: 1px dashed #afafaf;\n}\n\n[dir] .ag-theme-material .ag-ltr .ag-selection-fill-bottom, [dir] .ag-theme-material .ag-rtl .ag-selection-fill-bottom {\n  border-bottom: 1px dashed #7367F0;\n}\n\n[dir] .ag-theme-material .ag-ltr .ag-selection-fill-bottom.ag-cell.ag-cell-range-selected, [dir] .ag-theme-material .ag-rtl .ag-selection-fill-bottom.ag-cell.ag-cell-range-selected {\n  border-bottom: 1px dashed #afafaf;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-selection-fill-left, [dir=ltr] .ag-theme-material .ag-rtl .ag-selection-fill-left {\n  border-left: 1px dashed #7367F0;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-selection-fill-left, [dir=rtl] .ag-theme-material .ag-rtl .ag-selection-fill-left {\n  border-right: 1px dashed #7367F0;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-selection-fill-left.ag-cell.ag-cell-range-selected, [dir=ltr] .ag-theme-material .ag-rtl .ag-selection-fill-left.ag-cell.ag-cell-range-selected {\n  border-left: 1px dashed #afafaf;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-selection-fill-left.ag-cell.ag-cell-range-selected, [dir=rtl] .ag-theme-material .ag-rtl .ag-selection-fill-left.ag-cell.ag-cell-range-selected {\n  border-right: 1px dashed #afafaf;\n}\n\n.ag-theme-material .ag-range-handle, .ag-theme-material .ag-fill-handle {\n  position: absolute;\n  width: 6px;\n  height: 6px;\n  bottom: -1px;\n}\n\n[dir] .ag-theme-material .ag-range-handle, [dir] .ag-theme-material .ag-fill-handle {\n  background-color: #7367F0;\n}\n\n[dir=ltr] .ag-theme-material .ag-range-handle, [dir=ltr] .ag-theme-material .ag-fill-handle {\n  right: -1px;\n}\n\n[dir=rtl] .ag-theme-material .ag-range-handle, [dir=rtl] .ag-theme-material .ag-fill-handle {\n  left: -1px;\n}\n\n[dir] .ag-theme-material .ag-fill-handle {\n  cursor: cell;\n}\n\n[dir=ltr] .ag-theme-material .ag-range-handle {\n  cursor: nwse-resize;\n}\n\n[dir=rtl] .ag-theme-material .ag-range-handle {\n  cursor: nesw-resize;\n}\n\n.ag-theme-material .ag-cell.ag-cell-inline-editing {\n  height: 72px;\n}\n\n[dir] .ag-theme-material .ag-cell.ag-cell-inline-editing {\n  padding: 24px;\n}\n\n[dir] .ag-theme-material .ag-cell.ag-cell-inline-editing {\n  background: #fff;\n  border-radius: 2px;\n  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);\n  padding: 8px;\n  background-color: #fafafa;\n}\n\n[dir] .ag-theme-material .ag-popup-editor {\n  background: #fff;\n  border-radius: 2px;\n  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);\n  padding: 8px;\n  background-color: #fafafa;\n  padding: 0;\n}\n\n.ag-theme-material .ag-popup-editor .ag-large-textarea textarea {\n  height: auto;\n}\n\n[dir] .ag-theme-material .ag-popup-editor .ag-large-textarea textarea {\n  padding: 24px;\n}\n\n.ag-theme-material .ag-virtual-list-container .ag-virtual-list-item {\n  height: 40px;\n}\n\n[dir] .ag-theme-material .ag-rich-select {\n  background-color: #fafafa;\n}\n\n.ag-theme-material .ag-rich-select .ag-rich-select-list {\n  width: 200px;\n  height: 312px;\n}\n\n.ag-theme-material .ag-rich-select .ag-rich-select-value {\n  height: 48px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rich-select .ag-rich-select-value {\n  padding: 0 8px 0 24px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rich-select .ag-rich-select-value {\n  padding: 0 24px 0 8px;\n}\n\n.ag-theme-material .ag-rich-select .ag-virtual-list-item {\n  height: 48px;\n}\n\n[dir] .ag-theme-material .ag-rich-select .ag-virtual-list-item {\n  cursor: default;\n}\n\n[dir] .ag-theme-material .ag-rich-select .ag-virtual-list-item:hover {\n  background-color: #fafafa;\n}\n\n[dir=ltr] .ag-theme-material .ag-rich-select .ag-rich-select-row {\n  padding-left: 24px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rich-select .ag-rich-select-row {\n  padding-right: 24px;\n}\n\n[dir] .ag-theme-material .ag-rich-select .ag-rich-select-row-selected {\n  background-color: #eee;\n}\n\n[dir=ltr] .ag-theme-material .ag-ltr .ag-floating-filter-button {\n  margin-left: 24px;\n}\n\n[dir=rtl] .ag-theme-material .ag-ltr .ag-floating-filter-button {\n  margin-right: 24px;\n}\n\n.ag-theme-material .ag-floating-filter-button button {\n  -webkit-appearance: none;\n     -moz-appearance: none;\n          appearance: none;\n  height: 18px;\n  width: 18px;\n}\n\n[dir] .ag-theme-material .ag-floating-filter-button button {\n  background: transparent;\n  border: 0;\n  padding: 0;\n}\n\n[dir=ltr] .ag-theme-material .ag-selection-checkbox:not(.ag-hidden) ~ .ag-cell-value:not(:empty), [dir=ltr] .ag-theme-material .ag-selection-checkbox:not(.ag-hidden) + .ag-group-value:not(:empty), [dir=ltr] .ag-theme-material .ag-group-expanded:not(.ag-hidden) ~ .ag-cell-value:not(:empty), [dir=ltr] .ag-theme-material .ag-group-expanded:not(.ag-hidden) + .ag-group-value:not(:empty), [dir=ltr] .ag-theme-material .ag-group-contracted:not(.ag-hidden) ~ .ag-cell-value:not(:empty), [dir=ltr] .ag-theme-material .ag-group-contracted:not(.ag-hidden) + .ag-group-value:not(:empty), [dir=ltr] .ag-theme-material .ag-group-checkbox:not(.ag-invisible) ~ .ag-cell-value:not(:empty), [dir=ltr] .ag-theme-material .ag-group-checkbox:not(.ag-invisible) + .ag-group-value:not(:empty) {\n  margin-left: 24px;\n}\n\n[dir=rtl] .ag-theme-material .ag-selection-checkbox:not(.ag-hidden) ~ .ag-cell-value:not(:empty), [dir=rtl] .ag-theme-material .ag-selection-checkbox:not(.ag-hidden) + .ag-group-value:not(:empty), [dir=rtl] .ag-theme-material .ag-group-expanded:not(.ag-hidden) ~ .ag-cell-value:not(:empty), [dir=rtl] .ag-theme-material .ag-group-expanded:not(.ag-hidden) + .ag-group-value:not(:empty), [dir=rtl] .ag-theme-material .ag-group-contracted:not(.ag-hidden) ~ .ag-cell-value:not(:empty), [dir=rtl] .ag-theme-material .ag-group-contracted:not(.ag-hidden) + .ag-group-value:not(:empty), [dir=rtl] .ag-theme-material .ag-group-checkbox:not(.ag-invisible) ~ .ag-cell-value:not(:empty), [dir=rtl] .ag-theme-material .ag-group-checkbox:not(.ag-invisible) + .ag-group-value:not(:empty) {\n  margin-right: 24px;\n}\n\n[dir=ltr] .ag-theme-material .ag-selection-checkbox:not(.ag-hidden) ~ .ag-group-checkbox, [dir=ltr] .ag-theme-material .ag-group-expanded:not(.ag-hidden) ~ .ag-group-checkbox, [dir=ltr] .ag-theme-material .ag-group-contracted:not(.ag-hidden) ~ .ag-group-checkbox, [dir=ltr] .ag-theme-material .ag-group-checkbox:not(.ag-invisible) ~ .ag-group-checkbox {\n  margin-left: 24px;\n}\n\n[dir=rtl] .ag-theme-material .ag-selection-checkbox:not(.ag-hidden) ~ .ag-group-checkbox, [dir=rtl] .ag-theme-material .ag-group-expanded:not(.ag-hidden) ~ .ag-group-checkbox, [dir=rtl] .ag-theme-material .ag-group-contracted:not(.ag-hidden) ~ .ag-group-checkbox, [dir=rtl] .ag-theme-material .ag-group-checkbox:not(.ag-invisible) ~ .ag-group-checkbox {\n  margin-right: 24px;\n}\n\n[dir=ltr] .ag-theme-material .ag-group-child-count {\n  margin-left: 2px;\n}\n\n[dir=rtl] .ag-theme-material .ag-group-child-count {\n  margin-right: 2px;\n}\n\n.ag-theme-material .ag-selection-checkbox span {\n  position: relative;\n}\n\n.ag-theme-material .ag-column-drop-horizontal {\n  height: 48px;\n}\n\n[dir] .ag-theme-material .ag-column-drop-horizontal {\n  background-color: #eee;\n}\n\n[dir=ltr] .ag-theme-material .ag-column-drop-horizontal {\n  padding-left: 24px;\n}\n\n[dir=rtl] .ag-theme-material .ag-column-drop-horizontal {\n  padding-right: 24px;\n}\n\n[dir=ltr] .ag-theme-material .ag-column-drop-horizontal .ag-icon-group, [dir=ltr] .ag-theme-material .ag-column-drop-horizontal .ag-icon-pivot {\n  margin-right: 24px;\n}\n\n[dir=rtl] .ag-theme-material .ag-column-drop-horizontal .ag-icon-group, [dir=rtl] .ag-theme-material .ag-column-drop-horizontal .ag-icon-pivot {\n  margin-left: 24px;\n}\n\n.ag-theme-material .ag-column-drop-horizontal .ag-icon-small-left,\n.ag-theme-material .ag-column-drop-horizontal .ag-icon-small-right {\n  opacity: 0.54;\n}\n\n[dir] .ag-theme-material .ag-column-drop-horizontal .ag-icon-small-left, [dir] .ag-theme-material .ag-column-drop-horizontal .ag-icon-small-right {\n  margin: 0 8px;\n}\n\n.ag-theme-material .ag-column-drop-horizontal .ag-column-drop-empty-message {\n  opacity: 0.38;\n}\n\n.ag-theme-material .ag-column-drop-cell {\n  min-height: 32px;\n}\n\n[dir] .ag-theme-material .ag-column-drop-cell {\n  background: #e2e2e2;\n  border-radius: 32px;\n  padding: 0 4px;\n}\n\n[dir] .ag-theme-material .ag-column-drop-cell .ag-column-drop-cell-text {\n  margin: 0 8px;\n}\n\n.ag-theme-material .ag-column-drop-cell .ag-column-drop-cell-button {\n  min-width: 32px;\n  opacity: 0.54;\n}\n\n[dir] .ag-theme-material .ag-column-drop-cell .ag-column-drop-cell-button {\n  margin: 0 4px;\n}\n\n.ag-theme-material .ag-column-drop-cell .ag-column-drop-cell-button:hover {\n  opacity: 0.87;\n}\n\n[dir=ltr] .ag-theme-material .ag-column-drop-cell .ag-column-drag {\n  margin-left: 16px;\n}\n\n[dir=rtl] .ag-theme-material .ag-column-drop-cell .ag-column-drag {\n  margin-right: 16px;\n}\n\n[dir] .ag-theme-material .ag-column-drop-vertical .ag-column-drop-cell {\n  margin-top: 8px;\n}\n\n.ag-theme-material .ag-select-agg-func-popup {\n  height: 140px;\n}\n\n[dir] .ag-theme-material .ag-select-agg-func-popup {\n  background: #fff;\n  border-radius: 2px;\n  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);\n  padding: 8px;\n  background: #fff;\n  padding: 0;\n}\n\n.ag-theme-material .ag-select-agg-func-popup .ag-virtual-list-item {\n  line-height: 40px;\n}\n\n[dir] .ag-theme-material .ag-select-agg-func-popup .ag-virtual-list-item {\n  cursor: default;\n}\n\n[dir=ltr] .ag-theme-material .ag-select-agg-func-popup .ag-virtual-list-item {\n  padding-left: 16px;\n}\n\n[dir=rtl] .ag-theme-material .ag-select-agg-func-popup .ag-virtual-list-item {\n  padding-right: 16px;\n}\n\n.ag-theme-material .ag-set-filter-list,\n.ag-theme-material .ag-menu-column-select-wrapper {\n  width: auto;\n}\n\n[dir] .ag-theme-material .ag-column-drop-vertical > .ag-column-drop-cell {\n  margin-top: 0;\n}\n\n[dir=ltr] .ag-theme-material .ag-column-drop-vertical > .ag-column-drop-cell {\n  margin-left: 8px;\n}\n\n[dir=rtl] .ag-theme-material .ag-column-drop-vertical > .ag-column-drop-cell {\n  margin-right: 8px;\n}\n\n[dir] .ag-theme-material .ag-cell-data-changed {\n  background-color: #00acc1 !important;\n}\n\n.ag-theme-material .ag-cell-data-changed-animation {\n  transition: background-color 1s;\n}\n\n[dir] .ag-theme-material .ag-cell-data-changed-animation {\n  background-color: transparent;\n}\n\n[dir] .ag-theme-material .ag-stub-cell {\n  padding-top: 8px;\n}\n\n[dir=ltr] .ag-theme-material .ag-stub-cell {\n  padding-left: 24px;\n}\n\n[dir=rtl] .ag-theme-material .ag-stub-cell {\n  padding-right: 24px;\n}\n\n[dir=ltr] .ag-theme-material .ag-stub-cell .ag-loading-icon {\n  -webkit-animation-name:  spin-ltr ;\n          animation-name:  spin-ltr ;\n  -webkit-animation-duration: 1000ms;\n          animation-duration: 1000ms;\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n  -webkit-animation-timing-function: linear;\n          animation-timing-function: linear;\n}\n\n[dir=rtl] .ag-theme-material .ag-stub-cell .ag-loading-icon {\n  -webkit-animation-name:  spin-rtl ;\n          animation-name:  spin-rtl ;\n  -webkit-animation-duration: 1000ms;\n          animation-duration: 1000ms;\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n  -webkit-animation-timing-function: linear;\n          animation-timing-function: linear;\n}\n\n@-webkit-keyframes spin-ltr {\n  from {\n    transform: rotate(0deg);\n  }\n\n  to {\n    transform: rotate(360deg);\n  }\n}\n\n@keyframes spin-ltr {\n  from {\n    transform: rotate(0deg);\n  }\n\n  to {\n    transform: rotate(360deg);\n  }\n}\n\n@-webkit-keyframes spin-rtl {\n  from {\n    transform: rotate(0deg);\n  }\n\n  to {\n    transform: rotate(-360deg);\n  }\n}\n\n@keyframes spin-rtl {\n  from {\n    transform: rotate(0deg);\n  }\n\n  to {\n    transform: rotate(-360deg);\n  }\n}\n\n[dir] .ag-theme-material .ag-stub-cell .ag-loading-text {\n  margin-top: 8px;\n}\n\n[dir=ltr] .ag-theme-material .ag-stub-cell .ag-loading-text {\n  margin-left: 8px;\n}\n\n[dir=rtl] .ag-theme-material .ag-stub-cell .ag-loading-text {\n  margin-right: 8px;\n}\n\n[dir] .ag-theme-material .ag-floating-top {\n  border-bottom: 1px solid #e2e2e2;\n}\n\n[dir] .ag-theme-material .ag-floating-bottom {\n  border-top: 1px solid #e2e2e2;\n}\n\n.ag-theme-material .ag-status-bar {\n  color: rgba(0, 0, 0, 0.38);\n  font-weight: 600;\n  font-size: inherit;\n  font-family: inherit;\n  line-height: 1.5;\n}\n\n[dir] .ag-theme-material .ag-status-bar {\n  background: #fff;\n  border: 1px solid #e2e2e2;\n  border-top-width: 0;\n}\n\n[dir=ltr] .ag-theme-material .ag-status-bar {\n  padding-right: 32px;\n  padding-left: 32px;\n}\n\n[dir=rtl] .ag-theme-material .ag-status-bar {\n  padding-left: 32px;\n  padding-right: 32px;\n}\n\n.ag-theme-material .ag-name-value-value {\n  color: rgba(0, 0, 0, 0.87);\n}\n\n[dir] .ag-theme-material .ag-status-bar-center {\n  text-align: center;\n}\n\n[dir] .ag-theme-material .ag-name-value {\n  padding-top: 16px;\n  padding-bottom: 16px;\n}\n\n[dir=ltr] .ag-theme-material .ag-name-value {\n  margin-left: 8px;\n  margin-right: 8px;\n}\n\n[dir=rtl] .ag-theme-material .ag-name-value {\n  margin-right: 8px;\n  margin-left: 8px;\n}\n\n[dir] .ag-theme-material .ag-details-row {\n  padding: 40px;\n}\n\n[dir] .ag-theme-material .ag-overlay-loading-wrapper {\n  background-color: rgba(255, 255, 255, 0.5);\n}\n\n[dir] .ag-theme-material .ag-overlay-loading-center {\n  background: #fff;\n  border-radius: 2px;\n  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);\n  padding: 8px;\n}\n\n.ag-theme-material .ag-side-bar {\n  position: relative;\n}\n\n[dir] .ag-theme-material .ag-side-bar {\n  background-color: #fafafa;\n  border: 1px solid #e2e2e2;\n}\n\n[dir=ltr] .ag-theme-material .ag-side-bar {\n  border-left-width: 0;\n}\n\n[dir=rtl] .ag-theme-material .ag-side-bar {\n  border-right-width: 0;\n}\n\n.ag-theme-material .ag-side-bar .ag-side-buttons {\n  width: 22px;\n  position: relative;\n}\n\n[dir] .ag-theme-material .ag-side-bar .ag-side-buttons {\n  padding-top: 32px;\n  background: #fff;\n}\n\n.ag-theme-material .ag-side-bar .ag-side-buttons .ag-side-button button {\n  color: rgba(0, 0, 0, 0.87);\n  width: 100%;\n  min-height: 144px;\n}\n\n[dir] .ag-theme-material .ag-side-bar .ag-side-buttons .ag-side-button button {\n  background: transparent;\n  border: 0;\n  padding: 16px 0 16px 0;\n  margin: 0;\n  border-width: 1px 0 1px 0;\n  border-style: solid;\n  border-color: transparent;\n  background-position-y: center;\n  background-position-x: center;\n  background-repeat: no-repeat;\n}\n\n[dir] .ag-theme-material .ag-side-bar .ag-side-buttons .ag-selected button {\n  background-color: #fafafa;\n  border-color: #e2e2e2;\n}\n\n[dir=ltr] .ag-theme-material .ag-side-bar .ag-side-buttons .ag-selected button {\n  margin-left: -1px;\n  padding-left: 1px;\n}\n\n[dir=rtl] .ag-theme-material .ag-side-bar .ag-side-buttons .ag-selected button {\n  margin-right: -1px;\n  padding-right: 1px;\n}\n\n[dir=ltr] .ag-theme-material .ag-side-bar .ag-panel-container {\n  border-right: 1px solid #e2e2e2;\n}\n\n[dir=rtl] .ag-theme-material .ag-side-bar .ag-panel-container {\n  border-left: 1px solid #e2e2e2;\n}\n\n[dir=ltr] .ag-theme-material .ag-side-bar.full-width .ag-panel-container {\n  border-right: 0;\n}\n\n[dir=rtl] .ag-theme-material .ag-side-bar.full-width .ag-panel-container {\n  border-left: 0;\n}\n\n.ag-theme-material .ag-side-bar .ag-column-drop {\n  min-height: 50px;\n}\n\n[dir=ltr] .ag-theme-material .ag-primary-cols-filter-wrapper {\n  margin-left: 8px;\n  margin-right: 8px;\n}\n\n[dir=rtl] .ag-theme-material .ag-primary-cols-filter-wrapper {\n  margin-right: 8px;\n  margin-left: 8px;\n}\n\n[dir] .ag-theme-material .ag-group-component {\n  background-color: #fdfdfd;\n  padding: 0px;\n  border: 0 solid #efefef;\n  border-top-width: 1px;\n}\n\n.ag-theme-material .ag-group-component.ag-disabled > .ag-group-component-label .ag-group-component-title, .ag-theme-material .ag-group-component.ag-disabled > .ag-group-component-container {\n  opacity: 0.5;\n}\n\n.ag-theme-material .ag-group-component .ag-group-component-title-bar {\n  height: 18px;\n  font-size: inherit;\n  font-family: inherit;\n  height: 26px;\n}\n\n[dir] .ag-theme-material .ag-group-component .ag-group-component-title-bar {\n  background-color: #f0f0f0;\n}\n\n[dir=ltr] .ag-theme-material .ag-group-component:not(.ag-collapsible) > div {\n  margin-left: 0;\n}\n\n[dir=rtl] .ag-theme-material .ag-group-component:not(.ag-collapsible) > div {\n  margin-right: 0;\n}\n\n[dir] .ag-theme-material .ag-group-component:not(.ag-collapsible) > .ag-group-component-title-bar {\n  padding: 8px;\n}\n\n[dir=ltr] .ag-theme-material .ag-group-component:not(.ag-collapsible) > .ag-group-component-title-bar {\n  margin-left: 0;\n}\n\n[dir=rtl] .ag-theme-material .ag-group-component:not(.ag-collapsible) > .ag-group-component-title-bar {\n  margin-right: 0;\n}\n\n.ag-theme-material .ag-group-component:not(.ag-collapsible) > .ag-group-component-title-bar .ag-column-group-icons {\n  display: none;\n}\n\n[dir] .ag-theme-material .ag-group-component .ag-group-component-toolbar {\n  background-color: #f7f7f7;\n  padding: 8px;\n  border: 0 solid #e2e2e2;\n}\n\n[dir] .ag-theme-material .ag-group-component > .ag-group-component-container {\n  padding: 8px;\n}\n\n[dir=ltr] .ag-theme-material .ag-group-component > .ag-group-component-container {\n  margin-left: 16px;\n}\n\n[dir=rtl] .ag-theme-material .ag-group-component > .ag-group-component-container {\n  margin-right: 16px;\n}\n\n[dir] .ag-theme-material .ag-group-component .ag-group-item {\n  margin: 4px 0;\n}\n\n.ag-theme-material .ag-group-component .ag-group-item .ag-group-component-title-bar {\n  height: 18px;\n}\n\n.ag-theme-material .ag-labeled label {\n  white-space: nowrap;\n}\n\n[dir=ltr] .ag-theme-material .ag-labeled label {\n  margin-right: 8px;\n}\n\n[dir=rtl] .ag-theme-material .ag-labeled label {\n  margin-left: 8px;\n}\n\n[dir] .ag-theme-material .ag-labeled.ag-label-align-top label {\n  margin-bottom: 4px;\n}\n\n[dir=ltr] .ag-theme-material .ag-slider > .ag-wrapper > div:not(:first-of-type), [dir=ltr] .ag-theme-material .ag-angle-select > .ag-wrapper > div:not(:first-of-type) {\n  margin-left: 16px;\n}\n\n[dir=rtl] .ag-theme-material .ag-slider > .ag-wrapper > div:not(:first-of-type), [dir=rtl] .ag-theme-material .ag-angle-select > .ag-wrapper > div:not(:first-of-type) {\n  margin-right: 16px;\n}\n\n.ag-theme-material .ag-angle-select .ag-angle-select-field .ag-parent-circle {\n  width: 24px;\n  height: 24px;\n}\n\n[dir] .ag-theme-material .ag-angle-select .ag-angle-select-field .ag-parent-circle {\n  border-radius: 12px;\n  box-shadow: 0 0 2px rgba(0, 0, 0, 0.9);\n  background-color: #ffffff;\n}\n\n.ag-theme-material .ag-angle-select .ag-angle-select-field .ag-child-circle {\n  top: 4px;\n  width: 6px;\n  height: 6px;\n}\n\n[dir] .ag-theme-material .ag-angle-select .ag-angle-select-field .ag-child-circle {\n  margin-top: -4px;\n  border-radius: 3px;\n  background-color: #4c4c4c;\n}\n\n[dir=ltr] .ag-theme-material .ag-angle-select .ag-angle-select-field .ag-child-circle {\n  left: 12px;\n  margin-left: -3px;\n}\n\n[dir=rtl] .ag-theme-material .ag-angle-select .ag-angle-select-field .ag-child-circle {\n  right: 12px;\n  margin-right: -3px;\n}\n\n.ag-theme-material .ag-toggle-button .ag-input-wrapper {\n  height: 18px;\n  width: 40px;\n}\n\n[dir] .ag-theme-material .ag-toggle-button .ag-input-wrapper {\n  background-color: #fff;\n  border: 1px solid #333;\n  border-radius: 500rem;\n}\n\n.ag-theme-material .ag-toggle-button .ag-input-wrapper .ag-icon {\n  width: 18px;\n  height: 18px;\n}\n\n[dir] .ag-theme-material .ag-toggle-button .ag-input-wrapper .ag-icon {\n  border: 1px solid #333;\n  border-radius: 500rem;\n}\n\n[dir=ltr] .ag-theme-material .ag-toggle-button .ag-input-wrapper .ag-icon {\n  right: calc(100% - 18px);\n}\n\n[dir=rtl] .ag-theme-material .ag-toggle-button .ag-input-wrapper .ag-icon {\n  left: calc(100% - 18px);\n}\n\n[dir] .ag-theme-material .ag-toggle-button.ag-selected .ag-input-wrapper {\n  background-color: #ff4081;\n}\n\n[dir] .ag-theme-material .ag-toggle-button.ag-selected .ag-input-wrapper .ag-icon {\n  background: #fff;\n}\n\n[dir=ltr] .ag-theme-material .ag-toggle-button.ag-selected .ag-input-wrapper .ag-icon {\n  right: -1px;\n}\n\n[dir=rtl] .ag-theme-material .ag-toggle-button.ag-selected .ag-input-wrapper .ag-icon {\n  left: -1px;\n}\n\n[dir] .ag-theme-material .ag-color-picker > .ag-wrapper {\n  border: 1px solid #e2e2e2;\n  border-radius: 5px;\n}\n\n.ag-theme-material .ag-color-picker > .ag-wrapper > div {\n  width: 18px;\n  height: 18px;\n}\n\n[dir] .ag-theme-material .ag-color-picker > .ag-wrapper button {\n  background-color: #fff;\n}\n\n[dir] .ag-theme-material .ag-color-picker > .ag-wrapper button:hover {\n  background-color: #fafafa;\n}\n\n[dir] .ag-theme-material .ag-dialog.ag-color-dialog {\n  border-radius: 5px;\n}\n\n[dir] .ag-theme-material .ag-color-panel {\n  padding: 8px;\n}\n\n[dir] .ag-theme-material .ag-color-panel .ag-spectrum-color {\n  background-color: red;\n  border-radius: 2px;\n}\n\n[dir] .ag-theme-material .ag-color-panel .ag-spectrum-tools {\n  padding: 10px;\n}\n\n[dir=ltr] .ag-theme-material .ag-color-panel .ag-spectrum-sat {\n  background-image: linear-gradient(to right, white, rgba(204, 154, 129, 0));\n}\n\n[dir=rtl] .ag-theme-material .ag-color-panel .ag-spectrum-sat {\n  background-image: linear-gradient(to left, white, rgba(204, 154, 129, 0));\n}\n\n[dir] .ag-theme-material .ag-color-panel .ag-spectrum-val {\n  background-image: linear-gradient(to top, black, rgba(204, 154, 129, 0));\n}\n\n.ag-theme-material .ag-color-panel .ag-spectrum-dragger {\n  height: 12px;\n  width: 12px;\n}\n\n[dir] .ag-theme-material .ag-color-panel .ag-spectrum-dragger {\n  border-radius: 12px;\n  border: 1px solid white;\n  background: black;\n  box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.24);\n}\n\n[dir] .ag-theme-material .ag-color-panel .ag-spectrum-hue-background {\n  border-radius: 2px;\n}\n\n[dir] .ag-theme-material .ag-color-panel .ag-spectrum-alpha-background {\n  border-radius: 2px;\n}\n\n.ag-theme-material .ag-color-panel .ag-hue-alpha {\n  height: 11px;\n}\n\n[dir] .ag-theme-material .ag-color-panel .ag-hue-alpha {\n  margin-bottom: 10px;\n  border-radius: 2px;\n}\n\n.ag-theme-material .ag-color-panel .ag-spectrum-slider {\n  width: 13px;\n  height: 13px;\n}\n\n[dir] .ag-theme-material .ag-color-panel .ag-spectrum-slider {\n  margin-top: -12px;\n  border-radius: 13px;\n  background-color: #f8f8f8;\n  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);\n}\n\n.ag-theme-material .ag-color-panel .ag-spectrum-text-value {\n  font-weight: bold;\n  line-height: 20px;\n  color: #333;\n}\n\n[dir] .ag-theme-material .ag-color-panel .ag-spectrum-text-value:focus {\n  border: 1px solid #0d77e4;\n  padding: 2px;\n}\n\n[dir] .ag-theme-material .ag-color-panel .ag-recent-colors > div {\n  margin: 0 3px;\n}\n\n[dir=ltr] .ag-theme-material .ag-color-panel .ag-recent-colors > div:first-child {\n  margin-left: 0;\n}\n\n[dir=rtl] .ag-theme-material .ag-color-panel .ag-recent-colors > div:first-child {\n  margin-right: 0;\n}\n\n[dir=ltr] .ag-theme-material .ag-color-panel .ag-recent-colors > div:last-child {\n  margin-right: 0;\n}\n\n[dir=rtl] .ag-theme-material .ag-color-panel .ag-recent-colors > div:last-child {\n  margin-left: 0;\n}\n\n[dir=ltr] .ag-theme-material.ag-popup > div:not(.ag-tooltip-custom) {\n  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);\n}\n\n[dir=rtl] .ag-theme-material.ag-popup > div:not(.ag-tooltip-custom) {\n  box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.3);\n}\n\n[dir] .ag-theme-material .ag-panel {\n  background-color: #fff;\n  border: 1px solid #e2e2e2;\n}\n\n.ag-dragging-range-handle .ag-theme-material .ag-panel.ag-dialog, .ag-dragging-fill-handle .ag-theme-material .ag-panel.ag-dialog {\n  opacity: 0.7;\n  pointer-events: none;\n}\n\n.ag-theme-material .ag-panel .ag-title-bar {\n  color: rgba(0, 0, 0, 0.54);\n  height: 56px;\n  font-size: inherit;\n  font-weight: 600;\n  font-family: inherit;\n}\n\n[dir] .ag-theme-material .ag-panel .ag-title-bar {\n  background-color: #fff;\n  border-bottom: 1px solid #fcfcfc;\n  padding: 5px 10px;\n}\n\n[dir=ltr] .ag-theme-material .ag-panel .ag-title-bar {\n  padding-left: 24px;\n}\n\n[dir=rtl] .ag-theme-material .ag-panel .ag-title-bar {\n  padding-right: 24px;\n}\n\n.ag-theme-material .ag-panel .ag-title-bar .ag-title-bar-buttons .ag-button {\n  height: 20px;\n  width: 20px;\n}\n\n[dir] .ag-theme-material .ag-panel .ag-title-bar .ag-title-bar-buttons .ag-button {\n  border-radius: 5px;\n}\n\n.ag-theme-material .ag-panel .ag-title-bar .ag-title-bar-buttons .ag-button .ag-icon {\n  line-height: 20px;\n  font-size: 20px;\n}\n\n[dir] .ag-theme-material .ag-panel .ag-title-bar .ag-title-bar-buttons .ag-button:hover, [dir] .ag-theme-material .ag-panel .ag-title-bar .ag-title-bar-buttons .ag-button.ag-has-popup {\n  background-color: #e6e6e6;\n}\n\n[dir=ltr] .ag-theme-material .ag-panel .ag-title-bar .ag-title-bar-buttons .ag-button:not(:last-child) {\n  margin-right: 5px;\n}\n\n[dir=rtl] .ag-theme-material .ag-panel .ag-title-bar .ag-title-bar-buttons .ag-button:not(:last-child) {\n  margin-left: 5px;\n}\n\n.ag-theme-material .ag-panel .ag-message-box .ag-message-box-button-bar {\n  height: 30px;\n}\n\n[dir] .ag-theme-material .ag-panel .ag-message-box .ag-message-box-button-bar {\n  background-color: #fff;\n  padding: 2px;\n}\n\n[dir] .ag-theme-material .ag-panel .ag-message-box .ag-message-box-button-bar button {\n  border-radius: 2px;\n}\n\n.ag-theme-material .ag-tooltip {\n  color: rgba(0, 0, 0, 0.87);\n  transition: opacity 1s;\n}\n\n[dir] .ag-theme-material .ag-tooltip {\n  background-color: #535353;\n  border-radius: 2px;\n  padding: 5px;\n  border-width: 1px;\n  border-style: solid;\n  border-color: #ebebeb;\n}\n\n.ag-theme-material .ag-tooltip.ag-tooltip-hiding {\n  opacity: 0;\n}\n\n[dir] .ag-theme-material .ag-chart .ag-chart-menu {\n  border-radius: 5px;\n  background: #fff;\n}\n\n[dir] .ag-theme-material .ag-chart .ag-chart-menu > span:hover {\n  background-color: #e6e6e6;\n}\n\n[dir=ltr] .ag-theme-material .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-mini-wrapper .ag-group-component-container {\n  margin-left: 0;\n}\n\n[dir=rtl] .ag-theme-material .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-mini-wrapper .ag-group-component-container {\n  margin-right: 0;\n}\n\n[dir] .ag-theme-material .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-mini-wrapper .ag-chart-mini-thumbnail {\n  border: 1px solid #e2e2e2;\n  border-radius: 5px;\n  margin: 5px;\n}\n\n[dir=ltr] .ag-theme-material .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-mini-wrapper .ag-chart-mini-thumbnail:nth-child(2n+2):not(:last-child) {\n  margin-left: auto;\n  margin-right: auto;\n}\n\n[dir=rtl] .ag-theme-material .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-mini-wrapper .ag-chart-mini-thumbnail:nth-child(2n+2):not(:last-child) {\n  margin-right: auto;\n  margin-left: auto;\n}\n\n[dir=ltr] .ag-theme-material .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-mini-wrapper .ag-chart-mini-thumbnail:nth-child(3n+1) {\n  margin-left: 2px;\n}\n\n[dir=rtl] .ag-theme-material .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-mini-wrapper .ag-chart-mini-thumbnail:nth-child(3n+1) {\n  margin-right: 2px;\n}\n\n[dir=ltr] .ag-theme-material .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-mini-wrapper .ag-chart-mini-thumbnail:nth-child(3n) {\n  margin-right: 2px;\n}\n\n[dir=rtl] .ag-theme-material .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-mini-wrapper .ag-chart-mini-thumbnail:nth-child(3n) {\n  margin-left: 2px;\n}\n\n[dir] .ag-theme-material .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-mini-wrapper .ag-chart-mini-thumbnail.ag-selected {\n  border-color: #7367F0;\n}\n\n.ag-theme-material .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-nav-bar .ag-nav-card-selector .ag-nav-card-item {\n  color: rgba(0, 0, 0, 0.87);\n  font-size: inherit-2;\n}\n\n.ag-theme-material .ag-chart-tabbed-menu .ag-chart-settings .ag-chart-settings-nav-bar .ag-nav-card-selector .ag-nav-card-item.ag-selected {\n  color: #7367F0;\n}\n\n[dir] .ag-theme-material .ag-chart-tabbed-menu .ag-chart-format .ag-chart-format-wrapper .ag-group-item {\n  margin: 9.6px 0;\n}\n\n.ag-theme-material .ag-icon {\n  /* use !important to prevent issues with browser extensions that change fonts */\n  font-family: \"agGridMaterial\";\n  speak: none;\n  font-size: 18px;\n  color: #333;\n  font-style: normal;\n  font-weight: normal;\n  font-variant: normal;\n  text-transform: none;\n  /* Better Font Rendering =========== */\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.ag-theme-material .ag-icon-aggregation:before {\n  content: \"\\E900\";\n}\n\n.ag-theme-material .ag-icon-arrows:before {\n  content: \"\\E901\";\n}\n\n.ag-theme-material .ag-icon-asc:before {\n  content: \"\\E902\";\n}\n\n.ag-theme-material .ag-icon-cancel:before {\n  content: \"\\E903\";\n}\n\n.ag-theme-material .ag-icon-chart:before {\n  content: \"\\E904\";\n}\n\n.ag-theme-material .ag-icon-checkbox-checked:before {\n  content: \"\\E905\";\n}\n\n.ag-theme-material .ag-icon-checkbox-indeterminate:before {\n  content: \"\\E906\";\n}\n\n.ag-theme-material .ag-icon-checkbox-unchecked:before {\n  content: \"\\E907\";\n}\n\n.ag-theme-material .ag-icon-color-picker:before {\n  content: \"\\E908\";\n}\n\n.ag-theme-material .ag-icon-column:before {\n  content: \"\\E909\";\n}\n\n.ag-theme-material .ag-icon-columns:before {\n  content: \"\\E90A\";\n}\n\n.ag-theme-material .ag-icon-contracted:before {\n  content: \"\\E90B\";\n}\n\n.ag-theme-material .ag-icon-copy:before {\n  content: \"\\E90C\";\n}\n\n.ag-theme-material .ag-icon-cross:before {\n  content: \"\\E90D\";\n}\n\n.ag-theme-material .ag-icon-cut:before {\n  content: \"\\E90E\";\n}\n\n.ag-theme-material .ag-icon-data:before {\n  content: \"\\E90F\";\n}\n\n.ag-theme-material .ag-icon-desc:before {\n  content: \"\\E910\";\n}\n\n.ag-theme-material .ag-icon-expanded:before {\n  content: \"\\E911\";\n}\n\n.ag-theme-material .ag-icon-eye-slash:before {\n  content: \"\\E912\";\n}\n\n.ag-theme-material .ag-icon-eye:before {\n  content: \"\\E913\";\n}\n\n.ag-theme-material .ag-icon-filter:before {\n  content: \"\\E914\";\n}\n\n.ag-theme-material .ag-icon-first:before {\n  content: \"\\E915\";\n}\n\n.ag-theme-material .ag-icon-grip:before {\n  content: \"\\E916\";\n}\n\n.ag-theme-material .ag-icon-group:before {\n  content: \"\\E917\";\n}\n\n.ag-theme-material .ag-icon-indeterminate:before {\n  content: \"\\E918\";\n}\n\n.ag-theme-material .ag-icon-last:before {\n  content: \"\\E919\";\n}\n\n.ag-theme-material .ag-icon-left:before {\n  content: \"\\E91A\";\n}\n\n.ag-theme-material .ag-icon-linked:before {\n  content: \"\\E934\";\n}\n\n.ag-theme-material .ag-icon-loading:before {\n  content: \"\\E91B\";\n}\n\n.ag-theme-material .ag-icon-maximize:before {\n  content: \"\\E91C\";\n}\n\n.ag-theme-material .ag-icon-menu:before {\n  content: \"\\E91D\";\n}\n\n.ag-theme-material .ag-icon-minimize:before {\n  content: \"\\E91E\";\n}\n\n.ag-theme-material .ag-icon-minus:before {\n  content: \"\\E91F\";\n}\n\n.ag-theme-material .ag-icon-next:before {\n  content: \"\\E920\";\n}\n\n.ag-theme-material .ag-icon-none:before {\n  content: \"\\E921\";\n}\n\n.ag-theme-material .ag-icon-not-allowed:before {\n  content: \"\\E922\";\n}\n\n.ag-theme-material .ag-icon-paste:before {\n  content: \"\\E923\";\n}\n\n.ag-theme-material .ag-icon-pin:before {\n  content: \"\\E924\";\n}\n\n.ag-theme-material .ag-icon-pivot:before {\n  content: \"\\E925\";\n}\n\n.ag-theme-material .ag-icon-plus:before {\n  content: \"\\E926\";\n}\n\n.ag-theme-material .ag-icon-previous:before {\n  content: \"\\E927\";\n}\n\n.ag-theme-material .ag-icon-radio-button-off:before {\n  content: \"\\E928\";\n}\n\n.ag-theme-material .ag-icon-radio-button-on:before {\n  content: \"\\E929\";\n}\n\n.ag-theme-material .ag-icon-right:before {\n  content: \"\\E92A\";\n}\n\n.ag-theme-material .ag-icon-save:before {\n  content: \"\\E92B\";\n}\n\n.ag-theme-material .ag-icon-small-down:before {\n  content: \"\\E92C\";\n}\n\n.ag-theme-material .ag-icon-small-left:before {\n  content: \"\\E92D\";\n}\n\n.ag-theme-material .ag-icon-small-right:before {\n  content: \"\\E92E\";\n}\n\n.ag-theme-material .ag-icon-small-up:before {\n  content: \"\\E92F\";\n}\n\n.ag-theme-material .ag-icon-tick:before {\n  content: \"\\E930\";\n}\n\n.ag-theme-material .ag-icon-tree-closed:before {\n  content: \"\\E931\";\n}\n\n.ag-theme-material .ag-icon-tree-indeterminate:before {\n  content: \"\\E932\";\n}\n\n.ag-theme-material .ag-icon-tree-open:before {\n  content: \"\\E933\";\n}\n\n.ag-theme-material .ag-icon-unlinked:before {\n  content: \"\\E935\";\n}\n\n.ag-theme-material .ag-icon-checkbox-checked,\n.ag-theme-material .ag-icon-checkbox-indeterminate,\n.ag-theme-material .ag-icon-checkbox-unchecked {\n  line-height: 18px;\n}\n\n[dir] .ag-theme-material .ag-icon-checkbox-checked, [dir] .ag-theme-material .ag-icon-checkbox-indeterminate, [dir] .ag-theme-material .ag-icon-checkbox-unchecked {\n  background-color: transparent;\n  border-radius: 3px;\n}\n\n.ag-theme-material .ag-icon-checkbox-checked-readonly,\n.ag-theme-material .ag-icon-checkbox-indeterminate-readonly,\n.ag-theme-material .ag-icon-checkbox-unchecked-readonly {\n  opacity: 0.38;\n}\n\n[dir] .ag-theme-material .ag-icon-checkbox-checked-readonly, [dir] .ag-theme-material .ag-icon-checkbox-indeterminate-readonly, [dir] .ag-theme-material .ag-icon-checkbox-unchecked-readonly {\n  cursor: default;\n}\n\n.ag-theme-material .ag-icon-checkbox-checked {\n  color: #ff4081;\n}\n\n.ag-theme-material .ag-icon-checkbox-checked-readonly:before {\n  content: \"\\E905\";\n}\n\n.ag-theme-material .ag-icon-checkbox-indeterminate-readonly:before {\n  content: \"\\E906\";\n}\n\n.ag-theme-material .ag-icon-checkbox-unchecked-readonly:before {\n  content: \"\\E907\";\n}\n\n.ag-theme-material .ag-icon-row-drag:before {\n  content: \"\\E916\";\n}\n\n.ag-theme-material .ag-right-arrow:before {\n  content: \"\\E91A\";\n}\n\n.ag-theme-material .ag-icon-radio-button-on {\n  color: #ff4081;\n}\n\n.ag-theme-material .ag-right-arrow:before {\n  content: \"\\E92A\";\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl {\n  text-align: right;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl {\n  text-align: left;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-numeric-cell {\n  text-align: left;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-numeric-cell {\n  text-align: right;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-checkbox:not(.ag-label-align-left) label, [dir=ltr] .ag-theme-material .ag-rtl .ag-radio-button:not(.ag-label-align-left) label, [dir=ltr] .ag-theme-material .ag-rtl .ag-toggle-button:not(.ag-label-align-left) label {\n  margin-right: 8px;\n  margin-left: 0;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-checkbox:not(.ag-label-align-left) label, [dir=rtl] .ag-theme-material .ag-rtl .ag-radio-button:not(.ag-label-align-left) label, [dir=rtl] .ag-theme-material .ag-rtl .ag-toggle-button:not(.ag-label-align-left) label {\n  margin-left: 8px;\n  margin-right: 0;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-tool-panel-wrapper .ag-pivot-mode-panel .ag-pivot-mode-select {\n  margin-right: 8px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-tool-panel-wrapper .ag-pivot-mode-panel .ag-pivot-mode-select {\n  margin-left: 8px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-tool-panel-wrapper .ag-column-drop .ag-column-drop-empty-message {\n  padding-left: 8px;\n  padding-right: 32px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-tool-panel-wrapper .ag-column-drop .ag-column-drop-empty-message {\n  padding-right: 8px;\n  padding-left: 32px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-column-select-panel .ag-column-tool-panel-column-group .ag-column-select-checkbox, [dir=ltr] .ag-theme-material .ag-rtl .ag-column-select-panel .ag-column-tool-panel-column-group .ag-column-group-icons, [dir=ltr] .ag-theme-material .ag-rtl .ag-column-select-panel .ag-column-tool-panel-column .ag-column-select-checkbox, [dir=ltr] .ag-theme-material .ag-rtl .ag-column-select-panel .ag-column-tool-panel-column .ag-column-group-icons {\n  margin-left: 8px;\n  margin-right: 8px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-column-select-panel .ag-column-tool-panel-column-group .ag-column-select-checkbox, [dir=rtl] .ag-theme-material .ag-rtl .ag-column-select-panel .ag-column-tool-panel-column-group .ag-column-group-icons, [dir=rtl] .ag-theme-material .ag-rtl .ag-column-select-panel .ag-column-tool-panel-column .ag-column-select-checkbox, [dir=rtl] .ag-theme-material .ag-rtl .ag-column-select-panel .ag-column-tool-panel-column .ag-column-group-icons {\n  margin-right: 8px;\n  margin-left: 8px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-column-select-panel .ag-column-tool-panel-column.ag-toolpanel-add-group-indent {\n  margin-left: 0;\n  margin-right: 34px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-column-select-panel .ag-column-tool-panel-column.ag-toolpanel-add-group-indent {\n  margin-right: 0;\n  margin-left: 34px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-header-select-all {\n  margin-left: 24px;\n  margin-right: 0;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-header-select-all {\n  margin-right: 24px;\n  margin-left: 0;\n}\n\n.ag-theme-material .ag-rtl .ag-selection-checkbox,\n.ag-theme-material .ag-rtl .ag-group-checkbox,\n.ag-theme-material .ag-rtl .ag-group-expanded,\n.ag-theme-material .ag-rtl .ag-group-contracted {\n  display: inline-flex;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-selection-checkbox + .ag-cell-value:not(:empty), [dir=ltr] .ag-theme-material .ag-rtl .ag-selection-checkbox + .ag-group-value:not(:empty), [dir=ltr] .ag-theme-material .ag-rtl .ag-group-checkbox + .ag-cell-value:not(:empty), [dir=ltr] .ag-theme-material .ag-rtl .ag-group-checkbox + .ag-group-value:not(:empty), [dir=ltr] .ag-theme-material .ag-rtl .ag-group-expanded + .ag-cell-value:not(:empty), [dir=ltr] .ag-theme-material .ag-rtl .ag-group-expanded + .ag-group-value:not(:empty), [dir=ltr] .ag-theme-material .ag-rtl .ag-group-contracted + .ag-cell-value:not(:empty), [dir=ltr] .ag-theme-material .ag-rtl .ag-group-contracted + .ag-group-value:not(:empty) {\n  margin-right: 24px;\n  margin-left: initial;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-selection-checkbox + .ag-cell-value:not(:empty), [dir=rtl] .ag-theme-material .ag-rtl .ag-selection-checkbox + .ag-group-value:not(:empty), [dir=rtl] .ag-theme-material .ag-rtl .ag-group-checkbox + .ag-cell-value:not(:empty), [dir=rtl] .ag-theme-material .ag-rtl .ag-group-checkbox + .ag-group-value:not(:empty), [dir=rtl] .ag-theme-material .ag-rtl .ag-group-expanded + .ag-cell-value:not(:empty), [dir=rtl] .ag-theme-material .ag-rtl .ag-group-expanded + .ag-group-value:not(:empty), [dir=rtl] .ag-theme-material .ag-rtl .ag-group-contracted + .ag-cell-value:not(:empty), [dir=rtl] .ag-theme-material .ag-rtl .ag-group-contracted + .ag-group-value:not(:empty) {\n  margin-left: 24px;\n  margin-right: initial;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-selection-checkbox + .ag-group-checkbox, [dir=ltr] .ag-theme-material .ag-rtl .ag-group-checkbox + .ag-group-checkbox, [dir=ltr] .ag-theme-material .ag-rtl .ag-group-expanded + .ag-group-checkbox, [dir=ltr] .ag-theme-material .ag-rtl .ag-group-contracted + .ag-group-checkbox {\n  margin-right: 24px;\n  margin-left: initial;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-selection-checkbox + .ag-group-checkbox, [dir=rtl] .ag-theme-material .ag-rtl .ag-group-checkbox + .ag-group-checkbox, [dir=rtl] .ag-theme-material .ag-rtl .ag-group-expanded + .ag-group-checkbox, [dir=rtl] .ag-theme-material .ag-rtl .ag-group-contracted + .ag-group-checkbox {\n  margin-left: 24px;\n  margin-right: initial;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-group-child-count {\n  margin-left: unset;\n  margin-right: 2px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-group-child-count {\n  margin-right: unset;\n  margin-left: 2px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-column-drop-horizontal {\n  padding-right: 24px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-column-drop-horizontal {\n  padding-left: 24px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-column-drop-horizontal .ag-icon-group, [dir=ltr] .ag-theme-material .ag-rtl .ag-column-drop-horizontal .ag-icon-pivot {\n  margin-left: 24px;\n  margin-right: 0;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-column-drop-horizontal .ag-icon-group, [dir=rtl] .ag-theme-material .ag-rtl .ag-column-drop-horizontal .ag-icon-pivot {\n  margin-right: 24px;\n  margin-left: 0;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-floating-filter-button {\n  margin-right: 24px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-floating-filter-button {\n  margin-left: 24px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-set-filter-item > div, [dir=ltr] .ag-theme-material .ag-rtl .ag-set-filter-item > span {\n  margin-left: 0;\n  margin-right: 5px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-set-filter-item > div, [dir=rtl] .ag-theme-material .ag-rtl .ag-set-filter-item > span {\n  margin-right: 0;\n  margin-left: 5px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-header .ag-header-cell-resize::after {\n  border-left: 1px solid #e2e2e2;\n  border-right: 0;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-header .ag-header-cell-resize::after {\n  border-right: 1px solid #e2e2e2;\n  border-left: 0;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-side-bar .ag-panel-container {\n  border-left: 1px solid #e2e2e2;\n  border-right: 0;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-side-bar .ag-panel-container {\n  border-right: 1px solid #e2e2e2;\n  border-left: 0;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-side-bar.full-width .ag-panel-container {\n  border-left: 0;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-side-bar.full-width .ag-panel-container {\n  border-right: 0;\n}\n\n.ag-theme-material .sass-variables::after {\n  content: '{ \"autoSizePadding\": \"24px\", \"headerHeight\": \"56px\", \"groupPaddingSize\": \"42px\", \"footerPaddingAddition\": \"32px\", \"virtualItemHeight\": \"40px\", \"aggFuncPopupHeight\": \"140px\", \"checkboxIndentWidth\": \"26px\", \"leafNodePadding\": \"24px\", \"rowHeight\": \"48px\", \"gridSize\": \"8px\", \"iconSize\": \"18px\" }';\n  display: none;\n}\n\n.ag-theme-material .ag-icon-checkbox-checked,\n.ag-theme-material .ag-icon-checkbox-checked-readonly,\n.ag-theme-material .ag-icon-checkbox-unchecked,\n.ag-theme-material .ag-icon-checkbox-unchecked-readonly,\n.ag-theme-material .ag-icon-checkbox-indeterminate,\n.ag-theme-material .ag-icon-checkbox-indeterminate-readonly,\n.ag-theme-material .ag-icon-radio-button-on,\n.ag-theme-material .ag-icon-radio-button-off {\n  height: 24px;\n  width: 24px;\n  font-size: 24px;\n  line-height: 24px;\n}\n\n.ag-theme-material .ag-header-cell, .ag-theme-material .ag-header-group-cell {\n  transition: background-color 0.5s;\n}\n\n[dir] .ag-theme-material .ag-cell-highlight {\n  background-color: #fce4ec !important;\n}\n\n.ag-theme-material .ag-cell-highlight-animation {\n  transition: background-color 1s;\n}\n\n.ag-theme-material .ag-menu-option {\n  height: 38px;\n}\n\n[dir] .ag-theme-material .ag-side-bar {\n  border-bottom: 0;\n  border-top: 0;\n}\n\n[dir=ltr] .ag-theme-material .ag-side-bar {\n  border-right: 0;\n}\n\n[dir=rtl] .ag-theme-material .ag-side-bar {\n  border-left: 0;\n}\n\n.ag-theme-material .ag-side-bar .ag-side-buttons button {\n  color: rgba(0, 0, 0, 0.54);\n  font-family: inherit;\n  font-size: inherit;\n  font-weight: 600;\n}\n\n[dir] .ag-theme-material .ag-side-bar .ag-side-buttons button {\n  border: 0;\n  background: transparent;\n}\n\n[dir] .ag-theme-material .ag-side-bar .ag-side-buttons .ag-side-button button {\n  background-color: transparent;\n  border-width: 0;\n}\n\n[dir] .ag-theme-material .ag-side-bar .ag-side-buttons .ag-selected button {\n  background-color: #fafafa;\n}\n\n[dir=ltr] .ag-theme-material .ag-side-bar .ag-side-buttons .ag-selected button {\n  border-left: 2px solid #7367F0;\n  margin-left: -2px;\n  padding-left: 1px;\n}\n\n[dir=rtl] .ag-theme-material .ag-side-bar .ag-side-buttons .ag-selected button {\n  border-right: 2px solid #7367F0;\n  margin-right: -2px;\n  padding-right: 1px;\n}\n\n[dir] .ag-theme-material .ag-side-bar .ag-filter-toolpanel-body {\n  background-color: #fff;\n}\n\n[dir] .ag-theme-material .ag-status-bar {\n  border-top-width: 1px;\n}\n\n[dir=ltr] .ag-theme-material .ag-rtl .ag-side-bar .ag-side-buttons .ag-selected button {\n  border-left: 0;\n  margin-left: 0;\n  padding-left: 0;\n  border-right: 2px solid #7367F0;\n  margin-right: -2px;\n  padding-right: 1px;\n}\n\n[dir=rtl] .ag-theme-material .ag-rtl .ag-side-bar .ag-side-buttons .ag-selected button {\n  border-right: 0;\n  margin-right: 0;\n  padding-right: 0;\n  border-left: 2px solid #7367F0;\n  margin-left: -2px;\n  padding-left: 1px;\n}\n\n.ag-theme-material .ag-group-expanded .ag-icon-contracted:empty:before {\n  content: \"\\E933\";\n}\n\n/*=========================================================================================\n    File Name: _variables.scss\n    Description: partial- SCSS varibales\n    ----------------------------------------------------------------------------------------\n    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template\n      Author: Pixinvent\n    Author URL: http://www.themeforest.net/user/pixinvent\n==========================================================================================*/\n\n/*========================================================\n        SPACING\n=========================================================*/\n\n/*========================================================\n        COLORS\n=========================================================*/\n\n/*========================================================\n        TYPOGRAPHY\n=========================================================*/\n\n/*========================================================\n        TYPOGRAPHY\n=========================================================*/\n\n/*========================================================\n        DARK THEME\n=========================================================*/\n\n.ag-grid-table {\n  color: inherit !important;\n  height: calc(var(--vh, 1vh) * 100 - 30rem);\n}\n\n@media screen and (max-height: 800px) {\n  .ag-grid-table {\n    height: 620px;\n  }\n}\n\n.ag-grid-table .ag-header-cell .ag-cell-label-container .ag-header-icon.ag-filter-icon {\n  display: none;\n}\n\n[dir] .ag-grid-table .ag-filter-select {\n  padding: 0.3rem;\n  background: transparent;\n  border-radius: 5px;\n  border: 1px solid rgba(0, 0, 0, 0.2);\n}\n\n.ag-grid-table .ag-filter-filter {\n  height: 25px !important;\n}\n\n[dir] .ag-grid-table .ag-filter-filter {\n  padding-bottom: 0 !important;\n  padding-bottom: 0 !important;\n  margin-top: 10px;\n  margin-bottom: 14px !important;\n}\n\n[dir=ltr] .ag-grid-table .ag-filter-filter {\n  margin-right: 10px;\n  margin-left: 10px;\n}\n\n[dir=rtl] .ag-grid-table .ag-filter-filter {\n  margin-left: 10px;\n  margin-right: 10px;\n}\n\n[dir] .ag-grid-table .ag-input-text-wrapper input {\n  padding-bottom: 0 !important;\n}\n\n.ag-grid-table .ag-floating-filter-body {\n  height: unset;\n}\n\n.ag-grid-table .ag-cell-inline-editing {\n  height: 62px !important;\n}\n\n[dir] .ag-grid-table .ag-cell-inline-editting, [dir] .ag-grid-table .ag-popup-editor {\n  padding-bottom: 12px;\n}\n\n@media screen and (max-width: 614px) {\n  .ag-grid-table .ag-grid-table-actions-right {\n    flex-grow: 1;\n  }\n}\n\n@media screen and (max-width: 614px) and (min-width: 443px) {\n  .ag-grid-table .ag-grid-table-actions-left {\n    display: flex;\n    flex-grow: 1;\n    justify-content: flex-end;\n  }\n}\n\n.ag-grid-table .ag-horizontal-left-spacer, .ag-grid-table .ag-horizontal-right-spacer {\n  overflow-x: auto;\n}\n\n.ag-grid-table .ag-icon-checkbox-checked,\n.ag-grid-table .ag-icon-checkbox-indeterminate {\n  font-size: 22px;\n  color: rgba(var(--vs-primary), 1) !important;\n}\n\n.ag-grid-table .ag-icon-checkbox-unchecked {\n  color: #b8c2cc !important;\n  font-size: 22px;\n}\n\n.ag-grid-table ::-webkit-scrollbar {\n  width: 10px;\n  height: 10px;\n}\n\n[dir] .ag-grid-table ::-webkit-scrollbar-thumb {\n  background: #dae1e7;\n  border-radius: 20px;\n}\n\n[dir] .ag-grid-table ::-webkit-scrollbar-track {\n  background: #f8f8f8;\n  border-radius: 20px;\n}\n\n.theme-dark .ag-grid-table.ag-theme-material {\n  color: #c2c6dc;\n}\n\n[dir] .theme-dark .ag-grid-table.ag-theme-material {\n  background: transparent;\n}\n\n.theme-dark .ag-grid-table.ag-theme-material .ag-header {\n  color: #fff;\n}\n\n[dir] .theme-dark .ag-grid-table.ag-theme-material .ag-header {\n  background: transparent;\n  border-bottom-color: #414561;\n}\n\n[dir=ltr] .theme-dark .ag-grid-table.ag-theme-material .ag-cell-last-left-pinned {\n  border-right-color: #414561 !important;\n}\n\n[dir=rtl] .theme-dark .ag-grid-table.ag-theme-material .ag-cell-last-left-pinned {\n  border-left-color: #414561 !important;\n}\n\n.theme-dark .ag-grid-table.ag-theme-material .ag-floating-filter-input {\n  color: #c2c6dc;\n}\n\n[dir] .theme-dark .ag-grid-table.ag-theme-material .ag-floating-filter-input {\n  border-bottom-color: #414561;\n}\n\n[dir] .theme-dark .ag-grid-table.ag-theme-material .ag-row-hover, [dir] .theme-dark .ag-grid-table.ag-theme-material .ag-header-cell:hover {\n  background-color: #262c49;\n}\n\n[dir] .theme-dark .ag-grid-table.ag-theme-material .ag-row-selected {\n  background: #262c49;\n}\n\n[dir] .theme-dark .ag-grid-table.ag-theme-material .ag-row, [dir] .theme-dark .ag-grid-table.ag-theme-material .ag-header-cell, [dir] .theme-dark .ag-grid-table.ag-theme-material .ag-header-group-cell, [dir] .theme-dark .ag-grid-table.ag-theme-material .ag-row, [dir] .theme-dark .ag-grid-table.ag-theme-material .ag-pinned-left-header, [dir] .theme-dark .ag-grid-table.ag-theme-material .ag-horizontal-left-spacer, [dir] .theme-dark .ag-grid-table.ag-theme-material .ag-horizontal-right-spacer {\n  border-color: #414561;\n}\n\n.theme-dark .ag-grid-table .ag-icon-checkbox-unchecked,\n.theme-dark .ag-grid-table .ag-icon-filter,\n.theme-dark .ag-grid-table .ag-icon-asc,\n.theme-dark .ag-grid-table .ag-icon-desc {\n  color: #c2c6dc !important;\n}\n\n[dir] .theme-dark .ag-grid-table .ag-filter-body-wrapper {\n  background-color: #262c49;\n}\n\n.theme-dark .ag-grid-table .ag-filter-select {\n  color: #c2c6dc;\n}\n\n[dir] .theme-dark .ag-grid-table .ag-filter-select {\n  border-color: #414561;\n}\n\n[dir] .theme-dark .ag-grid-table option {\n  background-color: #10163a;\n}\n\n.theme-dark .ag-grid-table ::-webkit-scrollbar {\n  width: 10px;\n  height: 10px;\n}\n\n[dir] .theme-dark .ag-grid-table ::-webkit-scrollbar-thumb {\n  background: #7367F0;\n  border-radius: 20px;\n}\n\n[dir] .theme-dark .ag-grid-table ::-webkit-scrollbar-track {\n  background: #262c49;\n  border-radius: 20px;\n}\n\n.ag-grid-cell-chip {\n  top: 50%;\n  line-height: 1;\n}\n\n[dir] .ag-grid-cell-chip {\n  transform: translateY(-50%);\n}", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ "./node_modules/flatpickr/dist/flatpickr.css":
-/*!***************************************************!*\
-  !*** ./node_modules/flatpickr/dist/flatpickr.css ***!
-  \***************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/clients/Clients.vue?vue&type=template&id=2dcf5b72&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/views/clients/Clients.vue?vue&type=template&id=2dcf5b72& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { attrs: { id: "ag-grid-demo" } },
+    [
+      _c(
+        "vx-card",
+        [
+          _c(
+            "div",
+            { staticClass: "flex flex-wrap justify-between items-center" },
+            [
+              _c(
+                "div",
+                { staticClass: "mb-4 md:mb-0 mr-4 ag-grid-table-actions-left" },
+                [
+                  _c(
+                    "vs-dropdown",
+                    {
+                      staticClass: "cursor-pointer",
+                      attrs: { "vs-trigger-click": "" }
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "p-4 border border-solid d-theme-border-grey-light rounded-full d-theme-dark-bg cursor-pointer flex items-center justify-between font-medium"
+                        },
+                        [
+                          _c("span", { staticClass: "mr-2" }, [
+                            _vm._v(
+                              _vm._s(
+                                _vm.currentPage * _vm.paginationPageSize -
+                                  (_vm.paginationPageSize - 1)
+                              ) +
+                                " - " +
+                                _vm._s(
+                                  _vm.contacts.length -
+                                    _vm.currentPage * _vm.paginationPageSize >
+                                    0
+                                    ? _vm.currentPage * _vm.paginationPageSize
+                                    : _vm.contacts.length
+                                ) +
+                                " of " +
+                                _vm._s(_vm.contacts.length)
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("feather-icon", {
+                            attrs: {
+                              icon: "ChevronDownIcon",
+                              svgClasses: "h-4 w-4"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "vs-dropdown-menu",
+                        [
+                          _c(
+                            "vs-dropdown-item",
+                            {
+                              on: {
+                                click: function($event) {
+                                  return _vm.gridApi.paginationSetPageSize(20)
+                                }
+                              }
+                            },
+                            [_c("span", [_vm._v("20")])]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "vs-dropdown-item",
+                            {
+                              on: {
+                                click: function($event) {
+                                  return _vm.gridApi.paginationSetPageSize(50)
+                                }
+                              }
+                            },
+                            [_c("span", [_vm._v("50")])]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "vs-dropdown-item",
+                            {
+                              on: {
+                                click: function($event) {
+                                  return _vm.gridApi.paginationSetPageSize(100)
+                                }
+                              }
+                            },
+                            [_c("span", [_vm._v("100")])]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "vs-dropdown-item",
+                            {
+                              on: {
+                                click: function($event) {
+                                  return _vm.gridApi.paginationSetPageSize(150)
+                                }
+                              }
+                            },
+                            [_c("span", [_vm._v("150")])]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "flex flex-wrap items-center justify-between ag-grid-table-actions-right"
+                },
+                [
+                  _c("vs-input", {
+                    staticClass: "mb-4 md:mb-0 mr-4",
+                    attrs: { placeholder: "Search..." },
+                    on: { input: _vm.updateSearchQuery },
+                    model: {
+                      value: _vm.searchQuery,
+                      callback: function($$v) {
+                        _vm.searchQuery = $$v
+                      },
+                      expression: "searchQuery"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "vs-button",
+                    {
+                      staticClass: "mb-4 md:mb-0",
+                      on: {
+                        click: function($event) {
+                          return _vm.gridApi.exportDataAsCsv()
+                        }
+                      }
+                    },
+                    [_vm._v("Export as CSV")]
+                  )
+                ],
+                1
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c("ag-grid-vue", {
+            ref: "agGridTable",
+            staticClass: "ag-theme-material w-100 my-4 ag-grid-table",
+            attrs: {
+              gridOptions: _vm.gridOptions,
+              columnDefs: _vm.columnDefs,
+              defaultColDef: _vm.defaultColDef,
+              rowData: _vm.contacts,
+              rowSelection: "multiple",
+              colResizeDefault: "shift",
+              animateRows: true,
+              floatingFilter: true,
+              pagination: true,
+              paginationPageSize: _vm.paginationPageSize,
+              suppressPaginationPanel: true,
+              enableRtl: _vm.$vs.rtl
+            }
+          }),
+          _vm._v(" "),
+          _c("vs-pagination", {
+            attrs: { total: _vm.totalPages, max: _vm.maxPageNumbers },
+            model: {
+              value: _vm.currentPage,
+              callback: function($$v) {
+                _vm.currentPage = $$v
+              },
+              expression: "currentPage"
+            }
+          })
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./resources/js/src/views/clients/Clients.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/src/views/clients/Clients.vue ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Clients_vue_vue_type_template_id_2dcf5b72___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Clients.vue?vue&type=template&id=2dcf5b72& */ "./resources/js/src/views/clients/Clients.vue?vue&type=template&id=2dcf5b72&");
+/* harmony import */ var _Clients_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Clients.vue?vue&type=script&lang=js& */ "./resources/js/src/views/clients/Clients.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Clients_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Clients_vue_vue_type_template_id_2dcf5b72___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Clients_vue_vue_type_template_id_2dcf5b72___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/src/views/clients/Clients.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/src/views/clients/Clients.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/src/views/clients/Clients.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Clients_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Clients.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/clients/Clients.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Clients_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/src/views/clients/Clients.vue?vue&type=template&id=2dcf5b72&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/src/views/clients/Clients.vue?vue&type=template&id=2dcf5b72& ***!
+  \***********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Clients_vue_vue_type_template_id_2dcf5b72___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Clients.vue?vue&type=template&id=2dcf5b72& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/clients/Clients.vue?vue&type=template&id=2dcf5b72&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Clients_vue_vue_type_template_id_2dcf5b72___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Clients_vue_vue_type_template_id_2dcf5b72___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/src/views/clients/data.json":
+/*!**************************************************!*\
+  !*** ./resources/js/src/views/clients/data.json ***!
+  \**************************************************/
+/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("[{\"firstname\":\"Essie\",\"lastname\":\"Vaill\",\"company\":\"Litronic Industries\",\"address\":\"14225 Hancock Dr\",\"city\":\"Anchorage\",\"country\":\"Anchorage\",\"state\":\"AK\",\"zip\":\"99515\",\"phone\":\"907-345-0962\",\"fax\":\"907-345-1215\",\"email\":\"essie@vaill.com\",\"web\":\"http://www.essievaill.com\",\"followers\":3574},{\"firstname\":\"Cruz\",\"lastname\":\"Roudabush\",\"company\":\"Meridian Products\",\"address\":\"2202 S Central Ave\",\"city\":\"Phoenix\",\"country\":\"Maricopa\",\"state\":\"AZ\",\"zip\":\"85004\",\"phone\":\"602-252-4827\",\"fax\":\"602-252-4009\",\"email\":\"cruz@roudabush.com\",\"web\":\"http://www.cruzroudabush.com\",\"followers\":6548},{\"firstname\":\"Billie\",\"lastname\":\"Tinnes\",\"company\":\"D & M Plywood Inc\",\"address\":\"28 W 27th St\",\"city\":\"New York\",\"country\":\"New York\",\"state\":\"NY\",\"zip\":\"10001\",\"phone\":\"212-889-5775\",\"fax\":\"212-889-5764\",\"email\":\"billie@tinnes.com\",\"web\":\"http://www.billietinnes.com\",\"followers\":3536},{\"firstname\":\"Zackary\",\"lastname\":\"Mockus\",\"company\":\"Metropolitan Elevator Co\",\"address\":\"286 State St\",\"city\":\"Perth Amboy\",\"country\":\"Middlesex\",\"state\":\"NJ\",\"zip\":\"08861\",\"phone\":\"732-442-0638\",\"fax\":\"732-442-5218\",\"email\":\"zackary@mockus.com\",\"web\":\"http://www.zackarymockus.com\",\"followers\":1497},{\"firstname\":\"Rosemarie\",\"lastname\":\"Fifield\",\"company\":\"Technology Services\",\"address\":\"3131 N Nimitz Hwy  #-105\",\"city\":\"Honolulu\",\"country\":\"Honolulu\",\"state\":\"HI\",\"zip\":\"96819\",\"phone\":\"808-836-8966\",\"fax\":\"808-836-6008\",\"email\":\"rosemarie@fifield.com\",\"web\":\"http://www.rosemariefifield.com\",\"followers\":4812},{\"firstname\":\"Bernard\",\"lastname\":\"Laboy\",\"company\":\"Century 21 Keewaydin Prop\",\"address\":\"22661 S Frontage Rd\",\"city\":\"Channahon\",\"country\":\"Will\",\"state\":\"IL\",\"zip\":\"60410\",\"phone\":\"815-467-0487\",\"fax\":\"815-467-1244\",\"email\":\"bernard@laboy.com\",\"web\":\"http://www.bernardlaboy.com\",\"followers\":6891},{\"firstname\":\"Sue\",\"lastname\":\"Haakinson\",\"company\":\"Kim Peacock Beringhause\",\"address\":\"9617 N Metro Pky W\",\"city\":\"Phoenix\",\"country\":\"Maricopa\",\"state\":\"AZ\",\"zip\":\"85051\",\"phone\":\"602-953-2753\",\"fax\":\"602-953-0355\",\"email\":\"sue@haakinson.com\",\"web\":\"http://www.suehaakinson.com\",\"followers\":5787},{\"firstname\":\"Valerie\",\"lastname\":\"Pou\",\"company\":\"Sea Port Record One Stop Inc\",\"address\":\"7475 Hamilton Blvd\",\"city\":\"Trexlertown\",\"country\":\"Lehigh\",\"state\":\"PA\",\"zip\":\"18087\",\"phone\":\"610-395-8743\",\"fax\":\"610-395-6995\",\"email\":\"valerie@pou.com\",\"web\":\"http://www.valeriepou.com\",\"followers\":8990},{\"firstname\":\"Lashawn\",\"lastname\":\"Hasty\",\"company\":\"Kpff Consulting Engineers\",\"address\":\"815 S Glendora Ave\",\"city\":\"West Covina\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"91790\",\"phone\":\"626-960-6738\",\"fax\":\"626-960-1503\",\"email\":\"lashawn@hasty.com\",\"web\":\"http://www.lashawnhasty.com\",\"followers\":2131},{\"firstname\":\"Marianne\",\"lastname\":\"Earman\",\"company\":\"Albers Technologies Corp\",\"address\":\"6220 S Orange Blossom Trl\",\"city\":\"Orlando\",\"country\":\"Orange\",\"state\":\"FL\",\"zip\":\"32809\",\"phone\":\"407-857-0431\",\"fax\":\"407-857-2506\",\"email\":\"marianne@earman.com\",\"web\":\"http://www.marianneearman.com\",\"followers\":1992},{\"firstname\":\"Justina\",\"lastname\":\"Dragaj\",\"company\":\"Uchner, David D Esq\",\"address\":\"2552 Poplar Ave\",\"city\":\"Memphis\",\"country\":\"Shelby\",\"state\":\"TN\",\"zip\":\"38112\",\"phone\":\"901-327-5336\",\"fax\":\"901-327-2911\",\"email\":\"justina@dragaj.com\",\"web\":\"http://www.justinadragaj.com\",\"followers\":7149},{\"firstname\":\"Mandy\",\"lastname\":\"Mcdonnell\",\"company\":\"Southern Vermont Surveys\",\"address\":\"343 Bush St Se\",\"city\":\"Salem\",\"country\":\"Marion\",\"state\":\"OR\",\"zip\":\"97302\",\"phone\":\"503-371-8219\",\"fax\":\"503-371-1118\",\"email\":\"mandy@mcdonnell.com\",\"web\":\"http://www.mandymcdonnell.com\",\"followers\":1329},{\"firstname\":\"Conrad\",\"lastname\":\"Lanfear\",\"company\":\"Kahler, Karen T Esq\",\"address\":\"49 Roche Way\",\"city\":\"Youngstown\",\"country\":\"Mahoning\",\"state\":\"OH\",\"zip\":\"44512\",\"phone\":\"330-758-0314\",\"fax\":\"330-758-3536\",\"email\":\"conrad@lanfear.com\",\"web\":\"http://www.conradlanfear.com\",\"followers\":2906},{\"firstname\":\"Cyril\",\"lastname\":\"Behen\",\"company\":\"National Paper & Envelope Corp\",\"address\":\"1650 S Harbor Blvd\",\"city\":\"Anaheim\",\"country\":\"Orange\",\"state\":\"CA\",\"zip\":\"92802\",\"phone\":\"714-772-5050\",\"fax\":\"714-772-3859\",\"email\":\"cyril@behen.com\",\"web\":\"http://www.cyrilbehen.com\",\"followers\":7784},{\"firstname\":\"Shelley\",\"lastname\":\"Groden\",\"company\":\"Norton, Robert L Esq\",\"address\":\"110 Broadway St\",\"city\":\"San Antonio\",\"country\":\"Bexar\",\"state\":\"TX\",\"zip\":\"78205\",\"phone\":\"210-229-3017\",\"fax\":\"210-229-9757\",\"email\":\"shelley@groden.com\",\"web\":\"http://www.shelleygroden.com\",\"followers\":2012},{\"firstname\":\"Rosalind\",\"lastname\":\"Krenzke\",\"company\":\"Waldein Manufacturing\",\"address\":\"7000 Bass Lake Rd  #-200\",\"city\":\"Minneapolis\",\"country\":\"Hennepin\",\"state\":\"MN\",\"zip\":\"55428\",\"phone\":\"763-537-4194\",\"fax\":\"763-537-3885\",\"email\":\"rosalind@krenzke.com\",\"web\":\"http://www.rosalindkrenzke.com\",\"followers\":5547},{\"firstname\":\"Davis\",\"lastname\":\"Brevard\",\"company\":\"Transit Trading Corp\",\"address\":\"6715 Tippecanoe Rd\",\"city\":\"Canfield\",\"country\":\"Mahoning\",\"state\":\"OH\",\"zip\":\"44406\",\"phone\":\"330-533-6346\",\"fax\":\"330-533-8211\",\"email\":\"davis@brevard.com\",\"web\":\"http://www.davisbrevard.com\",\"followers\":4259},{\"firstname\":\"Winnie\",\"lastname\":\"Reich\",\"company\":\"Pacific Seating Co\",\"address\":\"1535 Hawkins Blvd\",\"city\":\"El Paso\",\"country\":\"El Paso\",\"state\":\"TX\",\"zip\":\"79925\",\"phone\":\"915-771-2730\",\"fax\":\"915-771-5729\",\"email\":\"winnie@reich.com\",\"web\":\"http://www.winniereich.com\",\"followers\":6621},{\"firstname\":\"Trudy\",\"lastname\":\"Worlds\",\"company\":\"Shapiro, Mark R Esq\",\"address\":\"24907 Tibbitts Aven  #-b\",\"city\":\"Valencia\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"91355\",\"phone\":\"661-257-3083\",\"fax\":\"661-257-0924\",\"email\":\"trudy@worlds.com\",\"web\":\"http://www.trudyworlds.com\",\"followers\":5782},{\"firstname\":\"Deshawn\",\"lastname\":\"Inafuku\",\"company\":\"Telair Div Of Teleflex Inc\",\"address\":\"3508 Leopard St\",\"city\":\"Corpus Christi\",\"country\":\"Nueces\",\"state\":\"TX\",\"zip\":\"78408\",\"phone\":\"361-884-8433\",\"fax\":\"361-884-3985\",\"email\":\"deshawn@inafuku.com\",\"web\":\"http://www.deshawninafuku.com\",\"followers\":1195},{\"firstname\":\"Claudio\",\"lastname\":\"Loose\",\"company\":\"Audiotek Electronics\",\"address\":\"286 State St\",\"city\":\"Perth Amboy\",\"country\":\"Middlesex\",\"state\":\"NJ\",\"zip\":\"08861\",\"phone\":\"732-442-8514\",\"fax\":\"732-442-1775\",\"email\":\"claudio@loose.com\",\"web\":\"http://www.claudioloose.com\",\"followers\":6043},{\"firstname\":\"Sal\",\"lastname\":\"Pindell\",\"company\":\"Wrigley, Robert I Esq\",\"address\":\"1112 Se 1st St\",\"city\":\"Evansville\",\"country\":\"Vanderburgh\",\"state\":\"IN\",\"zip\":\"47713\",\"phone\":\"812-421-4804\",\"fax\":\"812-421-7625\",\"email\":\"sal@pindell.com\",\"web\":\"http://www.salpindell.com\",\"followers\":4359},{\"firstname\":\"Cristina\",\"lastname\":\"Sharper\",\"company\":\"Tax Office\",\"address\":\"111 W 40th St\",\"city\":\"New York\",\"country\":\"New York\",\"state\":\"NY\",\"zip\":\"10018\",\"phone\":\"212-719-3952\",\"fax\":\"212-719-0754\",\"email\":\"cristina@sharper.com\",\"web\":\"http://www.cristinasharper.com\",\"followers\":4823},{\"firstname\":\"Betty Jane\",\"lastname\":\"Mccamey\",\"company\":\"Vita Foods Inc\",\"address\":\"100 E Broad St\",\"city\":\"Columbus\",\"country\":\"Franklin\",\"state\":\"OH\",\"zip\":\"43215\",\"phone\":\"614-225-0900\",\"fax\":\"614-225-1612\",\"email\":\"cary@mccamey.com\",\"web\":\"http://www.carymccamey.com\",\"followers\":8863},{\"firstname\":\"Haley\",\"lastname\":\"Rocheford\",\"company\":\"Davis, Robert L Esq\",\"address\":\"6030 Greenwood Plaza Blvd\",\"city\":\"Englewood\",\"country\":\"Arapahoe\",\"state\":\"CO\",\"zip\":\"80111\",\"phone\":\"303-689-7729\",\"fax\":\"303-689-5219\",\"email\":\"haley@rocheford.com\",\"web\":\"http://www.haleyrocheford.com\",\"followers\":9872},{\"firstname\":\"Dorothea\",\"lastname\":\"Sweem\",\"company\":\"Ehrmann, Rolfe F Esq\",\"address\":\"100 Thanet Circ\",\"city\":\"Trenton\",\"country\":\"Mercer\",\"state\":\"NJ\",\"zip\":\"08648\",\"phone\":\"609-896-5871\",\"fax\":\"609-896-2099\",\"email\":\"dorothea@sweem.com\",\"web\":\"http://www.dorotheasweem.com\",\"followers\":8897},{\"firstname\":\"Fannie\",\"lastname\":\"Steese\",\"company\":\"Chiapete, W Richard Esq\",\"address\":\"926 E Park Ave\",\"city\":\"Tallahassee\",\"country\":\"Leon\",\"state\":\"FL\",\"zip\":\"32301\",\"phone\":\"850-222-8103\",\"fax\":\"850-222-0105\",\"email\":\"fannie@steese.com\",\"web\":\"http://www.fanniesteese.com\",\"followers\":7140},{\"firstname\":\"Allyson\",\"lastname\":\"Gillispie\",\"company\":\"De Friese Theo & Sons\",\"address\":\"1722 White Horse Mercerville R\",\"city\":\"Trenton\",\"country\":\"Mercer\",\"state\":\"NJ\",\"zip\":\"08619\",\"phone\":\"609-584-1794\",\"fax\":\"609-584-0645\",\"email\":\"allyson@gillispie.com\",\"web\":\"http://www.allysongillispie.com\",\"followers\":1414},{\"firstname\":\"Roger\",\"lastname\":\"Seid\",\"company\":\"Yoshida, Gerald C Esq\",\"address\":\"3738 N Monroe St\",\"city\":\"Tallahassee\",\"country\":\"Leon\",\"state\":\"FL\",\"zip\":\"32303\",\"phone\":\"850-422-1535\",\"fax\":\"850-422-8152\",\"email\":\"roger@seid.com\",\"web\":\"http://www.rogerseid.com\",\"followers\":6661},{\"firstname\":\"Dollie\",\"lastname\":\"Daquino\",\"company\":\"Jd Edwards & Co\",\"address\":\"1005 Congress Ave\",\"city\":\"Austin\",\"country\":\"Travis\",\"state\":\"TX\",\"zip\":\"78701\",\"phone\":\"512-478-9636\",\"fax\":\"512-478-9874\",\"email\":\"dollie@daquino.com\",\"web\":\"http://www.dolliedaquino.com\",\"followers\":5262},{\"firstname\":\"Eva\",\"lastname\":\"Seahorn\",\"company\":\"Saunders Appraisal Inc\",\"address\":\"3 Northern Blvd\",\"city\":\"Amherst\",\"country\":\"Hillsborough\",\"state\":\"NH\",\"zip\":\"03031\",\"phone\":\"603-673-6072\",\"fax\":\"603-673-5009\",\"email\":\"eva@seahorn.com\",\"web\":\"http://www.evaseahorn.com\",\"followers\":9192},{\"firstname\":\"Mamie\",\"lastname\":\"Mcintee\",\"company\":\"Jacobs, Brian Realtor\",\"address\":\"2810 Jacobs Ave\",\"city\":\"Eureka\",\"country\":\"Humboldt\",\"state\":\"CA\",\"zip\":\"95501\",\"phone\":\"707-443-0621\",\"fax\":\"707-443-9147\",\"email\":\"mamie@mcintee.com\",\"web\":\"http://www.mamiemcintee.com\",\"followers\":6954},{\"firstname\":\"Lyndon\",\"lastname\":\"Bellerdine\",\"company\":\"A B C Lock & Key\",\"address\":\"200 California St\",\"city\":\"San Francisco\",\"country\":\"San Francisco\",\"state\":\"CA\",\"zip\":\"94111\",\"phone\":\"415-705-1956\",\"fax\":\"415-705-2887\",\"email\":\"lyndon@bellerdine.com\",\"web\":\"http://www.lyndonbellerdine.com\",\"followers\":146},{\"firstname\":\"Lashonda\",\"lastname\":\"Derouen\",\"company\":\"Travel Agent Magazine\",\"address\":\"101 Royal St\",\"city\":\"Alexandria\",\"country\":\"Alexandria City\",\"state\":\"VA\",\"zip\":\"22314\",\"phone\":\"703-684-3394\",\"fax\":\"703-684-0307\",\"email\":\"lashonda@derouen.com\",\"web\":\"http://www.lashondaderouen.com\",\"followers\":3792},{\"firstname\":\"Jacklyn\",\"lastname\":\"Emayo\",\"company\":\"Super 8 Motel Temple\",\"address\":\"101 Us Highway 46\",\"city\":\"Fairfield\",\"country\":\"Essex\",\"state\":\"NJ\",\"zip\":\"07004\",\"phone\":\"973-882-3960\",\"fax\":\"973-882-1908\",\"email\":\"jacklyn@emayo.com\",\"web\":\"http://www.jacklynemayo.com\",\"followers\":4575},{\"firstname\":\"Rubin\",\"lastname\":\"Crotts\",\"company\":\"Misko, Charles G Esq\",\"address\":\"303 N Indian Canyon Dr\",\"city\":\"Palm Springs\",\"country\":\"Riverside\",\"state\":\"CA\",\"zip\":\"92262\",\"phone\":\"760-327-0337\",\"fax\":\"760-327-0929\",\"email\":\"rubin@crotts.com\",\"web\":\"http://www.rubincrotts.com\",\"followers\":4736},{\"firstname\":\"Boris\",\"lastname\":\"Catino\",\"company\":\"Dream Homes Usa Inc\",\"address\":\"645 Church St\",\"city\":\"Norfolk\",\"country\":\"Norfolk City\",\"state\":\"VA\",\"zip\":\"23510\",\"phone\":\"757-627-8408\",\"fax\":\"757-627-6195\",\"email\":\"boris@catino.com\",\"web\":\"http://www.boriscatino.com\",\"followers\":2330},{\"firstname\":\"Jannie\",\"lastname\":\"Bowditch\",\"company\":\"Lindsays Landing Rv Pk & Mrna\",\"address\":\"1102 Main St\",\"city\":\"Grandview\",\"country\":\"Jackson\",\"state\":\"MO\",\"zip\":\"64030\",\"phone\":\"816-765-0961\",\"fax\":\"816-765-3469\",\"email\":\"jannie@bowditch.com\",\"web\":\"http://www.janniebowditch.com\",\"followers\":7302},{\"firstname\":\"Colin\",\"lastname\":\"Altonen\",\"company\":\"Smith, Arthur D Esq\",\"address\":\"1201 18th St\",\"city\":\"Denver\",\"country\":\"Denver\",\"state\":\"CO\",\"zip\":\"80202\",\"phone\":\"303-292-5477\",\"fax\":\"303-292-4239\",\"email\":\"colin@altonen.com\",\"web\":\"http://www.colinaltonen.com\",\"followers\":2587},{\"firstname\":\"Kerry\",\"lastname\":\"Evertt\",\"company\":\"Washington Crossing Inn\",\"address\":\"337 S North Lake Blvd\",\"city\":\"Altamonte Springs\",\"country\":\"Seminole\",\"state\":\"FL\",\"zip\":\"32701\",\"phone\":\"407-332-9851\",\"fax\":\"407-332-1718\",\"email\":\"kerry@evertt.com\",\"web\":\"http://www.kerryevertt.com\",\"followers\":6663},{\"firstname\":\"Kathie\",\"lastname\":\"Argenti\",\"company\":\"Microtel Franchise & Dev Corp\",\"address\":\"410 Front St\",\"city\":\"Brainerd\",\"country\":\"Crow Wing\",\"state\":\"MN\",\"zip\":\"56401\",\"phone\":\"218-828-9253\",\"fax\":\"218-828-1401\",\"email\":\"kathie@argenti.com\",\"web\":\"http://www.kathieargenti.com\",\"followers\":6260},{\"firstname\":\"Henrietta\",\"lastname\":\"Cintora\",\"company\":\"Keyes, Judith Droz Esq\",\"address\":\"1063 Fm Wzzw\",\"city\":\"Milton\",\"country\":\"Cabell\",\"state\":\"WV\",\"zip\":\"25541\",\"phone\":\"304-743-5440\",\"fax\":\"304-743-7475\",\"email\":\"henrietta@cintora.com\",\"web\":\"http://www.henriettacintora.com\",\"followers\":9622},{\"firstname\":\"Mariano\",\"lastname\":\"Maury\",\"company\":\"Donut & Sandwich Shop\",\"address\":\"1092 Saint Georges Ave\",\"city\":\"Rahway\",\"country\":\"Union\",\"state\":\"NJ\",\"zip\":\"07065\",\"phone\":\"732-388-1579\",\"fax\":\"732-388-9355\",\"email\":\"mariano@maury.com\",\"web\":\"http://www.marianomaury.com\",\"followers\":6254},{\"firstname\":\"Lottie\",\"lastname\":\"Voll\",\"company\":\"Mason, Joseph G Esq\",\"address\":\"55 E 10th Ave\",\"city\":\"Eugene\",\"country\":\"Lane\",\"state\":\"OR\",\"zip\":\"97401\",\"phone\":\"541-342-7282\",\"fax\":\"541-342-4657\",\"email\":\"lottie@voll.com\",\"web\":\"http://www.lottievoll.com\",\"followers\":1092},{\"firstname\":\"Ofelia\",\"lastname\":\"Sheffler\",\"company\":\"Rimpsey Agency\",\"address\":\"628 Pacific Ave\",\"city\":\"Oxnard\",\"country\":\"Ventura\",\"state\":\"CA\",\"zip\":\"93030\",\"phone\":\"805-483-7161\",\"fax\":\"805-483-5693\",\"email\":\"ofelia@sheffler.com\",\"web\":\"http://www.ofeliasheffler.com\",\"followers\":1096},{\"firstname\":\"Gaston\",\"lastname\":\"Cieloszyk\",\"company\":\"Center For Hope Hospice Inc\",\"address\":\"1160 Wccs\",\"city\":\"Homer City\",\"country\":\"Indiana\",\"state\":\"PA\",\"zip\":\"15748\",\"phone\":\"724-479-0355\",\"fax\":\"724-479-7077\",\"email\":\"gaston@cieloszyk.com\",\"web\":\"http://www.gastoncieloszyk.com\",\"followers\":7409},{\"firstname\":\"Karla\",\"lastname\":\"Ken\",\"company\":\"Nicollet Process Engineering\",\"address\":\"2135 11th St\",\"city\":\"Rockford\",\"country\":\"Winnebago\",\"state\":\"IL\",\"zip\":\"61104\",\"phone\":\"815-968-0369\",\"fax\":\"815-968-7904\",\"email\":\"karla@ken.com\",\"web\":\"http://www.karlaken.com\",\"followers\":1296},{\"firstname\":\"Avery\",\"lastname\":\"Parbol\",\"company\":\"Schlackman, William H\",\"address\":\"22343 Se Stark St\",\"city\":\"Gresham\",\"country\":\"Multnomah\",\"state\":\"OR\",\"zip\":\"97030\",\"phone\":\"503-666-1948\",\"fax\":\"503-666-9241\",\"email\":\"avery@parbol.com\",\"web\":\"http://www.averyparbol.com\",\"followers\":3515},{\"firstname\":\"John\",\"lastname\":\"Chipley\",\"company\":\"Manpower Temporary Services\",\"address\":\"2 Horizon Rd  #-2\",\"city\":\"Fort Lee\",\"country\":\"Bergen\",\"state\":\"NJ\",\"zip\":\"07024\",\"phone\":\"201-224-7741\",\"fax\":\"201-224-7282\",\"email\":\"john@chipley.com\",\"web\":\"http://www.johnchipley.com\",\"followers\":7710},{\"firstname\":\"Luella\",\"lastname\":\"Pliner\",\"company\":\"United Waste Systems\",\"address\":\"3437 N 12th Ave\",\"city\":\"Pensacola\",\"country\":\"Escambia\",\"state\":\"FL\",\"zip\":\"32503\",\"phone\":\"850-434-2521\",\"fax\":\"850-434-5228\",\"email\":\"luella@pliner.com\",\"web\":\"http://www.luellapliner.com\",\"followers\":5191},{\"firstname\":\"Elvira\",\"lastname\":\"Blumenthal\",\"company\":\"Stell Mortgage Investors\",\"address\":\"108 Washington St\",\"city\":\"Keokuk\",\"country\":\"Lee\",\"state\":\"IA\",\"zip\":\"52632\",\"phone\":\"319-524-6237\",\"fax\":\"319-524-9435\",\"email\":\"elvira@blumenthal.com\",\"web\":\"http://www.elvirablumenthal.com\",\"followers\":6616},{\"firstname\":\"Tyree\",\"lastname\":\"Courrege\",\"company\":\"Stitch Craft\",\"address\":\"13201 Northwest Fwy\",\"city\":\"Houston\",\"country\":\"Harris\",\"state\":\"TX\",\"zip\":\"77040\",\"phone\":\"713-690-9216\",\"fax\":\"713-690-4043\",\"email\":\"tyree@courrege.com\",\"web\":\"http://www.tyreecourrege.com\",\"followers\":5210},{\"firstname\":\"Ramon\",\"lastname\":\"Amaral\",\"company\":\"Air Academy Federal Credit Un\",\"address\":\"700 W Highway 287\",\"city\":\"Lander\",\"country\":\"Fremont\",\"state\":\"WY\",\"zip\":\"82520\",\"phone\":\"307-332-2667\",\"fax\":\"307-332-3893\",\"email\":\"ramon@amaral.com\",\"web\":\"http://www.ramonamaral.com\",\"followers\":8659},{\"firstname\":\"Wilfredo\",\"lastname\":\"Gidley\",\"company\":\"Mclaughlin, John F Esq\",\"address\":\"2255 Kuhio Ave  #-1203\",\"city\":\"Honolulu\",\"country\":\"Honolulu\",\"state\":\"HI\",\"zip\":\"96815\",\"phone\":\"808-924-2610\",\"fax\":\"808-924-7666\",\"email\":\"wilfredo@gidley.com\",\"web\":\"http://www.wilfredogidley.com\",\"followers\":8860},{\"firstname\":\"Gracie\",\"lastname\":\"Ehn\",\"company\":\"P C Systems\",\"address\":\"Kahala\",\"city\":\"Honolulu\",\"country\":\"Honolulu\",\"state\":\"HI\",\"zip\":\"96816\",\"phone\":\"808-247-8624\",\"fax\":\"808-247-7982\",\"email\":\"gracie@ehn.com\",\"web\":\"http://www.gracieehn.com\",\"followers\":2870},{\"firstname\":\"Dorthy\",\"lastname\":\"Alexy\",\"company\":\"Frank Siviglia & Co\",\"address\":\"Pearlridge\",\"city\":\"Aiea\",\"country\":\"Honolulu\",\"state\":\"HI\",\"zip\":\"96701\",\"phone\":\"808-247-4421\",\"fax\":\"808-247-7192\",\"email\":\"dorthy@alexy.com\",\"web\":\"http://www.dorthyalexy.com\",\"followers\":1029},{\"firstname\":\"Bertie\",\"lastname\":\"Luby\",\"company\":\"Puckett, Dennis L Esq\",\"address\":\"Windward\",\"city\":\"Kaneohe\",\"country\":\"Honolulu\",\"state\":\"HI\",\"zip\":\"96744\",\"phone\":\"808-247-8062\",\"fax\":\"808-247-2529\",\"email\":\"bertie@luby.com\",\"web\":\"http://www.bertieluby.com\",\"followers\":2660},{\"firstname\":\"Rudy\",\"lastname\":\"Kuhle\",\"company\":\"General Insurcorp Inc\",\"address\":\"1418 3rd Ave\",\"city\":\"New York\",\"country\":\"New York\",\"state\":\"NY\",\"zip\":\"10028\",\"phone\":\"212-628-9987\",\"fax\":\"212-628-1234\",\"email\":\"rudy@kuhle.com\",\"web\":\"http://www.rudykuhle.com\",\"followers\":7201},{\"firstname\":\"Gale\",\"lastname\":\"Nolau\",\"company\":\"Lust, C James Esq\",\"address\":\"104 N Aurora St\",\"city\":\"Ithaca\",\"country\":\"Tompkins\",\"state\":\"NY\",\"zip\":\"14850\",\"phone\":\"607-277-1567\",\"fax\":\"607-277-6524\",\"email\":\"gale@nolau.com\",\"web\":\"http://www.galenolau.com\",\"followers\":6842},{\"firstname\":\"Kenya\",\"lastname\":\"Bruni\",\"company\":\"Hurley, Thomas J Jr\",\"address\":\"280 N Midland Ave\",\"city\":\"Saddle Brook\",\"country\":\"Bergen\",\"state\":\"NJ\",\"zip\":\"07663\",\"phone\":\"201-646-9077\",\"fax\":\"201-646-8526\",\"email\":\"kenya@bruni.com\",\"web\":\"http://www.kenyabruni.com\",\"followers\":9368},{\"firstname\":\"Tricia\",\"lastname\":\"Kruss\",\"company\":\"Edwards, Elwood L\",\"address\":\"4685 Ne 14th St\",\"city\":\"Des Moines\",\"country\":\"Polk\",\"state\":\"IA\",\"zip\":\"50313\",\"phone\":\"515-262-3267\",\"fax\":\"515-262-6264\",\"email\":\"tricia@kruss.com\",\"web\":\"http://www.triciakruss.com\",\"followers\":9671},{\"firstname\":\"Mack\",\"lastname\":\"Jurasin\",\"company\":\"Sherman, Michael D Esq\",\"address\":\"1180 Dora Hwy\",\"city\":\"Pulaski\",\"country\":\"Pulaski\",\"state\":\"VA\",\"zip\":\"24301\",\"phone\":\"540-980-4958\",\"fax\":\"540-980-2978\",\"email\":\"mack@jurasin.com\",\"web\":\"http://www.mackjurasin.com\",\"followers\":4557},{\"firstname\":\"Margarito\",\"lastname\":\"Kornbau\",\"company\":\"Acker Knitting Mills Inc\",\"address\":\"303 W 15th St\",\"city\":\"Austin\",\"country\":\"Travis\",\"state\":\"TX\",\"zip\":\"78701\",\"phone\":\"512-478-0371\",\"fax\":\"512-478-4449\",\"email\":\"margarito@kornbau.com\",\"web\":\"http://www.margaritokornbau.com\",\"followers\":2072},{\"firstname\":\"Lucien\",\"lastname\":\"Iurato\",\"company\":\"Anderson Consulting\",\"address\":\"3918 16th Ave\",\"city\":\"Brooklyn\",\"country\":\"Kings\",\"state\":\"NY\",\"zip\":\"11218\",\"phone\":\"718-871-7952\",\"fax\":\"718-871-3483\",\"email\":\"lucien@iurato.com\",\"web\":\"http://www.lucieniurato.com\",\"followers\":9434},{\"firstname\":\"Jarvis\",\"lastname\":\"Galas\",\"company\":\"Younghans & Burke\",\"address\":\"307 E President St\",\"city\":\"Savannah\",\"country\":\"Chatham\",\"state\":\"GA\",\"zip\":\"31401\",\"phone\":\"912-236-8524\",\"fax\":\"912-236-8705\",\"email\":\"jarvis@galas.com\",\"web\":\"http://www.jarvisgalas.com\",\"followers\":2359},{\"firstname\":\"Billie\",\"lastname\":\"Cowley\",\"company\":\"Spears, Robert M Esq\",\"address\":\"1700 Street Rd\",\"city\":\"Warrington\",\"country\":\"Bucks\",\"state\":\"PA\",\"zip\":\"18976\",\"phone\":\"215-548-0842\",\"fax\":\"215-548-4706\",\"email\":\"billie@cowley.com\",\"web\":\"http://www.billiecowley.com\",\"followers\":2416},{\"firstname\":\"Jacinto\",\"lastname\":\"Gawron\",\"company\":\"Matt Kokkonen Insurance Agency\",\"address\":\"1740 House\",\"city\":\"Lumberville\",\"country\":\"Bucks\",\"state\":\"PA\",\"zip\":\"18933\",\"phone\":\"215-297-0120\",\"fax\":\"215-297-5442\",\"email\":\"jacinto@gawron.com\",\"web\":\"http://www.jacintogawron.com\",\"followers\":310},{\"firstname\":\"Randall\",\"lastname\":\"Kluemper\",\"company\":\"Lifestyles Organization\",\"address\":\"Rt 16\",\"city\":\"North Conway\",\"country\":\"Carroll\",\"state\":\"NH\",\"zip\":\"03860\",\"phone\":\"603-356-3217\",\"fax\":\"603-356-6174\",\"email\":\"randall@kluemper.com\",\"web\":\"http://www.randallkluemper.com\",\"followers\":5669},{\"firstname\":\"Enrique\",\"lastname\":\"Oroark\",\"company\":\"Callaghan, Kathleen M Esq\",\"address\":\"34 W 17th St\",\"city\":\"New York\",\"country\":\"New York\",\"state\":\"NY\",\"zip\":\"10011\",\"phone\":\"212-366-5568\",\"fax\":\"212-366-6877\",\"email\":\"enrique@oroark.com\",\"web\":\"http://www.enriqueoroark.com\",\"followers\":3911},{\"firstname\":\"Alva\",\"lastname\":\"Pennigton\",\"company\":\"Citizens Savings Bank\",\"address\":\"1275 country Road 210 W\",\"city\":\"Jacksonville\",\"country\":\"Saint Johns\",\"state\":\"FL\",\"zip\":\"32259\",\"phone\":\"904-260-2345\",\"fax\":\"904-260-3735\",\"email\":\"alva@pennigton.com\",\"web\":\"http://www.alvapennigton.com\",\"followers\":7564},{\"firstname\":\"Socorro\",\"lastname\":\"Balandran\",\"company\":\"Mooring\",\"address\":\"401 S Main St\",\"city\":\"Greensburg\",\"country\":\"Westmoreland\",\"state\":\"PA\",\"zip\":\"15601\",\"phone\":\"724-834-6908\",\"fax\":\"724-834-8831\",\"email\":\"socorro@balandran.com\",\"web\":\"http://www.socorrobalandran.com\",\"followers\":7056},{\"firstname\":\"Nadia\",\"lastname\":\"Wilshire\",\"company\":\"Midwest Undercar Distributors\",\"address\":\"1801 West Ave S\",\"city\":\"La Crosse\",\"country\":\"La Crosse\",\"state\":\"WI\",\"zip\":\"54601\",\"phone\":\"608-788-4965\",\"fax\":\"608-788-5946\",\"email\":\"nadia@wilshire.com\",\"web\":\"http://www.nadiawilshire.com\",\"followers\":9311},{\"firstname\":\"Reginald\",\"lastname\":\"Humes\",\"company\":\"Cowley & Chidester\",\"address\":\"44 N Main St\",\"city\":\"Wolfeboro\",\"country\":\"Carroll\",\"state\":\"NH\",\"zip\":\"03894\",\"phone\":\"603-569-7730\",\"fax\":\"603-569-8142\",\"email\":\"reginald@humes.com\",\"web\":\"http://www.reginaldhumes.com\",\"followers\":8347},{\"firstname\":\"Lynda\",\"lastname\":\"Caraway\",\"company\":\"Lowe Art Museum\",\"address\":\"1822 Spring Garden St\",\"city\":\"Philadelphia\",\"country\":\"Philadelphia\",\"state\":\"PA\",\"zip\":\"19130\",\"phone\":\"215-564-3171\",\"fax\":\"215-564-2241\",\"email\":\"lynda@caraway.com\",\"web\":\"http://www.lyndacaraway.com\",\"followers\":3853},{\"firstname\":\"Saundra\",\"lastname\":\"Mcaulay\",\"company\":\"Rcf Inc\",\"address\":\"2401 Cleveland Rd W\",\"city\":\"Huron\",\"country\":\"Erie\",\"state\":\"OH\",\"zip\":\"44839\",\"phone\":\"419-433-5558\",\"fax\":\"419-433-9756\",\"email\":\"saundra@mcaulay.com\",\"web\":\"http://www.saundramcaulay.com\",\"followers\":1620},{\"firstname\":\"Allan\",\"lastname\":\"Schwantd\",\"company\":\"Micro Wire Products\",\"address\":\"406 Ne 3rd St\",\"city\":\"McMinnville\",\"country\":\"Yamhill\",\"state\":\"OR\",\"zip\":\"97128\",\"phone\":\"503-434-9666\",\"fax\":\"503-434-3863\",\"email\":\"allan@schwantd.com\",\"web\":\"http://www.allanschwantd.com\",\"followers\":6069},{\"firstname\":\"Wilmer\",\"lastname\":\"Constantineau\",\"company\":\"Nutra Source\",\"address\":\"1745 W 18th Ave\",\"city\":\"Eugene\",\"country\":\"Lane\",\"state\":\"OR\",\"zip\":\"97402\",\"phone\":\"541-345-4729\",\"fax\":\"541-345-4884\",\"email\":\"wilmer@constantineau.com\",\"web\":\"http://www.wilmerconstantineau.com\",\"followers\":1648},{\"firstname\":\"Savannah\",\"lastname\":\"Kesich\",\"company\":\"Wbnd Am\",\"address\":\"221 Main\",\"city\":\"Park City\",\"country\":\"Summit\",\"state\":\"UT\",\"zip\":\"84060\",\"phone\":\"435-645-0986\",\"fax\":\"435-645-9504\",\"email\":\"savannah@kesich.com\",\"web\":\"http://www.savannahkesich.com\",\"followers\":7325},{\"firstname\":\"Dwain\",\"lastname\":\"Cuttitta\",\"company\":\"Kintech Stamping Inc\",\"address\":\"1919 Connecticut Ave Nw\",\"city\":\"Washington\",\"country\":\"District of Columbia\",\"state\":\"DC\",\"zip\":\"20009\",\"phone\":\"202-265-7854\",\"fax\":\"202-265-9475\",\"email\":\"dwain@cuttitta.com\",\"web\":\"http://www.dwaincuttitta.com\",\"followers\":8300},{\"firstname\":\"Krystle\",\"lastname\":\"Stika\",\"company\":\"Signature Inn\",\"address\":\"3730 Fm\",\"city\":\"Houston\",\"country\":\"Harris\",\"state\":\"TX\",\"zip\":\"77068\",\"phone\":\"281-537-5324\",\"fax\":\"281-537-3235\",\"email\":\"krystle@stika.com\",\"web\":\"http://www.krystlestika.com\",\"followers\":2603},{\"firstname\":\"Felipe\",\"lastname\":\"Gould\",\"company\":\"Black, Ronald H\",\"address\":\"2308 Bienville Blvd\",\"city\":\"Ocean Springs\",\"country\":\"Jackson\",\"state\":\"MS\",\"zip\":\"39564\",\"phone\":\"228-875-2811\",\"fax\":\"228-875-6402\",\"email\":\"felipe@gould.com\",\"web\":\"http://www.felipegould.com\",\"followers\":9237},{\"firstname\":\"Steve\",\"lastname\":\"Schorr\",\"company\":\"Midwest Fire Protection Inc\",\"address\":\"1810 N King St\",\"city\":\"Honolulu\",\"country\":\"Honolulu\",\"state\":\"HI\",\"zip\":\"96819\",\"phone\":\"808-842-7045\",\"fax\":\"808-842-7338\",\"email\":\"steve@schorr.com\",\"web\":\"http://www.steveschorr.com\",\"followers\":1468},{\"firstname\":\"Naomi\",\"lastname\":\"Caetano\",\"company\":\"Bashlin Industries Inc\",\"address\":\"50 Spring St  #-1\",\"city\":\"Cresskill\",\"country\":\"Bergen\",\"state\":\"NJ\",\"zip\":\"07626\",\"phone\":\"201-569-3572\",\"fax\":\"201-569-5795\",\"email\":\"naomi@caetano.com\",\"web\":\"http://www.naomicaetano.com\",\"followers\":1743},{\"firstname\":\"Melody\",\"lastname\":\"Saddat\",\"company\":\"Richards, Edward W Esq\",\"address\":\"3540 S 84th St\",\"city\":\"Omaha\",\"country\":\"Douglas\",\"state\":\"NE\",\"zip\":\"68124\",\"phone\":\"402-397-0581\",\"fax\":\"402-397-8391\",\"email\":\"melody@saddat.com\",\"web\":\"http://www.melodysaddat.com\",\"followers\":2442},{\"firstname\":\"Mitchel\",\"lastname\":\"Harnar\",\"company\":\"Copycat Quick Print\",\"address\":\"1810 Pioneer Ave\",\"city\":\"Cheyenne\",\"country\":\"Laramie\",\"state\":\"WY\",\"zip\":\"82001\",\"phone\":\"307-632-0256\",\"fax\":\"307-632-2516\",\"email\":\"mitchel@harnar.com\",\"web\":\"http://www.mitchelharnar.com\",\"followers\":4662},{\"firstname\":\"Sharlene\",\"lastname\":\"Circelli\",\"company\":\"Calibron Systems Inc\",\"address\":\"4018 W Clearwater Ave\",\"city\":\"Kennewick\",\"country\":\"Benton\",\"state\":\"WA\",\"zip\":\"99336\",\"phone\":\"509-783-5167\",\"fax\":\"509-783-7346\",\"email\":\"sharlene@circelli.com\",\"web\":\"http://www.sharlenecircelli.com\",\"followers\":6539},{\"firstname\":\"Sean\",\"lastname\":\"Bonnet\",\"company\":\"Corporate Alternatives Inc\",\"address\":\"3043 Ridge Rd\",\"city\":\"Lansing\",\"country\":\"Cook\",\"state\":\"IL\",\"zip\":\"60438\",\"phone\":\"708-474-4766\",\"fax\":\"708-474-0011\",\"email\":\"sean@bonnet.com\",\"web\":\"http://www.seanbonnet.com\",\"followers\":867},{\"firstname\":\"Travis\",\"lastname\":\"Brockert\",\"company\":\"Santa Cruz Title Co\",\"address\":\"7828 N 19th Ave\",\"city\":\"Phoenix\",\"country\":\"Maricopa\",\"state\":\"AZ\",\"zip\":\"85021\",\"phone\":\"602-995-1362\",\"fax\":\"602-995-0966\",\"email\":\"travis@brockert.com\",\"web\":\"http://www.travisbrockert.com\",\"followers\":7421},{\"firstname\":\"Candice\",\"lastname\":\"Bruckman\",\"company\":\"Fernando Foods Inc\",\"address\":\"611 1st Ave N\",\"city\":\"Humboldt\",\"country\":\"Humboldt\",\"state\":\"IA\",\"zip\":\"50548\",\"phone\":\"515-332-0809\",\"fax\":\"515-332-9083\",\"email\":\"candice@bruckman.com\",\"web\":\"http://www.candicebruckman.com\",\"followers\":7084},{\"firstname\":\"Mabel\",\"lastname\":\"Weeden\",\"company\":\"Pepsi Cola Gen Bottlers Inc\",\"address\":\"300 E Phillips St\",\"city\":\"Richardson\",\"country\":\"Dallas\",\"state\":\"TX\",\"zip\":\"75081\",\"phone\":\"972-235-5619\",\"fax\":\"972-235-1843\",\"email\":\"mabel@weeden.com\",\"web\":\"http://www.mabelweeden.com\",\"followers\":2674},{\"firstname\":\"Armando\",\"lastname\":\"Papik\",\"company\":\"Cryogenic Society Of America\",\"address\":\"615 W Markham St\",\"city\":\"Little Rock\",\"country\":\"Pulaski\",\"state\":\"AR\",\"zip\":\"72201\",\"phone\":\"501-376-4154\",\"fax\":\"501-376-0608\",\"email\":\"armando@papik.com\",\"web\":\"http://www.armandopapik.com\",\"followers\":7152},{\"firstname\":\"Kevin\",\"lastname\":\"Edd\",\"company\":\"Peebles, William J Esq\",\"address\":\"64 Dyerville Ave\",\"city\":\"Johnston\",\"country\":\"Providence\",\"state\":\"RI\",\"zip\":\"02919\",\"phone\":\"401-453-8514\",\"fax\":\"401-453-7085\",\"email\":\"kevin@edd.com\",\"web\":\"http://www.kevinedd.com\",\"followers\":3568},{\"firstname\":\"Raphael\",\"lastname\":\"Bickel\",\"company\":\"S Shamash & Sons Inc\",\"address\":\"550 N Brand Blvd  #-800\",\"city\":\"Glendale\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"91203\",\"phone\":\"818-246-1195\",\"fax\":\"818-246-4734\",\"email\":\"raphael@bickel.com\",\"web\":\"http://www.raphaelbickel.com\",\"followers\":1365},{\"firstname\":\"Darren\",\"lastname\":\"Merlin\",\"company\":\"Pozzuolo & Perkiss Pc\",\"address\":\"550 N Edward St\",\"city\":\"Decatur\",\"country\":\"Macon\",\"state\":\"IL\",\"zip\":\"62522\",\"phone\":\"217-428-0453\",\"fax\":\"217-428-1491\",\"email\":\"darren@merlin.com\",\"web\":\"http://www.darrenmerlin.com\",\"followers\":7653},{\"firstname\":\"Francis\",\"lastname\":\"Soo\",\"company\":\"Allen Industrial Supply\",\"address\":\"218 W Main St\",\"city\":\"Sparta\",\"country\":\"Monroe\",\"state\":\"WI\",\"zip\":\"54656\",\"phone\":\"608-269-7306\",\"fax\":\"608-269-3359\",\"email\":\"francis@soo.com\",\"web\":\"http://www.francissoo.com\",\"followers\":2482},{\"firstname\":\"Nelly\",\"lastname\":\"Jakuboski\",\"company\":\"Hammerman, Stanley M Esq\",\"address\":\"103 Main St\",\"city\":\"Ridgefield\",\"country\":\"Fairfield\",\"state\":\"CT\",\"zip\":\"06877\",\"phone\":\"203-438-9250\",\"fax\":\"203-438-5109\",\"email\":\"nelly@jakuboski.com\",\"web\":\"http://www.nellyjakuboski.com\",\"followers\":5338},{\"firstname\":\"Mitzi\",\"lastname\":\"Ihenyen\",\"company\":\"Helm, Norman O\",\"address\":\"979 3rd Ave\",\"city\":\"New York\",\"country\":\"New York\",\"state\":\"NY\",\"zip\":\"10022\",\"phone\":\"212-838-8303\",\"fax\":\"212-838-3221\",\"email\":\"mitzi@ihenyen.com\",\"web\":\"http://www.mitziihenyen.com\",\"followers\":9264},{\"firstname\":\"Kathleen\",\"lastname\":\"Beresnyak\",\"company\":\"R & E Associates\",\"address\":\"100 W 25th Ave\",\"city\":\"San Mateo\",\"country\":\"San Mateo\",\"state\":\"CA\",\"zip\":\"94403\",\"phone\":\"650-349-6809\",\"fax\":\"650-349-5962\",\"email\":\"kathleen@beresnyak.com\",\"web\":\"http://www.kathleenberesnyak.com\",\"followers\":2853},{\"firstname\":\"Adela\",\"lastname\":\"Cervantsz\",\"company\":\"Arizona Awards\",\"address\":\"102 5th St N\",\"city\":\"Clanton\",\"country\":\"Chilton\",\"state\":\"AL\",\"zip\":\"35045\",\"phone\":\"205-755-4137\",\"fax\":\"205-755-1034\",\"email\":\"adela@cervantsz.com\",\"web\":\"http://www.adelacervantsz.com\",\"followers\":9876},{\"firstname\":\"Randal\",\"lastname\":\"Gansen\",\"company\":\"Quik Print\",\"address\":\"1 First Federal Plz\",\"city\":\"Rochester\",\"country\":\"Monroe\",\"state\":\"NY\",\"zip\":\"14614\",\"phone\":\"585-238-8558\",\"fax\":\"585-238-7764\",\"email\":\"randal@gansen.com\",\"web\":\"http://www.randalgansen.com\",\"followers\":4019},{\"firstname\":\"Alyssa\",\"lastname\":\"Biasotti\",\"company\":\"Johnson Hardware Co\",\"address\":\"22 James St\",\"city\":\"Middletown\",\"country\":\"Orange\",\"state\":\"NY\",\"zip\":\"10940\",\"phone\":\"845-343-1878\",\"fax\":\"845-343-5354\",\"email\":\"alyssa@biasotti.com\",\"web\":\"http://www.alyssabiasotti.com\",\"followers\":3684},{\"firstname\":\"Janet\",\"lastname\":\"Schaffter\",\"company\":\"Hall, Camden M Esq\",\"address\":\"131 Rimbach St\",\"city\":\"Hammond\",\"country\":\"Lake\",\"state\":\"IN\",\"zip\":\"46320\",\"phone\":\"219-853-9283\",\"fax\":\"219-853-9329\",\"email\":\"janet@schaffter.com\",\"web\":\"http://www.janetschaffter.com\",\"followers\":2431},{\"firstname\":\"Armando\",\"lastname\":\"Kolm\",\"company\":\"Cooper & Cooper Cpas\",\"address\":\"201 N Main St\",\"city\":\"Anderson\",\"country\":\"Anderson\",\"state\":\"SC\",\"zip\":\"29621\",\"phone\":\"864-260-3642\",\"fax\":\"864-260-9205\",\"email\":\"armando@kolm.com\",\"web\":\"http://www.armandokolm.com\",\"followers\":4357},{\"firstname\":\"Gil\",\"lastname\":\"Scarpa\",\"company\":\"Hughes, James D Esq\",\"address\":\"12 E Broad St\",\"city\":\"Hazleton\",\"country\":\"Luzerne\",\"state\":\"PA\",\"zip\":\"18201\",\"phone\":\"570-459-9281\",\"fax\":\"570-459-5191\",\"email\":\"gil@scarpa.com\",\"web\":\"http://www.gilscarpa.com\",\"followers\":7691},{\"firstname\":\"Vanessa\",\"lastname\":\"Lewallen\",\"company\":\"Fargo Glass & Paint Co\",\"address\":\"5 E Main\",\"city\":\"Centerburg\",\"country\":\"Knox\",\"state\":\"OH\",\"zip\":\"43011\",\"phone\":\"740-625-8098\",\"fax\":\"740-625-1696\",\"email\":\"vanessa@lewallen.com\",\"web\":\"http://www.vanessalewallen.com\",\"followers\":2710},{\"firstname\":\"Burton\",\"lastname\":\"Brining\",\"company\":\"Corcoran Machine Company\",\"address\":\"135 E Liberty St\",\"city\":\"Wooster\",\"country\":\"Wayne\",\"state\":\"OH\",\"zip\":\"44691\",\"phone\":\"330-262-5481\",\"fax\":\"330-262-7555\",\"email\":\"burton@brining.com\",\"web\":\"http://www.burtonbrining.com\",\"followers\":8158},{\"firstname\":\"Rosalie\",\"lastname\":\"Krigger\",\"company\":\"Aaron, William Esq\",\"address\":\"330 Route 211 E\",\"city\":\"Middletown\",\"country\":\"Orange\",\"state\":\"NY\",\"zip\":\"10940\",\"phone\":\"845-343-2313\",\"fax\":\"845-343-2979\",\"email\":\"rosalie@krigger.com\",\"web\":\"http://www.rosaliekrigger.com\",\"followers\":1411},{\"firstname\":\"Tammie\",\"lastname\":\"Schwartzwalde\",\"company\":\"Cox, Thomas E\",\"address\":\"415 Center St\",\"city\":\"Ironton\",\"country\":\"Lawrence\",\"state\":\"OH\",\"zip\":\"45638\",\"phone\":\"740-532-5488\",\"fax\":\"740-532-0319\",\"email\":\"tammie@schwartzwalde.com\",\"web\":\"http://www.tammieschwartzwalde.com\",\"followers\":1367},{\"firstname\":\"Darrin\",\"lastname\":\"Neiss\",\"company\":\"Delaney, James J Jr\",\"address\":\"101 W Central Blvd\",\"city\":\"Kewanee\",\"country\":\"Henry\",\"state\":\"IL\",\"zip\":\"61443\",\"phone\":\"309-852-5127\",\"fax\":\"309-852-8638\",\"email\":\"darrin@neiss.com\",\"web\":\"http://www.darrinneiss.com\",\"followers\":5748},{\"firstname\":\"Rosalia\",\"lastname\":\"Kennemur\",\"company\":\"Reagan, Thomas J Esq\",\"address\":\"222 S 10th St\",\"city\":\"Oakdale\",\"country\":\"Allen\",\"state\":\"LA\",\"zip\":\"71463\",\"phone\":\"318-335-5586\",\"fax\":\"318-335-1873\",\"email\":\"rosalia@kennemur.com\",\"web\":\"http://www.rosaliakennemur.com\",\"followers\":5984},{\"firstname\":\"Callie\",\"lastname\":\"Leboeuf\",\"company\":\"Town Motors\",\"address\":\"100 S 2nd Ave\",\"city\":\"Alpena\",\"country\":\"Alpena\",\"state\":\"MI\",\"zip\":\"49707\",\"phone\":\"989-354-3344\",\"fax\":\"989-354-3712\",\"email\":\"callie@leboeuf.com\",\"web\":\"http://www.callieleboeuf.com\",\"followers\":3607},{\"firstname\":\"Patty\",\"lastname\":\"Bernasconi\",\"company\":\"Porter Wright Morris & Arthur\",\"address\":\"851 Fort Street Mall\",\"city\":\"Honolulu\",\"country\":\"Honolulu\",\"state\":\"HI\",\"zip\":\"96813\",\"phone\":\"808-531-2621\",\"fax\":\"808-531-6234\",\"email\":\"patty@bernasconi.com\",\"web\":\"http://www.pattybernasconi.com\",\"followers\":3012},{\"firstname\":\"Elmo\",\"lastname\":\"Gabouer\",\"company\":\"Conduit & Foundation Corp\",\"address\":\"275 W Bridge St\",\"city\":\"New Hope\",\"country\":\"Bucks\",\"state\":\"PA\",\"zip\":\"18938\",\"phone\":\"215-862-6538\",\"fax\":\"215-862-7006\",\"email\":\"elmo@gabouer.com\",\"web\":\"http://www.elmogabouer.com\",\"followers\":9593},{\"firstname\":\"Logan\",\"lastname\":\"Muhl\",\"company\":\"Brown, Phillip C Esq\",\"address\":\"126 S Bellevue Ave\",\"city\":\"Langhorne\",\"country\":\"Bucks\",\"state\":\"PA\",\"zip\":\"19047\",\"phone\":\"215-757-6124\",\"fax\":\"215-757-2785\",\"email\":\"logan@muhl.com\",\"web\":\"http://www.loganmuhl.com\",\"followers\":741},{\"firstname\":\"Vivian\",\"lastname\":\"Brzostowski\",\"company\":\"Savage, Philip M Iii\",\"address\":\"118 Mill St\",\"city\":\"Bristol\",\"country\":\"Bucks\",\"state\":\"PA\",\"zip\":\"19007\",\"phone\":\"215-788-2791\",\"fax\":\"215-788-3902\",\"email\":\"vivian@brzostowski.com\",\"web\":\"http://www.vivianbrzostowski.com\",\"followers\":1121},{\"firstname\":\"Efren\",\"lastname\":\"Baucher\",\"company\":\"R O Binson Inc\",\"address\":\"Rts 232 & 413\",\"city\":\"Newtown\",\"country\":\"Bucks\",\"state\":\"PA\",\"zip\":\"18940\",\"phone\":\"215-598-4644\",\"fax\":\"215-598-5929\",\"email\":\"efren@baucher.com\",\"web\":\"http://www.efrenbaucher.com\",\"followers\":8199},{\"firstname\":\"Kurtis\",\"lastname\":\"Mcbay\",\"company\":\"P C Enterprises Ltd\",\"address\":\"737 Levittown Ctr\",\"city\":\"Levittown\",\"country\":\"Bucks\",\"state\":\"PA\",\"zip\":\"19055\",\"phone\":\"215-946-6048\",\"fax\":\"215-946-6458\",\"email\":\"kurtis@mcbay.com\",\"web\":\"http://www.kurtismcbay.com\",\"followers\":8315},{\"firstname\":\"Guillermo\",\"lastname\":\"Tsang\",\"company\":\"Gillis, Donald W Esq\",\"address\":\"16 Highland Park Way\",\"city\":\"Levittown\",\"country\":\"Bucks\",\"state\":\"PA\",\"zip\":\"19056\",\"phone\":\"215-949-7912\",\"fax\":\"215-949-8919\",\"email\":\"guillermo@tsang.com\",\"web\":\"http://www.guillermotsang.com\",\"followers\":4007},{\"firstname\":\"Milton\",\"lastname\":\"Kuhlman\",\"company\":\"Imag Corp\",\"address\":\"237 Jackson St Sw\",\"city\":\"Camden\",\"country\":\"Ouachita\",\"state\":\"AR\",\"zip\":\"71701\",\"phone\":\"870-836-9021\",\"fax\":\"870-836-2283\",\"email\":\"milton@kuhlman.com\",\"web\":\"http://www.miltonkuhlman.com\",\"followers\":7034},{\"firstname\":\"Naomi\",\"lastname\":\"Greenly\",\"company\":\"Kpmg Peat Marwick Llp\",\"address\":\"1400 Gault Ave N\",\"city\":\"Fort Payne\",\"country\":\"De Kalb\",\"state\":\"AL\",\"zip\":\"35967\",\"phone\":\"256-845-1216\",\"fax\":\"256-845-2469\",\"email\":\"naomi@greenly.com\",\"web\":\"http://www.naomigreenly.com\",\"followers\":916},{\"firstname\":\"Mary\",\"lastname\":\"Maurizio\",\"company\":\"Carey Filter White & Boland\",\"address\":\"404 Main St\",\"city\":\"Delta\",\"country\":\"Fulton\",\"state\":\"OH\",\"zip\":\"43515\",\"phone\":\"419-822-7176\",\"fax\":\"419-822-0591\",\"email\":\"mary@maurizio.com\",\"web\":\"http://www.marymaurizio.com\",\"followers\":6083},{\"firstname\":\"Caitlin\",\"lastname\":\"Reiniger\",\"company\":\"White, Lawrence R Esq\",\"address\":\"140 N Columbus St\",\"city\":\"Galion\",\"country\":\"Crawford\",\"state\":\"OH\",\"zip\":\"44833\",\"phone\":\"419-468-6910\",\"fax\":\"419-468-9018\",\"email\":\"caitlin@reiniger.com\",\"web\":\"http://www.caitlinreiniger.com\",\"followers\":641},{\"firstname\":\"Coleman\",\"lastname\":\"Cuneo\",\"company\":\"M & M Mars\",\"address\":\"25 E High St\",\"city\":\"Waynesburg\",\"country\":\"Greene\",\"state\":\"PA\",\"zip\":\"15370\",\"phone\":\"724-627-4378\",\"fax\":\"724-627-2305\",\"email\":\"coleman@cuneo.com\",\"web\":\"http://www.colemancuneo.com\",\"followers\":8657},{\"firstname\":\"Rachel\",\"lastname\":\"Larrison\",\"company\":\"Ipa The Editing House\",\"address\":\"3721 Oberlin Ave\",\"city\":\"Lorain\",\"country\":\"Lorain\",\"state\":\"OH\",\"zip\":\"44053\",\"phone\":\"440-282-3729\",\"fax\":\"440-282-6918\",\"email\":\"rachel@larrison.com\",\"web\":\"http://www.rachellarrison.com\",\"followers\":4562},{\"firstname\":\"Dwayne\",\"lastname\":\"Maddalena\",\"company\":\"Ebbeson, James O Esq\",\"address\":\"532 Court St\",\"city\":\"Pekin\",\"country\":\"Tazewell\",\"state\":\"IL\",\"zip\":\"61554\",\"phone\":\"309-347-1137\",\"fax\":\"309-347-9282\",\"email\":\"dwayne@maddalena.com\",\"web\":\"http://www.dwaynemaddalena.com\",\"followers\":7384},{\"firstname\":\"Angelique\",\"lastname\":\"Schermerhorn\",\"company\":\"Safety Direct Inc\",\"address\":\"511 Saint Johns Ave\",\"city\":\"Palatka\",\"country\":\"Putnam\",\"state\":\"FL\",\"zip\":\"32177\",\"phone\":\"386-328-7869\",\"fax\":\"386-328-1499\",\"email\":\"angelique@schermerhorn.com\",\"web\":\"http://www.angeliqueschermerhorn.com\",\"followers\":6181},{\"firstname\":\"Junior\",\"lastname\":\"Wadlinger\",\"company\":\"Sonos Music\",\"address\":\"185 E Market St\",\"city\":\"Warren\",\"country\":\"Trumbull\",\"state\":\"OH\",\"zip\":\"44481\",\"phone\":\"330-393-9794\",\"fax\":\"330-393-6808\",\"email\":\"junior@wadlinger.com\",\"web\":\"http://www.juniorwadlinger.com\",\"followers\":7690},{\"firstname\":\"Darrel\",\"lastname\":\"Tork\",\"company\":\"S & T Machining\",\"address\":\"2121 S Mannheim Rd\",\"city\":\"Westchester\",\"country\":\"Cook\",\"state\":\"IL\",\"zip\":\"60154\",\"phone\":\"708-865-8091\",\"fax\":\"708-865-8984\",\"email\":\"darrel@tork.com\",\"web\":\"http://www.darreltork.com\",\"followers\":9708},{\"firstname\":\"Lana\",\"lastname\":\"Garrigus\",\"company\":\"Russell Builders & Hardware\",\"address\":\"118 Ne 3rd St\",\"city\":\"McMinnville\",\"country\":\"Yamhill\",\"state\":\"OR\",\"zip\":\"97128\",\"phone\":\"503-434-2642\",\"fax\":\"503-434-8121\",\"email\":\"lana@garrigus.com\",\"web\":\"http://www.lanagarrigus.com\",\"followers\":3048},{\"firstname\":\"Jonathon\",\"lastname\":\"Waldall\",\"company\":\"Mission Hills Escrow\",\"address\":\"300 Hampton St\",\"city\":\"Walterboro\",\"country\":\"Colleton\",\"state\":\"SC\",\"zip\":\"29488\",\"phone\":\"843-549-9461\",\"fax\":\"843-549-0125\",\"email\":\"jonathon@waldall.com\",\"web\":\"http://www.jonathonwaldall.com\",\"followers\":8039},{\"firstname\":\"Kristine\",\"lastname\":\"Paker\",\"company\":\"Chagrin Valley Massotherapy\",\"address\":\"301 N Pine St\",\"city\":\"Creston\",\"country\":\"Union\",\"state\":\"IA\",\"zip\":\"50801\",\"phone\":\"641-782-7169\",\"fax\":\"641-782-7962\",\"email\":\"kristine@paker.com\",\"web\":\"http://www.kristinepaker.com\",\"followers\":7977},{\"firstname\":\"Dwain\",\"lastname\":\"Agricola\",\"company\":\"Beatty Satchell Everngam & Co\",\"address\":\"211 N Main St\",\"city\":\"Leitchfield\",\"country\":\"Grayson\",\"state\":\"KY\",\"zip\":\"42754\",\"phone\":\"270-259-5194\",\"fax\":\"270-259-0821\",\"email\":\"dwain@agricola.com\",\"web\":\"http://www.dwainagricola.com\",\"followers\":8410},{\"firstname\":\"Jewel\",\"lastname\":\"Agresta\",\"company\":\"Md Assn Cert Pub Accts Inc\",\"address\":\"4565 Harrison St\",\"city\":\"Hillside\",\"country\":\"Cook\",\"state\":\"IL\",\"zip\":\"60162\",\"phone\":\"708-449-7139\",\"fax\":\"708-449-2963\",\"email\":\"jewel@agresta.com\",\"web\":\"http://www.jewelagresta.com\",\"followers\":293},{\"firstname\":\"Georgette\",\"lastname\":\"Bandyk\",\"company\":\"Specialty Alumn Castings Inc\",\"address\":\"1965 Wakefield Ave\",\"city\":\"Petersburg\",\"country\":\"Petersburg City\",\"state\":\"VA\",\"zip\":\"23805\",\"phone\":\"804-796-2746\",\"fax\":\"804-796-5351\",\"email\":\"georgette@bandyk.com\",\"web\":\"http://www.georgettebandyk.com\",\"followers\":9865},{\"firstname\":\"Geri\",\"lastname\":\"Forness\",\"company\":\"Quality Dynamics Group\",\"address\":\"Capitol Ave\",\"city\":\"Corydon\",\"country\":\"Harrison\",\"state\":\"IN\",\"zip\":\"47112\",\"phone\":\"812-738-9416\",\"fax\":\"812-738-4816\",\"email\":\"geri@forness.com\",\"web\":\"http://www.geriforness.com\",\"followers\":7788},{\"firstname\":\"Modesto\",\"lastname\":\"Scroggie\",\"company\":\"Bulloch, Bruce Cpa\",\"address\":\"300 Orlando Dr\",\"city\":\"Raritan\",\"country\":\"Somerset\",\"state\":\"NJ\",\"zip\":\"08869\",\"phone\":\"908-980-5621\",\"fax\":\"908-980-9842\",\"email\":\"modesto@scroggie.com\",\"web\":\"http://www.modestoscroggie.com\",\"followers\":5671},{\"firstname\":\"Curt\",\"lastname\":\"Menedez\",\"company\":\"J & J Machinery Repair Inc\",\"address\":\"207 Yukon\",\"city\":\"Tampa\",\"country\":\"Hillsborough\",\"state\":\"FL\",\"zip\":\"33604\",\"phone\":\"813-932-8602\",\"fax\":\"813-932-4548\",\"email\":\"curt@menedez.com\",\"web\":\"http://www.curtmenedez.com\",\"followers\":1311},{\"firstname\":\"Karen\",\"lastname\":\"Zombo\",\"company\":\"Healthcare Family Credit Union\",\"address\":\"3112 W Kennedy Blvd\",\"city\":\"Tampa\",\"country\":\"Hillsborough\",\"state\":\"FL\",\"zip\":\"33609\",\"phone\":\"813-872-4288\",\"fax\":\"813-872-8262\",\"email\":\"karen@zombo.com\",\"web\":\"http://www.karenzombo.com\",\"followers\":2543},{\"firstname\":\"Lora\",\"lastname\":\"Lendor\",\"company\":\"Advanced Electromagnetics Inc\",\"address\":\"7 W Darlington Ave\",\"city\":\"Kissimmee\",\"country\":\"Osceola\",\"state\":\"FL\",\"zip\":\"34741\",\"phone\":\"407-870-0382\",\"fax\":\"407-870-6229\",\"email\":\"lora@lendor.com\",\"web\":\"http://www.loralendor.com\",\"followers\":5947},{\"firstname\":\"Felipe\",\"lastname\":\"Mahone\",\"company\":\"Apartment Mart\",\"address\":\"1001 Bishop St  #-2850\",\"city\":\"Honolulu\",\"country\":\"Honolulu\",\"state\":\"HI\",\"zip\":\"96813\",\"phone\":\"808-536-3239\",\"fax\":\"808-536-1231\",\"email\":\"felipe@mahone.com\",\"web\":\"http://www.felipemahone.com\",\"followers\":4427},{\"firstname\":\"Rosalyn\",\"lastname\":\"Daulton\",\"company\":\"Rodgard Corp\",\"address\":\"300 Broadacres Dr\",\"city\":\"Bloomfield\",\"country\":\"Essex\",\"state\":\"NJ\",\"zip\":\"07003\",\"phone\":\"973-338-8552\",\"fax\":\"973-338-1603\",\"email\":\"rosalyn@daulton.com\",\"web\":\"http://www.rosalyndaulton.com\",\"followers\":2667},{\"firstname\":\"Marquita\",\"lastname\":\"Bousman\",\"company\":\"Constantine, Katherine A Esq\",\"address\":\"30 Highland Ave\",\"city\":\"Warwick\",\"country\":\"Orange\",\"state\":\"NY\",\"zip\":\"10990\",\"phone\":\"845-986-0909\",\"fax\":\"845-986-2447\",\"email\":\"marquita@bousman.com\",\"web\":\"http://www.marquitabousman.com\",\"followers\":4315},{\"firstname\":\"Carla\",\"lastname\":\"Sirbaugh\",\"company\":\"Urso, Natale L Esq\",\"address\":\"110 S La Brea Ave  #-22\",\"city\":\"Inglewood\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"90301\",\"phone\":\"310-412-6653\",\"fax\":\"310-412-1067\",\"email\":\"carla@sirbaugh.com\",\"web\":\"http://www.carlasirbaugh.com\",\"followers\":9701},{\"firstname\":\"Wes\",\"lastname\":\"Fontanella\",\"company\":\"Woodside Travel Trust\",\"address\":\"1369 W Redondo Beach Blvd\",\"city\":\"Gardena\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"90247\",\"phone\":\"310-515-3065\",\"fax\":\"310-515-2515\",\"email\":\"wes@fontanella.com\",\"web\":\"http://www.wesfontanella.com\",\"followers\":1717},{\"firstname\":\"Meredith\",\"lastname\":\"Ivrin\",\"company\":\"Hamilton Financial Corp\",\"address\":\"323 N Gilbert St\",\"city\":\"Danville\",\"country\":\"Vermilion\",\"state\":\"IL\",\"zip\":\"61832\",\"phone\":\"217-446-7172\",\"fax\":\"217-446-2369\",\"email\":\"meredith@ivrin.com\",\"web\":\"http://www.meredithivrin.com\",\"followers\":7827},{\"firstname\":\"Laurie\",\"lastname\":\"Bigg\",\"company\":\"Essc Inc\",\"address\":\"14500 Lakeside Cir\",\"city\":\"Sterling Heights\",\"country\":\"Macomb\",\"state\":\"MI\",\"zip\":\"48313\",\"phone\":\"586-247-6171\",\"fax\":\"586-247-9791\",\"email\":\"laurie@bigg.com\",\"web\":\"http://www.lauriebigg.com\",\"followers\":8684},{\"firstname\":\"Barton\",\"lastname\":\"Friesner\",\"company\":\"Optical Supply\",\"address\":\"1 Summit Ct\",\"city\":\"Fishkill\",\"country\":\"Dutchess\",\"state\":\"NY\",\"zip\":\"12524\",\"phone\":\"845-896-6652\",\"fax\":\"845-896-1692\",\"email\":\"barton@friesner.com\",\"web\":\"http://www.bartonfriesner.com\",\"followers\":4889},{\"firstname\":\"Sophie\",\"lastname\":\"Langner\",\"company\":\"Kapetanakis, Alexander Esq\",\"address\":\"535 Ward Ave  #-204\",\"city\":\"Honolulu\",\"country\":\"Honolulu\",\"state\":\"HI\",\"zip\":\"96814\",\"phone\":\"808-545-7695\",\"fax\":\"808-545-8636\",\"email\":\"sophie@langner.com\",\"web\":\"http://www.sophielangner.com\",\"followers\":1596},{\"firstname\":\"Garfield\",\"lastname\":\"Lijewski\",\"company\":\"Denker, Aaron Esq\",\"address\":\"6401 N Lincoln Ave\",\"city\":\"Chicago\",\"country\":\"Cook\",\"state\":\"IL\",\"zip\":\"60645\",\"phone\":\"773-976-3827\",\"fax\":\"773-976-5586\",\"email\":\"garfield@lijewski.com\",\"web\":\"http://www.garfieldlijewski.com\",\"followers\":5955},{\"firstname\":\"Warren\",\"lastname\":\"Speach\",\"company\":\"E Norwalk Crmc Tile & Mrbl Co\",\"address\":\"361 Park Ave\",\"city\":\"Scotch Plains\",\"country\":\"Union\",\"state\":\"NJ\",\"zip\":\"07076\",\"phone\":\"908-322-3846\",\"fax\":\"908-322-6744\",\"email\":\"warren@speach.com\",\"web\":\"http://www.warrenspeach.com\",\"followers\":6741},{\"firstname\":\"Madonna\",\"lastname\":\"Cosby\",\"company\":\"Emanuel Reider Architects Inc\",\"address\":\"135 Main St\",\"city\":\"San Francisco\",\"country\":\"San Francisco\",\"state\":\"CA\",\"zip\":\"94105\",\"phone\":\"415-956-4437\",\"fax\":\"415-956-5134\",\"email\":\"madonna@cosby.com\",\"web\":\"http://www.madonnacosby.com\",\"followers\":3985},{\"firstname\":\"Valeria\",\"lastname\":\"Lingbeek\",\"company\":\"Recreation Director\",\"address\":\"state\",\"city\":\"Newtown\",\"country\":\"Bucks\",\"state\":\"PA\",\"zip\":\"18940\",\"phone\":\"215-968-8421\",\"fax\":\"215-968-1567\",\"email\":\"valeria@lingbeek.com\",\"web\":\"http://www.valerialingbeek.com\",\"followers\":8824},{\"firstname\":\"Heath\",\"lastname\":\"Vanalphen\",\"company\":\"California Stat Min & Mnrl Mus\",\"address\":\"227 Commercial St\",\"city\":\"Provincetown\",\"country\":\"Barnstable\",\"state\":\"MA\",\"zip\":\"02657\",\"phone\":\"508-487-6010\",\"fax\":\"508-487-0597\",\"email\":\"heath@vanalphen.com\",\"web\":\"http://www.heathvanalphen.com\",\"followers\":6846},{\"firstname\":\"Marisa\",\"lastname\":\"Woldridge\",\"company\":\"Wegner, Tim Esq\",\"address\":\"153 Baltimore St\",\"city\":\"Cumberland\",\"country\":\"Allegany\",\"state\":\"MD\",\"zip\":\"21502\",\"phone\":\"301-759-7421\",\"fax\":\"301-759-9676\",\"email\":\"marisa@woldridge.com\",\"web\":\"http://www.marisawoldridge.com\",\"followers\":6009},{\"firstname\":\"Rene\",\"lastname\":\"Dummermuth\",\"company\":\"Super 8 Motel\",\"address\":\"2 Ridgedale Ave\",\"city\":\"Cedar Knolls\",\"country\":\"Morris\",\"state\":\"NJ\",\"zip\":\"07927\",\"phone\":\"973-292-7918\",\"fax\":\"973-292-5898\",\"email\":\"rene@dummermuth.com\",\"web\":\"http://www.renedummermuth.com\",\"followers\":1687},{\"firstname\":\"Helga\",\"lastname\":\"Windle\",\"company\":\"Loew, Andrea H Esq\",\"address\":\"99185 Moanalua Rd  #-101\",\"city\":\"Aiea\",\"country\":\"Honolulu\",\"state\":\"HI\",\"zip\":\"96701\",\"phone\":\"808-487-7779\",\"fax\":\"808-487-6258\",\"email\":\"helga@windle.com\",\"web\":\"http://www.helgawindle.com\",\"followers\":56},{\"firstname\":\"Margot\",\"lastname\":\"Arenburg\",\"company\":\"Mcivor, Carolyn Md\",\"address\":\"736 N Mills Ave\",\"city\":\"Orlando\",\"country\":\"Orange\",\"state\":\"FL\",\"zip\":\"32803\",\"phone\":\"407-896-1593\",\"fax\":\"407-896-6679\",\"email\":\"margot@arenburg.com\",\"web\":\"http://www.margotarenburg.com\",\"followers\":7445},{\"firstname\":\"Sheila\",\"lastname\":\"Holloran\",\"company\":\"Warehouse On Wheels\",\"address\":\"126 S Main St\",\"city\":\"Clyde\",\"country\":\"Sandusky\",\"state\":\"OH\",\"zip\":\"43410\",\"phone\":\"419-547-9428\",\"fax\":\"419-547-4835\",\"email\":\"sheila@holloran.com\",\"web\":\"http://www.sheilaholloran.com\",\"followers\":9682},{\"firstname\":\"Melinda\",\"lastname\":\"Carleton\",\"company\":\"Cenol Co\",\"address\":\"395 Revilo Ave\",\"city\":\"Shirley\",\"country\":\"Suffolk\",\"state\":\"NY\",\"zip\":\"11967\",\"phone\":\"631-399-1636\",\"fax\":\"631-399-6025\",\"email\":\"melinda@carleton.com\",\"web\":\"http://www.melindacarleton.com\",\"followers\":7154},{\"firstname\":\"Ike\",\"lastname\":\"Zeolla\",\"company\":\"Halpin, Irene A Esq\",\"address\":\"1900 L St Nw\",\"city\":\"Washington\",\"country\":\"District of Columbia\",\"state\":\"DC\",\"zip\":\"20036\",\"phone\":\"202-331-1409\",\"fax\":\"202-331-7781\",\"email\":\"ike@zeolla.com\",\"web\":\"http://www.ikezeolla.com\",\"followers\":7418},{\"firstname\":\"Elmo\",\"lastname\":\"Dagenais\",\"company\":\"P C Routing Inc\",\"address\":\"12914 Old Stage Rd\",\"city\":\"Chester\",\"country\":\"Chesterfield\",\"state\":\"VA\",\"zip\":\"23831\",\"phone\":\"804-796-5647\",\"fax\":\"804-796-9493\",\"email\":\"elmo@dagenais.com\",\"web\":\"http://www.elmodagenais.com\",\"followers\":7355},{\"firstname\":\"Valentine\",\"lastname\":\"Granberry\",\"company\":\"Sunnyvale Travel\",\"address\":\"1019 Shadick Dr\",\"city\":\"Orange City\",\"country\":\"Volusia\",\"state\":\"FL\",\"zip\":\"32763\",\"phone\":\"407-775-4269\",\"fax\":\"407-775-0598\",\"email\":\"valentine@granberry.com\",\"web\":\"http://www.valentinegranberry.com\",\"followers\":7021},{\"firstname\":\"Waldo\",\"lastname\":\"Sisk\",\"company\":\"Muller Drugs Inc\",\"address\":\"2211 Us Highway 19\",\"city\":\"Holiday\",\"country\":\"Pasco\",\"state\":\"FL\",\"zip\":\"34691\",\"phone\":\"727-934-3827\",\"fax\":\"727-934-7181\",\"email\":\"waldo@sisk.com\",\"web\":\"http://www.waldosisk.com\",\"followers\":2109},{\"firstname\":\"Robt\",\"lastname\":\"Braithwaite\",\"company\":\"Meyer, Janet Md\",\"address\":\"320 W Mclane St\",\"city\":\"Osceola\",\"country\":\"Clarke\",\"state\":\"IA\",\"zip\":\"50213\",\"phone\":\"641-342-1276\",\"fax\":\"641-342-6031\",\"email\":\"robt@braithwaite.com\",\"web\":\"http://www.robtbraithwaite.com\",\"followers\":1336},{\"firstname\":\"Corinne\",\"lastname\":\"Cowan\",\"company\":\"Ward Equipment Co\",\"address\":\"20 Montana Ave\",\"city\":\"Laurel\",\"country\":\"Yellowstone\",\"state\":\"MT\",\"zip\":\"59044\",\"phone\":\"406-628-4030\",\"fax\":\"406-628-9418\",\"email\":\"corinne@cowan.com\",\"web\":\"http://www.corinnecowan.com\",\"followers\":7049},{\"firstname\":\"Rebeca\",\"lastname\":\"Brumet\",\"company\":\"Kingston Office Supplies Inc\",\"address\":\"936 N Western Ave\",\"city\":\"Chicago\",\"country\":\"Cook\",\"state\":\"IL\",\"zip\":\"60622\",\"phone\":\"773-772-4015\",\"fax\":\"773-772-1603\",\"email\":\"rebeca@brumet.com\",\"web\":\"http://www.rebecabrumet.com\",\"followers\":202},{\"firstname\":\"Lynn\",\"lastname\":\"Saulsberry\",\"company\":\"Printing Factory Inc\",\"address\":\"2725 W Mcdowell Rd\",\"city\":\"Phoenix\",\"country\":\"Maricopa\",\"state\":\"AZ\",\"zip\":\"85009\",\"phone\":\"602-272-8326\",\"fax\":\"602-272-3143\",\"email\":\"lynn@saulsberry.com\",\"web\":\"http://www.lynnsaulsberry.com\",\"followers\":5265},{\"firstname\":\"Hannah\",\"lastname\":\"Facio\",\"company\":\"Cmptr Pros For Scl\",\"address\":\"115 E Church St\",\"city\":\"Elberton\",\"country\":\"Elbert\",\"state\":\"GA\",\"zip\":\"30635\",\"phone\":\"706-283-8280\",\"fax\":\"706-283-6916\",\"email\":\"hannah@facio.com\",\"web\":\"http://www.hannahfacio.com\",\"followers\":4321},{\"firstname\":\"Benjamin\",\"lastname\":\"Schkade\",\"company\":\"Port Brownsville Pub Scale Inc\",\"address\":\"1636 E 1st Ave\",\"city\":\"Anchorage\",\"country\":\"Anchorage\",\"state\":\"AK\",\"zip\":\"99501\",\"phone\":\"907-278-8687\",\"fax\":\"907-278-7166\",\"email\":\"benjamin@schkade.com\",\"web\":\"http://www.benjaminschkade.com\",\"followers\":5846},{\"firstname\":\"Athena\",\"lastname\":\"Fontanilla\",\"company\":\"Willamette Hobbies\",\"address\":\"5020 Germantown Ave\",\"city\":\"Philadelphia\",\"country\":\"Philadelphia\",\"state\":\"PA\",\"zip\":\"19144\",\"phone\":\"215-438-9675\",\"fax\":\"215-438-1716\",\"email\":\"athena@fontanilla.com\",\"web\":\"http://www.athenafontanilla.com\",\"followers\":5342},{\"firstname\":\"Alene\",\"lastname\":\"Rabeck\",\"company\":\"Bucks country Of\",\"address\":\"475 E 162nd St\",\"city\":\"South Holland\",\"country\":\"Cook\",\"state\":\"IL\",\"zip\":\"60473\",\"phone\":\"708-333-8056\",\"fax\":\"708-333-2125\",\"email\":\"alene@rabeck.com\",\"web\":\"http://www.alenerabeck.com\",\"followers\":2815},{\"firstname\":\"Yvette\",\"lastname\":\"Kokoska\",\"company\":\"Automation Products Inc\",\"address\":\"200 Valley Dr\",\"city\":\"Brisbane\",\"country\":\"San Mateo\",\"state\":\"CA\",\"zip\":\"94005\",\"phone\":\"650-468-3592\",\"fax\":\"650-468-7716\",\"email\":\"yvette@kokoska.com\",\"web\":\"http://www.yvettekokoska.com\",\"followers\":6175},{\"firstname\":\"Petra\",\"lastname\":\"Clemmens\",\"company\":\"Belton Industries Inc\",\"address\":\"980 N Federal Hwy\",\"city\":\"Boca Raton\",\"country\":\"Palm Beach\",\"state\":\"FL\",\"zip\":\"33432\",\"phone\":\"561-394-2152\",\"fax\":\"561-394-1574\",\"email\":\"petra@clemmens.com\",\"web\":\"http://www.petraclemmens.com\",\"followers\":5263},{\"firstname\":\"Carmel\",\"lastname\":\"Overfelt\",\"company\":\"Woodworkers Supply Inc\",\"address\":\"6801 Lake Worth Rd\",\"city\":\"Lake Worth\",\"country\":\"Palm Beach\",\"state\":\"FL\",\"zip\":\"33467\",\"phone\":\"561-965-5167\",\"fax\":\"561-965-1433\",\"email\":\"carmel@overfelt.com\",\"web\":\"http://www.carmeloverfelt.com\",\"followers\":5868},{\"firstname\":\"Danette\",\"lastname\":\"Fostervold\",\"company\":\"Flach, Douglas Esq\",\"address\":\"6920 Santa Teresa Blvd\",\"city\":\"San Jose\",\"country\":\"Santa Clara\",\"state\":\"CA\",\"zip\":\"95119\",\"phone\":\"408-225-1319\",\"fax\":\"408-225-5205\",\"email\":\"danette@fostervold.com\",\"web\":\"http://www.danettefostervold.com\",\"followers\":1315},{\"firstname\":\"Vince\",\"lastname\":\"Ettel\",\"company\":\"Breen Trucking\",\"address\":\"408 Main St\",\"city\":\"Springfield\",\"country\":\"Sarpy\",\"state\":\"NE\",\"zip\":\"68059\",\"phone\":\"402-399-6999\",\"fax\":\"402-399-6478\",\"email\":\"vince@ettel.com\",\"web\":\"http://www.vinceettel.com\",\"followers\":7780},{\"firstname\":\"Davis\",\"lastname\":\"Heideman\",\"company\":\"Dennis J Wall Atty At Law Pa\",\"address\":\"801 W 5th St\",\"city\":\"Fort Worth\",\"country\":\"Tarrant\",\"state\":\"TX\",\"zip\":\"76102\",\"phone\":\"817-332-7902\",\"fax\":\"817-332-5439\",\"email\":\"davis@heideman.com\",\"web\":\"http://www.davisheideman.com\",\"followers\":4778},{\"firstname\":\"Bradly\",\"lastname\":\"Hasselvander\",\"company\":\"Public Works Department Office\",\"address\":\"2302 Artesia Blvd\",\"city\":\"Redondo Beach\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"90278\",\"phone\":\"310-374-2374\",\"fax\":\"310-374-2363\",\"email\":\"bradly@hasselvander.com\",\"web\":\"http://www.bradlyhasselvander.com\",\"followers\":7831},{\"firstname\":\"Nathanial\",\"lastname\":\"Phoenix\",\"company\":\"Precision Steel Rule Die Co\",\"address\":\"1000 Nw 105th St\",\"city\":\"Oklahoma City\",\"country\":\"Oklahoma\",\"state\":\"OK\",\"zip\":\"73114\",\"phone\":\"405-748-7637\",\"fax\":\"405-748-1856\",\"email\":\"nathanial@phoenix.com\",\"web\":\"http://www.nathanialphoenix.com\",\"followers\":8308},{\"firstname\":\"Lamar\",\"lastname\":\"Mckibben\",\"company\":\"Battaglia, Jack M Esq\",\"address\":\"1620 Folsom St\",\"city\":\"San Francisco\",\"country\":\"San Francisco\",\"state\":\"CA\",\"zip\":\"94103\",\"phone\":\"415-864-7338\",\"fax\":\"415-864-7623\",\"email\":\"lamar@mckibben.com\",\"web\":\"http://www.lamarmckibben.com\",\"followers\":4193},{\"firstname\":\"Shanna\",\"lastname\":\"Numkena\",\"company\":\"Anderson Independent Mail\",\"address\":\"1426 5th Pl Nw\",\"city\":\"Rochester\",\"country\":\"Olmsted\",\"state\":\"MN\",\"zip\":\"55901\",\"phone\":\"507-280-1856\",\"fax\":\"507-280-6844\",\"email\":\"shanna@numkena.com\",\"web\":\"http://www.shannanumkena.com\",\"followers\":1364},{\"firstname\":\"Helena\",\"lastname\":\"Suermann\",\"company\":\"Stubenberge, James A Esq\",\"address\":\"897 Independence Ave\",\"city\":\"Mountain View\",\"country\":\"Santa Clara\",\"state\":\"CA\",\"zip\":\"94043\",\"phone\":\"650-965-0255\",\"fax\":\"650-965-3368\",\"email\":\"helena@suermann.com\",\"web\":\"http://www.helenasuermann.com\",\"followers\":4536},{\"firstname\":\"Delphine\",\"lastname\":\"Helmich\",\"company\":\"Friends Hospital\",\"address\":\"50 Aviation Way\",\"city\":\"Watsonville\",\"country\":\"Santa Cruz\",\"state\":\"CA\",\"zip\":\"95076\",\"phone\":\"831-763-4348\",\"fax\":\"831-763-0923\",\"email\":\"delphine@helmich.com\",\"web\":\"http://www.delphinehelmich.com\",\"followers\":7383},{\"firstname\":\"Barbara\",\"lastname\":\"Hindley\",\"company\":\"Kirin Amgen\",\"address\":\"904 N Lake St\",\"city\":\"Burbank\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"91502\",\"phone\":\"818-841-8886\",\"fax\":\"818-841-8221\",\"email\":\"barbara@hindley.com\",\"web\":\"http://www.barbarahindley.com\",\"followers\":9155},{\"firstname\":\"Sheryl\",\"lastname\":\"Sisofo\",\"company\":\"Thrifty Sign Stop\",\"address\":\"1049 S Mccord Rd\",\"city\":\"Holland\",\"country\":\"Lucas\",\"state\":\"OH\",\"zip\":\"43528\",\"phone\":\"419-865-8702\",\"fax\":\"419-865-1836\",\"email\":\"sheryl@sisofo.com\",\"web\":\"http://www.sherylsisofo.com\",\"followers\":5693},{\"firstname\":\"Robyn\",\"lastname\":\"Christophel\",\"company\":\"Woodward, John C Esq\",\"address\":\"3420 E Flamingo Rd\",\"city\":\"Las Vegas\",\"country\":\"Clark\",\"state\":\"NV\",\"zip\":\"89121\",\"phone\":\"702-458-1072\",\"fax\":\"702-458-2093\",\"email\":\"robyn@christophel.com\",\"web\":\"http://www.robynchristophel.com\",\"followers\":3971},{\"firstname\":\"Gayla\",\"lastname\":\"Geimer\",\"company\":\"Ortman Mccain Co\",\"address\":\"1280 Price Ave\",\"city\":\"Pomona\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"91767\",\"phone\":\"909-620-6453\",\"fax\":\"909-620-2768\",\"email\":\"gayla@geimer.com\",\"web\":\"http://www.gaylageimer.com\",\"followers\":8969},{\"firstname\":\"Evan\",\"lastname\":\"Pyfrom\",\"company\":\"Nevada Baking Co\",\"address\":\"5430 Alpha Rd\",\"city\":\"Dallas\",\"country\":\"Dallas\",\"state\":\"TX\",\"zip\":\"75240\",\"phone\":\"214-661-4625\",\"fax\":\"214-661-8804\",\"email\":\"evan@pyfrom.com\",\"web\":\"http://www.evanpyfrom.com\",\"followers\":2516},{\"firstname\":\"Chad\",\"lastname\":\"Miklas\",\"company\":\"Red Carpet Inn\",\"address\":\"31 S Grove St\",\"city\":\"East Aurora\",\"country\":\"Erie\",\"state\":\"NY\",\"zip\":\"14052\",\"phone\":\"716-655-2736\",\"fax\":\"716-655-2749\",\"email\":\"chad@miklas.com\",\"web\":\"http://www.chadmiklas.com\",\"followers\":5357},{\"firstname\":\"Trey\",\"lastname\":\"Tout\",\"company\":\"Breen, Sean E Esq\",\"address\":\"100 Mbc Dr\",\"city\":\"Shawano\",\"country\":\"Shawano\",\"state\":\"WI\",\"zip\":\"54166\",\"phone\":\"715-526-6806\",\"fax\":\"715-526-2421\",\"email\":\"trey@tout.com\",\"web\":\"http://www.treytout.com\",\"followers\":205},{\"firstname\":\"Isabell\",\"lastname\":\"Armout\",\"company\":\"True Electric Corp\",\"address\":\"7895 S Cessna Ave\",\"city\":\"Gaithersburg\",\"country\":\"Montgomery\",\"state\":\"MD\",\"zip\":\"20879\",\"phone\":\"301-921-0406\",\"fax\":\"301-921-1251\",\"email\":\"isabell@armout.com\",\"web\":\"http://www.isabellarmout.com\",\"followers\":4878},{\"firstname\":\"Alejandro\",\"lastname\":\"Mascall\",\"company\":\"Railway Educational Bureau\",\"address\":\"2350 Duke St\",\"city\":\"Alexandria\",\"country\":\"Alexandria City\",\"state\":\"VA\",\"zip\":\"22314\",\"phone\":\"703-684-2882\",\"fax\":\"703-684-8561\",\"email\":\"alejandro@mascall.com\",\"web\":\"http://www.alejandromascall.com\",\"followers\":3512},{\"firstname\":\"Kennith\",\"lastname\":\"Kirklin\",\"company\":\"Sears Roebuck And Co\",\"address\":\"2303 21st Ave S\",\"city\":\"Nashville\",\"country\":\"Davidson\",\"state\":\"TN\",\"zip\":\"37212\",\"phone\":\"615-385-1598\",\"fax\":\"615-385-6946\",\"email\":\"kennith@kirklin.com\",\"web\":\"http://www.kennithkirklin.com\",\"followers\":5087},{\"firstname\":\"Ike\",\"lastname\":\"Benthin\",\"company\":\"Lee, Harry Esq\",\"address\":\"1062 Folsom St\",\"city\":\"San Francisco\",\"country\":\"San Francisco\",\"state\":\"CA\",\"zip\":\"94103\",\"phone\":\"415-255-5277\",\"fax\":\"415-255-6543\",\"email\":\"ike@benthin.com\",\"web\":\"http://www.ikebenthin.com\",\"followers\":8473},{\"firstname\":\"Donald\",\"lastname\":\"Sherretts\",\"company\":\"Nylonge Corporation\",\"address\":\"1062 Folsom St\",\"city\":\"San Francisco\",\"country\":\"San Francisco\",\"state\":\"CA\",\"zip\":\"94103\",\"phone\":\"415-255-7718\",\"fax\":\"415-255-7088\",\"email\":\"donald@sherretts.com\",\"web\":\"http://www.donaldsherretts.com\",\"followers\":2332},{\"firstname\":\"Lina\",\"lastname\":\"Hybarger\",\"company\":\"L & H Central Office\",\"address\":\"1828 Jefferson Pl Nw\",\"city\":\"Washington\",\"country\":\"District of Columbia\",\"state\":\"DC\",\"zip\":\"20036\",\"phone\":\"202-833-4983\",\"fax\":\"202-833-3174\",\"email\":\"lina@hybarger.com\",\"web\":\"http://www.linahybarger.com\",\"followers\":9793},{\"firstname\":\"Rebekah\",\"lastname\":\"Padley\",\"company\":\"Reed Engineering Inc\",\"address\":\"200 E Delawr Pl\",\"city\":\"Chicago\",\"country\":\"Cook\",\"state\":\"IL\",\"zip\":\"60611\",\"phone\":\"312-944-1877\",\"fax\":\"312-944-1477\",\"email\":\"rebekah@padley.com\",\"web\":\"http://www.rebekahpadley.com\",\"followers\":3839},{\"firstname\":\"Marion\",\"lastname\":\"Gaulden\",\"company\":\"Madden, John H Jr\",\"address\":\"200 W South St\",\"city\":\"Charlottesville\",\"country\":\"Charlottesville City\",\"state\":\"VA\",\"zip\":\"22902\",\"phone\":\"434-979-9335\",\"fax\":\"434-979-2694\",\"email\":\"marion@gaulden.com\",\"web\":\"http://www.mariongaulden.com\",\"followers\":5625},{\"firstname\":\"Maurine\",\"lastname\":\"Monroy\",\"company\":\"Central Distribution System\",\"address\":\"2000 Linwood Ave\",\"city\":\"Fort Lee\",\"country\":\"Bergen\",\"state\":\"NJ\",\"zip\":\"07024\",\"phone\":\"201-947-8922\",\"fax\":\"201-947-4235\",\"email\":\"maurine@monroy.com\",\"web\":\"http://www.maurinemonroy.com\",\"followers\":5828},{\"firstname\":\"Rosanna\",\"lastname\":\"Sandrock\",\"company\":\"Computer X Consulting\",\"address\":\"1797 Lakewood Ter Se\",\"city\":\"Atlanta\",\"country\":\"Fulton\",\"state\":\"GA\",\"zip\":\"30315\",\"phone\":\"404-627-4604\",\"fax\":\"404-627-4276\",\"email\":\"rosanna@sandrock.com\",\"web\":\"http://www.rosannasandrock.com\",\"followers\":3044},{\"firstname\":\"Marcelino\",\"lastname\":\"Maggs\",\"company\":\"Rascher & Betzold Inc\",\"address\":\"201 E Pine St\",\"city\":\"Orlando\",\"country\":\"Orange\",\"state\":\"FL\",\"zip\":\"32801\",\"phone\":\"407-420-1152\",\"fax\":\"407-420-7195\",\"email\":\"marcelino@maggs.com\",\"web\":\"http://www.marcelinomaggs.com\",\"followers\":5320},{\"firstname\":\"Florine\",\"lastname\":\"Willardson\",\"company\":\"Lunt, Donald C Esq\",\"address\":\"5605 Ne 105th Ave\",\"city\":\"Portland\",\"country\":\"Multnomah\",\"state\":\"OR\",\"zip\":\"97220\",\"phone\":\"503-256-6559\",\"fax\":\"503-256-8982\",\"email\":\"florine@willardson.com\",\"web\":\"http://www.florinewillardson.com\",\"followers\":2336},{\"firstname\":\"Jude\",\"lastname\":\"Haza\",\"company\":\"Howard Fabrication\",\"address\":\"1348 Liberty Pike\",\"city\":\"Franklin\",\"country\":\"Williamson\",\"state\":\"TN\",\"zip\":\"37067\",\"phone\":\"615-790-3984\",\"fax\":\"615-790-3042\",\"email\":\"jude@haza.com\",\"web\":\"http://www.judehaza.com\",\"followers\":7311},{\"firstname\":\"Eldon\",\"lastname\":\"Sutch\",\"company\":\"Friesen And Kane Public Accts\",\"address\":\"1818 E Atlantic St\",\"city\":\"Philadelphia\",\"country\":\"Philadelphia\",\"state\":\"PA\",\"zip\":\"19134\",\"phone\":\"215-743-2414\",\"fax\":\"215-743-2529\",\"email\":\"eldon@sutch.com\",\"web\":\"http://www.eldonsutch.com\",\"followers\":6895},{\"firstname\":\"Lashonda\",\"lastname\":\"Enote\",\"company\":\"Nichols Village The Inn\",\"address\":\"6301 Owensmouth Ave\",\"city\":\"Woodland Hills\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"91367\",\"phone\":\"818-704-8490\",\"fax\":\"818-704-7539\",\"email\":\"lashonda@enote.com\",\"web\":\"http://www.lashondaenote.com\",\"Note\":\"Ancien Dailymotion, recontré à LeWeb London 2012\",\"followers\":6383},{\"firstname\":\"Marla\",\"lastname\":\"Folz\",\"company\":\"Odonoghue C Kevin\",\"address\":\"201 Electronics Blvd Sw\",\"city\":\"Huntsville\",\"country\":\"Madison\",\"state\":\"AL\",\"zip\":\"35824\",\"phone\":\"256-464-3329\",\"fax\":\"256-464-6964\",\"email\":\"marla@folz.com\",\"web\":\"http://www.marlafolz.com\",\"Note\":\"Product Manager at Sage France & WebMaster of ConseilsMarketing.Fr Interview at LEWeb\",\"followers\":5861},{\"firstname\":\"Reginald\",\"lastname\":\"Lunan\",\"company\":\"Healey Chevy Olds Buick Geo\",\"address\":\"985 Parker Ct\",\"city\":\"Santa Clara\",\"country\":\"Santa Clara\",\"state\":\"CA\",\"zip\":\"95050\",\"phone\":\"408-727-1747\",\"fax\":\"408-727-0884\",\"email\":\"reginald@lunan.com\",\"web\":\"http://www.reginaldlunan.com\",\"followers\":7075},{\"firstname\":\"Kyle\",\"lastname\":\"Lindauer\",\"company\":\"Gem Tec Inc\",\"address\":\"2000 E Jefferson St\",\"city\":\"Phoenix\",\"country\":\"Maricopa\",\"state\":\"AZ\",\"zip\":\"85034\",\"phone\":\"602-258-5196\",\"fax\":\"602-258-8609\",\"email\":\"kyle@lindauer.com\",\"web\":\"http://www.kylelindauer.com\",\"followers\":6277},{\"firstname\":\"Son\",\"lastname\":\"Marschke\",\"company\":\"Evenings Dlght Fireplaces\",\"address\":\"1119 Wheeler Ave\",\"city\":\"Scranton\",\"country\":\"Lackawanna\",\"state\":\"PA\",\"zip\":\"18510\",\"phone\":\"570-969-0886\",\"fax\":\"570-969-8176\",\"email\":\"son@marschke.com\",\"web\":\"http://www.sonmarschke.com\",\"followers\":3481},{\"firstname\":\"Johnie\",\"lastname\":\"Minaai\",\"company\":\"Darling, Pamela E\",\"address\":\"2100 Linwood Ave\",\"city\":\"Fort Lee\",\"country\":\"Bergen\",\"state\":\"NJ\",\"zip\":\"07024\",\"phone\":\"201-592-4771\",\"fax\":\"201-592-8423\",\"email\":\"johnie@minaai.com\",\"web\":\"http://www.johnieminaai.com\",\"followers\":5903},{\"firstname\":\"Kelli\",\"lastname\":\"Varrato\",\"company\":\"Frances Meyer Inc\",\"address\":\"2505 Congress St\",\"city\":\"San Diego\",\"country\":\"San Diego\",\"state\":\"CA\",\"zip\":\"92110\",\"phone\":\"858-298-3969\",\"fax\":\"858-298-6695\",\"email\":\"kelli@varrato.com\",\"web\":\"http://www.kellivarrato.com\",\"followers\":9891},{\"firstname\":\"Neva\",\"lastname\":\"Marsell\",\"company\":\"Comfort Inn Wilshire\",\"address\":\"1312 W Lincoln Ave\",\"city\":\"Olivia\",\"country\":\"Renville\",\"state\":\"MN\",\"zip\":\"56277\",\"phone\":\"320-523-4975\",\"fax\":\"320-523-8378\",\"email\":\"neva@marsell.com\",\"web\":\"http://www.nevamarsell.com\",\"followers\":4114},{\"firstname\":\"Brice\",\"lastname\":\"Hedglin\",\"company\":\"Cupkovic, Walter D Esq\",\"address\":\"2809 Granny White Pike\",\"city\":\"Nashville\",\"country\":\"Davidson\",\"state\":\"TN\",\"zip\":\"37204\",\"phone\":\"615-292-9016\",\"fax\":\"615-292-9027\",\"email\":\"brice@hedglin.com\",\"web\":\"http://www.bricehedglin.com\",\"followers\":7730},{\"firstname\":\"Terrance\",\"lastname\":\"Nimmer\",\"company\":\"C D Short Foods Inc\",\"address\":\"1400 N Woodward Ave\",\"city\":\"Bloomfield Hills\",\"country\":\"Oakland\",\"state\":\"MI\",\"zip\":\"48304\",\"phone\":\"248-647-0653\",\"fax\":\"248-647-1999\",\"email\":\"terrance@nimmer.com\",\"web\":\"http://www.terrancenimmer.com\",\"followers\":7388},{\"firstname\":\"Carol\",\"lastname\":\"Krisman\",\"company\":\"Uniglobe Transeas Travel\",\"address\":\"100 E 85th St\",\"city\":\"New York\",\"country\":\"New York\",\"state\":\"NY\",\"zip\":\"10028\",\"phone\":\"212-472-7877\",\"fax\":\"212-472-9579\",\"email\":\"carol@krisman.com\",\"web\":\"http://www.carolkrisman.com\",\"followers\":5985},{\"firstname\":\"Dollie\",\"lastname\":\"Pillitteri\",\"company\":\"Jiffy Moving & Storage Company\",\"address\":\"4024 Merchant Rd\",\"city\":\"Fort Wayne\",\"country\":\"Allen\",\"state\":\"IN\",\"zip\":\"46818\",\"phone\":\"260-489-3094\",\"fax\":\"260-489-4697\",\"email\":\"dollie@pillitteri.com\",\"web\":\"http://www.dolliepillitteri.com\",\"followers\":2624},{\"firstname\":\"Mellissa\",\"lastname\":\"Sule\",\"company\":\"Dowse, Geoffrey Esq\",\"address\":\"92 Argonaut  #-270\",\"city\":\"Aliso Viejo\",\"country\":\"Orange\",\"state\":\"CA\",\"zip\":\"92656\",\"phone\":\"949-768-6176\",\"fax\":\"949-768-8107\",\"email\":\"mellissa@sule.com\",\"web\":\"http://www.mellissasule.com\",\"followers\":2709},{\"firstname\":\"Antony\",\"lastname\":\"Thierauf\",\"company\":\"Gutzwiller, Robert H Esq\",\"address\":\"4915 Industrial Way\",\"city\":\"Coeur d Alene\",\"country\":\"Kootenai\",\"state\":\"ID\",\"zip\":\"83814\",\"phone\":\"208-667-5252\",\"fax\":\"208-667-5935\",\"email\":\"antony@thierauf.com\",\"web\":\"http://www.antonythierauf.com\",\"followers\":1044},{\"firstname\":\"Reina\",\"lastname\":\"Reisenauer\",\"company\":\"Terrance Fox\",\"address\":\"207 N Main St\",\"city\":\"Hutchins\",\"country\":\"Dallas\",\"state\":\"TX\",\"zip\":\"75141\",\"phone\":\"972-225-9930\",\"fax\":\"972-225-9569\",\"email\":\"reina@reisenauer.com\",\"web\":\"http://www.reinareisenauer.com\",\"followers\":2953},{\"firstname\":\"Zane\",\"lastname\":\"Sulikowski\",\"company\":\"Meijer Associates Credit Union\",\"address\":\"2375 3rd St\",\"city\":\"Riverside\",\"country\":\"Riverside\",\"state\":\"CA\",\"zip\":\"92507\",\"phone\":\"951-683-4479\",\"fax\":\"951-683-9932\",\"email\":\"zane@sulikowski.com\",\"web\":\"http://www.zanesulikowski.com\",\"followers\":7275},{\"firstname\":\"Hilario\",\"lastname\":\"Cassa\",\"company\":\"Independence Assocaites Inc\",\"address\":\"2222 Santa Monica Blvd\",\"city\":\"Santa Monica\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"90404\",\"phone\":\"310-828-6710\",\"fax\":\"310-828-1895\",\"email\":\"hilario@cassa.com\",\"web\":\"http://www.hilariocassa.com\",\"followers\":994},{\"firstname\":\"Veronica\",\"lastname\":\"Radman\",\"company\":\"Martin, Anthony D Esq\",\"address\":\"235 W Main St\",\"city\":\"Charlottesville\",\"country\":\"Charlottesville City\",\"state\":\"VA\",\"zip\":\"22902\",\"phone\":\"434-979-3306\",\"fax\":\"434-979-9777\",\"email\":\"veronica@radman.com\",\"web\":\"http://www.veronicaradman.com\",\"followers\":7568},{\"firstname\":\"Teri\",\"lastname\":\"Erlewine\",\"company\":\"League Of Kans Municipalities\",\"address\":\"370 34th St St\",\"city\":\"Saint Petersburg\",\"country\":\"Pinellas\",\"state\":\"FL\",\"zip\":\"33711\",\"phone\":\"727-327-3850\",\"fax\":\"727-327-8494\",\"email\":\"teri@erlewine.com\",\"web\":\"http://www.terierlewine.com\",\"followers\":6077},{\"firstname\":\"Alissa\",\"lastname\":\"Mountjoy\",\"company\":\"Technical & Mgmt Svc Corp\",\"address\":\"6585 Commerce Blvd\",\"city\":\"Rohnert Park\",\"country\":\"Sonoma\",\"state\":\"CA\",\"zip\":\"94928\",\"phone\":\"707-585-9715\",\"fax\":\"707-585-7011\",\"email\":\"alissa@mountjoy.com\",\"web\":\"http://www.alissamountjoy.com\",\"followers\":4886},{\"firstname\":\"Helene\",\"lastname\":\"Iberg\",\"company\":\"Spec Check Inc\",\"address\":\"24800 Rockside Rd\",\"city\":\"Bedford\",\"country\":\"Cuyahoga\",\"state\":\"OH\",\"zip\":\"44146\",\"phone\":\"440-786-6052\",\"fax\":\"440-786-9246\",\"email\":\"helene@iberg.com\",\"web\":\"http://www.heleneiberg.com\",\"followers\":716},{\"firstname\":\"Lona\",\"lastname\":\"Scronce\",\"company\":\"L & L Builders\",\"address\":\"Rte 6 & 209\",\"city\":\"Matamoras\",\"country\":\"Pike\",\"state\":\"PA\",\"zip\":\"18336\",\"phone\":\"570-296-4820\",\"fax\":\"570-296-2054\",\"email\":\"lona@scronce.com\",\"web\":\"http://www.lonascronce.com\",\"followers\":4687},{\"firstname\":\"Jeremy\",\"lastname\":\"Lampi\",\"company\":\"E Henderson Inc\",\"address\":\"150 Sawkill Ave\",\"city\":\"Milford\",\"country\":\"Pike\",\"state\":\"PA\",\"zip\":\"18337\",\"phone\":\"570-296-7797\",\"fax\":\"570-296-4647\",\"email\":\"jeremy@lampi.com\",\"web\":\"http://www.jeremylampi.com\",\"followers\":4714},{\"firstname\":\"Mitch\",\"lastname\":\"Schattner\",\"company\":\"Cosgrove Eisenberg & Kiley Pc\",\"address\":\"3001 Geary Blvd\",\"city\":\"San Francisco\",\"country\":\"San Francisco\",\"state\":\"CA\",\"zip\":\"94118\",\"phone\":\"415-668-8105\",\"fax\":\"415-668-5841\",\"email\":\"mitch@schattner.com\",\"web\":\"http://www.mitchschattner.com\",\"followers\":4388},{\"firstname\":\"Hans\",\"lastname\":\"Carlan\",\"company\":\"Midlen & Guillot Chartered\",\"address\":\"509 W 4th Ave\",\"city\":\"Anchorage\",\"country\":\"Anchorage\",\"state\":\"AK\",\"zip\":\"99501\",\"phone\":\"907-276-2956\",\"fax\":\"907-276-6002\",\"email\":\"hans@carlan.com\",\"web\":\"http://www.hanscarlan.com\",\"followers\":985},{\"firstname\":\"Concetta\",\"lastname\":\"Sarchett\",\"company\":\"Barco/chromatics Inc\",\"address\":\"2405 Grand Blvd\",\"city\":\"Kansas City\",\"country\":\"Jackson\",\"state\":\"MO\",\"zip\":\"64108\",\"phone\":\"816-274-3833\",\"fax\":\"816-274-6897\",\"email\":\"concetta@sarchett.com\",\"web\":\"http://www.concettasarchett.com\",\"followers\":3086},{\"firstname\":\"Isaac\",\"lastname\":\"Zackery\",\"company\":\"Holiday Inn Of Issaquah\",\"address\":\"321 Palmer Rd\",\"city\":\"Denville\",\"country\":\"Morris\",\"state\":\"NJ\",\"zip\":\"07834\",\"phone\":\"973-328-5943\",\"fax\":\"973-328-1903\",\"email\":\"isaac@zackery.com\",\"web\":\"http://www.isaaczackery.com\",\"followers\":501},{\"firstname\":\"Doug\",\"lastname\":\"Matrisciano\",\"company\":\"Cefpi\",\"address\":\"12500 Ne 10th Pl\",\"city\":\"Bellevue\",\"country\":\"King\",\"state\":\"WA\",\"zip\":\"98005\",\"phone\":\"425-451-5906\",\"fax\":\"425-451-1273\",\"email\":\"doug@matrisciano.com\",\"web\":\"http://www.dougmatrisciano.com\",\"followers\":9054},{\"firstname\":\"Devon\",\"lastname\":\"Samrah\",\"company\":\"Software Pursuits Inc\",\"address\":\"1219 Pine Ave\",\"city\":\"Orlando\",\"country\":\"Orange\",\"state\":\"FL\",\"zip\":\"32824\",\"phone\":\"407-240-2401\",\"fax\":\"407-240-8312\",\"email\":\"devon@samrah.com\",\"web\":\"http://www.devonsamrah.com\",\"followers\":6795},{\"firstname\":\"Amos\",\"lastname\":\"Linnan\",\"company\":\"Quincy, Jim\",\"address\":\"3960 W 26th St\",\"city\":\"Chicago\",\"country\":\"Cook\",\"state\":\"IL\",\"zip\":\"60623\",\"phone\":\"773-277-8332\",\"fax\":\"773-277-4756\",\"email\":\"amos@linnan.com\",\"web\":\"http://www.amoslinnan.com\",\"followers\":6297},{\"firstname\":\"Manuel\",\"lastname\":\"Dienhart\",\"company\":\"Bohning Co Ltd\",\"address\":\"40 E Mcmicken Ave\",\"city\":\"Cincinnati\",\"country\":\"Hamilton\",\"state\":\"OH\",\"zip\":\"45210\",\"phone\":\"513-357-4669\",\"fax\":\"513-357-7989\",\"email\":\"manuel@dienhart.com\",\"web\":\"http://www.manueldienhart.com\",\"followers\":6771},{\"firstname\":\"Audra\",\"lastname\":\"Cantu\",\"company\":\"Chesapeake Telephone Systems\",\"address\":\"935 S 2nd St\",\"city\":\"Plainfield\",\"country\":\"Union\",\"state\":\"NJ\",\"zip\":\"07063\",\"phone\":\"908-756-1816\",\"fax\":\"908-756-5441\",\"email\":\"audra@cantu.com\",\"web\":\"http://www.audracantu.com\",\"followers\":3088},{\"firstname\":\"Keisha\",\"lastname\":\"Ransonet\",\"company\":\"Hsk Decker\",\"address\":\"1049 Lakloey Dr\",\"city\":\"North Pole\",\"country\":\"Fairbanks North Star\",\"state\":\"AK\",\"zip\":\"99705\",\"phone\":\"907-488-6897\",\"fax\":\"907-488-2093\",\"email\":\"keisha@ransonet.com\",\"web\":\"http://www.keisharansonet.com\",\"followers\":5340},{\"firstname\":\"Rolando\",\"lastname\":\"Baumann\",\"company\":\"Erie Brush Co\",\"address\":\"921 Sw Washington St  #-321\",\"city\":\"Portland\",\"country\":\"Multnomah\",\"state\":\"OR\",\"zip\":\"97205\",\"phone\":\"503-241-6723\",\"fax\":\"503-241-7691\",\"email\":\"rolando@baumann.com\",\"web\":\"http://www.rolandobaumann.com\",\"followers\":9754},{\"firstname\":\"Maryanne\",\"lastname\":\"Whyman\",\"company\":\"Walls, Robert E Esq\",\"address\":\"1008 S San Pedro St\",\"city\":\"Los Angeles\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"90015\",\"phone\":\"213-748-1137\",\"fax\":\"213-748-0447\",\"email\":\"maryanne@whyman.com\",\"web\":\"http://www.maryannewhyman.com\",\"followers\":844},{\"firstname\":\"Kurtis\",\"lastname\":\"Asberry\",\"company\":\"Budgetel Inns\",\"address\":\"Box #-37223\",\"city\":\"El Paso\",\"country\":\"El Paso\",\"state\":\"TX\",\"zip\":\"79937\",\"phone\":\"915-591-1621\",\"fax\":\"915-591-3614\",\"email\":\"kurtis@asberry.com\",\"web\":\"http://www.kurtisasberry.com\",\"followers\":8502},{\"firstname\":\"Ed\",\"lastname\":\"Gompf\",\"company\":\"Corro Therm Inc\",\"address\":\"3 B Floor Care & Hskpg Svc\",\"city\":\"Catawissa\",\"country\":\"Columbia\",\"state\":\"PA\",\"zip\":\"17820\",\"phone\":\"570-799-2838\",\"fax\":\"570-799-4583\",\"email\":\"ed@gompf.com\",\"web\":\"http://www.edgompf.com\",\"followers\":8705},{\"firstname\":\"Norman\",\"lastname\":\"Betance\",\"company\":\"Precision Electric Co Inc\",\"address\":\"7949 E Acoma Dr\",\"city\":\"Scottsdale\",\"country\":\"Maricopa\",\"state\":\"AZ\",\"zip\":\"85260\",\"phone\":\"480-991-7884\",\"fax\":\"480-991-6547\",\"email\":\"norman@betance.com\",\"web\":\"http://www.normanbetance.com\",\"followers\":4602},{\"firstname\":\"Berta\",\"lastname\":\"Karczewski\",\"company\":\"Sather Eng Inc\",\"address\":\"1035 N Mcqueen Rd  #-133\",\"city\":\"Gilbert\",\"country\":\"Maricopa\",\"state\":\"AZ\",\"zip\":\"85233\",\"phone\":\"480-926-0770\",\"fax\":\"480-926-7533\",\"email\":\"berta@karczewski.com\",\"web\":\"http://www.bertakarczewski.com\",\"followers\":1093},{\"firstname\":\"Mac\",\"lastname\":\"Marksberry\",\"company\":\"Pursell, David B Esq\",\"address\":\"112 W Plum\",\"city\":\"Doniphan\",\"country\":\"Hall\",\"state\":\"NE\",\"zip\":\"68832\",\"phone\":\"402-845-4275\",\"fax\":\"402-845-8229\",\"email\":\"mac@marksberry.com\",\"web\":\"http://www.macmarksberry.com\",\"followers\":6081},{\"firstname\":\"Sandra\",\"lastname\":\"Graen\",\"company\":\"Action Remediation Co\",\"address\":\"106 Erie St\",\"city\":\"Hutchinson\",\"country\":\"McLeod\",\"state\":\"MN\",\"zip\":\"55350\",\"phone\":\"320-587-3844\",\"fax\":\"320-587-7201\",\"email\":\"sandra@graen.com\",\"web\":\"http://www.sandragraen.com\",\"followers\":4844},{\"firstname\":\"Lee\",\"lastname\":\"Javens\",\"company\":\"Dyer, James R Esq\",\"address\":\"6086 N Lyons Rd\",\"city\":\"Burlington\",\"country\":\"Racine\",\"state\":\"WI\",\"zip\":\"53105\",\"phone\":\"262-763-9582\",\"fax\":\"262-763-3845\",\"email\":\"lee@javens.com\",\"web\":\"http://www.leejavens.com\",\"followers\":2954},{\"firstname\":\"Fran\",\"lastname\":\"Zanders\",\"company\":\"River City Body Co\",\"address\":\"6312 S Yellowstone Hwy\",\"city\":\"Idaho Falls\",\"country\":\"Bonneville\",\"state\":\"ID\",\"zip\":\"83402\",\"phone\":\"208-525-6418\",\"fax\":\"208-525-5501\",\"email\":\"fran@zanders.com\",\"web\":\"http://www.franzanders.com\",\"followers\":9590},{\"firstname\":\"Lane\",\"lastname\":\"Brantz\",\"company\":\"Kings Inn\",\"address\":\"106 Erie St\",\"city\":\"Hutchinson\",\"country\":\"McLeod\",\"state\":\"MN\",\"zip\":\"55350\",\"phone\":\"320-587-2903\",\"fax\":\"320-587-3448\",\"email\":\"lane@brantz.com\",\"web\":\"http://www.lanebrantz.com\",\"followers\":361},{\"firstname\":\"Bess\",\"lastname\":\"Marso\",\"company\":\"Lesher Printers Inc\",\"address\":\"15542 Chemical Ln\",\"city\":\"Huntington Beach\",\"country\":\"Orange\",\"state\":\"CA\",\"zip\":\"92649\",\"phone\":\"714-895-4582\",\"fax\":\"714-895-8188\",\"email\":\"bess@marso.com\",\"web\":\"http://www.bessmarso.com\",\"followers\":9552},{\"firstname\":\"Tamara\",\"lastname\":\"Declue\",\"company\":\"Glen Burnie The Bank Of\",\"address\":\"1900 W Loop S  #-600\",\"city\":\"Houston\",\"country\":\"Harris\",\"state\":\"TX\",\"zip\":\"77027\",\"phone\":\"713-871-3958\",\"fax\":\"713-871-6355\",\"email\":\"tamara@declue.com\",\"web\":\"http://www.tamaradeclue.com\",\"followers\":3229},{\"firstname\":\"Denise\",\"lastname\":\"Speegle\",\"company\":\"Shipley Oil Company\",\"address\":\"2078 Foster Ave\",\"city\":\"Wheeling\",\"country\":\"Cook\",\"state\":\"IL\",\"zip\":\"60090\",\"phone\":\"847-870-8743\",\"fax\":\"847-870-6026\",\"email\":\"denise@speegle.com\",\"web\":\"http://www.denisespeegle.com\",\"followers\":1139},{\"firstname\":\"Lynda\",\"lastname\":\"Youtsey\",\"company\":\"Accurate Color Inc\",\"address\":\"1370 S Bertelsen Rd\",\"city\":\"Eugene\",\"country\":\"Lane\",\"state\":\"OR\",\"zip\":\"97402\",\"phone\":\"541-342-0606\",\"fax\":\"541-342-0655\",\"email\":\"lynda@youtsey.com\",\"web\":\"http://www.lyndayoutsey.com\",\"followers\":378},{\"firstname\":\"Diann\",\"lastname\":\"Burigsay\",\"company\":\"Snyder, Stephen E Esq\",\"address\":\"13026 S Normandie Ave\",\"city\":\"Gardena\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"90249\",\"phone\":\"310-321-8278\",\"fax\":\"310-321-0564\",\"email\":\"diann@burigsay.com\",\"web\":\"http://www.diannburigsay.com\",\"followers\":6193},{\"firstname\":\"Mari\",\"lastname\":\"Hwang\",\"company\":\"Play Craft Pontoon Co\",\"address\":\"23352 El Toro Rd\",\"city\":\"Lake Forest\",\"country\":\"Orange\",\"state\":\"CA\",\"zip\":\"92630\",\"phone\":\"949-583-6901\",\"fax\":\"949-583-7758\",\"email\":\"mari@hwang.com\",\"web\":\"http://www.marihwang.com\",\"followers\":6719},{\"firstname\":\"Shanna\",\"lastname\":\"Neundorfer\",\"company\":\"Door Systems\",\"address\":\"833 E Allegheny Ave\",\"city\":\"Philadelphia\",\"country\":\"Philadelphia\",\"state\":\"PA\",\"zip\":\"19134\",\"phone\":\"215-426-9722\",\"fax\":\"215-426-8416\",\"email\":\"shanna@neundorfer.com\",\"web\":\"http://www.shannaneundorfer.com\",\"followers\":9759},{\"firstname\":\"Sherwood\",\"lastname\":\"Detillier\",\"company\":\"Minteq International\",\"address\":\"Box #-851\",\"city\":\"Woodland Hills\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"91365\",\"phone\":\"818-703-9160\",\"fax\":\"818-703-0447\",\"email\":\"sherwood@detillier.com\",\"web\":\"http://www.sherwooddetillier.com\",\"followers\":6816},{\"firstname\":\"Walton\",\"lastname\":\"Schwallie\",\"company\":\"Nielsen, Laura W Md\",\"address\":\"154 Main St\",\"city\":\"Upton\",\"country\":\"Worcester\",\"state\":\"MA\",\"zip\":\"01568\",\"phone\":\"508-529-8783\",\"fax\":\"508-529-8368\",\"email\":\"walton@schwallie.com\",\"web\":\"http://www.waltonschwallie.com\",\"followers\":4498},{\"firstname\":\"Judy\",\"lastname\":\"Gartenmayer\",\"company\":\"Pro Infusion Pharm Inc\",\"address\":\"3260 W New Haven Ave\",\"city\":\"Melbourne\",\"country\":\"Brevard\",\"state\":\"FL\",\"zip\":\"32904\",\"phone\":\"321-676-3091\",\"fax\":\"321-676-3378\",\"email\":\"judy@gartenmayer.com\",\"web\":\"http://www.judygartenmayer.com\",\"followers\":5730},{\"firstname\":\"Antione\",\"lastname\":\"Mccleary\",\"company\":\"Cerberus Pyrotronics\",\"address\":\"1110 25th Ave N\",\"city\":\"Fargo\",\"country\":\"Cass\",\"state\":\"ND\",\"zip\":\"58102\",\"phone\":\"701-293-8410\",\"fax\":\"701-293-7439\",\"email\":\"antione@mccleary.com\",\"web\":\"http://www.antionemccleary.com\",\"followers\":5273},{\"firstname\":\"Kay\",\"lastname\":\"Ganguli\",\"company\":\"Hanson, Bruce Esq\",\"address\":\"3763 Scripps Dr\",\"city\":\"Las Vegas\",\"country\":\"Clark\",\"state\":\"NV\",\"zip\":\"89103\",\"phone\":\"702-876-3089\",\"fax\":\"702-876-9367\",\"email\":\"kay@ganguli.com\",\"web\":\"http://www.kayganguli.com\",\"followers\":6368},{\"firstname\":\"Oma\",\"lastname\":\"Duffy\",\"company\":\"Laun Law Offices\",\"address\":\"255 Industrial Dr\",\"city\":\"Franklin\",\"country\":\"Warren\",\"state\":\"OH\",\"zip\":\"45005\",\"phone\":\"937-746-7537\",\"fax\":\"937-746-4129\",\"email\":\"oma@duffy.com\",\"web\":\"http://www.omaduffy.com\",\"followers\":9375},{\"firstname\":\"Devon\",\"lastname\":\"Teston\",\"company\":\"Bilton, Dean H Esq\",\"address\":\"1900 W Loop S\",\"city\":\"Houston\",\"country\":\"Harris\",\"state\":\"TX\",\"zip\":\"77027\",\"phone\":\"713-871-9773\",\"fax\":\"713-871-0838\",\"email\":\"devon@teston.com\",\"web\":\"http://www.devonteston.com\",\"followers\":3426},{\"firstname\":\"Jade\",\"lastname\":\"Erlebach\",\"company\":\"Vickery Tape & Label Co Inc\",\"address\":\"975 Flynn Rd\",\"city\":\"Camarillo\",\"country\":\"Ventura\",\"state\":\"CA\",\"zip\":\"93012\",\"phone\":\"805-445-8331\",\"fax\":\"805-445-9961\",\"email\":\"jade@erlebach.com\",\"web\":\"http://www.jadeerlebach.com\",\"followers\":4178},{\"firstname\":\"Roseann\",\"lastname\":\"Jerko\",\"company\":\"Larry Farmer Appraisal Co Inc\",\"address\":\"850 Glen Ave\",\"city\":\"Moorestown\",\"country\":\"Burlington\",\"state\":\"NJ\",\"zip\":\"08057\",\"phone\":\"856-866-4945\",\"fax\":\"856-866-1542\",\"email\":\"roseann@jerko.com\",\"web\":\"http://www.roseannjerko.com\",\"followers\":5397},{\"firstname\":\"Ruthie\",\"lastname\":\"Zortman\",\"company\":\"Review Monterey Peninsula\",\"address\":\"4508 Enterprise St\",\"city\":\"Fremont\",\"country\":\"Alameda\",\"state\":\"CA\",\"zip\":\"94538\",\"phone\":\"510-651-1410\",\"fax\":\"510-651-1242\",\"email\":\"ruthie@zortman.com\",\"web\":\"http://www.ruthiezortman.com\",\"followers\":6079},{\"firstname\":\"Leif\",\"lastname\":\"Arguin\",\"company\":\"Cmplt Cmptg Solutions Ne\",\"address\":\"4508 Enterprise St\",\"city\":\"Fremont\",\"country\":\"Alameda\",\"state\":\"CA\",\"zip\":\"94538\",\"phone\":\"510-651-4937\",\"fax\":\"510-651-8302\",\"email\":\"leif@arguin.com\",\"web\":\"http://www.leifarguin.com\",\"followers\":6571},{\"firstname\":\"Millicent\",\"lastname\":\"Ekstrom\",\"company\":\"Personal Creations Inc\",\"address\":\"151 Brown St  #-b\",\"city\":\"Lawrenceburg\",\"country\":\"Dearborn\",\"state\":\"IN\",\"zip\":\"47025\",\"phone\":\"812-537-7287\",\"fax\":\"812-537-5442\",\"email\":\"millicent@ekstrom.com\",\"web\":\"http://www.millicentekstrom.com\",\"followers\":5739},{\"firstname\":\"Val\",\"lastname\":\"Oborne\",\"company\":\"Stone Container Corporation\",\"address\":\"7846 Clybourn Ave\",\"city\":\"Sun Valley\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"91352\",\"phone\":\"818-767-1347\",\"fax\":\"818-767-5123\",\"email\":\"val@oborne.com\",\"web\":\"http://www.valoborne.com\",\"followers\":6746},{\"firstname\":\"Bridgett\",\"lastname\":\"Retort\",\"company\":\"Womens Resource & Refrl Ntwrk\",\"address\":\"6747 Signat Dr\",\"city\":\"Houston\",\"country\":\"Harris\",\"state\":\"TX\",\"zip\":\"77041\",\"phone\":\"713-466-7259\",\"fax\":\"713-466-3278\",\"email\":\"bridgett@retort.com\",\"web\":\"http://www.bridgettretort.com\",\"followers\":3060},{\"firstname\":\"Tia\",\"lastname\":\"Lino\",\"company\":\"Superior Gundrilling\",\"address\":\"35375 Highway 228\",\"city\":\"Brownsville\",\"country\":\"Linn\",\"state\":\"OR\",\"zip\":\"97327\",\"phone\":\"541-466-2483\",\"fax\":\"541-466-1661\",\"email\":\"tia@lino.com\",\"web\":\"http://www.tialino.com\",\"followers\":8942},{\"firstname\":\"Jarrett\",\"lastname\":\"Kenzie\",\"company\":\"Young Men Christian Assn Cnty\",\"address\":\"11551 Riverpark Way\",\"city\":\"Chesterfield\",\"country\":\"Chesterfield\",\"state\":\"VA\",\"zip\":\"23838\",\"phone\":\"804-739-3007\",\"fax\":\"804-739-7905\",\"email\":\"jarrett@kenzie.com\",\"web\":\"http://www.jarrettkenzie.com\",\"followers\":9459},{\"firstname\":\"Mara\",\"lastname\":\"Vanderzwaag\",\"company\":\"Brown & Brown Law Office\",\"address\":\"2550 E Lucas Dr\",\"city\":\"Beaumont\",\"country\":\"Jefferson\",\"state\":\"TX\",\"zip\":\"77703\",\"phone\":\"409-892-1231\",\"fax\":\"409-892-8492\",\"email\":\"mara@vanderzwaag.com\",\"web\":\"http://www.maravanderzwaag.com\",\"followers\":2331},{\"firstname\":\"Tiffany\",\"lastname\":\"Knust\",\"company\":\"Vantage Products\",\"address\":\"1425 Koll Cir  #-107\",\"city\":\"San Jose\",\"country\":\"Santa Clara\",\"state\":\"CA\",\"zip\":\"95112\",\"phone\":\"408-453-0357\",\"fax\":\"408-453-1525\",\"email\":\"tiffany@knust.com\",\"web\":\"http://www.tiffanyknust.com\",\"followers\":2896},{\"firstname\":\"Fabian\",\"lastname\":\"Mcshaw\",\"company\":\"Bodik, Michael G Esq\",\"address\":\"6023 Garfield Ave\",\"city\":\"Los Angeles\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"90040\",\"phone\":\"323-726-5319\",\"fax\":\"323-726-8499\",\"email\":\"fabian@mcshaw.com\",\"web\":\"http://www.fabianmcshaw.com\",\"followers\":4892},{\"firstname\":\"Annabelle\",\"lastname\":\"Coger\",\"company\":\"Center For Resource Management\",\"address\":\"1200 Shreveport Barksdale Hwy\",\"city\":\"Shreveport\",\"country\":\"Caddo\",\"state\":\"LA\",\"zip\":\"71105\",\"phone\":\"318-865-8418\",\"fax\":\"318-865-7381\",\"email\":\"annabelle@coger.com\",\"web\":\"http://www.annabellecoger.com\",\"followers\":2623},{\"firstname\":\"Marisa\",\"lastname\":\"Smiler\",\"company\":\"Star Systems Inc\",\"address\":\"200 Broadhollow Rd\",\"city\":\"Melville\",\"country\":\"Suffolk\",\"state\":\"NY\",\"zip\":\"11747\",\"phone\":\"631-673-3339\",\"fax\":\"631-673-1556\",\"email\":\"marisa@smiler.com\",\"web\":\"http://www.marisasmiler.com\",\"followers\":4693},{\"firstname\":\"Samantha\",\"lastname\":\"Bordwell\",\"company\":\"Interwest Freight System Inc\",\"address\":\"23405 Sw 152nd Ct\",\"city\":\"Homestead\",\"country\":\"Miami-Dade\",\"state\":\"FL\",\"zip\":\"33032\",\"phone\":\"305-247-8402\",\"fax\":\"305-247-4599\",\"email\":\"samantha@bordwell.com\",\"web\":\"http://www.samanthabordwell.com\",\"followers\":6109},{\"firstname\":\"Felecia\",\"lastname\":\"Riedl\",\"company\":\"Benson, John S\",\"address\":\"333 Andrew Ave\",\"city\":\"Salt Lake City\",\"country\":\"Salt Lake\",\"state\":\"UT\",\"zip\":\"84115\",\"phone\":\"801-486-6484\",\"fax\":\"801-486-6755\",\"email\":\"felecia@riedl.com\",\"web\":\"http://www.feleciariedl.com\",\"followers\":7849},{\"firstname\":\"Kris\",\"lastname\":\"Persson\",\"company\":\"Tweel, Ronald R Esq\",\"address\":\"1765 Sw Highway 97\",\"city\":\"Madras\",\"country\":\"Jefferson\",\"state\":\"OR\",\"zip\":\"97741\",\"phone\":\"541-475-8404\",\"fax\":\"541-475-0021\",\"email\":\"kris@persson.com\",\"web\":\"http://www.krispersson.com\",\"followers\":232},{\"firstname\":\"Kylie\",\"lastname\":\"Bridgeman\",\"company\":\"Thomas & Libowitz Pa\",\"address\":\"118 Lenzner Ct\",\"city\":\"Sewickley\",\"country\":\"Allegheny\",\"state\":\"PA\",\"zip\":\"15143\",\"phone\":\"412-741-4604\",\"fax\":\"412-741-4236\",\"email\":\"kylie@bridgeman.com\",\"web\":\"http://www.kyliebridgeman.com\",\"followers\":9868},{\"firstname\":\"Eduardo\",\"lastname\":\"Bellendir\",\"company\":\"Powers & Assocs\",\"address\":\"1800 Pine Run Rd\",\"city\":\"Wilkes Barre\",\"country\":\"Luzerne\",\"state\":\"PA\",\"zip\":\"18702\",\"phone\":\"570-822-0721\",\"fax\":\"570-822-6267\",\"email\":\"eduardo@bellendir.com\",\"web\":\"http://www.eduardobellendir.com\",\"followers\":597},{\"firstname\":\"Waldo\",\"lastname\":\"Edberg\",\"company\":\"Bush Building Corporation\",\"address\":\"2017 W Jackson St\",\"city\":\"Tupelo\",\"country\":\"Lee\",\"state\":\"MS\",\"zip\":\"38801\",\"phone\":\"662-842-4133\",\"fax\":\"662-842-8645\",\"email\":\"waldo@edberg.com\",\"web\":\"http://www.waldoedberg.com\",\"followers\":6609},{\"firstname\":\"Brent\",\"lastname\":\"Vaidya\",\"company\":\"Crain Industries\",\"address\":\"45 Church St\",\"city\":\"Stamford\",\"country\":\"Fairfield\",\"state\":\"CT\",\"zip\":\"06906\",\"phone\":\"203-359-2824\",\"fax\":\"203-359-6466\",\"email\":\"brent@vaidya.com\",\"web\":\"http://www.brentvaidya.com\",\"followers\":3729},{\"firstname\":\"Bette\",\"lastname\":\"Barcelona\",\"company\":\"Fischer, William R Esq\",\"address\":\"432 Lignite Ave\",\"city\":\"Fairbanks\",\"country\":\"Fairbanks North Star\",\"state\":\"AK\",\"zip\":\"99701\",\"phone\":\"907-456-6738\",\"fax\":\"907-456-4144\",\"email\":\"bette@barcelona.com\",\"web\":\"http://www.bettebarcelona.com\",\"followers\":5857},{\"firstname\":\"Rich\",\"lastname\":\"Gleave\",\"company\":\"Finkelstein, Bernard A Cpa\",\"address\":\"827 E 10th Ave\",\"city\":\"Anchorage\",\"country\":\"Anchorage\",\"state\":\"AK\",\"zip\":\"99501\",\"phone\":\"907-277-9294\",\"fax\":\"907-277-2227\",\"email\":\"rich@gleave.com\",\"web\":\"http://www.richgleave.com\",\"followers\":488},{\"firstname\":\"Lyman\",\"lastname\":\"Whittley\",\"company\":\"Berry, Robert A Esq\",\"address\":\"3030 Bridgeway\",\"city\":\"Sausalito\",\"country\":\"Marin\",\"state\":\"CA\",\"zip\":\"94965\",\"phone\":\"415-332-9570\",\"fax\":\"415-332-7303\",\"email\":\"lyman@whittley.com\",\"web\":\"http://www.lymanwhittley.com\",\"followers\":7950},{\"firstname\":\"Maryann\",\"lastname\":\"Garnette\",\"company\":\"Catholic University Of\",\"address\":\"582 Centerville Rd\",\"city\":\"Lancaster\",\"country\":\"Lancaster\",\"state\":\"PA\",\"zip\":\"17601\",\"phone\":\"717-560-6671\",\"fax\":\"717-560-5625\",\"email\":\"maryann@garnette.com\",\"web\":\"http://www.maryanngarnette.com\",\"followers\":5412},{\"firstname\":\"Jimmie\",\"lastname\":\"Zarzycki\",\"company\":\"John C Auth\",\"address\":\"215 E Pikes Peak Ave\",\"city\":\"Colorado Springs\",\"country\":\"El Paso\",\"state\":\"CO\",\"zip\":\"80903\",\"phone\":\"719-632-0667\",\"fax\":\"719-632-5612\",\"email\":\"jimmie@zarzycki.com\",\"web\":\"http://www.jimmiezarzycki.com\",\"followers\":4291},{\"firstname\":\"Gisela\",\"lastname\":\"Kosicki\",\"company\":\"Lisher, John L Esq\",\"address\":\"22140 Ventura Blvd  #-4\",\"city\":\"Woodland Hills\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"91364\",\"phone\":\"818-713-6306\",\"fax\":\"818-713-8346\",\"email\":\"gisela@kosicki.com\",\"web\":\"http://www.giselakosicki.com\",\"followers\":377},{\"firstname\":\"Marlene\",\"lastname\":\"Hammeren\",\"company\":\"Chamot, Philip S Esq\",\"address\":\"1000 Monte Sano Blvd Se\",\"city\":\"Huntsville\",\"country\":\"Madison\",\"state\":\"AL\",\"zip\":\"35801\",\"phone\":\"256-533-8674\",\"fax\":\"256-533-1176\",\"email\":\"marlene@hammeren.com\",\"web\":\"http://www.marlenehammeren.com\",\"followers\":428},{\"firstname\":\"Kris\",\"lastname\":\"Stanzak\",\"company\":\"Cenref Labs\",\"address\":\"3100 Dodge St\",\"city\":\"Dubuque\",\"country\":\"Dubuque\",\"state\":\"IA\",\"zip\":\"52003\",\"phone\":\"563-557-2588\",\"fax\":\"563-557-6308\",\"email\":\"kris@stanzak.com\",\"web\":\"http://www.krisstanzak.com\",\"followers\":368},{\"firstname\":\"Roman\",\"lastname\":\"Simone\",\"company\":\"Spottswood, William B Esq\",\"address\":\"610 W Main St\",\"city\":\"Batavia\",\"country\":\"Clermont\",\"state\":\"OH\",\"zip\":\"45103\",\"phone\":\"513-732-3089\",\"fax\":\"513-732-2547\",\"email\":\"roman@simone.com\",\"web\":\"http://www.romansimone.com\",\"followers\":3460},{\"firstname\":\"Cathryn\",\"lastname\":\"Nicolaus\",\"company\":\"Perkins Photo/graphics Inc\",\"address\":\"2575 State Highway 32\",\"city\":\"Chico\",\"country\":\"Butte\",\"state\":\"CA\",\"zip\":\"95973\",\"phone\":\"530-345-4627\",\"fax\":\"530-345-8372\",\"email\":\"cathryn@nicolaus.com\",\"web\":\"http://www.cathrynnicolaus.com\",\"followers\":9494},{\"firstname\":\"Lana\",\"lastname\":\"Keels\",\"company\":\"Veron, J Michael Esq\",\"address\":\"711 Park Ave\",\"city\":\"Freehold\",\"country\":\"Monmouth\",\"state\":\"NJ\",\"zip\":\"07728\",\"phone\":\"732-462-1106\",\"fax\":\"732-462-3575\",\"email\":\"lana@keels.com\",\"web\":\"http://www.lanakeels.com\",\"followers\":2796},{\"firstname\":\"Malissa\",\"lastname\":\"Ziesemer\",\"company\":\"Electron Rentals Inc\",\"address\":\"330 S Ocean Blvd\",\"city\":\"Palm Beach\",\"country\":\"Palm Beach\",\"state\":\"FL\",\"zip\":\"33480\",\"phone\":\"561-655-6443\",\"fax\":\"561-655-9129\",\"email\":\"malissa@ziesemer.com\",\"web\":\"http://www.malissaziesemer.com\",\"followers\":7525},{\"firstname\":\"Pamala\",\"lastname\":\"Brodtmann\",\"company\":\"Gagen, William E Jr\",\"address\":\"342 Seaside Ave\",\"city\":\"Honolulu\",\"country\":\"Honolulu\",\"state\":\"HI\",\"zip\":\"96815\",\"phone\":\"808-926-0776\",\"fax\":\"808-926-6173\",\"email\":\"pamala@brodtmann.com\",\"web\":\"http://www.pamalabrodtmann.com\",\"followers\":134},{\"firstname\":\"Heriberto\",\"lastname\":\"Tivis\",\"company\":\"Newood\",\"address\":\"1135 Kildaire Farm Rd\",\"city\":\"Cary\",\"country\":\"Wake\",\"state\":\"NC\",\"zip\":\"27511\",\"phone\":\"919-460-8104\",\"fax\":\"919-460-4304\",\"email\":\"heriberto@tivis.com\",\"web\":\"http://www.heribertotivis.com\",\"followers\":2418},{\"firstname\":\"Edgardo\",\"lastname\":\"Prudente\",\"company\":\"R A Hamilton Corp\",\"address\":\"1110 N Highway 360\",\"city\":\"Grand Prairie\",\"country\":\"Dallas\",\"state\":\"TX\",\"zip\":\"75050\",\"phone\":\"972-660-3960\",\"fax\":\"972-660-0934\",\"email\":\"edgardo@prudente.com\",\"web\":\"http://www.edgardoprudente.com\",\"followers\":3269},{\"firstname\":\"Fred\",\"lastname\":\"Kunde\",\"company\":\"Swanson, Victoria C Esq\",\"address\":\"5321 Sterling Center Dr\",\"city\":\"Westlake Village\",\"country\":\"Ventura\",\"state\":\"CA\",\"zip\":\"91361\",\"phone\":\"805-991-9740\",\"fax\":\"805-991-4665\",\"email\":\"fred@kunde.com\",\"web\":\"http://www.fredkunde.com\",\"followers\":7741},{\"firstname\":\"Pilar\",\"lastname\":\"Suddeth\",\"company\":\"Slant Fin Corp\",\"address\":\"3700 Campus Dr\",\"city\":\"Newport Beach\",\"country\":\"Orange\",\"state\":\"CA\",\"zip\":\"92660\",\"phone\":\"949-852-5463\",\"fax\":\"949-852-9027\",\"email\":\"pilar@suddeth.com\",\"web\":\"http://www.pilarsuddeth.com\",\"followers\":4094},{\"firstname\":\"Eliseo\",\"lastname\":\"Wice\",\"company\":\"A Limousine Service\",\"address\":\"711 W 38th St\",\"city\":\"Austin\",\"country\":\"Travis\",\"state\":\"TX\",\"zip\":\"78705\",\"phone\":\"512-458-0034\",\"fax\":\"512-458-7226\",\"email\":\"eliseo@wice.com\",\"web\":\"http://www.eliseowice.com\",\"followers\":7508},{\"firstname\":\"Bridget\",\"lastname\":\"Knightly\",\"company\":\"Teamsters Union Local 20\",\"address\":\"66 Flint St\",\"city\":\"Asheville\",\"country\":\"Buncombe\",\"state\":\"NC\",\"zip\":\"28801\",\"phone\":\"828-251-0817\",\"fax\":\"828-251-4242\",\"email\":\"bridget@knightly.com\",\"web\":\"http://www.bridgetknightly.com\",\"followers\":1212},{\"firstname\":\"Tori\",\"lastname\":\"Villaescusa\",\"company\":\"Church Point Whol Gr Co Inc\",\"address\":\"1006 S San Pedro St\",\"city\":\"Los Angeles\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"90015\",\"phone\":\"213-748-7617\",\"fax\":\"213-748-5668\",\"email\":\"tori@villaescusa.com\",\"web\":\"http://www.torivillaescusa.com\",\"followers\":9093},{\"firstname\":\"Claire\",\"lastname\":\"Moyerman\",\"company\":\"Grt Nthrn Shoe Rpr & Dry Clnrs\",\"address\":\"2280 S Xanadu Way  #-300\",\"city\":\"Aurora\",\"country\":\"Arapahoe\",\"state\":\"CO\",\"zip\":\"80014\",\"phone\":\"303-337-5701\",\"fax\":\"303-337-5796\",\"email\":\"claire@moyerman.com\",\"web\":\"http://www.clairemoyerman.com\",\"followers\":5959},{\"firstname\":\"Judi\",\"lastname\":\"Kivel\",\"company\":\"Postal Place At 111th Square\",\"address\":\"125 N Emporia St\",\"city\":\"Wichita\",\"country\":\"Sedgwick\",\"state\":\"KS\",\"zip\":\"67202\",\"phone\":\"316-267-2178\",\"fax\":\"316-267-5183\",\"email\":\"judi@kivel.com\",\"web\":\"http://www.judikivel.com\",\"followers\":6139},{\"firstname\":\"Terrell\",\"lastname\":\"Rodda\",\"company\":\"Woodland Village Nursing Home\",\"address\":\"200 Cottontail Ln\",\"city\":\"Somerset\",\"country\":\"Somerset\",\"state\":\"NJ\",\"zip\":\"08873\",\"phone\":\"732-563-5361\",\"fax\":\"732-563-1293\",\"email\":\"terrell@rodda.com\",\"web\":\"http://www.terrellrodda.com\",\"followers\":3803},{\"firstname\":\"Jasmin\",\"lastname\":\"Gum\",\"company\":\"White, Samuel I Esq\",\"address\":\"43 Parmenter Rd\",\"city\":\"Hudson\",\"country\":\"Middlesex\",\"state\":\"MA\",\"zip\":\"01749\",\"phone\":\"978-562-2524\",\"fax\":\"978-562-5062\",\"email\":\"jasmin@gum.com\",\"web\":\"http://www.jasmingum.com\",\"followers\":9074},{\"firstname\":\"Bridget\",\"lastname\":\"Bottella\",\"company\":\"Mid State Construction Prod\",\"address\":\"112 E Pecan St\",\"city\":\"San Antonio\",\"country\":\"Bexar\",\"state\":\"TX\",\"zip\":\"78205\",\"phone\":\"210-224-9708\",\"fax\":\"210-224-4881\",\"email\":\"bridget@bottella.com\",\"web\":\"http://www.bridgetbottella.com\",\"followers\":5951},{\"firstname\":\"Tami\",\"lastname\":\"Trybus\",\"company\":\"Seawright, Rodney\",\"address\":\"3963 Virginia Ave\",\"city\":\"Cincinnati\",\"country\":\"Hamilton\",\"state\":\"OH\",\"zip\":\"45227\",\"phone\":\"513-561-1096\",\"fax\":\"513-561-7531\",\"email\":\"tami@trybus.com\",\"web\":\"http://www.tamitrybus.com\",\"followers\":370},{\"firstname\":\"Maynard\",\"lastname\":\"Kaewprasert\",\"company\":\"Decatur Studio Inc\",\"address\":\"1224 S Hope St\",\"city\":\"Los Angeles\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"90015\",\"phone\":\"213-747-6026\",\"fax\":\"213-747-3088\",\"email\":\"maynard@kaewprasert.com\",\"web\":\"http://www.maynardkaewprasert.com\",\"followers\":711},{\"firstname\":\"Viola\",\"lastname\":\"Mcsorley\",\"company\":\"First Bank Of Brunswick\",\"address\":\"6850 S Harlem Ave\",\"city\":\"Summit Argo\",\"country\":\"Cook\",\"state\":\"IL\",\"zip\":\"60501\",\"phone\":\"708-496-7428\",\"fax\":\"708-496-8587\",\"email\":\"viola@mcsorley.com\",\"web\":\"http://www.violamcsorley.com\",\"followers\":7687},{\"firstname\":\"Reggie\",\"lastname\":\"Streu\",\"company\":\"Als Motors Inc\",\"address\":\"15 Henderson Dr\",\"city\":\"Caldwell\",\"country\":\"Essex\",\"state\":\"NJ\",\"zip\":\"07006\",\"phone\":\"973-575-5898\",\"fax\":\"973-575-9328\",\"email\":\"reggie@streu.com\",\"web\":\"http://www.reggiestreu.com\",\"followers\":971},{\"firstname\":\"Rena\",\"lastname\":\"Griffeth\",\"company\":\"Reliable Optical\",\"address\":\"19901 Nordhoff St\",\"city\":\"Northridge\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"91324\",\"phone\":\"818-709-9165\",\"fax\":\"818-709-2649\",\"email\":\"rena@griffeth.com\",\"web\":\"http://www.renagriffeth.com\",\"followers\":6336},{\"firstname\":\"Pierre\",\"lastname\":\"Salera\",\"company\":\"Ridley Ridley & Burnette\",\"address\":\"1601 S Shamrock Ave\",\"city\":\"Monrovia\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"91016\",\"phone\":\"626-303-9233\",\"fax\":\"626-303-2569\",\"email\":\"pierre@salera.com\",\"web\":\"http://www.pierresalera.com\",\"followers\":6542},{\"firstname\":\"Carolina\",\"lastname\":\"Kinlaw\",\"company\":\"Loftus, Daniel B Esq\",\"address\":\"3m country\",\"city\":\"Belle Mead\",\"country\":\"Somerset\",\"state\":\"NJ\",\"zip\":\"08502\",\"phone\":\"908-874-0864\",\"fax\":\"908-874-4873\",\"email\":\"carolina@kinlaw.com\",\"web\":\"http://www.carolinakinlaw.com\",\"followers\":8944},{\"firstname\":\"Alejandra\",\"lastname\":\"Prenatt\",\"company\":\"Mitchell De Burring Co\",\"address\":\"6850 S Harlem Ave\",\"city\":\"Summit Argo\",\"country\":\"Cook\",\"state\":\"IL\",\"zip\":\"60501\",\"phone\":\"708-496-6958\",\"fax\":\"708-496-4617\",\"email\":\"alejandra@prenatt.com\",\"web\":\"http://www.alejandraprenatt.com\",\"followers\":4118},{\"firstname\":\"Quintin\",\"lastname\":\"Isacson\",\"company\":\"Spectrum Constrctn & Dev Corp\",\"address\":\"1015 N Cahuenga Blvd\",\"city\":\"Los Angeles\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"90038\",\"phone\":\"323-469-0643\",\"fax\":\"323-469-3082\",\"email\":\"quintin@isacson.com\",\"web\":\"http://www.quintinisacson.com\",\"followers\":94},{\"firstname\":\"Robin\",\"lastname\":\"Grotz\",\"company\":\"Hackett, Peter J\",\"address\":\"2601 Summerhill Rd\",\"city\":\"Texarkana\",\"country\":\"Bowie\",\"state\":\"TX\",\"zip\":\"75503\",\"phone\":\"903-792-2081\",\"fax\":\"903-792-5309\",\"email\":\"robin@grotz.com\",\"web\":\"http://www.robingrotz.com\",\"followers\":2532},{\"firstname\":\"Lacy\",\"lastname\":\"Woodfin\",\"company\":\"Enviro Dynamics\",\"address\":\"130 Wyoming Ave\",\"city\":\"Scranton\",\"country\":\"Lackawanna\",\"state\":\"PA\",\"zip\":\"18503\",\"phone\":\"570-348-3754\",\"fax\":\"570-348-4204\",\"email\":\"lacy@woodfin.com\",\"web\":\"http://www.lacywoodfin.com\",\"followers\":4644},{\"firstname\":\"Daniel\",\"lastname\":\"Zill\",\"company\":\"Safety Team Inc\",\"address\":\"550 N Brand Blvd  #-1940\",\"city\":\"Glendale\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"91203\",\"phone\":\"818-507-7207\",\"fax\":\"818-507-1925\",\"email\":\"daniel@zill.com\",\"web\":\"http://www.danielzill.com\",\"followers\":2051},{\"firstname\":\"Reina\",\"lastname\":\"Wolchesky\",\"company\":\"Highland Management Group\",\"address\":\"305 W Washington St\",\"city\":\"Brainerd\",\"country\":\"Crow Wing\",\"state\":\"MN\",\"zip\":\"56401\",\"phone\":\"218-828-7281\",\"fax\":\"218-828-3231\",\"email\":\"reina@wolchesky.com\",\"web\":\"http://www.reinawolchesky.com\",\"followers\":9240},{\"firstname\":\"Marc\",\"lastname\":\"Wanger\",\"company\":\"Welsh Company\",\"address\":\"33 Harrison Ave\",\"city\":\"Boston\",\"country\":\"Suffolk\",\"state\":\"MA\",\"zip\":\"02111\",\"phone\":\"617-426-6393\",\"fax\":\"617-426-1114\",\"email\":\"marc@wanger.com\",\"web\":\"http://www.marcwanger.com\",\"followers\":2846},{\"firstname\":\"Damion\",\"lastname\":\"Matkin\",\"company\":\"Data Ware Development Inc\",\"address\":\"5830 Downing St  #-d\",\"city\":\"Denver\",\"country\":\"Denver\",\"state\":\"CO\",\"zip\":\"80216\",\"phone\":\"303-295-4797\",\"fax\":\"303-295-3867\",\"email\":\"damion@matkin.com\",\"web\":\"http://www.damionmatkin.com\",\"followers\":5752},{\"firstname\":\"Lucius\",\"lastname\":\"Winchester\",\"company\":\"Barrett Paving Materials Inc\",\"address\":\"670 S Barrington Rd\",\"city\":\"Streamwood\",\"country\":\"Cook\",\"state\":\"IL\",\"zip\":\"60107\",\"phone\":\"630-289-9458\",\"fax\":\"630-289-9033\",\"email\":\"lucius@winchester.com\",\"web\":\"http://www.luciuswinchester.com\",\"followers\":8815},{\"firstname\":\"Petra\",\"lastname\":\"Mcnichol\",\"company\":\"Hyacinth Foundation Aids Proj\",\"address\":\"670 S Barrington Rd\",\"city\":\"Streamwood\",\"country\":\"Cook\",\"state\":\"IL\",\"zip\":\"60107\",\"phone\":\"630-289-8190\",\"fax\":\"630-289-8985\",\"email\":\"petra@mcnichol.com\",\"web\":\"http://www.petramcnichol.com\",\"followers\":9459},{\"firstname\":\"Katina\",\"lastname\":\"Ramano\",\"company\":\"Fuhrmann, Chris C Esq\",\"address\":\"580 Fountain Ave\",\"city\":\"Brooklyn\",\"country\":\"Kings\",\"state\":\"NY\",\"zip\":\"11208\",\"phone\":\"718-272-2553\",\"fax\":\"718-272-8498\",\"email\":\"katina@ramano.com\",\"web\":\"http://www.katinaramano.com\",\"followers\":924},{\"firstname\":\"Leslie\",\"lastname\":\"Cackowski\",\"company\":\"Re, Matthew R Esq\",\"address\":\"2103 W Main St\",\"city\":\"Farmington\",\"country\":\"San Juan\",\"state\":\"NM\",\"zip\":\"87401\",\"phone\":\"505-325-3933\",\"fax\":\"505-325-9042\",\"email\":\"leslie@cackowski.com\",\"web\":\"http://www.lesliecackowski.com\",\"followers\":3028},{\"firstname\":\"Cristopher\",\"lastname\":\"Wiget\",\"company\":\"Roche, Patrick Esq\",\"address\":\"4354 Highway 64\",\"city\":\"Kirtland\",\"country\":\"San Juan\",\"state\":\"NM\",\"zip\":\"87417\",\"phone\":\"505-598-9742\",\"fax\":\"505-598-3063\",\"email\":\"cristopher@wiget.com\",\"web\":\"http://www.cristopherwiget.com\",\"followers\":2445},{\"firstname\":\"Garth\",\"lastname\":\"Skiffington\",\"company\":\"Fox & Killbride\",\"address\":\"22 Mill St\",\"city\":\"Paterson\",\"country\":\"Passaic\",\"state\":\"NJ\",\"zip\":\"07501\",\"phone\":\"973-684-7654\",\"fax\":\"973-684-6309\",\"email\":\"garth@skiffington.com\",\"web\":\"http://www.garthskiffington.com\",\"followers\":1725},{\"firstname\":\"Brendan\",\"lastname\":\"Qin\",\"company\":\"Allegro Copy & Print\",\"address\":\"305 Griffin Ave Sw\",\"city\":\"Eastman\",\"country\":\"Dodge\",\"state\":\"GA\",\"zip\":\"31023\",\"phone\":\"478-374-5686\",\"fax\":\"478-374-6992\",\"email\":\"brendan@qin.com\",\"web\":\"http://www.brendanqin.com\",\"followers\":8035},{\"firstname\":\"Chase\",\"lastname\":\"Furler\",\"company\":\"Hostetler & Kowalik\",\"address\":\"3333 Se 21st St\",\"city\":\"Topeka\",\"country\":\"Shawnee\",\"state\":\"KS\",\"zip\":\"66607\",\"phone\":\"785-354-7091\",\"fax\":\"785-354-3042\",\"email\":\"chase@furler.com\",\"web\":\"http://www.chasefurler.com\",\"followers\":2977},{\"firstname\":\"Marietta\",\"lastname\":\"Bjornberg\",\"company\":\"Consolidated Mechanical Inc\",\"address\":\"1515 Wyoming St\",\"city\":\"Missoula\",\"country\":\"Missoula\",\"state\":\"MT\",\"zip\":\"59801\",\"phone\":\"406-728-0501\",\"fax\":\"406-728-5507\",\"email\":\"marietta@bjornberg.com\",\"web\":\"http://www.mariettabjornberg.com\",\"followers\":54},{\"firstname\":\"Carmella\",\"lastname\":\"Wishman\",\"company\":\"Meicher Cpa\",\"address\":\"1515 Wyoming St\",\"city\":\"Missoula\",\"country\":\"Missoula\",\"state\":\"MT\",\"zip\":\"59801\",\"phone\":\"406-728-6772\",\"fax\":\"406-728-7668\",\"email\":\"carmella@wishman.com\",\"web\":\"http://www.carmellawishman.com\",\"followers\":624},{\"firstname\":\"Erica\",\"lastname\":\"Eyrich\",\"company\":\"C & I Computer Services Inc\",\"address\":\"1515 Wyoming St\",\"city\":\"Missoula\",\"country\":\"Missoula\",\"state\":\"MT\",\"zip\":\"59801\",\"phone\":\"406-728-7293\",\"fax\":\"406-728-4789\",\"email\":\"erica@eyrich.com\",\"web\":\"http://www.ericaeyrich.com\",\"followers\":8217},{\"firstname\":\"Lucius\",\"lastname\":\"Bagnoli\",\"company\":\"American Music Teacher\",\"address\":\"404 W Boonville New Harmony Rd\",\"city\":\"Evansville\",\"country\":\"Vanderburgh\",\"state\":\"IN\",\"zip\":\"47711\",\"phone\":\"812-867-2916\",\"fax\":\"812-867-2593\",\"email\":\"lucius@bagnoli.com\",\"web\":\"http://www.luciusbagnoli.com\",\"followers\":8666},{\"firstname\":\"Bart\",\"lastname\":\"Hachey\",\"company\":\"Pip Printing\",\"address\":\"490 S Broad St\",\"city\":\"Canfield\",\"country\":\"Mahoning\",\"state\":\"OH\",\"zip\":\"44406\",\"phone\":\"330-533-9769\",\"fax\":\"330-533-6543\",\"email\":\"bart@hachey.com\",\"web\":\"http://www.barthachey.com\",\"followers\":8457},{\"firstname\":\"Isiah\",\"lastname\":\"Phernetton\",\"company\":\"Wyckoff Florist & Gifts\",\"address\":\"246 Griffing Ave\",\"city\":\"Riverhead\",\"country\":\"Suffolk\",\"state\":\"NY\",\"zip\":\"11901\",\"phone\":\"631-727-0917\",\"fax\":\"631-727-2147\",\"email\":\"isiah@phernetton.com\",\"web\":\"http://www.isiahphernetton.com\",\"followers\":6662},{\"firstname\":\"Morton\",\"lastname\":\"Crummell\",\"company\":\"Boykin Management Co\",\"address\":\"5485 Conestoga Ct\",\"city\":\"Boulder\",\"country\":\"Boulder\",\"state\":\"CO\",\"zip\":\"80301\",\"phone\":\"303-546-3698\",\"fax\":\"303-546-1589\",\"email\":\"morton@crummell.com\",\"web\":\"http://www.mortoncrummell.com\",\"followers\":8143},{\"firstname\":\"Prince\",\"lastname\":\"Kauk\",\"company\":\"Mckesson Drug Co\",\"address\":\"2320 W Louise Dr\",\"city\":\"Phoenix\",\"country\":\"Maricopa\",\"state\":\"AZ\",\"zip\":\"85027\",\"phone\":\"623-581-7435\",\"fax\":\"623-581-2472\",\"email\":\"prince@kauk.com\",\"web\":\"http://www.princekauk.com\",\"followers\":177},{\"firstname\":\"Marta\",\"lastname\":\"Horner\",\"company\":\"Scisci, Pasquale M\",\"address\":\"4694 Alvarado Canyon Rd  #-f\",\"city\":\"San Diego\",\"country\":\"San Diego\",\"state\":\"CA\",\"zip\":\"92120\",\"phone\":\"858-265-2270\",\"fax\":\"858-265-6604\",\"email\":\"marta@horner.com\",\"web\":\"http://www.martahorner.com\",\"followers\":5749},{\"firstname\":\"Teodoro\",\"lastname\":\"Gaboury\",\"company\":\"Bostek, Eva M Dvm\",\"address\":\"4251 Glenwood Ave\",\"city\":\"Youngstown\",\"country\":\"Mahoning\",\"state\":\"OH\",\"zip\":\"44512\",\"phone\":\"330-783-8123\",\"fax\":\"330-783-9674\",\"email\":\"teodoro@gaboury.com\",\"web\":\"http://www.teodorogaboury.com\",\"followers\":3663},{\"firstname\":\"Jess\",\"lastname\":\"Assad\",\"company\":\"Livingston City\",\"address\":\"9100 F St\",\"city\":\"Omaha\",\"country\":\"Douglas\",\"state\":\"NE\",\"zip\":\"68127\",\"phone\":\"402-331-0470\",\"fax\":\"402-331-4974\",\"email\":\"jess@assad.com\",\"web\":\"http://www.jessassad.com\",\"followers\":6985},{\"firstname\":\"Freeman\",\"lastname\":\"Soula\",\"company\":\"Henson, Claudia\",\"address\":\"Hwy 8e E\",\"city\":\"Mena\",\"country\":\"Polk\",\"state\":\"AR\",\"zip\":\"71953\",\"phone\":\"479-394-6308\",\"fax\":\"479-394-7509\",\"email\":\"freeman@soula.com\",\"web\":\"http://www.freemansoula.com\",\"followers\":7262},{\"firstname\":\"Rita\",\"lastname\":\"Center\",\"company\":\"R D Playman Co\",\"address\":\"4013 Cameron St  #-b\",\"city\":\"Lafayette\",\"country\":\"Lafayette\",\"state\":\"LA\",\"zip\":\"70506\",\"phone\":\"337-269-8825\",\"fax\":\"337-269-7011\",\"email\":\"rita@center.com\",\"web\":\"http://www.ritacenter.com\",\"followers\":4484},{\"firstname\":\"Kira\",\"lastname\":\"Papen\",\"company\":\"Tile City & Carpet Of Pa\",\"address\":\"8387 University Ave\",\"city\":\"La Mesa\",\"country\":\"San Diego\",\"state\":\"CA\",\"zip\":\"91941\",\"phone\":\"619-464-3649\",\"fax\":\"619-464-8499\",\"email\":\"kira@papen.com\",\"web\":\"http://www.kirapapen.com\",\"followers\":5711},{\"firstname\":\"Miquel\",\"lastname\":\"Demicco\",\"company\":\"Welk Resort Center\",\"address\":\"5921 S Middlefield Rd\",\"city\":\"Littleton\",\"country\":\"Jefferson\",\"state\":\"CO\",\"zip\":\"80123\",\"phone\":\"303-730-8080\",\"fax\":\"303-730-8087\",\"email\":\"miquel@demicco.com\",\"web\":\"http://www.miqueldemicco.com\",\"followers\":6863},{\"firstname\":\"William\",\"lastname\":\"Mahmud\",\"company\":\"Campbell Inn\",\"address\":\"1003 Northern Blvd\",\"city\":\"Manhasset\",\"country\":\"Nassau\",\"state\":\"NY\",\"zip\":\"11030\",\"phone\":\"516-365-3496\",\"fax\":\"516-365-0493\",\"email\":\"william@mahmud.com\",\"web\":\"http://www.williammahmud.com\",\"followers\":3591},{\"firstname\":\"Lacy\",\"lastname\":\"Belmont\",\"company\":\"House Boat Rentals Inc\",\"address\":\"585 Bedford Rd\",\"city\":\"Bedford Hills\",\"country\":\"Westchester\",\"state\":\"NY\",\"zip\":\"10507\",\"phone\":\"914-241-8888\",\"fax\":\"914-241-2272\",\"email\":\"lacy@belmont.com\",\"web\":\"http://www.lacybelmont.com\",\"followers\":1399},{\"firstname\":\"Van\",\"lastname\":\"Leanen\",\"company\":\"Mail Boxes Etc\",\"address\":\"Bus Rt 54 & Hh\",\"city\":\"Lake Ozark\",\"country\":\"Camden\",\"state\":\"MO\",\"zip\":\"65049\",\"phone\":\"573-365-0319\",\"fax\":\"573-365-1055\",\"email\":\"van@leanen.com\",\"web\":\"http://www.vanleanen.com\",\"followers\":1949},{\"firstname\":\"Mayme\",\"lastname\":\"Staub\",\"company\":\"River House Hotel\",\"address\":\"2470 Lamington Rd\",\"city\":\"Bedminster\",\"country\":\"Somerset\",\"state\":\"NJ\",\"zip\":\"07921\",\"phone\":\"908-234-9338\",\"fax\":\"908-234-9433\",\"email\":\"mayme@staub.com\",\"web\":\"http://www.maymestaub.com\",\"followers\":2216},{\"firstname\":\"Gregg\",\"lastname\":\"Guevarra\",\"company\":\"Arbor Center\",\"address\":\"221 S Kerr Ave\",\"city\":\"Wilmington\",\"country\":\"New Hanover\",\"state\":\"NC\",\"zip\":\"28403\",\"phone\":\"910-799-9811\",\"fax\":\"910-799-1965\",\"email\":\"gregg@guevarra.com\",\"web\":\"http://www.greggguevarra.com\",\"followers\":2704},{\"firstname\":\"Minh\",\"lastname\":\"Leclare\",\"company\":\"Osach, Ronald C Esq\",\"address\":\"106 S 4th St\",\"city\":\"Forest City\",\"country\":\"Winnebago\",\"state\":\"IA\",\"zip\":\"50436\",\"phone\":\"641-582-0973\",\"fax\":\"641-582-0424\",\"email\":\"minh@leclare.com\",\"web\":\"http://www.minhleclare.com\",\"followers\":7681},{\"firstname\":\"Joey\",\"lastname\":\"Sedore\",\"company\":\"Goodwill Speciality Co\",\"address\":\"1647 E Palmdale Blvd\",\"city\":\"Palmdale\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"93550\",\"phone\":\"661-273-4188\",\"fax\":\"661-273-6263\",\"email\":\"joey@sedore.com\",\"web\":\"http://www.joeysedore.com\",\"followers\":273},{\"firstname\":\"Jeanie\",\"lastname\":\"Dalen\",\"company\":\"Ivs Media Inc\",\"address\":\"2900 Ford Rd\",\"city\":\"Bristol\",\"country\":\"Bucks\",\"state\":\"PA\",\"zip\":\"19007\",\"phone\":\"215-788-5062\",\"fax\":\"215-788-7666\",\"email\":\"jeanie@dalen.com\",\"web\":\"http://www.jeaniedalen.com\",\"followers\":290},{\"firstname\":\"Eddie\",\"lastname\":\"Gauer\",\"company\":\"Easy Mail\",\"address\":\"506 Kellogg Ave\",\"city\":\"Ames\",\"country\":\"Story\",\"state\":\"IA\",\"zip\":\"50010\",\"phone\":\"515-233-2381\",\"fax\":\"515-233-6551\",\"email\":\"eddie@gauer.com\",\"web\":\"http://www.eddiegauer.com\",\"followers\":2350},{\"firstname\":\"Jessie\",\"lastname\":\"Barkle\",\"company\":\"Days Inn Airport By Mall Amer\",\"address\":\"1002 S Treadaway Blvd\",\"city\":\"Abilene\",\"country\":\"Taylor\",\"state\":\"TX\",\"zip\":\"79602\",\"phone\":\"325-677-1190\",\"fax\":\"325-677-2343\",\"email\":\"jessie@barkle.com\",\"web\":\"http://www.jessiebarkle.com\",\"followers\":5427},{\"firstname\":\"Deandre\",\"lastname\":\"Resendiz\",\"company\":\"Sav Mart\",\"address\":\"4 Trvl Svc Carlson Trvl Ways\",\"city\":\"Twin Falls\",\"country\":\"Twin Falls\",\"state\":\"ID\",\"zip\":\"83301\",\"phone\":\"208-733-8306\",\"fax\":\"208-733-3476\",\"email\":\"deandre@resendiz.com\",\"web\":\"http://www.deandreresendiz.com\",\"followers\":1120},{\"firstname\":\"Janet\",\"lastname\":\"Rathrock\",\"company\":\"Ryder, Edward A Esq\",\"address\":\"2181 Harlem Rd\",\"city\":\"Loves Park\",\"country\":\"Winnebago\",\"state\":\"IL\",\"zip\":\"61111\",\"phone\":\"815-877-4376\",\"fax\":\"815-877-9538\",\"email\":\"janet@rathrock.com\",\"web\":\"http://www.janetrathrock.com\",\"followers\":2725},{\"firstname\":\"Denice\",\"lastname\":\"Nordlinger\",\"company\":\"Bickel, Daniel R Cpa\",\"address\":\"7210 Gateway Blvd E\",\"city\":\"El Paso\",\"country\":\"El Paso\",\"state\":\"TX\",\"zip\":\"79915\",\"phone\":\"915-593-2344\",\"fax\":\"915-593-8069\",\"email\":\"denice@nordlinger.com\",\"web\":\"http://www.denicenordlinger.com\",\"followers\":2003},{\"firstname\":\"Danny\",\"lastname\":\"Dales\",\"company\":\"Barrett Bindery Co\",\"address\":\"3530 E Washington St\",\"city\":\"Phoenix\",\"country\":\"Maricopa\",\"state\":\"AZ\",\"zip\":\"85034\",\"phone\":\"602-225-9543\",\"fax\":\"602-225-9028\",\"email\":\"danny@dales.com\",\"web\":\"http://www.dannydales.com\",\"followers\":2843},{\"firstname\":\"Robbie\",\"lastname\":\"Deshay\",\"company\":\"Cornhusker Press\",\"address\":\"1700 Terminal St\",\"city\":\"West Sacramento\",\"country\":\"Yolo\",\"state\":\"CA\",\"zip\":\"95691\",\"phone\":\"916-372-5032\",\"fax\":\"916-372-1333\",\"email\":\"robbie@deshay.com\",\"web\":\"http://www.robbiedeshay.com\",\"followers\":3460},{\"firstname\":\"Carla\",\"lastname\":\"Humble\",\"company\":\"Express Printing Center\",\"address\":\"11796 Sheldon St\",\"city\":\"Sun Valley\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"91352\",\"phone\":\"818-768-0662\",\"fax\":\"818-768-1832\",\"email\":\"carla@humble.com\",\"web\":\"http://www.carlahumble.com\",\"followers\":4639},{\"firstname\":\"Ashley\",\"lastname\":\"Leonesio\",\"company\":\"Martinique Resort Hotel\",\"address\":\"15 Park Row\",\"city\":\"New York\",\"country\":\"New York\",\"state\":\"NY\",\"zip\":\"10038\",\"phone\":\"212-227-3681\",\"fax\":\"212-227-4343\",\"email\":\"ashley@leonesio.com\",\"web\":\"http://www.ashleyleonesio.com\",\"followers\":4801},{\"firstname\":\"Josephine\",\"lastname\":\"Sotlar\",\"company\":\"Shipp Storage\",\"address\":\"400 1st St Nw\",\"city\":\"Washington\",\"country\":\"District of Columbia\",\"state\":\"DC\",\"zip\":\"20001\",\"phone\":\"202-783-2772\",\"fax\":\"202-783-8805\",\"email\":\"josephine@sotlar.com\",\"web\":\"http://www.josephinesotlar.com\",\"followers\":515},{\"firstname\":\"Derek\",\"lastname\":\"Kreutzbender\",\"company\":\"Recycle Metals Corp\",\"address\":\"411 E Wisconsin Ave\",\"city\":\"Milwaukee\",\"country\":\"Milwaukee\",\"state\":\"WI\",\"zip\":\"53202\",\"phone\":\"414-271-5253\",\"fax\":\"414-271-6234\",\"email\":\"derek@kreutzbender.com\",\"web\":\"http://www.derekkreutzbender.com\",\"followers\":2430},{\"firstname\":\"Kira\",\"lastname\":\"Staffon\",\"company\":\"International Management Assoc\",\"address\":\"933 Wiliwili St\",\"city\":\"Honolulu\",\"country\":\"Honolulu\",\"state\":\"HI\",\"zip\":\"96826\",\"phone\":\"808-949-0941\",\"fax\":\"808-949-8257\",\"email\":\"kira@staffon.com\",\"web\":\"http://www.kirastaffon.com\",\"followers\":5769},{\"firstname\":\"Isaac\",\"lastname\":\"Davensizer\",\"company\":\"Dillon Measurement Instruments\",\"address\":\"444 Nahua St\",\"city\":\"Honolulu\",\"country\":\"Honolulu\",\"state\":\"HI\",\"zip\":\"96815\",\"phone\":\"808-544-5794\",\"fax\":\"808-544-6357\",\"email\":\"isaac@davensizer.com\",\"web\":\"http://www.isaacdavensizer.com\",\"followers\":3453},{\"firstname\":\"Reva\",\"lastname\":\"Bayer\",\"company\":\"Hirt, Stanley Esq\",\"address\":\"4011 Wallingford Ave N\",\"city\":\"Seattle\",\"country\":\"King\",\"state\":\"WA\",\"zip\":\"98103\",\"phone\":\"206-634-9998\",\"fax\":\"206-634-2589\",\"email\":\"reva@bayer.com\",\"web\":\"http://www.revabayer.com\",\"followers\":7415},{\"firstname\":\"Melvin\",\"lastname\":\"Auteri\",\"company\":\"Interstate Unltd Fed Crdt Un\",\"address\":\"463 Beacon St\",\"city\":\"Boston\",\"country\":\"Suffolk\",\"state\":\"MA\",\"zip\":\"02115\",\"phone\":\"617-247-8022\",\"fax\":\"617-247-6002\",\"email\":\"melvin@auteri.com\",\"web\":\"http://www.melvinauteri.com\",\"followers\":2705},{\"firstname\":\"Stephen\",\"lastname\":\"Seiters\",\"company\":\"Us Mortgage Corp\",\"address\":\"814 Blue Mound Rd\",\"city\":\"Fort Worth\",\"country\":\"Tarrant\",\"state\":\"TX\",\"zip\":\"76131\",\"phone\":\"817-947-3102\",\"fax\":\"817-947-6272\",\"email\":\"stephen@seiters.com\",\"web\":\"http://www.stephenseiters.com\",\"followers\":9568},{\"firstname\":\"Lucas\",\"lastname\":\"Santellana\",\"company\":\"Constantino, James P Esq\",\"address\":\"4820 E Mcdowell Rd  #-300\",\"city\":\"Phoenix\",\"country\":\"Maricopa\",\"state\":\"AZ\",\"zip\":\"85008\",\"phone\":\"602-225-3469\",\"fax\":\"602-225-8897\",\"email\":\"lucas@santellana.com\",\"web\":\"http://www.lucassantellana.com\",\"followers\":8420},{\"firstname\":\"Traci\",\"lastname\":\"Toomey\",\"company\":\"Pea Press\",\"address\":\"Box #-1948\",\"city\":\"Jackson\",\"country\":\"Teton\",\"state\":\"WY\",\"zip\":\"83001\",\"phone\":\"307-733-9708\",\"fax\":\"307-733-6525\",\"email\":\"traci@toomey.com\",\"web\":\"http://www.tracitoomey.com\",\"followers\":7718},{\"firstname\":\"Vernice\",\"lastname\":\"Resendes\",\"company\":\"Sorrento Cheese Co Inc\",\"address\":\"11796 Sheldon St\",\"city\":\"Sun Valley\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"91352\",\"phone\":\"818-768-6234\",\"fax\":\"818-768-7585\",\"email\":\"vernice@resendes.com\",\"web\":\"http://www.verniceresendes.com\",\"followers\":912},{\"firstname\":\"Hillary\",\"lastname\":\"Holmes\",\"company\":\"Dennis N Brager Law Offices Of\",\"address\":\"7565 Green Valley Rd\",\"city\":\"Placerville\",\"country\":\"El Dorado\",\"state\":\"CA\",\"zip\":\"95667\",\"phone\":\"530-626-1934\",\"fax\":\"530-626-6128\",\"email\":\"hillary@holmes.com\",\"web\":\"http://www.hillaryholmes.com\",\"followers\":7918},{\"firstname\":\"Robin\",\"lastname\":\"Schartz\",\"company\":\"Fairmount Country Club\",\"address\":\"10175 Joerschke Dr\",\"city\":\"Grass Valley\",\"country\":\"Nevada\",\"state\":\"CA\",\"zip\":\"95945\",\"phone\":\"530-477-9983\",\"fax\":\"530-477-7396\",\"email\":\"robin@schartz.com\",\"web\":\"http://www.robinschartz.com\",\"followers\":2169},{\"firstname\":\"Sabrina\",\"lastname\":\"Deppert\",\"company\":\"Americold\",\"address\":\"2701 E Thomas Rd  #-j\",\"city\":\"Phoenix\",\"country\":\"Maricopa\",\"state\":\"AZ\",\"zip\":\"85016\",\"phone\":\"602-954-4343\",\"fax\":\"602-954-6266\",\"email\":\"sabrina@deppert.com\",\"web\":\"http://www.sabrinadeppert.com\",\"followers\":5488},{\"firstname\":\"Luciano\",\"lastname\":\"Truiolo\",\"company\":\"Currier Gallery Of Art\",\"address\":\"435 Mira Vista Ter\",\"city\":\"Pasadena\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"91105\",\"phone\":\"626-792-6850\",\"fax\":\"626-792-5166\",\"email\":\"luciano@truiolo.com\",\"web\":\"http://www.lucianotruiolo.com\",\"followers\":9047},{\"firstname\":\"Ezekiel\",\"lastname\":\"Mildon\",\"company\":\"Ace Pro Pest Cntrl Inc\",\"address\":\"10 Rogers St\",\"city\":\"Cambridge\",\"country\":\"Middlesex\",\"state\":\"MA\",\"zip\":\"02142\",\"phone\":\"617-494-5618\",\"fax\":\"617-494-3365\",\"email\":\"ezekiel@mildon.com\",\"web\":\"http://www.ezekielmildon.com\",\"followers\":399},{\"firstname\":\"Hanna\",\"lastname\":\"Cinkan\",\"company\":\"Northbrook Flowers\",\"address\":\"1150 Nw 72nd Ave  #-333\",\"city\":\"Miami\",\"country\":\"Miami-Dade\",\"state\":\"FL\",\"zip\":\"33126\",\"phone\":\"305-477-7869\",\"fax\":\"305-477-7089\",\"email\":\"hanna@cinkan.com\",\"web\":\"http://www.hannacinkan.com\",\"followers\":4636},{\"firstname\":\"Kory\",\"lastname\":\"Wooldridge\",\"company\":\"Paper Stock Dealers Inc\",\"address\":\"1525 E 53rd St\",\"city\":\"Chicago\",\"country\":\"Cook\",\"state\":\"IL\",\"zip\":\"60615\",\"phone\":\"312-753-6734\",\"fax\":\"312-753-2693\",\"email\":\"kory@wooldridge.com\",\"web\":\"http://www.korywooldridge.com\",\"followers\":4528},{\"firstname\":\"Darrel\",\"lastname\":\"Ruffins\",\"company\":\"Brickman, Arthur Cpa\",\"address\":\"2800 4th St N\",\"city\":\"Saint Petersburg\",\"country\":\"Pinellas\",\"state\":\"FL\",\"zip\":\"33704\",\"phone\":\"727-821-8502\",\"fax\":\"727-821-5104\",\"email\":\"darrel@ruffins.com\",\"web\":\"http://www.darrelruffins.com\",\"followers\":6468},{\"firstname\":\"Miranda\",\"lastname\":\"Hammitt\",\"company\":\"Steindel, Carl R Md\",\"address\":\"964 E Saint Francis St\",\"city\":\"Brownsville\",\"country\":\"Cameron\",\"state\":\"TX\",\"zip\":\"78520\",\"phone\":\"956-541-5918\",\"fax\":\"956-541-9021\",\"email\":\"miranda@hammitt.com\",\"web\":\"http://www.mirandahammitt.com\",\"followers\":8847},{\"firstname\":\"Sadie\",\"lastname\":\"Rowlett\",\"company\":\"Port City Taxi Inc\",\"address\":\"2659 Webster Ave\",\"city\":\"Bronx\",\"country\":\"Bronx\",\"state\":\"NY\",\"zip\":\"10458\",\"phone\":\"718-365-1753\",\"fax\":\"718-365-5353\",\"email\":\"sadie@rowlett.com\",\"web\":\"http://www.sadierowlett.com\",\"followers\":9836},{\"firstname\":\"Deanna\",\"lastname\":\"Gerbi\",\"company\":\"Centerville Historical Society\",\"address\":\"264 Broadway\",\"city\":\"Jersey City\",\"country\":\"Hudson\",\"state\":\"NJ\",\"zip\":\"07306\",\"phone\":\"201-433-0391\",\"fax\":\"201-433-3619\",\"email\":\"deanna@gerbi.com\",\"web\":\"http://www.deannagerbi.com\",\"followers\":9112},{\"firstname\":\"Alfonso\",\"lastname\":\"Griglen\",\"company\":\"Paul D Friedman\",\"address\":\"577 Township Road  #-30s\",\"city\":\"Ada\",\"country\":\"Hardin\",\"state\":\"OH\",\"zip\":\"45810\",\"phone\":\"419-634-3513\",\"fax\":\"419-634-5733\",\"email\":\"alfonso@griglen.com\",\"web\":\"http://www.alfonsogriglen.com\",\"followers\":7361},{\"firstname\":\"Vernon\",\"lastname\":\"Engelman\",\"company\":\"Atlas Metal Cutting Inc\",\"address\":\"321 Watson St\",\"city\":\"Ripon\",\"country\":\"Fond du Lac\",\"state\":\"WI\",\"zip\":\"54971\",\"phone\":\"920-748-1387\",\"fax\":\"920-748-3703\",\"email\":\"vernon@engelman.com\",\"web\":\"http://www.vernonengelman.com\",\"followers\":656},{\"firstname\":\"Johnnie\",\"lastname\":\"Rheaves\",\"company\":\"Roberts, James A Cpa\",\"address\":\"2910 E La Cresta Ave\",\"city\":\"Anaheim\",\"country\":\"Orange\",\"state\":\"CA\",\"zip\":\"92806\",\"phone\":\"714-632-1291\",\"fax\":\"714-632-7337\",\"email\":\"johnnie@rheaves.com\",\"web\":\"http://www.johnnierheaves.com\",\"followers\":2812},{\"firstname\":\"Ella\",\"lastname\":\"Pahnke\",\"company\":\"Davis, Randle S Esq\",\"address\":\"2640 Junction Hwy\",\"city\":\"Kerrville\",\"country\":\"Kerr\",\"state\":\"TX\",\"zip\":\"78028\",\"phone\":\"830-367-8513\",\"fax\":\"830-367-9231\",\"email\":\"ella@pahnke.com\",\"web\":\"http://www.ellapahnke.com\",\"followers\":4762},{\"firstname\":\"Veronica\",\"lastname\":\"Achorn\",\"company\":\"Guy Spradling\",\"address\":\"5201 Hanawalt Dr\",\"city\":\"El Paso\",\"country\":\"El Paso\",\"state\":\"TX\",\"zip\":\"79903\",\"phone\":\"915-772-3217\",\"fax\":\"915-772-2346\",\"email\":\"veronica@achorn.com\",\"web\":\"http://www.veronicaachorn.com\",\"followers\":9145},{\"firstname\":\"Kasey\",\"lastname\":\"Nguyen\",\"company\":\"Pettine, Paul A Iii\",\"address\":\"5603 Arapahoe Ave\",\"city\":\"Boulder\",\"country\":\"Boulder\",\"state\":\"CO\",\"zip\":\"80303\",\"phone\":\"303-440-3916\",\"fax\":\"303-440-2452\",\"email\":\"kasey@nguyen.com\",\"web\":\"http://www.kaseynguyen.com\",\"followers\":2867},{\"firstname\":\"Frankie\",\"lastname\":\"Morein\",\"company\":\"Oliver, Jerrold B Esq\",\"address\":\"104 North St\",\"city\":\"Stamford\",\"country\":\"Fairfield\",\"state\":\"CT\",\"zip\":\"06902\",\"phone\":\"203-975-3712\",\"fax\":\"203-975-4688\",\"email\":\"frankie@morein.com\",\"web\":\"http://www.frankiemorein.com\",\"followers\":5663},{\"firstname\":\"Elaine\",\"lastname\":\"Renzi\",\"company\":\"Delvel Chem Co\",\"address\":\"221 E 59th St\",\"city\":\"New York\",\"country\":\"New York\",\"state\":\"NY\",\"zip\":\"10022\",\"phone\":\"212-826-7966\",\"fax\":\"212-826-2043\",\"email\":\"elaine@renzi.com\",\"web\":\"http://www.elainerenzi.com\",\"followers\":9525},{\"firstname\":\"Timothy\",\"lastname\":\"Janski\",\"company\":\"Snyder Chevrolet Olds Geo Co\",\"address\":\"800 E Dimond Blvd\",\"city\":\"Anchorage\",\"country\":\"Anchorage\",\"state\":\"AK\",\"zip\":\"99515\",\"phone\":\"907-344-4330\",\"fax\":\"907-344-4086\",\"email\":\"timothy@janski.com\",\"web\":\"http://www.timothyjanski.com\",\"followers\":1000},{\"firstname\":\"Warren\",\"lastname\":\"Hacher\",\"company\":\"Josel, Stephen C Esq\",\"address\":\"4600 S 1st St\",\"city\":\"Abilene\",\"country\":\"Taylor\",\"state\":\"TX\",\"zip\":\"79605\",\"phone\":\"325-691-7220\",\"fax\":\"325-691-7394\",\"email\":\"warren@hacher.com\",\"web\":\"http://www.warrenhacher.com\",\"followers\":6287},{\"firstname\":\"Brant\",\"lastname\":\"Darnel\",\"company\":\"Cody, Daniel S Esq\",\"address\":\"8250 Tyler Blvd\",\"city\":\"Mentor\",\"country\":\"Lake\",\"state\":\"OH\",\"zip\":\"44060\",\"phone\":\"440-974-8416\",\"fax\":\"440-974-7476\",\"email\":\"brant@darnel.com\",\"web\":\"http://www.brantdarnel.com\",\"followers\":5217},{\"firstname\":\"Mara\",\"lastname\":\"Rineheart\",\"company\":\"Berry Naturipe Growers\",\"address\":\"39 W 21st St\",\"city\":\"Northampton\",\"country\":\"Northampton\",\"state\":\"PA\",\"zip\":\"18067\",\"phone\":\"610-262-2444\",\"fax\":\"610-262-6836\",\"email\":\"mara@rineheart.com\",\"web\":\"http://www.mararineheart.com\",\"followers\":9213},{\"firstname\":\"Karen\",\"lastname\":\"Flierl\",\"company\":\"Cook Vetter Doerhoff\",\"address\":\"501 N I  #-h35\",\"city\":\"Austin\",\"country\":\"Travis\",\"state\":\"TX\",\"zip\":\"78702\",\"phone\":\"512-477-1826\",\"fax\":\"512-477-1407\",\"email\":\"karen@flierl.com\",\"web\":\"http://www.karenflierl.com\",\"followers\":754},{\"firstname\":\"Virgil\",\"lastname\":\"Chinni\",\"company\":\"Dorfman Abrams Music & Co\",\"address\":\"248 Libby St\",\"city\":\"Honolulu\",\"country\":\"Honolulu\",\"state\":\"HI\",\"zip\":\"96819\",\"phone\":\"808-841-9811\",\"fax\":\"808-841-9646\",\"email\":\"virgil@chinni.com\",\"web\":\"http://www.virgilchinni.com\",\"followers\":6740},{\"firstname\":\"Jimmie\",\"lastname\":\"Kertzman\",\"company\":\"Oregon Pacific Trading Co\",\"address\":\"279 Puuhale Rd\",\"city\":\"Honolulu\",\"country\":\"Honolulu\",\"state\":\"HI\",\"zip\":\"96819\",\"phone\":\"808-841-2883\",\"fax\":\"808-841-1772\",\"email\":\"jimmie@kertzman.com\",\"web\":\"http://www.jimmiekertzman.com\",\"followers\":4795},{\"firstname\":\"Leif\",\"lastname\":\"Bachta\",\"company\":\"Hislop, Lorna Brumfield Esq\",\"address\":\"91246 Oihana St\",\"city\":\"Kapolei\",\"country\":\"Honolulu\",\"state\":\"HI\",\"zip\":\"96707\",\"phone\":\"808-682-8942\",\"fax\":\"808-682-2789\",\"email\":\"leif@bachta.com\",\"web\":\"http://www.leifbachta.com\",\"followers\":6016},{\"firstname\":\"Ione\",\"lastname\":\"Kucera\",\"company\":\"Tweedy Penney & Crawford\",\"address\":\"94210 Pupukahi St  #-201a\",\"city\":\"Waipahu\",\"country\":\"Honolulu\",\"state\":\"HI\",\"zip\":\"96797\",\"phone\":\"808-671-5253\",\"fax\":\"808-671-3048\",\"email\":\"ione@kucera.com\",\"web\":\"http://www.ionekucera.com\",\"followers\":17},{\"firstname\":\"Doreen\",\"lastname\":\"Sakurai\",\"company\":\"Airlifter\",\"address\":\"211 E 50th St\",\"city\":\"New York\",\"country\":\"New York\",\"state\":\"NY\",\"zip\":\"10022\",\"phone\":\"212-759-4757\",\"fax\":\"212-759-7548\",\"email\":\"doreen@sakurai.com\",\"web\":\"http://www.doreensakurai.com\",\"followers\":8051},{\"firstname\":\"Joel\",\"lastname\":\"Nardo\",\"company\":\"New Era Canning Co\",\"address\":\"5150 Town Center Cir\",\"city\":\"Boca Raton\",\"country\":\"Palm Beach\",\"state\":\"FL\",\"zip\":\"33486\",\"phone\":\"561-395-2277\",\"fax\":\"561-395-7825\",\"email\":\"joel@nardo.com\",\"web\":\"http://www.joelnardo.com\",\"followers\":9041},{\"firstname\":\"Neil\",\"lastname\":\"Backus\",\"company\":\"Smith Capital Management\",\"address\":\"521 5th Ave\",\"city\":\"New York\",\"country\":\"New York\",\"state\":\"NY\",\"zip\":\"10175\",\"phone\":\"212-537-4955\",\"fax\":\"212-537-1181\",\"email\":\"neil@backus.com\",\"web\":\"http://www.neilbackus.com\",\"followers\":9529},{\"firstname\":\"Fausto\",\"lastname\":\"Marks\",\"company\":\"Donohue, Brian C Esq\",\"address\":\"200 Stuart St\",\"city\":\"Boston\",\"country\":\"Suffolk\",\"state\":\"MA\",\"zip\":\"02116\",\"phone\":\"617-451-9353\",\"fax\":\"617-451-2136\",\"email\":\"fausto@marks.com\",\"web\":\"http://www.faustomarks.com\",\"followers\":9763},{\"firstname\":\"Christa\",\"lastname\":\"Bodenschatz\",\"company\":\"Stationers Inc\",\"address\":\"Tilton Rd\",\"city\":\"Danville\",\"country\":\"Vermilion\",\"state\":\"IL\",\"zip\":\"61832\",\"phone\":\"217-443-6280\",\"fax\":\"217-443-6382\",\"email\":\"christa@bodenschatz.com\",\"web\":\"http://www.christabodenschatz.com\",\"followers\":1744},{\"firstname\":\"Chi\",\"lastname\":\"Greenlaw\",\"company\":\"E & T Screw Machine Products\",\"address\":\"4300 N Miller Rd  #-143\",\"city\":\"Scottsdale\",\"country\":\"Maricopa\",\"state\":\"AZ\",\"zip\":\"85251\",\"phone\":\"480-946-1537\",\"fax\":\"480-946-1657\",\"email\":\"chi@greenlaw.com\",\"web\":\"http://www.chigreenlaw.com\",\"followers\":2707},{\"firstname\":\"Kyle\",\"lastname\":\"Ferri\",\"company\":\"Ames Plumbing & Heating\",\"address\":\"1801 E 5th Ave\",\"city\":\"Anchorage\",\"country\":\"Anchorage\",\"state\":\"AK\",\"zip\":\"99501\",\"phone\":\"907-272-2216\",\"fax\":\"907-272-7109\",\"email\":\"kyle@ferri.com\",\"web\":\"http://www.kyleferri.com\",\"followers\":7533},{\"firstname\":\"Freida\",\"lastname\":\"Michelfelder\",\"company\":\"Fun Discovery Inc\",\"address\":\"117 Martin Luther King Jr Dr S\",\"city\":\"Atlanta\",\"country\":\"Fulton\",\"state\":\"GA\",\"zip\":\"30303\",\"phone\":\"404-521-3372\",\"fax\":\"404-521-3223\",\"email\":\"freida@michelfelder.com\",\"web\":\"http://www.freidamichelfelder.com\",\"followers\":4298},{\"firstname\":\"Bryant\",\"lastname\":\"Bouliouris\",\"company\":\"Medlin, Charles K Jr\",\"address\":\"480 W Pearl Ave\",\"city\":\"Jackson\",\"country\":\"Teton\",\"state\":\"WY\",\"zip\":\"83001\",\"phone\":\"307-733-8286\",\"fax\":\"307-733-6041\",\"email\":\"bryant@bouliouris.com\",\"web\":\"http://www.bryantbouliouris.com\",\"followers\":9520},{\"firstname\":\"Emilia\",\"lastname\":\"Oxley\",\"company\":\"Buckeye Reserve Title\",\"address\":\"14651 Dallas Pky\",\"city\":\"Dallas\",\"country\":\"Dallas\",\"state\":\"TX\",\"zip\":\"75240\",\"phone\":\"214-702-8125\",\"fax\":\"214-702-4766\",\"email\":\"emilia@oxley.com\",\"web\":\"http://www.emiliaoxley.com\",\"followers\":6873},{\"firstname\":\"Naomi\",\"lastname\":\"Mcraven\",\"company\":\"Oak Brook Capital Corp\",\"address\":\"13456 Se 27th Pl\",\"city\":\"Bellevue\",\"country\":\"King\",\"state\":\"WA\",\"zip\":\"98005\",\"phone\":\"425-641-5463\",\"fax\":\"425-641-5923\",\"email\":\"naomi@mcraven.com\",\"web\":\"http://www.naomimcraven.com\",\"followers\":7029},{\"firstname\":\"Dionne\",\"lastname\":\"Borycz\",\"company\":\"Pepsi Cola Dr Pepper Bottling\",\"address\":\"77 S Washington St  #-207\",\"city\":\"Rockville\",\"country\":\"Montgomery\",\"state\":\"MD\",\"zip\":\"20850\",\"phone\":\"301-294-0154\",\"fax\":\"301-294-7523\",\"email\":\"dionne@borycz.com\",\"web\":\"http://www.dionneborycz.com\",\"followers\":6973},{\"firstname\":\"Jimmy\",\"lastname\":\"Hrobsky\",\"company\":\"Howard Johnson\",\"address\":\"8253 Ronson Rd\",\"city\":\"San Diego\",\"country\":\"San Diego\",\"state\":\"CA\",\"zip\":\"92111\",\"phone\":\"858-268-4663\",\"fax\":\"858-268-4964\",\"email\":\"jimmy@hrobsky.com\",\"web\":\"http://www.jimmyhrobsky.com\",\"followers\":544},{\"firstname\":\"Peggy\",\"lastname\":\"Hohlstein\",\"company\":\"Steritek Inc\",\"address\":\"Rt 20\",\"city\":\"Westfield\",\"country\":\"Hampden\",\"state\":\"MA\",\"zip\":\"01085\",\"phone\":\"413-543-2933\",\"fax\":\"413-543-3805\",\"email\":\"peggy@hohlstein.com\",\"web\":\"http://www.peggyhohlstein.com\",\"followers\":8885},{\"firstname\":\"Genevieve\",\"lastname\":\"Kekiwi\",\"company\":\"Lawson, John F Esq\",\"address\":\"8300 Bell Ter\",\"city\":\"Newburgh\",\"country\":\"Warrick\",\"state\":\"IN\",\"zip\":\"47630\",\"phone\":\"812-477-3620\",\"fax\":\"812-477-3646\",\"email\":\"genevieve@kekiwi.com\",\"web\":\"http://www.genevievekekiwi.com\",\"followers\":8134},{\"firstname\":\"Terra\",\"lastname\":\"Plagge\",\"company\":\"Beach, Jeffrey E\",\"address\":\"60 Minute Photo Colormax\",\"city\":\"Evansville\",\"country\":\"Vanderburgh\",\"state\":\"IN\",\"zip\":\"47715\",\"phone\":\"812-477-9524\",\"fax\":\"812-477-9617\",\"email\":\"terra@plagge.com\",\"web\":\"http://www.terraplagge.com\",\"followers\":4323},{\"firstname\":\"Allie\",\"lastname\":\"Pumphrey\",\"company\":\"Asher, Ronald L Md\",\"address\":\"501 N Weinbach Ave\",\"city\":\"Evansville\",\"country\":\"Vanderburgh\",\"state\":\"IN\",\"zip\":\"47711\",\"phone\":\"812-477-0753\",\"fax\":\"812-477-4604\",\"email\":\"allie@pumphrey.com\",\"web\":\"http://www.alliepumphrey.com\",\"followers\":3985},{\"firstname\":\"Katina\",\"lastname\":\"Survant\",\"company\":\"Kgtv Channel 10\",\"address\":\"590 N 2nd E\",\"city\":\"Mountain Home\",\"country\":\"Elmore\",\"state\":\"ID\",\"zip\":\"83647\",\"phone\":\"208-587-3734\",\"fax\":\"208-587-5574\",\"email\":\"katina@survant.com\",\"web\":\"http://www.katinasurvant.com\",\"followers\":3440},{\"firstname\":\"Marta\",\"lastname\":\"Warran\",\"company\":\"Wirth, John T Esq\",\"address\":\"2929 W Kennewick Ave\",\"city\":\"Kennewick\",\"country\":\"Benton\",\"state\":\"WA\",\"zip\":\"99336\",\"phone\":\"509-735-8388\",\"fax\":\"509-735-9193\",\"email\":\"marta@warran.com\",\"web\":\"http://www.martawarran.com\",\"followers\":9891},{\"firstname\":\"Rebekah\",\"lastname\":\"Lindboe\",\"company\":\"Granite Corporation\",\"address\":\"600 Las Colinas Blvd E\",\"city\":\"Irving\",\"country\":\"Dallas\",\"state\":\"TX\",\"zip\":\"75039\",\"phone\":\"972-556-1121\",\"fax\":\"972-556-0801\",\"email\":\"rebekah@lindboe.com\",\"web\":\"http://www.rebekahlindboe.com\",\"followers\":180},{\"firstname\":\"Roxie\",\"lastname\":\"Varenhorst\",\"company\":\"Good Neighbor Real Estate\",\"address\":\"1301 Dublin Rd\",\"city\":\"Columbus\",\"country\":\"Franklin\",\"state\":\"OH\",\"zip\":\"43215\",\"phone\":\"614-487-2917\",\"fax\":\"614-487-4227\",\"email\":\"roxie@varenhorst.com\",\"web\":\"http://www.roxievarenhorst.com\",\"followers\":1352},{\"firstname\":\"Kennith\",\"lastname\":\"Peto\",\"company\":\"Kirschbaum, Thomas A Esq\",\"address\":\"2080 Peachtree Industrial Ct\",\"city\":\"Atlanta\",\"country\":\"Dekalb\",\"state\":\"GA\",\"zip\":\"30341\",\"phone\":\"770-455-4277\",\"fax\":\"770-455-6746\",\"email\":\"kennith@peto.com\",\"web\":\"http://www.kennithpeto.com\",\"followers\":8164},{\"firstname\":\"Darrell\",\"lastname\":\"Amrich\",\"company\":\"Harris, James P Iii\",\"address\":\"64 W Convenient\",\"city\":\"Apex\",\"country\":\"Wake\",\"state\":\"NC\",\"zip\":\"27502\",\"phone\":\"919-362-8201\",\"fax\":\"919-362-7475\",\"email\":\"darrell@amrich.com\",\"web\":\"http://www.darrellamrich.com\",\"followers\":9098},{\"firstname\":\"Savannah\",\"lastname\":\"Loffier\",\"company\":\"Saint Charles Catv\",\"address\":\"501 S Johnstone Ave\",\"city\":\"Bartlesville\",\"country\":\"Washington\",\"state\":\"OK\",\"zip\":\"74003\",\"phone\":\"918-337-3201\",\"fax\":\"918-337-4947\",\"email\":\"savannah@loffier.com\",\"web\":\"http://www.savannahloffier.com\",\"followers\":7227},{\"firstname\":\"Martin\",\"lastname\":\"Carley\",\"company\":\"Heil, John P Esq\",\"address\":\"680 Country W\",\"city\":\"Sylva\",\"country\":\"Jackson\",\"state\":\"NC\",\"zip\":\"28779\",\"phone\":\"828-586-3914\",\"fax\":\"828-586-8059\",\"email\":\"martin@carley.com\",\"web\":\"http://www.martincarley.com\",\"followers\":7412},{\"firstname\":\"Lacy\",\"lastname\":\"Hyten\",\"company\":\"Buy & Sell Press\",\"address\":\"1 Palmer Sq\",\"city\":\"Princeton\",\"country\":\"Mercer\",\"state\":\"NJ\",\"zip\":\"08542\",\"phone\":\"609-683-3558\",\"fax\":\"609-683-0649\",\"email\":\"lacy@hyten.com\",\"web\":\"http://www.lacyhyten.com\",\"followers\":2184},{\"firstname\":\"Forest\",\"lastname\":\"Orea\",\"company\":\"Clark, Francis J\",\"address\":\"6858 S Ashland Ave\",\"city\":\"Chicago\",\"country\":\"Cook\",\"state\":\"IL\",\"zip\":\"60636\",\"phone\":\"773-436-4531\",\"fax\":\"773-436-2636\",\"email\":\"forest@orea.com\",\"web\":\"http://www.forestorea.com\",\"followers\":8308},{\"firstname\":\"Courtney\",\"lastname\":\"Shishido\",\"company\":\"Beymers Jewelry\",\"address\":\"145 W 6th Ave\",\"city\":\"Anchorage\",\"country\":\"Anchorage\",\"state\":\"AK\",\"zip\":\"99501\",\"phone\":\"907-279-2737\",\"fax\":\"907-279-2025\",\"email\":\"courtney@shishido.com\",\"web\":\"http://www.courtneyshishido.com\",\"followers\":6286},{\"firstname\":\"Annette\",\"lastname\":\"Frietas\",\"company\":\"Monsanto Chemical Company\",\"address\":\"45 W 46th St\",\"city\":\"New York\",\"country\":\"New York\",\"state\":\"NY\",\"zip\":\"10036\",\"phone\":\"212-944-8670\",\"fax\":\"212-944-9464\",\"email\":\"annette@frietas.com\",\"web\":\"http://www.annettefrietas.com\",\"followers\":9185},{\"firstname\":\"Karyn\",\"lastname\":\"Jinks\",\"company\":\"Maslen, David Esq\",\"address\":\"2318 N Galloway Ave\",\"city\":\"Mesquite\",\"country\":\"Dallas\",\"state\":\"TX\",\"zip\":\"75150\",\"phone\":\"972-289-4090\",\"fax\":\"972-289-3319\",\"email\":\"karyn@jinks.com\",\"web\":\"http://www.karynjinks.com\",\"followers\":3549},{\"firstname\":\"Edwin\",\"lastname\":\"Lavelli\",\"company\":\"Letterguide Co\",\"address\":\"W 1st St\",\"city\":\"East Liverpool\",\"country\":\"Columbiana\",\"state\":\"OH\",\"zip\":\"43920\",\"phone\":\"330-385-4581\",\"fax\":\"330-385-9959\",\"email\":\"edwin@lavelli.com\",\"web\":\"http://www.edwinlavelli.com\",\"followers\":1645},{\"firstname\":\"Jimmie\",\"lastname\":\"Barninger\",\"company\":\"California Paint & Wlpaper Str\",\"address\":\"Box #-4038\",\"city\":\"Modesto\",\"country\":\"Stanislaus\",\"state\":\"CA\",\"zip\":\"95352\",\"phone\":\"209-525-7568\",\"fax\":\"209-525-4389\",\"email\":\"jimmie@barninger.com\",\"web\":\"http://www.jimmiebarninger.com\",\"followers\":3947},{\"firstname\":\"Merle\",\"lastname\":\"Wyrosdick\",\"company\":\"Keil, James J Esq\",\"address\":\"1350 Campus Pky\",\"city\":\"Neptune\",\"country\":\"Monmouth\",\"state\":\"NJ\",\"zip\":\"07753\",\"phone\":\"732-938-7301\",\"fax\":\"732-938-7237\",\"email\":\"merle@wyrosdick.com\",\"web\":\"http://www.merlewyrosdick.com\",\"followers\":5762},{\"firstname\":\"Amelia\",\"lastname\":\"Caputo\",\"company\":\"Security Marketing Agency\",\"address\":\"1800 Airport Way\",\"city\":\"Fairbanks\",\"country\":\"Fairbanks North Star\",\"state\":\"AK\",\"zip\":\"99701\",\"phone\":\"907-456-1748\",\"fax\":\"907-456-7535\",\"email\":\"amelia@caputo.com\",\"web\":\"http://www.ameliacaputo.com\",\"followers\":9583},{\"firstname\":\"Germaine\",\"lastname\":\"Bruski\",\"company\":\"Alloy Founders\",\"address\":\"2301 S Cushman St\",\"city\":\"Fairbanks\",\"country\":\"Fairbanks North Star\",\"state\":\"AK\",\"zip\":\"99701\",\"phone\":\"907-456-8225\",\"fax\":\"907-456-9261\",\"email\":\"germaine@bruski.com\",\"web\":\"http://www.germainebruski.com\",\"followers\":5075},{\"firstname\":\"Willa\",\"lastname\":\"Dutt\",\"company\":\"Gutmann Leather Co Inc\",\"address\":\"2110 Peger Rd\",\"city\":\"Fairbanks\",\"country\":\"Fairbanks North Star\",\"state\":\"AK\",\"zip\":\"99709\",\"phone\":\"907-456-2885\",\"fax\":\"907-456-2187\",\"email\":\"willa@dutt.com\",\"web\":\"http://www.willadutt.com\",\"followers\":2775},{\"firstname\":\"Cherie\",\"lastname\":\"Fuhri\",\"company\":\"Continental Baking Co\",\"address\":\"3679 College Rd\",\"city\":\"Fairbanks\",\"country\":\"Fairbanks North Star\",\"state\":\"AK\",\"zip\":\"99709\",\"phone\":\"907-456-9072\",\"fax\":\"907-456-8467\",\"email\":\"cherie@fuhri.com\",\"web\":\"http://www.cheriefuhri.com\",\"followers\":5839},{\"firstname\":\"Tyron\",\"lastname\":\"Quillman\",\"company\":\"Analysts International Corp\",\"address\":\"5300 Shawnee Rd\",\"city\":\"Alexandria\",\"country\":\"Fairfax\",\"state\":\"VA\",\"zip\":\"22312\",\"phone\":\"703-354-9266\",\"fax\":\"703-354-2554\",\"email\":\"tyron@quillman.com\",\"web\":\"http://www.tyronquillman.com\",\"followers\":9439},{\"firstname\":\"Charity\",\"lastname\":\"Dyckman\",\"company\":\"Marriott, Frank Jr\",\"address\":\"6927 Old Seward Hwy\",\"city\":\"Anchorage\",\"country\":\"Anchorage\",\"state\":\"AK\",\"zip\":\"99518\",\"phone\":\"907-349-9880\",\"fax\":\"907-349-4449\",\"email\":\"charity@dyckman.com\",\"web\":\"http://www.charitydyckman.com\",\"followers\":2058},{\"firstname\":\"Nanette\",\"lastname\":\"Turansky\",\"company\":\"Sheraton Society Hill Hotel\",\"address\":\"52 S 2nd St\",\"city\":\"Easton\",\"country\":\"Northampton\",\"state\":\"PA\",\"zip\":\"18042\",\"phone\":\"610-250-6188\",\"fax\":\"610-250-4334\",\"email\":\"nanette@turansky.com\",\"web\":\"http://www.nanetteturansky.com\",\"followers\":5905},{\"firstname\":\"Cherie\",\"lastname\":\"Schronce\",\"company\":\"Varda, John Duncan Esq\",\"address\":\"21603 Devonshire St\",\"city\":\"Chatsworth\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"91311\",\"phone\":\"818-718-2001\",\"fax\":\"818-718-7339\",\"email\":\"cherie@schronce.com\",\"web\":\"http://www.cherieschronce.com\",\"followers\":9409},{\"firstname\":\"Theron\",\"lastname\":\"Hambright\",\"company\":\"Sensor Oil And Gas Inc\",\"address\":\"905 Brooks Ave\",\"city\":\"Holland\",\"country\":\"Ottawa\",\"state\":\"MI\",\"zip\":\"49423\",\"phone\":\"616-392-2074\",\"fax\":\"616-392-0226\",\"email\":\"theron@hambright.com\",\"web\":\"http://www.theronhambright.com\",\"followers\":6532},{\"firstname\":\"Laurie\",\"lastname\":\"Bibbs\",\"company\":\"Action Nursing Care Llc\",\"address\":\"2101 Claremont Ave Ne\",\"city\":\"Albuquerque\",\"country\":\"Bernalillo\",\"state\":\"NM\",\"zip\":\"87107\",\"phone\":\"505-881-2899\",\"fax\":\"505-881-3771\",\"email\":\"laurie@bibbs.com\",\"web\":\"http://www.lauriebibbs.com\",\"followers\":5422},{\"firstname\":\"Angelo\",\"lastname\":\"Ferentz\",\"company\":\"Reagan, William L Esq\",\"address\":\"3220 E 26th St\",\"city\":\"Los Angeles\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"90023\",\"phone\":\"323-262-5047\",\"fax\":\"323-262-8693\",\"email\":\"angelo@ferentz.com\",\"web\":\"http://www.angeloferentz.com\",\"followers\":6580},{\"firstname\":\"Denver\",\"lastname\":\"Topete\",\"company\":\"Insight Cablevision\",\"address\":\"5770 Morehouse Dr\",\"city\":\"San Diego\",\"country\":\"San Diego\",\"state\":\"CA\",\"zip\":\"92121\",\"phone\":\"858-457-3538\",\"fax\":\"858-457-0465\",\"email\":\"denver@topete.com\",\"web\":\"http://www.denvertopete.com\",\"followers\":6542},{\"firstname\":\"Tommie\",\"lastname\":\"Reuland\",\"company\":\"Schaff, Michael D Esq\",\"address\":\"1166 Arroyo St\",\"city\":\"San Fernando\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"91340\",\"phone\":\"818-361-4035\",\"fax\":\"818-361-7493\",\"email\":\"tommie@reuland.com\",\"web\":\"http://www.tommiereuland.com\",\"followers\":7735},{\"firstname\":\"Delmer\",\"lastname\":\"Delucas\",\"company\":\"American Processing Co Inc\",\"address\":\"2770 Walden Ave\",\"city\":\"Buffalo\",\"country\":\"Erie\",\"state\":\"NY\",\"zip\":\"14225\",\"phone\":\"716-874-1439\",\"fax\":\"716-874-3467\",\"email\":\"delmer@delucas.com\",\"web\":\"http://www.delmerdelucas.com\",\"followers\":8605},{\"firstname\":\"Latisha\",\"lastname\":\"Bahls\",\"company\":\"Search South Inc\",\"address\":\"3 E 4th St\",\"city\":\"Cincinnati\",\"country\":\"Hamilton\",\"state\":\"OH\",\"zip\":\"45202\",\"phone\":\"513-784-5007\",\"fax\":\"513-784-5275\",\"email\":\"latisha@bahls.com\",\"web\":\"http://www.latishabahls.com\",\"followers\":8504},{\"firstname\":\"Simone\",\"lastname\":\"Lundie\",\"company\":\"Casebolt, Victor S Esq\",\"address\":\"701 S 17th St\",\"city\":\"Philadelphia\",\"country\":\"Philadelphia\",\"state\":\"PA\",\"zip\":\"19146\",\"phone\":\"215-732-9026\",\"fax\":\"215-732-8257\",\"email\":\"simone@lundie.com\",\"web\":\"http://www.simonelundie.com\",\"followers\":2165},{\"firstname\":\"Ross\",\"lastname\":\"Spurger\",\"company\":\"Hoover Group Inc\",\"address\":\"710 S Illinois Ave\",\"city\":\"Carbondale\",\"country\":\"Jackson\",\"state\":\"IL\",\"zip\":\"62901\",\"phone\":\"618-453-9968\",\"fax\":\"618-453-6144\",\"email\":\"ross@spurger.com\",\"web\":\"http://www.rossspurger.com\",\"followers\":361},{\"firstname\":\"Abel\",\"lastname\":\"Tuter\",\"company\":\"Wernsing Plumbing & Heating\",\"address\":\"2457 Perkiomen Ave\",\"city\":\"Reading\",\"country\":\"Berks\",\"state\":\"PA\",\"zip\":\"19606\",\"phone\":\"610-370-6549\",\"fax\":\"610-370-0856\",\"email\":\"abel@tuter.com\",\"web\":\"http://www.abeltuter.com\",\"followers\":6215},{\"firstname\":\"Beverley\",\"lastname\":\"Bunche\",\"company\":\"Nurses Organization Vets Affrs\",\"address\":\"1727 Nw 79th Ave\",\"city\":\"Miami\",\"country\":\"Miami-Dade\",\"state\":\"FL\",\"zip\":\"33126\",\"phone\":\"305-591-4141\",\"fax\":\"305-591-7751\",\"email\":\"beverley@bunche.com\",\"web\":\"http://www.beverleybunche.com\",\"followers\":8121},{\"firstname\":\"Lizzie\",\"lastname\":\"Torregrossa\",\"company\":\"Salerno & Son\",\"address\":\"78 Faunce Corner Rd\",\"city\":\"North Dartmouth\",\"country\":\"Bristol\",\"state\":\"MA\",\"zip\":\"02747\",\"phone\":\"508-997-1409\",\"fax\":\"508-997-9846\",\"email\":\"lizzie@torregrossa.com\",\"web\":\"http://www.lizzietorregrossa.com\",\"followers\":1134},{\"firstname\":\"Tia\",\"lastname\":\"Neumaier\",\"company\":\"Carterville Mini Storage\",\"address\":\"2500 Maitland Center Pky\",\"city\":\"Maitland\",\"country\":\"Orange\",\"state\":\"FL\",\"zip\":\"32751\",\"phone\":\"407-660-7426\",\"fax\":\"407-660-7628\",\"email\":\"tia@neumaier.com\",\"web\":\"http://www.tianeumaier.com\",\"followers\":3010},{\"firstname\":\"Lesa\",\"lastname\":\"Chantry\",\"company\":\"Lutz Cichy Selig & Zeronda\",\"address\":\"1119 N Bodine St\",\"city\":\"Philadelphia\",\"country\":\"Philadelphia\",\"state\":\"PA\",\"zip\":\"19123\",\"phone\":\"215-923-0136\",\"fax\":\"215-923-9492\",\"email\":\"lesa@chantry.com\",\"web\":\"http://www.lesachantry.com\",\"followers\":5201},{\"firstname\":\"Marcelo\",\"lastname\":\"Arostegui\",\"company\":\"Moraschs Quality Meats\",\"address\":\"76 Mall Comp\",\"city\":\"Branson\",\"country\":\"Taney\",\"state\":\"MO\",\"zip\":\"65616\",\"phone\":\"417-336-9702\",\"fax\":\"417-336-2664\",\"email\":\"marcelo@arostegui.com\",\"web\":\"http://www.marceloarostegui.com\",\"followers\":1195},{\"firstname\":\"Jimmie\",\"lastname\":\"Hardgrove\",\"company\":\"Prosthodontic Associates\",\"address\":\"305 E 47th St\",\"city\":\"New York\",\"country\":\"New York\",\"state\":\"NY\",\"zip\":\"10017\",\"phone\":\"212-980-0445\",\"fax\":\"212-980-6914\",\"email\":\"jimmie@hardgrove.com\",\"web\":\"http://www.jimmiehardgrove.com\",\"followers\":1002},{\"firstname\":\"Renae\",\"lastname\":\"Eldrige\",\"company\":\"Pexco Packaging Corp\",\"address\":\"1716 Rt 77\",\"city\":\"Attica\",\"country\":\"Wyoming\",\"state\":\"NY\",\"zip\":\"14011\",\"phone\":\"585-591-3118\",\"fax\":\"585-591-9104\",\"email\":\"renae@eldrige.com\",\"web\":\"http://www.renaeeldrige.com\",\"followers\":4105},{\"firstname\":\"Tisha\",\"lastname\":\"Gorder\",\"company\":\"Paroly Rampart Sec Systems\",\"address\":\"77 W Huron St\",\"city\":\"Chicago\",\"country\":\"Cook\",\"state\":\"IL\",\"zip\":\"60610\",\"phone\":\"312-642-2897\",\"fax\":\"312-642-2664\",\"email\":\"tisha@gorder.com\",\"web\":\"http://www.tishagorder.com\",\"followers\":3305},{\"firstname\":\"Clarice\",\"lastname\":\"Knower\",\"company\":\"Yaffa, Andrew B Esq\",\"address\":\"210 W 79th St\",\"city\":\"Chicago\",\"country\":\"Cook\",\"state\":\"IL\",\"zip\":\"60620\",\"phone\":\"773-846-1489\",\"fax\":\"773-846-1462\",\"email\":\"clarice@knower.com\",\"web\":\"http://www.clariceknower.com\",\"followers\":5497},{\"firstname\":\"Sybil\",\"lastname\":\"Marmerchant\",\"company\":\"Blvd Distillers & Importers\",\"address\":\"12 E 7th Ave\",\"city\":\"York\",\"country\":\"York\",\"state\":\"PA\",\"zip\":\"17404\",\"phone\":\"717-845-4718\",\"fax\":\"717-845-4736\",\"email\":\"sybil@marmerchant.com\",\"web\":\"http://www.sybilmarmerchant.com\",\"followers\":4656},{\"firstname\":\"Floyd\",\"lastname\":\"Veazey\",\"company\":\"Ramada Inn San Fran Arprt N\",\"address\":\"2877 E Florence Ave\",\"city\":\"Huntington Park\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"90255\",\"phone\":\"323-862-9133\",\"fax\":\"323-862-5589\",\"email\":\"floyd@veazey.com\",\"web\":\"http://www.floydveazey.com\",\"followers\":4208},{\"firstname\":\"Reyna\",\"lastname\":\"Bangle\",\"company\":\"C & R Contractors Inc\",\"address\":\"85 Long Island Expy\",\"city\":\"New Hyde Park\",\"country\":\"Nassau\",\"state\":\"NY\",\"zip\":\"11040\",\"phone\":\"516-627-8715\",\"fax\":\"516-627-9033\",\"email\":\"reyna@bangle.com\",\"web\":\"http://www.reynabangle.com\",\"followers\":9261},{\"firstname\":\"Owen\",\"lastname\":\"Sparacino\",\"company\":\"Murtha, Thomas D Esq\",\"address\":\"2865 Poplar Ave\",\"city\":\"Memphis\",\"country\":\"Shelby\",\"state\":\"TN\",\"zip\":\"38111\",\"phone\":\"901-324-9274\",\"fax\":\"901-324-4381\",\"email\":\"owen@sparacino.com\",\"web\":\"http://www.owensparacino.com\",\"followers\":154},{\"firstname\":\"Eli\",\"lastname\":\"Bettner\",\"company\":\"Shea, David J Esq\",\"address\":\"825 W Main Ave\",\"city\":\"Brewster\",\"country\":\"Okanogan\",\"state\":\"WA\",\"zip\":\"98812\",\"phone\":\"509-689-7964\",\"fax\":\"509-689-1394\",\"email\":\"eli@bettner.com\",\"web\":\"http://www.elibettner.com\",\"followers\":9176},{\"firstname\":\"Taylor\",\"lastname\":\"Fogerty\",\"company\":\"Khoury Factory Outlet\",\"address\":\"2000 W 120th Ave\",\"city\":\"Denver\",\"country\":\"Adams\",\"state\":\"CO\",\"zip\":\"80234\",\"phone\":\"303-465-0070\",\"fax\":\"303-465-2109\",\"email\":\"taylor@fogerty.com\",\"web\":\"http://www.taylorfogerty.com\",\"followers\":2464},{\"firstname\":\"Reva\",\"lastname\":\"Lecates\",\"company\":\"First American Rlty Assoc Inc\",\"address\":\"829 S 14th St\",\"city\":\"Fernandina Beach\",\"country\":\"Nassau\",\"state\":\"FL\",\"zip\":\"32034\",\"phone\":\"904-261-0604\",\"fax\":\"904-261-2123\",\"email\":\"reva@lecates.com\",\"web\":\"http://www.revalecates.com\",\"followers\":8963},{\"firstname\":\"Rodrigo\",\"lastname\":\"Wildrick\",\"company\":\"Midwest Wrecking Company Inc\",\"address\":\"1201 34th St N\",\"city\":\"Saint Petersburg\",\"country\":\"Pinellas\",\"state\":\"FL\",\"zip\":\"33713\",\"phone\":\"727-323-5060\",\"fax\":\"727-323-5982\",\"email\":\"rodrigo@wildrick.com\",\"web\":\"http://www.rodrigowildrick.com\",\"followers\":1406},{\"firstname\":\"George\",\"lastname\":\"Tukis\",\"company\":\"Andow Personnel Services\",\"address\":\"8 Inn Of Americus\",\"city\":\"Americus\",\"country\":\"Sumter\",\"state\":\"GA\",\"zip\":\"31709\",\"phone\":\"229-924-0263\",\"fax\":\"229-924-4251\",\"email\":\"george@tukis.com\",\"web\":\"http://www.georgetukis.com\",\"followers\":5243},{\"firstname\":\"Titus\",\"lastname\":\"Rodreguez\",\"company\":\"Vasquez & Co\",\"address\":\"7677 Engineer Rd\",\"city\":\"San Diego\",\"country\":\"San Diego\",\"state\":\"CA\",\"zip\":\"92111\",\"phone\":\"858-571-0819\",\"fax\":\"858-571-9047\",\"email\":\"titus@rodreguez.com\",\"web\":\"http://www.titusrodreguez.com\",\"followers\":9258},{\"firstname\":\"Emilio\",\"lastname\":\"Lampkin\",\"company\":\"Hendricks, Kenneth J Cpa\",\"address\":\"834 Lois Dr\",\"city\":\"Williamstown\",\"country\":\"Gloucester\",\"state\":\"NJ\",\"zip\":\"08094\",\"phone\":\"856-629-8933\",\"fax\":\"856-629-3337\",\"email\":\"emilio@lampkin.com\",\"web\":\"http://www.emiliolampkin.com\",\"followers\":5810},{\"firstname\":\"Maryjane\",\"lastname\":\"Arata\",\"company\":\"Larson, John R Esq\",\"address\":\"342 Wolverine Way\",\"city\":\"Sparks\",\"country\":\"Washoe\",\"state\":\"NV\",\"zip\":\"89431\",\"phone\":\"775-352-5822\",\"fax\":\"775-352-1557\",\"email\":\"maryjane@arata.com\",\"web\":\"http://www.maryjanearata.com\",\"followers\":5044},{\"firstname\":\"Marcie\",\"lastname\":\"Shulz\",\"company\":\"United Printers Inc\",\"address\":\"Blanco Rd\",\"city\":\"San Antonio\",\"country\":\"Bexar\",\"state\":\"TX\",\"zip\":\"78216\",\"phone\":\"210-524-6711\",\"fax\":\"210-524-1693\",\"email\":\"marcie@shulz.com\",\"web\":\"http://www.marcieshulz.com\",\"followers\":4807},{\"firstname\":\"Celia\",\"lastname\":\"Slavin\",\"company\":\"Acra Aerospace Inc\",\"address\":\"8750 W Bryn Mawr Ave\",\"city\":\"Chicago\",\"country\":\"Cook\",\"state\":\"IL\",\"zip\":\"60631\",\"phone\":\"773-256-3550\",\"fax\":\"773-256-2162\",\"email\":\"celia@slavin.com\",\"web\":\"http://www.celiaslavin.com\",\"followers\":3493},{\"firstname\":\"Suzette\",\"lastname\":\"Devaughan\",\"company\":\"Anchor Graphics Inc\",\"address\":\"385 Prospect Ave\",\"city\":\"Hackensack\",\"country\":\"Bergen\",\"state\":\"NJ\",\"zip\":\"07601\",\"phone\":\"201-342-8964\",\"fax\":\"201-342-9862\",\"email\":\"suzette@devaughan.com\",\"web\":\"http://www.suzettedevaughan.com\",\"followers\":6410},{\"firstname\":\"Christian\",\"lastname\":\"Marnell\",\"company\":\"Wenick, George D Esq\",\"address\":\"2750 Springboro Rd\",\"city\":\"Dayton\",\"country\":\"Montgomery\",\"state\":\"OH\",\"zip\":\"45439\",\"phone\":\"937-293-9728\",\"fax\":\"937-293-6782\",\"email\":\"christian@marnell.com\",\"web\":\"http://www.christianmarnell.com\",\"followers\":3071},{\"firstname\":\"Misty\",\"lastname\":\"Ericksen\",\"company\":\"Graham & Associates Inc\",\"address\":\"1808 2nd\",\"city\":\"Cheney\",\"country\":\"Spokane\",\"state\":\"WA\",\"zip\":\"99004\",\"phone\":\"509-235-8873\",\"fax\":\"509-235-1856\",\"email\":\"misty@ericksen.com\",\"web\":\"http://www.mistyericksen.com\",\"followers\":1779},{\"firstname\":\"Bert\",\"lastname\":\"Schadle\",\"company\":\"Guaranty Chevrolet Geo\",\"address\":\"500 Sw Loop  #-820\",\"city\":\"Fort Worth\",\"country\":\"Tarrant\",\"state\":\"TX\",\"zip\":\"76115\",\"phone\":\"817-921-5560\",\"fax\":\"817-921-5913\",\"email\":\"bert@schadle.com\",\"web\":\"http://www.bertschadle.com\",\"followers\":9753},{\"firstname\":\"Bertram\",\"lastname\":\"Quertermous\",\"company\":\"Florida Mining & Materials\",\"address\":\"222 Delaware Ave\",\"city\":\"Wilmington\",\"country\":\"New Castle\",\"state\":\"DE\",\"zip\":\"19801\",\"phone\":\"302-655-8039\",\"fax\":\"302-655-4522\",\"email\":\"bertram@quertermous.com\",\"web\":\"http://www.bertramquertermous.com\",\"followers\":4349},{\"firstname\":\"Buster\",\"lastname\":\"Wubbel\",\"company\":\"Collins, Joseph B Esq\",\"address\":\"315 Us Rt 1\",\"city\":\"Fairless Hills\",\"country\":\"Bucks\",\"state\":\"PA\",\"zip\":\"19030\",\"phone\":\"215-943-3689\",\"fax\":\"215-943-6049\",\"email\":\"buster@wubbel.com\",\"web\":\"http://www.busterwubbel.com\",\"followers\":6911},{\"firstname\":\"Mildred\",\"lastname\":\"Gallegas\",\"company\":\"Rogers, William A Jr\",\"address\":\"310 Ridge Rd\",\"city\":\"Claymont\",\"country\":\"New Castle\",\"state\":\"DE\",\"zip\":\"19703\",\"phone\":\"302-792-8044\",\"fax\":\"302-792-1282\",\"email\":\"mildred@gallegas.com\",\"web\":\"http://www.mildredgallegas.com\",\"followers\":8618},{\"firstname\":\"Pat\",\"lastname\":\"Hoshaw\",\"company\":\"Jorgensen, James L Esq\",\"address\":\"30 Matthews Rd\",\"city\":\"Malvern\",\"country\":\"Chester\",\"state\":\"PA\",\"zip\":\"19355\",\"phone\":\"610-644-7836\",\"fax\":\"610-644-3252\",\"email\":\"pat@hoshaw.com\",\"web\":\"http://www.pathoshaw.com\",\"followers\":6030},{\"firstname\":\"Marshall\",\"lastname\":\"Hutch\",\"company\":\"Nako, Joy Y\",\"address\":\"Route 519\",\"city\":\"Eighty Four\",\"country\":\"Washington\",\"state\":\"PA\",\"zip\":\"15330\",\"phone\":\"724-225-1729\",\"fax\":\"724-225-7064\",\"email\":\"marshall@hutch.com\",\"web\":\"http://www.marshallhutch.com\",\"followers\":6225},{\"firstname\":\"Don\",\"lastname\":\"Mestler\",\"company\":\"Coldwell Bnkr Hearthside Rltrs\",\"address\":\"State Hwy  #-31\",\"city\":\"Pennington\",\"country\":\"Mercer\",\"state\":\"NJ\",\"zip\":\"08534\",\"phone\":\"609-737-2033\",\"fax\":\"609-737-2374\",\"email\":\"don@mestler.com\",\"web\":\"http://www.donmestler.com\",\"followers\":6967},{\"firstname\":\"Emery\",\"lastname\":\"Reek\",\"company\":\"Metri Tech Engineering Inc\",\"address\":\"85 S Beachview Dr\",\"city\":\"Jekyll Island\",\"country\":\"Glynn\",\"state\":\"GA\",\"zip\":\"31527\",\"phone\":\"912-635-3866\",\"fax\":\"912-635-4039\",\"email\":\"emery@reek.com\",\"web\":\"http://www.emeryreek.com\",\"followers\":2476},{\"firstname\":\"Ray\",\"lastname\":\"Srock\",\"company\":\"Tilt Lock Inc\",\"address\":\"8700 E Pinnacle Peak Rd\",\"city\":\"Scottsdale\",\"country\":\"Maricopa\",\"state\":\"AZ\",\"zip\":\"85255\",\"phone\":\"480-585-6138\",\"fax\":\"480-585-4983\",\"email\":\"ray@srock.com\",\"web\":\"http://www.raysrock.com\",\"followers\":2387},{\"firstname\":\"Nickolas\",\"lastname\":\"Khosravi\",\"company\":\"Brennan, Mary V Esq\",\"address\":\"120 Tustin Ave\",\"city\":\"Newport Beach\",\"country\":\"Orange\",\"state\":\"CA\",\"zip\":\"92663\",\"phone\":\"949-646-6578\",\"fax\":\"949-646-0043\",\"email\":\"nickolas@khosravi.com\",\"web\":\"http://www.nickolaskhosravi.com\",\"followers\":3074},{\"firstname\":\"Aileen\",\"lastname\":\"Mottern\",\"company\":\"Bennett Hallmark Cards\",\"address\":\"2053 Lemoine Ave\",\"city\":\"Fort Lee\",\"country\":\"Bergen\",\"state\":\"NJ\",\"zip\":\"07024\",\"phone\":\"201-944-1664\",\"fax\":\"201-944-3382\",\"email\":\"aileen@mottern.com\",\"web\":\"http://www.aileenmottern.com\",\"followers\":6519},{\"firstname\":\"Chad\",\"lastname\":\"Araiza\",\"company\":\"Christiansen, David L Cpa\",\"address\":\"536 Grand Ave\",\"city\":\"Schofield\",\"country\":\"Marathon\",\"state\":\"WI\",\"zip\":\"54476\",\"phone\":\"715-359-8700\",\"fax\":\"715-359-3579\",\"email\":\"chad@araiza.com\",\"web\":\"http://www.chadaraiza.com\",\"followers\":4865},{\"firstname\":\"Beverly\",\"lastname\":\"Cambel\",\"company\":\"Mcintyre Mcintyre & Mcintyre\",\"address\":\"630 W 8th Ave\",\"city\":\"Anchorage\",\"country\":\"Anchorage\",\"state\":\"AK\",\"zip\":\"99501\",\"phone\":\"907-272-3953\",\"fax\":\"907-272-3618\",\"email\":\"beverly@cambel.com\",\"web\":\"http://www.beverlycambel.com\",\"followers\":2393},{\"firstname\":\"Janice\",\"lastname\":\"Twiet\",\"company\":\"Henley, Cal Pa\",\"address\":\"136 S Riverside Ave\",\"city\":\"Rialto\",\"country\":\"San Bernardino\",\"state\":\"CA\",\"zip\":\"92376\",\"phone\":\"909-874-6739\",\"fax\":\"909-874-2594\",\"email\":\"janice@twiet.com\",\"web\":\"http://www.janicetwiet.com\",\"followers\":7340},{\"firstname\":\"Byron\",\"lastname\":\"Fortuna\",\"company\":\"Jackson & Collins Pa\",\"address\":\"700 Sw Higgins Ave\",\"city\":\"Missoula\",\"country\":\"Missoula\",\"state\":\"MT\",\"zip\":\"59803\",\"phone\":\"406-549-8320\",\"fax\":\"406-549-4641\",\"email\":\"byron@fortuna.com\",\"web\":\"http://www.byronfortuna.com\",\"followers\":8913},{\"firstname\":\"Lynette\",\"lastname\":\"Setlock\",\"company\":\"George S Olive & Co\",\"address\":\"614 W Superior Ave\",\"city\":\"Cleveland\",\"country\":\"Cuyahoga\",\"state\":\"OH\",\"zip\":\"44113\",\"phone\":\"216-566-2265\",\"fax\":\"216-566-2299\",\"email\":\"lynette@setlock.com\",\"web\":\"http://www.lynettesetlock.com\",\"followers\":8002},{\"firstname\":\"Willard\",\"lastname\":\"Roughen\",\"company\":\"Nakamura Oyama & Assocs Inc\",\"address\":\"9 5officce Product Cent\",\"city\":\"Arlington\",\"country\":\"Tarrant\",\"state\":\"TX\",\"zip\":\"76012\",\"phone\":\"817-265-1847\",\"fax\":\"817-265-0322\",\"email\":\"willard@roughen.com\",\"web\":\"http://www.willardroughen.com\",\"followers\":861},{\"firstname\":\"Elisa\",\"lastname\":\"Gracely\",\"company\":\"Alexander, Christine T Esq\",\"address\":\"1805 Kings Hwy\",\"city\":\"Brooklyn\",\"country\":\"Kings\",\"state\":\"NY\",\"zip\":\"11229\",\"phone\":\"718-627-1421\",\"fax\":\"718-627-9346\",\"email\":\"elisa@gracely.com\",\"web\":\"http://www.elisagracely.com\",\"followers\":5321},{\"firstname\":\"Jeri\",\"lastname\":\"Farstvedt\",\"company\":\"Regan, Denis J Esq\",\"address\":\"16133 Ventura Blvd  #-700\",\"city\":\"Encino\",\"country\":\"Los Angeles\",\"state\":\"CA\",\"zip\":\"91436\",\"phone\":\"818-986-8843\",\"fax\":\"818-986-6786\",\"email\":\"jeri@farstvedt.com\",\"web\":\"http://www.jerifarstvedt.com\",\"followers\":9529},{\"firstname\":\"Stacey\",\"lastname\":\"Blow\",\"company\":\"Schechter, Jeffrey S Esq\",\"address\":\"136 S Riverside Ave\",\"city\":\"Rialto\",\"country\":\"San Bernardino\",\"state\":\"CA\",\"zip\":\"92376\",\"phone\":\"909-874-0274\",\"fax\":\"909-874-8538\",\"email\":\"stacey@blow.com\",\"web\":\"http://www.staceyblow.com\",\"followers\":6685},{\"firstname\":\"Bryan\",\"lastname\":\"Rovell\",\"company\":\"All N All Shop\",\"address\":\"90 Hackensack St\",\"city\":\"East Rutherford\",\"country\":\"Bergen\",\"state\":\"NJ\",\"zip\":\"07073\",\"phone\":\"201-939-2788\",\"fax\":\"201-939-9079\",\"email\":\"bryan@rovell.com\",\"web\":\"http://www.bryanrovell.com\",\"followers\":2687},{\"firstname\":\"Joey\",\"lastname\":\"Bolick\",\"company\":\"Utility Trailer Sales\",\"address\":\"7700 N Council Rd\",\"city\":\"Oklahoma City\",\"country\":\"Oklahoma\",\"state\":\"OK\",\"zip\":\"73132\",\"phone\":\"405-728-5972\",\"fax\":\"405-728-5244\",\"email\":\"joey@bolick.com\",\"web\":\"http://www.joeybolick.com\",\"followers\":8465}]");
+
+/***/ }),
+
+/***/ "./resources/sass/vuexy/extraComponents/agGridStyleOverride.scss":
+/*!***********************************************************************!*\
+  !*** ./resources/sass/vuexy/extraComponents/agGridStyleOverride.scss ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../css-loader??ref--7-1!../../postcss-loader/src??ref--7-2!./flatpickr.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/flatpickr/dist/flatpickr.css");
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/src??ref--8-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!./agGridStyleOverride.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/sass/vuexy/extraComponents/agGridStyleOverride.scss");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -41,2637 +534,11 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(/*! ../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
-
-/***/ }),
-
-/***/ "./node_modules/flatpickr/dist/flatpickr.js":
-/*!**************************************************!*\
-  !*** ./node_modules/flatpickr/dist/flatpickr.js ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* flatpickr v4.6.3, @license MIT */
-(function (global, factory) {
-     true ? module.exports = factory() :
-    undefined;
-}(this, function () { 'use strict';
-
-    /*! *****************************************************************************
-    Copyright (c) Microsoft Corporation. All rights reserved.
-    Licensed under the Apache License, Version 2.0 (the "License"); you may not use
-    this file except in compliance with the License. You may obtain a copy of the
-    License at http://www.apache.org/licenses/LICENSE-2.0
-
-    THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-    KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
-    WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
-    MERCHANTABLITY OR NON-INFRINGEMENT.
-
-    See the Apache Version 2.0 License for specific language governing permissions
-    and limitations under the License.
-    ***************************************************************************** */
-
-    var __assign = function() {
-        __assign = Object.assign || function __assign(t) {
-            for (var s, i = 1, n = arguments.length; i < n; i++) {
-                s = arguments[i];
-                for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-            }
-            return t;
-        };
-        return __assign.apply(this, arguments);
-    };
-
-    var HOOKS = [
-        "onChange",
-        "onClose",
-        "onDayCreate",
-        "onDestroy",
-        "onKeyDown",
-        "onMonthChange",
-        "onOpen",
-        "onParseConfig",
-        "onReady",
-        "onValueUpdate",
-        "onYearChange",
-        "onPreCalendarPosition",
-    ];
-    var defaults = {
-        _disable: [],
-        _enable: [],
-        allowInput: false,
-        altFormat: "F j, Y",
-        altInput: false,
-        altInputClass: "form-control input",
-        animate: typeof window === "object" &&
-            window.navigator.userAgent.indexOf("MSIE") === -1,
-        ariaDateFormat: "F j, Y",
-        clickOpens: true,
-        closeOnSelect: true,
-        conjunction: ", ",
-        dateFormat: "Y-m-d",
-        defaultHour: 12,
-        defaultMinute: 0,
-        defaultSeconds: 0,
-        disable: [],
-        disableMobile: false,
-        enable: [],
-        enableSeconds: false,
-        enableTime: false,
-        errorHandler: function (err) {
-            return typeof console !== "undefined" && console.warn(err);
-        },
-        getWeek: function (givenDate) {
-            var date = new Date(givenDate.getTime());
-            date.setHours(0, 0, 0, 0);
-            // Thursday in current week decides the year.
-            date.setDate(date.getDate() + 3 - ((date.getDay() + 6) % 7));
-            // January 4 is always in week 1.
-            var week1 = new Date(date.getFullYear(), 0, 4);
-            // Adjust to Thursday in week 1 and count number of weeks from date to week1.
-            return (1 +
-                Math.round(((date.getTime() - week1.getTime()) / 86400000 -
-                    3 +
-                    ((week1.getDay() + 6) % 7)) /
-                    7));
-        },
-        hourIncrement: 1,
-        ignoredFocusElements: [],
-        inline: false,
-        locale: "default",
-        minuteIncrement: 5,
-        mode: "single",
-        monthSelectorType: "dropdown",
-        nextArrow: "<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 17 17'><g></g><path d='M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z' /></svg>",
-        noCalendar: false,
-        now: new Date(),
-        onChange: [],
-        onClose: [],
-        onDayCreate: [],
-        onDestroy: [],
-        onKeyDown: [],
-        onMonthChange: [],
-        onOpen: [],
-        onParseConfig: [],
-        onReady: [],
-        onValueUpdate: [],
-        onYearChange: [],
-        onPreCalendarPosition: [],
-        plugins: [],
-        position: "auto",
-        positionElement: undefined,
-        prevArrow: "<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 17 17'><g></g><path d='M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z' /></svg>",
-        shorthandCurrentMonth: false,
-        showMonths: 1,
-        static: false,
-        time_24hr: false,
-        weekNumbers: false,
-        wrap: false
-    };
-
-    var english = {
-        weekdays: {
-            shorthand: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-            longhand: [
-                "Sunday",
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-            ]
-        },
-        months: {
-            shorthand: [
-                "Jan",
-                "Feb",
-                "Mar",
-                "Apr",
-                "May",
-                "Jun",
-                "Jul",
-                "Aug",
-                "Sep",
-                "Oct",
-                "Nov",
-                "Dec",
-            ],
-            longhand: [
-                "January",
-                "February",
-                "March",
-                "April",
-                "May",
-                "June",
-                "July",
-                "August",
-                "September",
-                "October",
-                "November",
-                "December",
-            ]
-        },
-        daysInMonth: [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
-        firstDayOfWeek: 0,
-        ordinal: function (nth) {
-            var s = nth % 100;
-            if (s > 3 && s < 21)
-                return "th";
-            switch (s % 10) {
-                case 1:
-                    return "st";
-                case 2:
-                    return "nd";
-                case 3:
-                    return "rd";
-                default:
-                    return "th";
-            }
-        },
-        rangeSeparator: " to ",
-        weekAbbreviation: "Wk",
-        scrollTitle: "Scroll to increment",
-        toggleTitle: "Click to toggle",
-        amPM: ["AM", "PM"],
-        yearAriaLabel: "Year",
-        hourAriaLabel: "Hour",
-        minuteAriaLabel: "Minute",
-        time_24hr: false
-    };
-
-    var pad = function (number) { return ("0" + number).slice(-2); };
-    var int = function (bool) { return (bool === true ? 1 : 0); };
-    /* istanbul ignore next */
-    function debounce(func, wait, immediate) {
-        if (immediate === void 0) { immediate = false; }
-        var timeout;
-        return function () {
-            var context = this, args = arguments;
-            timeout !== null && clearTimeout(timeout);
-            timeout = window.setTimeout(function () {
-                timeout = null;
-                if (!immediate)
-                    func.apply(context, args);
-            }, wait);
-            if (immediate && !timeout)
-                func.apply(context, args);
-        };
-    }
-    var arrayify = function (obj) {
-        return obj instanceof Array ? obj : [obj];
-    };
-
-    function toggleClass(elem, className, bool) {
-        if (bool === true)
-            return elem.classList.add(className);
-        elem.classList.remove(className);
-    }
-    function createElement(tag, className, content) {
-        var e = window.document.createElement(tag);
-        className = className || "";
-        content = content || "";
-        e.className = className;
-        if (content !== undefined)
-            e.textContent = content;
-        return e;
-    }
-    function clearNode(node) {
-        while (node.firstChild)
-            node.removeChild(node.firstChild);
-    }
-    function findParent(node, condition) {
-        if (condition(node))
-            return node;
-        else if (node.parentNode)
-            return findParent(node.parentNode, condition);
-        return undefined; // nothing found
-    }
-    function createNumberInput(inputClassName, opts) {
-        var wrapper = createElement("div", "numInputWrapper"), numInput = createElement("input", "numInput " + inputClassName), arrowUp = createElement("span", "arrowUp"), arrowDown = createElement("span", "arrowDown");
-        if (navigator.userAgent.indexOf("MSIE 9.0") === -1) {
-            numInput.type = "number";
-        }
-        else {
-            numInput.type = "text";
-            numInput.pattern = "\\d*";
-        }
-        if (opts !== undefined)
-            for (var key in opts)
-                numInput.setAttribute(key, opts[key]);
-        wrapper.appendChild(numInput);
-        wrapper.appendChild(arrowUp);
-        wrapper.appendChild(arrowDown);
-        return wrapper;
-    }
-    function getEventTarget(event) {
-        if (typeof event.composedPath === "function") {
-            var path = event.composedPath();
-            return path[0];
-        }
-        return event.target;
-    }
-
-    var doNothing = function () { return undefined; };
-    var monthToStr = function (monthNumber, shorthand, locale) { return locale.months[shorthand ? "shorthand" : "longhand"][monthNumber]; };
-    var revFormat = {
-        D: doNothing,
-        F: function (dateObj, monthName, locale) {
-            dateObj.setMonth(locale.months.longhand.indexOf(monthName));
-        },
-        G: function (dateObj, hour) {
-            dateObj.setHours(parseFloat(hour));
-        },
-        H: function (dateObj, hour) {
-            dateObj.setHours(parseFloat(hour));
-        },
-        J: function (dateObj, day) {
-            dateObj.setDate(parseFloat(day));
-        },
-        K: function (dateObj, amPM, locale) {
-            dateObj.setHours((dateObj.getHours() % 12) +
-                12 * int(new RegExp(locale.amPM[1], "i").test(amPM)));
-        },
-        M: function (dateObj, shortMonth, locale) {
-            dateObj.setMonth(locale.months.shorthand.indexOf(shortMonth));
-        },
-        S: function (dateObj, seconds) {
-            dateObj.setSeconds(parseFloat(seconds));
-        },
-        U: function (_, unixSeconds) { return new Date(parseFloat(unixSeconds) * 1000); },
-        W: function (dateObj, weekNum, locale) {
-            var weekNumber = parseInt(weekNum);
-            var date = new Date(dateObj.getFullYear(), 0, 2 + (weekNumber - 1) * 7, 0, 0, 0, 0);
-            date.setDate(date.getDate() - date.getDay() + locale.firstDayOfWeek);
-            return date;
-        },
-        Y: function (dateObj, year) {
-            dateObj.setFullYear(parseFloat(year));
-        },
-        Z: function (_, ISODate) { return new Date(ISODate); },
-        d: function (dateObj, day) {
-            dateObj.setDate(parseFloat(day));
-        },
-        h: function (dateObj, hour) {
-            dateObj.setHours(parseFloat(hour));
-        },
-        i: function (dateObj, minutes) {
-            dateObj.setMinutes(parseFloat(minutes));
-        },
-        j: function (dateObj, day) {
-            dateObj.setDate(parseFloat(day));
-        },
-        l: doNothing,
-        m: function (dateObj, month) {
-            dateObj.setMonth(parseFloat(month) - 1);
-        },
-        n: function (dateObj, month) {
-            dateObj.setMonth(parseFloat(month) - 1);
-        },
-        s: function (dateObj, seconds) {
-            dateObj.setSeconds(parseFloat(seconds));
-        },
-        u: function (_, unixMillSeconds) {
-            return new Date(parseFloat(unixMillSeconds));
-        },
-        w: doNothing,
-        y: function (dateObj, year) {
-            dateObj.setFullYear(2000 + parseFloat(year));
-        }
-    };
-    var tokenRegex = {
-        D: "(\\w+)",
-        F: "(\\w+)",
-        G: "(\\d\\d|\\d)",
-        H: "(\\d\\d|\\d)",
-        J: "(\\d\\d|\\d)\\w+",
-        K: "",
-        M: "(\\w+)",
-        S: "(\\d\\d|\\d)",
-        U: "(.+)",
-        W: "(\\d\\d|\\d)",
-        Y: "(\\d{4})",
-        Z: "(.+)",
-        d: "(\\d\\d|\\d)",
-        h: "(\\d\\d|\\d)",
-        i: "(\\d\\d|\\d)",
-        j: "(\\d\\d|\\d)",
-        l: "(\\w+)",
-        m: "(\\d\\d|\\d)",
-        n: "(\\d\\d|\\d)",
-        s: "(\\d\\d|\\d)",
-        u: "(.+)",
-        w: "(\\d\\d|\\d)",
-        y: "(\\d{2})"
-    };
-    var formats = {
-        // get the date in UTC
-        Z: function (date) { return date.toISOString(); },
-        // weekday name, short, e.g. Thu
-        D: function (date, locale, options) {
-            return locale.weekdays.shorthand[formats.w(date, locale, options)];
-        },
-        // full month name e.g. January
-        F: function (date, locale, options) {
-            return monthToStr(formats.n(date, locale, options) - 1, false, locale);
-        },
-        // padded hour 1-12
-        G: function (date, locale, options) {
-            return pad(formats.h(date, locale, options));
-        },
-        // hours with leading zero e.g. 03
-        H: function (date) { return pad(date.getHours()); },
-        // day (1-30) with ordinal suffix e.g. 1st, 2nd
-        J: function (date, locale) {
-            return locale.ordinal !== undefined
-                ? date.getDate() + locale.ordinal(date.getDate())
-                : date.getDate();
-        },
-        // AM/PM
-        K: function (date, locale) { return locale.amPM[int(date.getHours() > 11)]; },
-        // shorthand month e.g. Jan, Sep, Oct, etc
-        M: function (date, locale) {
-            return monthToStr(date.getMonth(), true, locale);
-        },
-        // seconds 00-59
-        S: function (date) { return pad(date.getSeconds()); },
-        // unix timestamp
-        U: function (date) { return date.getTime() / 1000; },
-        W: function (date, _, options) {
-            return options.getWeek(date);
-        },
-        // full year e.g. 2016
-        Y: function (date) { return date.getFullYear(); },
-        // day in month, padded (01-30)
-        d: function (date) { return pad(date.getDate()); },
-        // hour from 1-12 (am/pm)
-        h: function (date) { return (date.getHours() % 12 ? date.getHours() % 12 : 12); },
-        // minutes, padded with leading zero e.g. 09
-        i: function (date) { return pad(date.getMinutes()); },
-        // day in month (1-30)
-        j: function (date) { return date.getDate(); },
-        // weekday name, full, e.g. Thursday
-        l: function (date, locale) {
-            return locale.weekdays.longhand[date.getDay()];
-        },
-        // padded month number (01-12)
-        m: function (date) { return pad(date.getMonth() + 1); },
-        // the month number (1-12)
-        n: function (date) { return date.getMonth() + 1; },
-        // seconds 0-59
-        s: function (date) { return date.getSeconds(); },
-        // Unix Milliseconds
-        u: function (date) { return date.getTime(); },
-        // number of the day of the week
-        w: function (date) { return date.getDay(); },
-        // last two digits of year e.g. 16 for 2016
-        y: function (date) { return String(date.getFullYear()).substring(2); }
-    };
-
-    var createDateFormatter = function (_a) {
-        var _b = _a.config, config = _b === void 0 ? defaults : _b, _c = _a.l10n, l10n = _c === void 0 ? english : _c;
-        return function (dateObj, frmt, overrideLocale) {
-            var locale = overrideLocale || l10n;
-            if (config.formatDate !== undefined) {
-                return config.formatDate(dateObj, frmt, locale);
-            }
-            return frmt
-                .split("")
-                .map(function (c, i, arr) {
-                return formats[c] && arr[i - 1] !== "\\"
-                    ? formats[c](dateObj, locale, config)
-                    : c !== "\\"
-                        ? c
-                        : "";
-            })
-                .join("");
-        };
-    };
-    var createDateParser = function (_a) {
-        var _b = _a.config, config = _b === void 0 ? defaults : _b, _c = _a.l10n, l10n = _c === void 0 ? english : _c;
-        return function (date, givenFormat, timeless, customLocale) {
-            if (date !== 0 && !date)
-                return undefined;
-            var locale = customLocale || l10n;
-            var parsedDate;
-            var dateOrig = date;
-            if (date instanceof Date)
-                parsedDate = new Date(date.getTime());
-            else if (typeof date !== "string" &&
-                date.toFixed !== undefined // timestamp
-            )
-                // create a copy
-                parsedDate = new Date(date);
-            else if (typeof date === "string") {
-                // date string
-                var format = givenFormat || (config || defaults).dateFormat;
-                var datestr = String(date).trim();
-                if (datestr === "today") {
-                    parsedDate = new Date();
-                    timeless = true;
-                }
-                else if (/Z$/.test(datestr) ||
-                    /GMT$/.test(datestr) // datestrings w/ timezone
-                )
-                    parsedDate = new Date(date);
-                else if (config && config.parseDate)
-                    parsedDate = config.parseDate(date, format);
-                else {
-                    parsedDate =
-                        !config || !config.noCalendar
-                            ? new Date(new Date().getFullYear(), 0, 1, 0, 0, 0, 0)
-                            : new Date(new Date().setHours(0, 0, 0, 0));
-                    var matched = void 0, ops = [];
-                    for (var i = 0, matchIndex = 0, regexStr = ""; i < format.length; i++) {
-                        var token_1 = format[i];
-                        var isBackSlash = token_1 === "\\";
-                        var escaped = format[i - 1] === "\\" || isBackSlash;
-                        if (tokenRegex[token_1] && !escaped) {
-                            regexStr += tokenRegex[token_1];
-                            var match = new RegExp(regexStr).exec(date);
-                            if (match && (matched = true)) {
-                                ops[token_1 !== "Y" ? "push" : "unshift"]({
-                                    fn: revFormat[token_1],
-                                    val: match[++matchIndex]
-                                });
-                            }
-                        }
-                        else if (!isBackSlash)
-                            regexStr += "."; // don't really care
-                        ops.forEach(function (_a) {
-                            var fn = _a.fn, val = _a.val;
-                            return (parsedDate = fn(parsedDate, val, locale) || parsedDate);
-                        });
-                    }
-                    parsedDate = matched ? parsedDate : undefined;
-                }
-            }
-            /* istanbul ignore next */
-            if (!(parsedDate instanceof Date && !isNaN(parsedDate.getTime()))) {
-                config.errorHandler(new Error("Invalid date provided: " + dateOrig));
-                return undefined;
-            }
-            if (timeless === true)
-                parsedDate.setHours(0, 0, 0, 0);
-            return parsedDate;
-        };
-    };
-    /**
-     * Compute the difference in dates, measured in ms
-     */
-    function compareDates(date1, date2, timeless) {
-        if (timeless === void 0) { timeless = true; }
-        if (timeless !== false) {
-            return (new Date(date1.getTime()).setHours(0, 0, 0, 0) -
-                new Date(date2.getTime()).setHours(0, 0, 0, 0));
-        }
-        return date1.getTime() - date2.getTime();
-    }
-    var isBetween = function (ts, ts1, ts2) {
-        return ts > Math.min(ts1, ts2) && ts < Math.max(ts1, ts2);
-    };
-    var duration = {
-        DAY: 86400000
-    };
-
-    if (typeof Object.assign !== "function") {
-        Object.assign = function (target) {
-            var args = [];
-            for (var _i = 1; _i < arguments.length; _i++) {
-                args[_i - 1] = arguments[_i];
-            }
-            if (!target) {
-                throw TypeError("Cannot convert undefined or null to object");
-            }
-            var _loop_1 = function (source) {
-                if (source) {
-                    Object.keys(source).forEach(function (key) { return (target[key] = source[key]); });
-                }
-            };
-            for (var _a = 0, args_1 = args; _a < args_1.length; _a++) {
-                var source = args_1[_a];
-                _loop_1(source);
-            }
-            return target;
-        };
-    }
-
-    var DEBOUNCED_CHANGE_MS = 300;
-    function FlatpickrInstance(element, instanceConfig) {
-        var self = {
-            config: __assign({}, defaults, flatpickr.defaultConfig),
-            l10n: english
-        };
-        self.parseDate = createDateParser({ config: self.config, l10n: self.l10n });
-        self._handlers = [];
-        self.pluginElements = [];
-        self.loadedPlugins = [];
-        self._bind = bind;
-        self._setHoursFromDate = setHoursFromDate;
-        self._positionCalendar = positionCalendar;
-        self.changeMonth = changeMonth;
-        self.changeYear = changeYear;
-        self.clear = clear;
-        self.close = close;
-        self._createElement = createElement;
-        self.destroy = destroy;
-        self.isEnabled = isEnabled;
-        self.jumpToDate = jumpToDate;
-        self.open = open;
-        self.redraw = redraw;
-        self.set = set;
-        self.setDate = setDate;
-        self.toggle = toggle;
-        function setupHelperFunctions() {
-            self.utils = {
-                getDaysInMonth: function (month, yr) {
-                    if (month === void 0) { month = self.currentMonth; }
-                    if (yr === void 0) { yr = self.currentYear; }
-                    if (month === 1 && ((yr % 4 === 0 && yr % 100 !== 0) || yr % 400 === 0))
-                        return 29;
-                    return self.l10n.daysInMonth[month];
-                }
-            };
-        }
-        function init() {
-            self.element = self.input = element;
-            self.isOpen = false;
-            parseConfig();
-            setupLocale();
-            setupInputs();
-            setupDates();
-            setupHelperFunctions();
-            if (!self.isMobile)
-                build();
-            bindEvents();
-            if (self.selectedDates.length || self.config.noCalendar) {
-                if (self.config.enableTime) {
-                    setHoursFromDate(self.config.noCalendar
-                        ? self.latestSelectedDateObj || self.config.minDate
-                        : undefined);
-                }
-                updateValue(false);
-            }
-            setCalendarWidth();
-            self.showTimeInput =
-                self.selectedDates.length > 0 || self.config.noCalendar;
-            var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-            /* TODO: investigate this further
-        
-              Currently, there is weird positioning behavior in safari causing pages
-              to scroll up. https://github.com/chmln/flatpickr/issues/563
-        
-              However, most browsers are not Safari and positioning is expensive when used
-              in scale. https://github.com/chmln/flatpickr/issues/1096
-            */
-            if (!self.isMobile && isSafari) {
-                positionCalendar();
-            }
-            triggerEvent("onReady");
-        }
-        function bindToInstance(fn) {
-            return fn.bind(self);
-        }
-        function setCalendarWidth() {
-            var config = self.config;
-            if (config.weekNumbers === false && config.showMonths === 1)
-                return;
-            else if (config.noCalendar !== true) {
-                window.requestAnimationFrame(function () {
-                    if (self.calendarContainer !== undefined) {
-                        self.calendarContainer.style.visibility = "hidden";
-                        self.calendarContainer.style.display = "block";
-                    }
-                    if (self.daysContainer !== undefined) {
-                        var daysWidth = (self.days.offsetWidth + 1) * config.showMonths;
-                        self.daysContainer.style.width = daysWidth + "px";
-                        self.calendarContainer.style.width =
-                            daysWidth +
-                                (self.weekWrapper !== undefined
-                                    ? self.weekWrapper.offsetWidth
-                                    : 0) +
-                                "px";
-                        self.calendarContainer.style.removeProperty("visibility");
-                        self.calendarContainer.style.removeProperty("display");
-                    }
-                });
-            }
-        }
-        /**
-         * The handler for all events targeting the time inputs
-         */
-        function updateTime(e) {
-            if (self.selectedDates.length === 0) {
-                setDefaultTime();
-            }
-            if (e !== undefined && e.type !== "blur") {
-                timeWrapper(e);
-            }
-            var prevValue = self._input.value;
-            setHoursFromInputs();
-            updateValue();
-            if (self._input.value !== prevValue) {
-                self._debouncedChange();
-            }
-        }
-        function ampm2military(hour, amPM) {
-            return (hour % 12) + 12 * int(amPM === self.l10n.amPM[1]);
-        }
-        function military2ampm(hour) {
-            switch (hour % 24) {
-                case 0:
-                case 12:
-                    return 12;
-                default:
-                    return hour % 12;
-            }
-        }
-        /**
-         * Syncs the selected date object time with user's time input
-         */
-        function setHoursFromInputs() {
-            if (self.hourElement === undefined || self.minuteElement === undefined)
-                return;
-            var hours = (parseInt(self.hourElement.value.slice(-2), 10) || 0) % 24, minutes = (parseInt(self.minuteElement.value, 10) || 0) % 60, seconds = self.secondElement !== undefined
-                ? (parseInt(self.secondElement.value, 10) || 0) % 60
-                : 0;
-            if (self.amPM !== undefined) {
-                hours = ampm2military(hours, self.amPM.textContent);
-            }
-            var limitMinHours = self.config.minTime !== undefined ||
-                (self.config.minDate &&
-                    self.minDateHasTime &&
-                    self.latestSelectedDateObj &&
-                    compareDates(self.latestSelectedDateObj, self.config.minDate, true) ===
-                        0);
-            var limitMaxHours = self.config.maxTime !== undefined ||
-                (self.config.maxDate &&
-                    self.maxDateHasTime &&
-                    self.latestSelectedDateObj &&
-                    compareDates(self.latestSelectedDateObj, self.config.maxDate, true) ===
-                        0);
-            if (limitMaxHours) {
-                var maxTime = self.config.maxTime !== undefined
-                    ? self.config.maxTime
-                    : self.config.maxDate;
-                hours = Math.min(hours, maxTime.getHours());
-                if (hours === maxTime.getHours())
-                    minutes = Math.min(minutes, maxTime.getMinutes());
-                if (minutes === maxTime.getMinutes())
-                    seconds = Math.min(seconds, maxTime.getSeconds());
-            }
-            if (limitMinHours) {
-                var minTime = self.config.minTime !== undefined
-                    ? self.config.minTime
-                    : self.config.minDate;
-                hours = Math.max(hours, minTime.getHours());
-                if (hours === minTime.getHours())
-                    minutes = Math.max(minutes, minTime.getMinutes());
-                if (minutes === minTime.getMinutes())
-                    seconds = Math.max(seconds, minTime.getSeconds());
-            }
-            setHours(hours, minutes, seconds);
-        }
-        /**
-         * Syncs time input values with a date
-         */
-        function setHoursFromDate(dateObj) {
-            var date = dateObj || self.latestSelectedDateObj;
-            if (date)
-                setHours(date.getHours(), date.getMinutes(), date.getSeconds());
-        }
-        function setDefaultHours() {
-            var hours = self.config.defaultHour;
-            var minutes = self.config.defaultMinute;
-            var seconds = self.config.defaultSeconds;
-            if (self.config.minDate !== undefined) {
-                var minHr = self.config.minDate.getHours();
-                var minMinutes = self.config.minDate.getMinutes();
-                hours = Math.max(hours, minHr);
-                if (hours === minHr)
-                    minutes = Math.max(minMinutes, minutes);
-                if (hours === minHr && minutes === minMinutes)
-                    seconds = self.config.minDate.getSeconds();
-            }
-            if (self.config.maxDate !== undefined) {
-                var maxHr = self.config.maxDate.getHours();
-                var maxMinutes = self.config.maxDate.getMinutes();
-                hours = Math.min(hours, maxHr);
-                if (hours === maxHr)
-                    minutes = Math.min(maxMinutes, minutes);
-                if (hours === maxHr && minutes === maxMinutes)
-                    seconds = self.config.maxDate.getSeconds();
-            }
-            setHours(hours, minutes, seconds);
-        }
-        /**
-         * Sets the hours, minutes, and optionally seconds
-         * of the latest selected date object and the
-         * corresponding time inputs
-         * @param {Number} hours the hour. whether its military
-         *                 or am-pm gets inferred from config
-         * @param {Number} minutes the minutes
-         * @param {Number} seconds the seconds (optional)
-         */
-        function setHours(hours, minutes, seconds) {
-            if (self.latestSelectedDateObj !== undefined) {
-                self.latestSelectedDateObj.setHours(hours % 24, minutes, seconds || 0, 0);
-            }
-            if (!self.hourElement || !self.minuteElement || self.isMobile)
-                return;
-            self.hourElement.value = pad(!self.config.time_24hr
-                ? ((12 + hours) % 12) + 12 * int(hours % 12 === 0)
-                : hours);
-            self.minuteElement.value = pad(minutes);
-            if (self.amPM !== undefined)
-                self.amPM.textContent = self.l10n.amPM[int(hours >= 12)];
-            if (self.secondElement !== undefined)
-                self.secondElement.value = pad(seconds);
-        }
-        /**
-         * Handles the year input and incrementing events
-         * @param {Event} event the keyup or increment event
-         */
-        function onYearInput(event) {
-            var year = parseInt(event.target.value) + (event.delta || 0);
-            if (year / 1000 > 1 ||
-                (event.key === "Enter" && !/[^\d]/.test(year.toString()))) {
-                changeYear(year);
-            }
-        }
-        /**
-         * Essentially addEventListener + tracking
-         * @param {Element} element the element to addEventListener to
-         * @param {String} event the event name
-         * @param {Function} handler the event handler
-         */
-        function bind(element, event, handler, options) {
-            if (event instanceof Array)
-                return event.forEach(function (ev) { return bind(element, ev, handler, options); });
-            if (element instanceof Array)
-                return element.forEach(function (el) { return bind(el, event, handler, options); });
-            element.addEventListener(event, handler, options);
-            self._handlers.push({
-                element: element,
-                event: event,
-                handler: handler,
-                options: options
-            });
-        }
-        /**
-         * A mousedown handler which mimics click.
-         * Minimizes latency, since we don't need to wait for mouseup in most cases.
-         * Also, avoids handling right clicks.
-         *
-         * @param {Function} handler the event handler
-         */
-        function onClick(handler) {
-            return function (evt) {
-                evt.which === 1 && handler(evt);
-            };
-        }
-        function triggerChange() {
-            triggerEvent("onChange");
-        }
-        /**
-         * Adds all the necessary event listeners
-         */
-        function bindEvents() {
-            if (self.config.wrap) {
-                ["open", "close", "toggle", "clear"].forEach(function (evt) {
-                    Array.prototype.forEach.call(self.element.querySelectorAll("[data-" + evt + "]"), function (el) {
-                        return bind(el, "click", self[evt]);
-                    });
-                });
-            }
-            if (self.isMobile) {
-                setupMobile();
-                return;
-            }
-            var debouncedResize = debounce(onResize, 50);
-            self._debouncedChange = debounce(triggerChange, DEBOUNCED_CHANGE_MS);
-            if (self.daysContainer && !/iPhone|iPad|iPod/i.test(navigator.userAgent))
-                bind(self.daysContainer, "mouseover", function (e) {
-                    if (self.config.mode === "range")
-                        onMouseOver(e.target);
-                });
-            bind(window.document.body, "keydown", onKeyDown);
-            if (!self.config.inline && !self.config.static)
-                bind(window, "resize", debouncedResize);
-            if (window.ontouchstart !== undefined)
-                bind(window.document, "touchstart", documentClick);
-            else
-                bind(window.document, "mousedown", onClick(documentClick));
-            bind(window.document, "focus", documentClick, { capture: true });
-            if (self.config.clickOpens === true) {
-                bind(self._input, "focus", self.open);
-                bind(self._input, "mousedown", onClick(self.open));
-            }
-            if (self.daysContainer !== undefined) {
-                bind(self.monthNav, "mousedown", onClick(onMonthNavClick));
-                bind(self.monthNav, ["keyup", "increment"], onYearInput);
-                bind(self.daysContainer, "mousedown", onClick(selectDate));
-            }
-            if (self.timeContainer !== undefined &&
-                self.minuteElement !== undefined &&
-                self.hourElement !== undefined) {
-                var selText = function (e) {
-                    return e.target.select();
-                };
-                bind(self.timeContainer, ["increment"], updateTime);
-                bind(self.timeContainer, "blur", updateTime, { capture: true });
-                bind(self.timeContainer, "mousedown", onClick(timeIncrement));
-                bind([self.hourElement, self.minuteElement], ["focus", "click"], selText);
-                if (self.secondElement !== undefined)
-                    bind(self.secondElement, "focus", function () { return self.secondElement && self.secondElement.select(); });
-                if (self.amPM !== undefined) {
-                    bind(self.amPM, "mousedown", onClick(function (e) {
-                        updateTime(e);
-                        triggerChange();
-                    }));
-                }
-            }
-        }
-        /**
-         * Set the calendar view to a particular date.
-         * @param {Date} jumpDate the date to set the view to
-         * @param {boolean} triggerChange if change events should be triggered
-         */
-        function jumpToDate(jumpDate, triggerChange) {
-            var jumpTo = jumpDate !== undefined
-                ? self.parseDate(jumpDate)
-                : self.latestSelectedDateObj ||
-                    (self.config.minDate && self.config.minDate > self.now
-                        ? self.config.minDate
-                        : self.config.maxDate && self.config.maxDate < self.now
-                            ? self.config.maxDate
-                            : self.now);
-            var oldYear = self.currentYear;
-            var oldMonth = self.currentMonth;
-            try {
-                if (jumpTo !== undefined) {
-                    self.currentYear = jumpTo.getFullYear();
-                    self.currentMonth = jumpTo.getMonth();
-                }
-            }
-            catch (e) {
-                /* istanbul ignore next */
-                e.message = "Invalid date supplied: " + jumpTo;
-                self.config.errorHandler(e);
-            }
-            if (triggerChange && self.currentYear !== oldYear) {
-                triggerEvent("onYearChange");
-                buildMonthSwitch();
-            }
-            if (triggerChange &&
-                (self.currentYear !== oldYear || self.currentMonth !== oldMonth)) {
-                triggerEvent("onMonthChange");
-            }
-            self.redraw();
-        }
-        /**
-         * The up/down arrow handler for time inputs
-         * @param {Event} e the click event
-         */
-        function timeIncrement(e) {
-            if (~e.target.className.indexOf("arrow"))
-                incrementNumInput(e, e.target.classList.contains("arrowUp") ? 1 : -1);
-        }
-        /**
-         * Increments/decrements the value of input associ-
-         * ated with the up/down arrow by dispatching an
-         * "increment" event on the input.
-         *
-         * @param {Event} e the click event
-         * @param {Number} delta the diff (usually 1 or -1)
-         * @param {Element} inputElem the input element
-         */
-        function incrementNumInput(e, delta, inputElem) {
-            var target = e && e.target;
-            var input = inputElem ||
-                (target && target.parentNode && target.parentNode.firstChild);
-            var event = createEvent("increment");
-            event.delta = delta;
-            input && input.dispatchEvent(event);
-        }
-        function build() {
-            var fragment = window.document.createDocumentFragment();
-            self.calendarContainer = createElement("div", "flatpickr-calendar");
-            self.calendarContainer.tabIndex = -1;
-            if (!self.config.noCalendar) {
-                fragment.appendChild(buildMonthNav());
-                self.innerContainer = createElement("div", "flatpickr-innerContainer");
-                if (self.config.weekNumbers) {
-                    var _a = buildWeeks(), weekWrapper = _a.weekWrapper, weekNumbers = _a.weekNumbers;
-                    self.innerContainer.appendChild(weekWrapper);
-                    self.weekNumbers = weekNumbers;
-                    self.weekWrapper = weekWrapper;
-                }
-                self.rContainer = createElement("div", "flatpickr-rContainer");
-                self.rContainer.appendChild(buildWeekdays());
-                if (!self.daysContainer) {
-                    self.daysContainer = createElement("div", "flatpickr-days");
-                    self.daysContainer.tabIndex = -1;
-                }
-                buildDays();
-                self.rContainer.appendChild(self.daysContainer);
-                self.innerContainer.appendChild(self.rContainer);
-                fragment.appendChild(self.innerContainer);
-            }
-            if (self.config.enableTime) {
-                fragment.appendChild(buildTime());
-            }
-            toggleClass(self.calendarContainer, "rangeMode", self.config.mode === "range");
-            toggleClass(self.calendarContainer, "animate", self.config.animate === true);
-            toggleClass(self.calendarContainer, "multiMonth", self.config.showMonths > 1);
-            self.calendarContainer.appendChild(fragment);
-            var customAppend = self.config.appendTo !== undefined &&
-                self.config.appendTo.nodeType !== undefined;
-            if (self.config.inline || self.config.static) {
-                self.calendarContainer.classList.add(self.config.inline ? "inline" : "static");
-                if (self.config.inline) {
-                    if (!customAppend && self.element.parentNode)
-                        self.element.parentNode.insertBefore(self.calendarContainer, self._input.nextSibling);
-                    else if (self.config.appendTo !== undefined)
-                        self.config.appendTo.appendChild(self.calendarContainer);
-                }
-                if (self.config.static) {
-                    var wrapper = createElement("div", "flatpickr-wrapper");
-                    if (self.element.parentNode)
-                        self.element.parentNode.insertBefore(wrapper, self.element);
-                    wrapper.appendChild(self.element);
-                    if (self.altInput)
-                        wrapper.appendChild(self.altInput);
-                    wrapper.appendChild(self.calendarContainer);
-                }
-            }
-            if (!self.config.static && !self.config.inline)
-                (self.config.appendTo !== undefined
-                    ? self.config.appendTo
-                    : window.document.body).appendChild(self.calendarContainer);
-        }
-        function createDay(className, date, dayNumber, i) {
-            var dateIsEnabled = isEnabled(date, true), dayElement = createElement("span", "flatpickr-day " + className, date.getDate().toString());
-            dayElement.dateObj = date;
-            dayElement.$i = i;
-            dayElement.setAttribute("aria-label", self.formatDate(date, self.config.ariaDateFormat));
-            if (className.indexOf("hidden") === -1 &&
-                compareDates(date, self.now) === 0) {
-                self.todayDateElem = dayElement;
-                dayElement.classList.add("today");
-                dayElement.setAttribute("aria-current", "date");
-            }
-            if (dateIsEnabled) {
-                dayElement.tabIndex = -1;
-                if (isDateSelected(date)) {
-                    dayElement.classList.add("selected");
-                    self.selectedDateElem = dayElement;
-                    if (self.config.mode === "range") {
-                        toggleClass(dayElement, "startRange", self.selectedDates[0] &&
-                            compareDates(date, self.selectedDates[0], true) === 0);
-                        toggleClass(dayElement, "endRange", self.selectedDates[1] &&
-                            compareDates(date, self.selectedDates[1], true) === 0);
-                        if (className === "nextMonthDay")
-                            dayElement.classList.add("inRange");
-                    }
-                }
-            }
-            else {
-                dayElement.classList.add("flatpickr-disabled");
-            }
-            if (self.config.mode === "range") {
-                if (isDateInRange(date) && !isDateSelected(date))
-                    dayElement.classList.add("inRange");
-            }
-            if (self.weekNumbers &&
-                self.config.showMonths === 1 &&
-                className !== "prevMonthDay" &&
-                dayNumber % 7 === 1) {
-                self.weekNumbers.insertAdjacentHTML("beforeend", "<span class='flatpickr-day'>" + self.config.getWeek(date) + "</span>");
-            }
-            triggerEvent("onDayCreate", dayElement);
-            return dayElement;
-        }
-        function focusOnDayElem(targetNode) {
-            targetNode.focus();
-            if (self.config.mode === "range")
-                onMouseOver(targetNode);
-        }
-        function getFirstAvailableDay(delta) {
-            var startMonth = delta > 0 ? 0 : self.config.showMonths - 1;
-            var endMonth = delta > 0 ? self.config.showMonths : -1;
-            for (var m = startMonth; m != endMonth; m += delta) {
-                var month = self.daysContainer.children[m];
-                var startIndex = delta > 0 ? 0 : month.children.length - 1;
-                var endIndex = delta > 0 ? month.children.length : -1;
-                for (var i = startIndex; i != endIndex; i += delta) {
-                    var c = month.children[i];
-                    if (c.className.indexOf("hidden") === -1 && isEnabled(c.dateObj))
-                        return c;
-                }
-            }
-            return undefined;
-        }
-        function getNextAvailableDay(current, delta) {
-            var givenMonth = current.className.indexOf("Month") === -1
-                ? current.dateObj.getMonth()
-                : self.currentMonth;
-            var endMonth = delta > 0 ? self.config.showMonths : -1;
-            var loopDelta = delta > 0 ? 1 : -1;
-            for (var m = givenMonth - self.currentMonth; m != endMonth; m += loopDelta) {
-                var month = self.daysContainer.children[m];
-                var startIndex = givenMonth - self.currentMonth === m
-                    ? current.$i + delta
-                    : delta < 0
-                        ? month.children.length - 1
-                        : 0;
-                var numMonthDays = month.children.length;
-                for (var i = startIndex; i >= 0 && i < numMonthDays && i != (delta > 0 ? numMonthDays : -1); i += loopDelta) {
-                    var c = month.children[i];
-                    if (c.className.indexOf("hidden") === -1 &&
-                        isEnabled(c.dateObj) &&
-                        Math.abs(current.$i - i) >= Math.abs(delta))
-                        return focusOnDayElem(c);
-                }
-            }
-            self.changeMonth(loopDelta);
-            focusOnDay(getFirstAvailableDay(loopDelta), 0);
-            return undefined;
-        }
-        function focusOnDay(current, offset) {
-            var dayFocused = isInView(document.activeElement || document.body);
-            var startElem = current !== undefined
-                ? current
-                : dayFocused
-                    ? document.activeElement
-                    : self.selectedDateElem !== undefined && isInView(self.selectedDateElem)
-                        ? self.selectedDateElem
-                        : self.todayDateElem !== undefined && isInView(self.todayDateElem)
-                            ? self.todayDateElem
-                            : getFirstAvailableDay(offset > 0 ? 1 : -1);
-            if (startElem === undefined)
-                return self._input.focus();
-            if (!dayFocused)
-                return focusOnDayElem(startElem);
-            getNextAvailableDay(startElem, offset);
-        }
-        function buildMonthDays(year, month) {
-            var firstOfMonth = (new Date(year, month, 1).getDay() - self.l10n.firstDayOfWeek + 7) % 7;
-            var prevMonthDays = self.utils.getDaysInMonth((month - 1 + 12) % 12);
-            var daysInMonth = self.utils.getDaysInMonth(month), days = window.document.createDocumentFragment(), isMultiMonth = self.config.showMonths > 1, prevMonthDayClass = isMultiMonth ? "prevMonthDay hidden" : "prevMonthDay", nextMonthDayClass = isMultiMonth ? "nextMonthDay hidden" : "nextMonthDay";
-            var dayNumber = prevMonthDays + 1 - firstOfMonth, dayIndex = 0;
-            // prepend days from the ending of previous month
-            for (; dayNumber <= prevMonthDays; dayNumber++, dayIndex++) {
-                days.appendChild(createDay(prevMonthDayClass, new Date(year, month - 1, dayNumber), dayNumber, dayIndex));
-            }
-            // Start at 1 since there is no 0th day
-            for (dayNumber = 1; dayNumber <= daysInMonth; dayNumber++, dayIndex++) {
-                days.appendChild(createDay("", new Date(year, month, dayNumber), dayNumber, dayIndex));
-            }
-            // append days from the next month
-            for (var dayNum = daysInMonth + 1; dayNum <= 42 - firstOfMonth &&
-                (self.config.showMonths === 1 || dayIndex % 7 !== 0); dayNum++, dayIndex++) {
-                days.appendChild(createDay(nextMonthDayClass, new Date(year, month + 1, dayNum % daysInMonth), dayNum, dayIndex));
-            }
-            //updateNavigationCurrentMonth();
-            var dayContainer = createElement("div", "dayContainer");
-            dayContainer.appendChild(days);
-            return dayContainer;
-        }
-        function buildDays() {
-            if (self.daysContainer === undefined) {
-                return;
-            }
-            clearNode(self.daysContainer);
-            // TODO: week numbers for each month
-            if (self.weekNumbers)
-                clearNode(self.weekNumbers);
-            var frag = document.createDocumentFragment();
-            for (var i = 0; i < self.config.showMonths; i++) {
-                var d = new Date(self.currentYear, self.currentMonth, 1);
-                d.setMonth(self.currentMonth + i);
-                frag.appendChild(buildMonthDays(d.getFullYear(), d.getMonth()));
-            }
-            self.daysContainer.appendChild(frag);
-            self.days = self.daysContainer.firstChild;
-            if (self.config.mode === "range" && self.selectedDates.length === 1) {
-                onMouseOver();
-            }
-        }
-        function buildMonthSwitch() {
-            if (self.config.showMonths > 1 ||
-                self.config.monthSelectorType !== "dropdown")
-                return;
-            var shouldBuildMonth = function (month) {
-                if (self.config.minDate !== undefined &&
-                    self.currentYear === self.config.minDate.getFullYear() &&
-                    month < self.config.minDate.getMonth()) {
-                    return false;
-                }
-                return !(self.config.maxDate !== undefined &&
-                    self.currentYear === self.config.maxDate.getFullYear() &&
-                    month > self.config.maxDate.getMonth());
-            };
-            self.monthsDropdownContainer.tabIndex = -1;
-            self.monthsDropdownContainer.innerHTML = "";
-            for (var i = 0; i < 12; i++) {
-                if (!shouldBuildMonth(i))
-                    continue;
-                var month = createElement("option", "flatpickr-monthDropdown-month");
-                month.value = new Date(self.currentYear, i).getMonth().toString();
-                month.textContent = monthToStr(i, self.config.shorthandCurrentMonth, self.l10n);
-                month.tabIndex = -1;
-                if (self.currentMonth === i) {
-                    month.selected = true;
-                }
-                self.monthsDropdownContainer.appendChild(month);
-            }
-        }
-        function buildMonth() {
-            var container = createElement("div", "flatpickr-month");
-            var monthNavFragment = window.document.createDocumentFragment();
-            var monthElement;
-            if (self.config.showMonths > 1 ||
-                self.config.monthSelectorType === "static") {
-                monthElement = createElement("span", "cur-month");
-            }
-            else {
-                self.monthsDropdownContainer = createElement("select", "flatpickr-monthDropdown-months");
-                bind(self.monthsDropdownContainer, "change", function (e) {
-                    var target = e.target;
-                    var selectedMonth = parseInt(target.value, 10);
-                    self.changeMonth(selectedMonth - self.currentMonth);
-                    triggerEvent("onMonthChange");
-                });
-                buildMonthSwitch();
-                monthElement = self.monthsDropdownContainer;
-            }
-            var yearInput = createNumberInput("cur-year", { tabindex: "-1" });
-            var yearElement = yearInput.getElementsByTagName("input")[0];
-            yearElement.setAttribute("aria-label", self.l10n.yearAriaLabel);
-            if (self.config.minDate) {
-                yearElement.setAttribute("min", self.config.minDate.getFullYear().toString());
-            }
-            if (self.config.maxDate) {
-                yearElement.setAttribute("max", self.config.maxDate.getFullYear().toString());
-                yearElement.disabled =
-                    !!self.config.minDate &&
-                        self.config.minDate.getFullYear() === self.config.maxDate.getFullYear();
-            }
-            var currentMonth = createElement("div", "flatpickr-current-month");
-            currentMonth.appendChild(monthElement);
-            currentMonth.appendChild(yearInput);
-            monthNavFragment.appendChild(currentMonth);
-            container.appendChild(monthNavFragment);
-            return {
-                container: container,
-                yearElement: yearElement,
-                monthElement: monthElement
-            };
-        }
-        function buildMonths() {
-            clearNode(self.monthNav);
-            self.monthNav.appendChild(self.prevMonthNav);
-            if (self.config.showMonths) {
-                self.yearElements = [];
-                self.monthElements = [];
-            }
-            for (var m = self.config.showMonths; m--;) {
-                var month = buildMonth();
-                self.yearElements.push(month.yearElement);
-                self.monthElements.push(month.monthElement);
-                self.monthNav.appendChild(month.container);
-            }
-            self.monthNav.appendChild(self.nextMonthNav);
-        }
-        function buildMonthNav() {
-            self.monthNav = createElement("div", "flatpickr-months");
-            self.yearElements = [];
-            self.monthElements = [];
-            self.prevMonthNav = createElement("span", "flatpickr-prev-month");
-            self.prevMonthNav.innerHTML = self.config.prevArrow;
-            self.nextMonthNav = createElement("span", "flatpickr-next-month");
-            self.nextMonthNav.innerHTML = self.config.nextArrow;
-            buildMonths();
-            Object.defineProperty(self, "_hidePrevMonthArrow", {
-                get: function () { return self.__hidePrevMonthArrow; },
-                set: function (bool) {
-                    if (self.__hidePrevMonthArrow !== bool) {
-                        toggleClass(self.prevMonthNav, "flatpickr-disabled", bool);
-                        self.__hidePrevMonthArrow = bool;
-                    }
-                }
-            });
-            Object.defineProperty(self, "_hideNextMonthArrow", {
-                get: function () { return self.__hideNextMonthArrow; },
-                set: function (bool) {
-                    if (self.__hideNextMonthArrow !== bool) {
-                        toggleClass(self.nextMonthNav, "flatpickr-disabled", bool);
-                        self.__hideNextMonthArrow = bool;
-                    }
-                }
-            });
-            self.currentYearElement = self.yearElements[0];
-            updateNavigationCurrentMonth();
-            return self.monthNav;
-        }
-        function buildTime() {
-            self.calendarContainer.classList.add("hasTime");
-            if (self.config.noCalendar)
-                self.calendarContainer.classList.add("noCalendar");
-            self.timeContainer = createElement("div", "flatpickr-time");
-            self.timeContainer.tabIndex = -1;
-            var separator = createElement("span", "flatpickr-time-separator", ":");
-            var hourInput = createNumberInput("flatpickr-hour", {
-                "aria-label": self.l10n.hourAriaLabel
-            });
-            self.hourElement = hourInput.getElementsByTagName("input")[0];
-            var minuteInput = createNumberInput("flatpickr-minute", {
-                "aria-label": self.l10n.minuteAriaLabel
-            });
-            self.minuteElement = minuteInput.getElementsByTagName("input")[0];
-            self.hourElement.tabIndex = self.minuteElement.tabIndex = -1;
-            self.hourElement.value = pad(self.latestSelectedDateObj
-                ? self.latestSelectedDateObj.getHours()
-                : self.config.time_24hr
-                    ? self.config.defaultHour
-                    : military2ampm(self.config.defaultHour));
-            self.minuteElement.value = pad(self.latestSelectedDateObj
-                ? self.latestSelectedDateObj.getMinutes()
-                : self.config.defaultMinute);
-            self.hourElement.setAttribute("step", self.config.hourIncrement.toString());
-            self.minuteElement.setAttribute("step", self.config.minuteIncrement.toString());
-            self.hourElement.setAttribute("min", self.config.time_24hr ? "0" : "1");
-            self.hourElement.setAttribute("max", self.config.time_24hr ? "23" : "12");
-            self.minuteElement.setAttribute("min", "0");
-            self.minuteElement.setAttribute("max", "59");
-            self.timeContainer.appendChild(hourInput);
-            self.timeContainer.appendChild(separator);
-            self.timeContainer.appendChild(minuteInput);
-            if (self.config.time_24hr)
-                self.timeContainer.classList.add("time24hr");
-            if (self.config.enableSeconds) {
-                self.timeContainer.classList.add("hasSeconds");
-                var secondInput = createNumberInput("flatpickr-second");
-                self.secondElement = secondInput.getElementsByTagName("input")[0];
-                self.secondElement.value = pad(self.latestSelectedDateObj
-                    ? self.latestSelectedDateObj.getSeconds()
-                    : self.config.defaultSeconds);
-                self.secondElement.setAttribute("step", self.minuteElement.getAttribute("step"));
-                self.secondElement.setAttribute("min", "0");
-                self.secondElement.setAttribute("max", "59");
-                self.timeContainer.appendChild(createElement("span", "flatpickr-time-separator", ":"));
-                self.timeContainer.appendChild(secondInput);
-            }
-            if (!self.config.time_24hr) {
-                // add self.amPM if appropriate
-                self.amPM = createElement("span", "flatpickr-am-pm", self.l10n.amPM[int((self.latestSelectedDateObj
-                    ? self.hourElement.value
-                    : self.config.defaultHour) > 11)]);
-                self.amPM.title = self.l10n.toggleTitle;
-                self.amPM.tabIndex = -1;
-                self.timeContainer.appendChild(self.amPM);
-            }
-            return self.timeContainer;
-        }
-        function buildWeekdays() {
-            if (!self.weekdayContainer)
-                self.weekdayContainer = createElement("div", "flatpickr-weekdays");
-            else
-                clearNode(self.weekdayContainer);
-            for (var i = self.config.showMonths; i--;) {
-                var container = createElement("div", "flatpickr-weekdaycontainer");
-                self.weekdayContainer.appendChild(container);
-            }
-            updateWeekdays();
-            return self.weekdayContainer;
-        }
-        function updateWeekdays() {
-            if (!self.weekdayContainer) {
-                return;
-            }
-            var firstDayOfWeek = self.l10n.firstDayOfWeek;
-            var weekdays = self.l10n.weekdays.shorthand.slice();
-            if (firstDayOfWeek > 0 && firstDayOfWeek < weekdays.length) {
-                weekdays = weekdays.splice(firstDayOfWeek, weekdays.length).concat(weekdays.splice(0, firstDayOfWeek));
-            }
-            for (var i = self.config.showMonths; i--;) {
-                self.weekdayContainer.children[i].innerHTML = "\n      <span class='flatpickr-weekday'>\n        " + weekdays.join("</span><span class='flatpickr-weekday'>") + "\n      </span>\n      ";
-            }
-        }
-        /* istanbul ignore next */
-        function buildWeeks() {
-            self.calendarContainer.classList.add("hasWeeks");
-            var weekWrapper = createElement("div", "flatpickr-weekwrapper");
-            weekWrapper.appendChild(createElement("span", "flatpickr-weekday", self.l10n.weekAbbreviation));
-            var weekNumbers = createElement("div", "flatpickr-weeks");
-            weekWrapper.appendChild(weekNumbers);
-            return {
-                weekWrapper: weekWrapper,
-                weekNumbers: weekNumbers
-            };
-        }
-        function changeMonth(value, isOffset) {
-            if (isOffset === void 0) { isOffset = true; }
-            var delta = isOffset ? value : value - self.currentMonth;
-            if ((delta < 0 && self._hidePrevMonthArrow === true) ||
-                (delta > 0 && self._hideNextMonthArrow === true))
-                return;
-            self.currentMonth += delta;
-            if (self.currentMonth < 0 || self.currentMonth > 11) {
-                self.currentYear += self.currentMonth > 11 ? 1 : -1;
-                self.currentMonth = (self.currentMonth + 12) % 12;
-                triggerEvent("onYearChange");
-                buildMonthSwitch();
-            }
-            buildDays();
-            triggerEvent("onMonthChange");
-            updateNavigationCurrentMonth();
-        }
-        function clear(triggerChangeEvent, toInitial) {
-            if (triggerChangeEvent === void 0) { triggerChangeEvent = true; }
-            if (toInitial === void 0) { toInitial = true; }
-            self.input.value = "";
-            if (self.altInput !== undefined)
-                self.altInput.value = "";
-            if (self.mobileInput !== undefined)
-                self.mobileInput.value = "";
-            self.selectedDates = [];
-            self.latestSelectedDateObj = undefined;
-            if (toInitial === true) {
-                self.currentYear = self._initialDate.getFullYear();
-                self.currentMonth = self._initialDate.getMonth();
-            }
-            self.showTimeInput = false;
-            if (self.config.enableTime === true) {
-                setDefaultHours();
-            }
-            self.redraw();
-            if (triggerChangeEvent)
-                // triggerChangeEvent is true (default) or an Event
-                triggerEvent("onChange");
-        }
-        function close() {
-            self.isOpen = false;
-            if (!self.isMobile) {
-                if (self.calendarContainer !== undefined) {
-                    self.calendarContainer.classList.remove("open");
-                }
-                if (self._input !== undefined) {
-                    self._input.classList.remove("active");
-                }
-            }
-            triggerEvent("onClose");
-        }
-        function destroy() {
-            if (self.config !== undefined)
-                triggerEvent("onDestroy");
-            for (var i = self._handlers.length; i--;) {
-                var h = self._handlers[i];
-                h.element.removeEventListener(h.event, h.handler, h.options);
-            }
-            self._handlers = [];
-            if (self.mobileInput) {
-                if (self.mobileInput.parentNode)
-                    self.mobileInput.parentNode.removeChild(self.mobileInput);
-                self.mobileInput = undefined;
-            }
-            else if (self.calendarContainer && self.calendarContainer.parentNode) {
-                if (self.config.static && self.calendarContainer.parentNode) {
-                    var wrapper = self.calendarContainer.parentNode;
-                    wrapper.lastChild && wrapper.removeChild(wrapper.lastChild);
-                    if (wrapper.parentNode) {
-                        while (wrapper.firstChild)
-                            wrapper.parentNode.insertBefore(wrapper.firstChild, wrapper);
-                        wrapper.parentNode.removeChild(wrapper);
-                    }
-                }
-                else
-                    self.calendarContainer.parentNode.removeChild(self.calendarContainer);
-            }
-            if (self.altInput) {
-                self.input.type = "text";
-                if (self.altInput.parentNode)
-                    self.altInput.parentNode.removeChild(self.altInput);
-                delete self.altInput;
-            }
-            if (self.input) {
-                self.input.type = self.input._type;
-                self.input.classList.remove("flatpickr-input");
-                self.input.removeAttribute("readonly");
-                self.input.value = "";
-            }
-            [
-                "_showTimeInput",
-                "latestSelectedDateObj",
-                "_hideNextMonthArrow",
-                "_hidePrevMonthArrow",
-                "__hideNextMonthArrow",
-                "__hidePrevMonthArrow",
-                "isMobile",
-                "isOpen",
-                "selectedDateElem",
-                "minDateHasTime",
-                "maxDateHasTime",
-                "days",
-                "daysContainer",
-                "_input",
-                "_positionElement",
-                "innerContainer",
-                "rContainer",
-                "monthNav",
-                "todayDateElem",
-                "calendarContainer",
-                "weekdayContainer",
-                "prevMonthNav",
-                "nextMonthNav",
-                "monthsDropdownContainer",
-                "currentMonthElement",
-                "currentYearElement",
-                "navigationCurrentMonth",
-                "selectedDateElem",
-                "config",
-            ].forEach(function (k) {
-                try {
-                    delete self[k];
-                }
-                catch (_) { }
-            });
-        }
-        function isCalendarElem(elem) {
-            if (self.config.appendTo && self.config.appendTo.contains(elem))
-                return true;
-            return self.calendarContainer.contains(elem);
-        }
-        function documentClick(e) {
-            if (self.isOpen && !self.config.inline) {
-                var eventTarget_1 = getEventTarget(e);
-                var isCalendarElement = isCalendarElem(eventTarget_1);
-                var isInput = eventTarget_1 === self.input ||
-                    eventTarget_1 === self.altInput ||
-                    self.element.contains(eventTarget_1) ||
-                    // web components
-                    // e.path is not present in all browsers. circumventing typechecks
-                    (e.path &&
-                        e.path.indexOf &&
-                        (~e.path.indexOf(self.input) ||
-                            ~e.path.indexOf(self.altInput)));
-                var lostFocus = e.type === "blur"
-                    ? isInput &&
-                        e.relatedTarget &&
-                        !isCalendarElem(e.relatedTarget)
-                    : !isInput &&
-                        !isCalendarElement &&
-                        !isCalendarElem(e.relatedTarget);
-                var isIgnored = !self.config.ignoredFocusElements.some(function (elem) {
-                    return elem.contains(eventTarget_1);
-                });
-                if (lostFocus && isIgnored) {
-                    if (self.timeContainer !== undefined &&
-                        self.minuteElement !== undefined &&
-                        self.hourElement !== undefined) {
-                        updateTime();
-                    }
-                    self.close();
-                    if (self.config.mode === "range" && self.selectedDates.length === 1) {
-                        self.clear(false);
-                        self.redraw();
-                    }
-                }
-            }
-        }
-        function changeYear(newYear) {
-            if (!newYear ||
-                (self.config.minDate && newYear < self.config.minDate.getFullYear()) ||
-                (self.config.maxDate && newYear > self.config.maxDate.getFullYear()))
-                return;
-            var newYearNum = newYear, isNewYear = self.currentYear !== newYearNum;
-            self.currentYear = newYearNum || self.currentYear;
-            if (self.config.maxDate &&
-                self.currentYear === self.config.maxDate.getFullYear()) {
-                self.currentMonth = Math.min(self.config.maxDate.getMonth(), self.currentMonth);
-            }
-            else if (self.config.minDate &&
-                self.currentYear === self.config.minDate.getFullYear()) {
-                self.currentMonth = Math.max(self.config.minDate.getMonth(), self.currentMonth);
-            }
-            if (isNewYear) {
-                self.redraw();
-                triggerEvent("onYearChange");
-                buildMonthSwitch();
-            }
-        }
-        function isEnabled(date, timeless) {
-            if (timeless === void 0) { timeless = true; }
-            var dateToCheck = self.parseDate(date, undefined, timeless); // timeless
-            if ((self.config.minDate &&
-                dateToCheck &&
-                compareDates(dateToCheck, self.config.minDate, timeless !== undefined ? timeless : !self.minDateHasTime) < 0) ||
-                (self.config.maxDate &&
-                    dateToCheck &&
-                    compareDates(dateToCheck, self.config.maxDate, timeless !== undefined ? timeless : !self.maxDateHasTime) > 0))
-                return false;
-            if (self.config.enable.length === 0 && self.config.disable.length === 0)
-                return true;
-            if (dateToCheck === undefined)
-                return false;
-            var bool = self.config.enable.length > 0, array = bool ? self.config.enable : self.config.disable;
-            for (var i = 0, d = void 0; i < array.length; i++) {
-                d = array[i];
-                if (typeof d === "function" &&
-                    d(dateToCheck) // disabled by function
-                )
-                    return bool;
-                else if (d instanceof Date &&
-                    dateToCheck !== undefined &&
-                    d.getTime() === dateToCheck.getTime())
-                    // disabled by date
-                    return bool;
-                else if (typeof d === "string" && dateToCheck !== undefined) {
-                    // disabled by date string
-                    var parsed = self.parseDate(d, undefined, true);
-                    return parsed && parsed.getTime() === dateToCheck.getTime()
-                        ? bool
-                        : !bool;
-                }
-                else if (
-                // disabled by range
-                typeof d === "object" &&
-                    dateToCheck !== undefined &&
-                    d.from &&
-                    d.to &&
-                    dateToCheck.getTime() >= d.from.getTime() &&
-                    dateToCheck.getTime() <= d.to.getTime())
-                    return bool;
-            }
-            return !bool;
-        }
-        function isInView(elem) {
-            if (self.daysContainer !== undefined)
-                return (elem.className.indexOf("hidden") === -1 &&
-                    self.daysContainer.contains(elem));
-            return false;
-        }
-        function onKeyDown(e) {
-            // e.key                      e.keyCode
-            // "Backspace"                        8
-            // "Tab"                              9
-            // "Enter"                           13
-            // "Escape"     (IE "Esc")           27
-            // "ArrowLeft"  (IE "Left")          37
-            // "ArrowUp"    (IE "Up")            38
-            // "ArrowRight" (IE "Right")         39
-            // "ArrowDown"  (IE "Down")          40
-            // "Delete"     (IE "Del")           46
-            var isInput = e.target === self._input;
-            var allowInput = self.config.allowInput;
-            var allowKeydown = self.isOpen && (!allowInput || !isInput);
-            var allowInlineKeydown = self.config.inline && isInput && !allowInput;
-            if (e.keyCode === 13 && isInput) {
-                if (allowInput) {
-                    self.setDate(self._input.value, true, e.target === self.altInput
-                        ? self.config.altFormat
-                        : self.config.dateFormat);
-                    return e.target.blur();
-                }
-                else {
-                    self.open();
-                }
-            }
-            else if (isCalendarElem(e.target) ||
-                allowKeydown ||
-                allowInlineKeydown) {
-                var isTimeObj = !!self.timeContainer &&
-                    self.timeContainer.contains(e.target);
-                switch (e.keyCode) {
-                    case 13:
-                        if (isTimeObj) {
-                            e.preventDefault();
-                            updateTime();
-                            focusAndClose();
-                        }
-                        else
-                            selectDate(e);
-                        break;
-                    case 27: // escape
-                        e.preventDefault();
-                        focusAndClose();
-                        break;
-                    case 8:
-                    case 46:
-                        if (isInput && !self.config.allowInput) {
-                            e.preventDefault();
-                            self.clear();
-                        }
-                        break;
-                    case 37:
-                    case 39:
-                        if (!isTimeObj && !isInput) {
-                            e.preventDefault();
-                            if (self.daysContainer !== undefined &&
-                                (allowInput === false ||
-                                    (document.activeElement && isInView(document.activeElement)))) {
-                                var delta_1 = e.keyCode === 39 ? 1 : -1;
-                                if (!e.ctrlKey)
-                                    focusOnDay(undefined, delta_1);
-                                else {
-                                    e.stopPropagation();
-                                    changeMonth(delta_1);
-                                    focusOnDay(getFirstAvailableDay(1), 0);
-                                }
-                            }
-                        }
-                        else if (self.hourElement)
-                            self.hourElement.focus();
-                        break;
-                    case 38:
-                    case 40:
-                        e.preventDefault();
-                        var delta = e.keyCode === 40 ? 1 : -1;
-                        if ((self.daysContainer && e.target.$i !== undefined) ||
-                            e.target === self.input ||
-                            e.target === self.altInput) {
-                            if (e.ctrlKey) {
-                                e.stopPropagation();
-                                changeYear(self.currentYear - delta);
-                                focusOnDay(getFirstAvailableDay(1), 0);
-                            }
-                            else if (!isTimeObj)
-                                focusOnDay(undefined, delta * 7);
-                        }
-                        else if (e.target === self.currentYearElement) {
-                            changeYear(self.currentYear - delta);
-                        }
-                        else if (self.config.enableTime) {
-                            if (!isTimeObj && self.hourElement)
-                                self.hourElement.focus();
-                            updateTime(e);
-                            self._debouncedChange();
-                        }
-                        break;
-                    case 9:
-                        if (isTimeObj) {
-                            var elems = [
-                                self.hourElement,
-                                self.minuteElement,
-                                self.secondElement,
-                                self.amPM,
-                            ]
-                                .concat(self.pluginElements)
-                                .filter(function (x) { return x; });
-                            var i = elems.indexOf(e.target);
-                            if (i !== -1) {
-                                var target = elems[i + (e.shiftKey ? -1 : 1)];
-                                e.preventDefault();
-                                (target || self._input).focus();
-                            }
-                        }
-                        else if (!self.config.noCalendar &&
-                            self.daysContainer &&
-                            self.daysContainer.contains(e.target) &&
-                            e.shiftKey) {
-                            e.preventDefault();
-                            self._input.focus();
-                        }
-                        break;
-                    default:
-                        break;
-                }
-            }
-            if (self.amPM !== undefined && e.target === self.amPM) {
-                switch (e.key) {
-                    case self.l10n.amPM[0].charAt(0):
-                    case self.l10n.amPM[0].charAt(0).toLowerCase():
-                        self.amPM.textContent = self.l10n.amPM[0];
-                        setHoursFromInputs();
-                        updateValue();
-                        break;
-                    case self.l10n.amPM[1].charAt(0):
-                    case self.l10n.amPM[1].charAt(0).toLowerCase():
-                        self.amPM.textContent = self.l10n.amPM[1];
-                        setHoursFromInputs();
-                        updateValue();
-                        break;
-                }
-            }
-            if (isInput || isCalendarElem(e.target)) {
-                triggerEvent("onKeyDown", e);
-            }
-        }
-        function onMouseOver(elem) {
-            if (self.selectedDates.length !== 1 ||
-                (elem &&
-                    (!elem.classList.contains("flatpickr-day") ||
-                        elem.classList.contains("flatpickr-disabled"))))
-                return;
-            var hoverDate = elem
-                ? elem.dateObj.getTime()
-                : self.days.firstElementChild.dateObj.getTime(), initialDate = self.parseDate(self.selectedDates[0], undefined, true).getTime(), rangeStartDate = Math.min(hoverDate, self.selectedDates[0].getTime()), rangeEndDate = Math.max(hoverDate, self.selectedDates[0].getTime());
-            var containsDisabled = false;
-            var minRange = 0, maxRange = 0;
-            for (var t = rangeStartDate; t < rangeEndDate; t += duration.DAY) {
-                if (!isEnabled(new Date(t), true)) {
-                    containsDisabled =
-                        containsDisabled || (t > rangeStartDate && t < rangeEndDate);
-                    if (t < initialDate && (!minRange || t > minRange))
-                        minRange = t;
-                    else if (t > initialDate && (!maxRange || t < maxRange))
-                        maxRange = t;
-                }
-            }
-            for (var m = 0; m < self.config.showMonths; m++) {
-                var month = self.daysContainer.children[m];
-                var _loop_1 = function (i, l) {
-                    var dayElem = month.children[i], date = dayElem.dateObj;
-                    var timestamp = date.getTime();
-                    var outOfRange = (minRange > 0 && timestamp < minRange) ||
-                        (maxRange > 0 && timestamp > maxRange);
-                    if (outOfRange) {
-                        dayElem.classList.add("notAllowed");
-                        ["inRange", "startRange", "endRange"].forEach(function (c) {
-                            dayElem.classList.remove(c);
-                        });
-                        return "continue";
-                    }
-                    else if (containsDisabled && !outOfRange)
-                        return "continue";
-                    ["startRange", "inRange", "endRange", "notAllowed"].forEach(function (c) {
-                        dayElem.classList.remove(c);
-                    });
-                    if (elem !== undefined) {
-                        elem.classList.add(hoverDate <= self.selectedDates[0].getTime()
-                            ? "startRange"
-                            : "endRange");
-                        if (initialDate < hoverDate && timestamp === initialDate)
-                            dayElem.classList.add("startRange");
-                        else if (initialDate > hoverDate && timestamp === initialDate)
-                            dayElem.classList.add("endRange");
-                        if (timestamp >= minRange &&
-                            (maxRange === 0 || timestamp <= maxRange) &&
-                            isBetween(timestamp, initialDate, hoverDate))
-                            dayElem.classList.add("inRange");
-                    }
-                };
-                for (var i = 0, l = month.children.length; i < l; i++) {
-                    _loop_1(i, l);
-                }
-            }
-        }
-        function onResize() {
-            if (self.isOpen && !self.config.static && !self.config.inline)
-                positionCalendar();
-        }
-        function setDefaultTime() {
-            self.setDate(self.config.minDate !== undefined
-                ? new Date(self.config.minDate.getTime())
-                : new Date(), true);
-            setDefaultHours();
-            updateValue();
-        }
-        function open(e, positionElement) {
-            if (positionElement === void 0) { positionElement = self._positionElement; }
-            if (self.isMobile === true) {
-                if (e) {
-                    e.preventDefault();
-                    e.target && e.target.blur();
-                }
-                if (self.mobileInput !== undefined) {
-                    self.mobileInput.focus();
-                    self.mobileInput.click();
-                }
-                triggerEvent("onOpen");
-                return;
-            }
-            if (self._input.disabled || self.config.inline)
-                return;
-            var wasOpen = self.isOpen;
-            self.isOpen = true;
-            if (!wasOpen) {
-                self.calendarContainer.classList.add("open");
-                self._input.classList.add("active");
-                triggerEvent("onOpen");
-                positionCalendar(positionElement);
-            }
-            if (self.config.enableTime === true && self.config.noCalendar === true) {
-                if (self.selectedDates.length === 0) {
-                    setDefaultTime();
-                }
-                if (self.config.allowInput === false &&
-                    (e === undefined ||
-                        !self.timeContainer.contains(e.relatedTarget))) {
-                    setTimeout(function () { return self.hourElement.select(); }, 50);
-                }
-            }
-        }
-        function minMaxDateSetter(type) {
-            return function (date) {
-                var dateObj = (self.config["_" + type + "Date"] = self.parseDate(date, self.config.dateFormat));
-                var inverseDateObj = self.config["_" + (type === "min" ? "max" : "min") + "Date"];
-                if (dateObj !== undefined) {
-                    self[type === "min" ? "minDateHasTime" : "maxDateHasTime"] =
-                        dateObj.getHours() > 0 ||
-                            dateObj.getMinutes() > 0 ||
-                            dateObj.getSeconds() > 0;
-                }
-                if (self.selectedDates) {
-                    self.selectedDates = self.selectedDates.filter(function (d) { return isEnabled(d); });
-                    if (!self.selectedDates.length && type === "min")
-                        setHoursFromDate(dateObj);
-                    updateValue();
-                }
-                if (self.daysContainer) {
-                    redraw();
-                    if (dateObj !== undefined)
-                        self.currentYearElement[type] = dateObj.getFullYear().toString();
-                    else
-                        self.currentYearElement.removeAttribute(type);
-                    self.currentYearElement.disabled =
-                        !!inverseDateObj &&
-                            dateObj !== undefined &&
-                            inverseDateObj.getFullYear() === dateObj.getFullYear();
-                }
-            };
-        }
-        function parseConfig() {
-            var boolOpts = [
-                "wrap",
-                "weekNumbers",
-                "allowInput",
-                "clickOpens",
-                "time_24hr",
-                "enableTime",
-                "noCalendar",
-                "altInput",
-                "shorthandCurrentMonth",
-                "inline",
-                "static",
-                "enableSeconds",
-                "disableMobile",
-            ];
-            var userConfig = __assign({}, instanceConfig, JSON.parse(JSON.stringify(element.dataset || {})));
-            var formats = {};
-            self.config.parseDate = userConfig.parseDate;
-            self.config.formatDate = userConfig.formatDate;
-            Object.defineProperty(self.config, "enable", {
-                get: function () { return self.config._enable; },
-                set: function (dates) {
-                    self.config._enable = parseDateRules(dates);
-                }
-            });
-            Object.defineProperty(self.config, "disable", {
-                get: function () { return self.config._disable; },
-                set: function (dates) {
-                    self.config._disable = parseDateRules(dates);
-                }
-            });
-            var timeMode = userConfig.mode === "time";
-            if (!userConfig.dateFormat && (userConfig.enableTime || timeMode)) {
-                var defaultDateFormat = flatpickr.defaultConfig.dateFormat || defaults.dateFormat;
-                formats.dateFormat =
-                    userConfig.noCalendar || timeMode
-                        ? "H:i" + (userConfig.enableSeconds ? ":S" : "")
-                        : defaultDateFormat + " H:i" + (userConfig.enableSeconds ? ":S" : "");
-            }
-            if (userConfig.altInput &&
-                (userConfig.enableTime || timeMode) &&
-                !userConfig.altFormat) {
-                var defaultAltFormat = flatpickr.defaultConfig.altFormat || defaults.altFormat;
-                formats.altFormat =
-                    userConfig.noCalendar || timeMode
-                        ? "h:i" + (userConfig.enableSeconds ? ":S K" : " K")
-                        : defaultAltFormat + (" h:i" + (userConfig.enableSeconds ? ":S" : "") + " K");
-            }
-            if (!userConfig.altInputClass) {
-                self.config.altInputClass =
-                    self.input.className + " " + self.config.altInputClass;
-            }
-            Object.defineProperty(self.config, "minDate", {
-                get: function () { return self.config._minDate; },
-                set: minMaxDateSetter("min")
-            });
-            Object.defineProperty(self.config, "maxDate", {
-                get: function () { return self.config._maxDate; },
-                set: minMaxDateSetter("max")
-            });
-            var minMaxTimeSetter = function (type) { return function (val) {
-                self.config[type === "min" ? "_minTime" : "_maxTime"] = self.parseDate(val, "H:i:S");
-            }; };
-            Object.defineProperty(self.config, "minTime", {
-                get: function () { return self.config._minTime; },
-                set: minMaxTimeSetter("min")
-            });
-            Object.defineProperty(self.config, "maxTime", {
-                get: function () { return self.config._maxTime; },
-                set: minMaxTimeSetter("max")
-            });
-            if (userConfig.mode === "time") {
-                self.config.noCalendar = true;
-                self.config.enableTime = true;
-            }
-            Object.assign(self.config, formats, userConfig);
-            for (var i = 0; i < boolOpts.length; i++)
-                self.config[boolOpts[i]] =
-                    self.config[boolOpts[i]] === true ||
-                        self.config[boolOpts[i]] === "true";
-            HOOKS.filter(function (hook) { return self.config[hook] !== undefined; }).forEach(function (hook) {
-                self.config[hook] = arrayify(self.config[hook] || []).map(bindToInstance);
-            });
-            self.isMobile =
-                !self.config.disableMobile &&
-                    !self.config.inline &&
-                    self.config.mode === "single" &&
-                    !self.config.disable.length &&
-                    !self.config.enable.length &&
-                    !self.config.weekNumbers &&
-                    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            for (var i = 0; i < self.config.plugins.length; i++) {
-                var pluginConf = self.config.plugins[i](self) || {};
-                for (var key in pluginConf) {
-                    if (HOOKS.indexOf(key) > -1) {
-                        self.config[key] = arrayify(pluginConf[key])
-                            .map(bindToInstance)
-                            .concat(self.config[key]);
-                    }
-                    else if (typeof userConfig[key] === "undefined")
-                        self.config[key] = pluginConf[key];
-                }
-            }
-            triggerEvent("onParseConfig");
-        }
-        function setupLocale() {
-            if (typeof self.config.locale !== "object" &&
-                typeof flatpickr.l10ns[self.config.locale] === "undefined")
-                self.config.errorHandler(new Error("flatpickr: invalid locale " + self.config.locale));
-            self.l10n = __assign({}, flatpickr.l10ns["default"], (typeof self.config.locale === "object"
-                ? self.config.locale
-                : self.config.locale !== "default"
-                    ? flatpickr.l10ns[self.config.locale]
-                    : undefined));
-            tokenRegex.K = "(" + self.l10n.amPM[0] + "|" + self.l10n.amPM[1] + "|" + self.l10n.amPM[0].toLowerCase() + "|" + self.l10n.amPM[1].toLowerCase() + ")";
-            var userConfig = __assign({}, instanceConfig, JSON.parse(JSON.stringify(element.dataset || {})));
-            if (userConfig.time_24hr === undefined &&
-                flatpickr.defaultConfig.time_24hr === undefined) {
-                self.config.time_24hr = self.l10n.time_24hr;
-            }
-            self.formatDate = createDateFormatter(self);
-            self.parseDate = createDateParser({ config: self.config, l10n: self.l10n });
-        }
-        function positionCalendar(customPositionElement) {
-            if (self.calendarContainer === undefined)
-                return;
-            triggerEvent("onPreCalendarPosition");
-            var positionElement = customPositionElement || self._positionElement;
-            var calendarHeight = Array.prototype.reduce.call(self.calendarContainer.children, (function (acc, child) { return acc + child.offsetHeight; }), 0), calendarWidth = self.calendarContainer.offsetWidth, configPos = self.config.position.split(" "), configPosVertical = configPos[0], configPosHorizontal = configPos.length > 1 ? configPos[1] : null, inputBounds = positionElement.getBoundingClientRect(), distanceFromBottom = window.innerHeight - inputBounds.bottom, showOnTop = configPosVertical === "above" ||
-                (configPosVertical !== "below" &&
-                    distanceFromBottom < calendarHeight &&
-                    inputBounds.top > calendarHeight);
-            var top = window.pageYOffset +
-                inputBounds.top +
-                (!showOnTop ? positionElement.offsetHeight + 2 : -calendarHeight - 2);
-            toggleClass(self.calendarContainer, "arrowTop", !showOnTop);
-            toggleClass(self.calendarContainer, "arrowBottom", showOnTop);
-            if (self.config.inline)
-                return;
-            var left = window.pageXOffset +
-                inputBounds.left -
-                (configPosHorizontal != null && configPosHorizontal === "center"
-                    ? (calendarWidth - inputBounds.width) / 2
-                    : 0);
-            var right = window.document.body.offsetWidth - (window.pageXOffset + inputBounds.right);
-            var rightMost = left + calendarWidth > window.document.body.offsetWidth;
-            var centerMost = right + calendarWidth > window.document.body.offsetWidth;
-            toggleClass(self.calendarContainer, "rightMost", rightMost);
-            if (self.config.static)
-                return;
-            self.calendarContainer.style.top = top + "px";
-            if (!rightMost) {
-                self.calendarContainer.style.left = left + "px";
-                self.calendarContainer.style.right = "auto";
-            }
-            else if (!centerMost) {
-                self.calendarContainer.style.left = "auto";
-                self.calendarContainer.style.right = right + "px";
-            }
-            else {
-                var doc = document.styleSheets[0];
-                // some testing environments don't have css support
-                if (doc === undefined)
-                    return;
-                var bodyWidth = window.document.body.offsetWidth;
-                var centerLeft = Math.max(0, bodyWidth / 2 - calendarWidth / 2);
-                var centerBefore = ".flatpickr-calendar.centerMost:before";
-                var centerAfter = ".flatpickr-calendar.centerMost:after";
-                var centerIndex = doc.cssRules.length;
-                var centerStyle = "{left:" + inputBounds.left + "px;right:auto;}";
-                toggleClass(self.calendarContainer, "rightMost", false);
-                toggleClass(self.calendarContainer, "centerMost", true);
-                doc.insertRule(centerBefore + "," + centerAfter + centerStyle, centerIndex);
-                self.calendarContainer.style.left = centerLeft + "px";
-                self.calendarContainer.style.right = "auto";
-            }
-        }
-        function redraw() {
-            if (self.config.noCalendar || self.isMobile)
-                return;
-            updateNavigationCurrentMonth();
-            buildDays();
-        }
-        function focusAndClose() {
-            self._input.focus();
-            if (window.navigator.userAgent.indexOf("MSIE") !== -1 ||
-                navigator.msMaxTouchPoints !== undefined) {
-                // hack - bugs in the way IE handles focus keeps the calendar open
-                setTimeout(self.close, 0);
-            }
-            else {
-                self.close();
-            }
-        }
-        function selectDate(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            var isSelectable = function (day) {
-                return day.classList &&
-                    day.classList.contains("flatpickr-day") &&
-                    !day.classList.contains("flatpickr-disabled") &&
-                    !day.classList.contains("notAllowed");
-            };
-            var t = findParent(e.target, isSelectable);
-            if (t === undefined)
-                return;
-            var target = t;
-            var selectedDate = (self.latestSelectedDateObj = new Date(target.dateObj.getTime()));
-            var shouldChangeMonth = (selectedDate.getMonth() < self.currentMonth ||
-                selectedDate.getMonth() >
-                    self.currentMonth + self.config.showMonths - 1) &&
-                self.config.mode !== "range";
-            self.selectedDateElem = target;
-            if (self.config.mode === "single")
-                self.selectedDates = [selectedDate];
-            else if (self.config.mode === "multiple") {
-                var selectedIndex = isDateSelected(selectedDate);
-                if (selectedIndex)
-                    self.selectedDates.splice(parseInt(selectedIndex), 1);
-                else
-                    self.selectedDates.push(selectedDate);
-            }
-            else if (self.config.mode === "range") {
-                if (self.selectedDates.length === 2) {
-                    self.clear(false, false);
-                }
-                self.latestSelectedDateObj = selectedDate;
-                self.selectedDates.push(selectedDate);
-                // unless selecting same date twice, sort ascendingly
-                if (compareDates(selectedDate, self.selectedDates[0], true) !== 0)
-                    self.selectedDates.sort(function (a, b) { return a.getTime() - b.getTime(); });
-            }
-            setHoursFromInputs();
-            if (shouldChangeMonth) {
-                var isNewYear = self.currentYear !== selectedDate.getFullYear();
-                self.currentYear = selectedDate.getFullYear();
-                self.currentMonth = selectedDate.getMonth();
-                if (isNewYear) {
-                    triggerEvent("onYearChange");
-                    buildMonthSwitch();
-                }
-                triggerEvent("onMonthChange");
-            }
-            updateNavigationCurrentMonth();
-            buildDays();
-            updateValue();
-            if (self.config.enableTime)
-                setTimeout(function () { return (self.showTimeInput = true); }, 50);
-            // maintain focus
-            if (!shouldChangeMonth &&
-                self.config.mode !== "range" &&
-                self.config.showMonths === 1)
-                focusOnDayElem(target);
-            else if (self.selectedDateElem !== undefined &&
-                self.hourElement === undefined) {
-                self.selectedDateElem && self.selectedDateElem.focus();
-            }
-            if (self.hourElement !== undefined)
-                self.hourElement !== undefined && self.hourElement.focus();
-            if (self.config.closeOnSelect) {
-                var single = self.config.mode === "single" && !self.config.enableTime;
-                var range = self.config.mode === "range" &&
-                    self.selectedDates.length === 2 &&
-                    !self.config.enableTime;
-                if (single || range) {
-                    focusAndClose();
-                }
-            }
-            triggerChange();
-        }
-        var CALLBACKS = {
-            locale: [setupLocale, updateWeekdays],
-            showMonths: [buildMonths, setCalendarWidth, buildWeekdays],
-            minDate: [jumpToDate],
-            maxDate: [jumpToDate]
-        };
-        function set(option, value) {
-            if (option !== null && typeof option === "object") {
-                Object.assign(self.config, option);
-                for (var key in option) {
-                    if (CALLBACKS[key] !== undefined)
-                        CALLBACKS[key].forEach(function (x) { return x(); });
-                }
-            }
-            else {
-                self.config[option] = value;
-                if (CALLBACKS[option] !== undefined)
-                    CALLBACKS[option].forEach(function (x) { return x(); });
-                else if (HOOKS.indexOf(option) > -1)
-                    self.config[option] = arrayify(value);
-            }
-            self.redraw();
-            updateValue(false);
-        }
-        function setSelectedDate(inputDate, format) {
-            var dates = [];
-            if (inputDate instanceof Array)
-                dates = inputDate.map(function (d) { return self.parseDate(d, format); });
-            else if (inputDate instanceof Date || typeof inputDate === "number")
-                dates = [self.parseDate(inputDate, format)];
-            else if (typeof inputDate === "string") {
-                switch (self.config.mode) {
-                    case "single":
-                    case "time":
-                        dates = [self.parseDate(inputDate, format)];
-                        break;
-                    case "multiple":
-                        dates = inputDate
-                            .split(self.config.conjunction)
-                            .map(function (date) { return self.parseDate(date, format); });
-                        break;
-                    case "range":
-                        dates = inputDate
-                            .split(self.l10n.rangeSeparator)
-                            .map(function (date) { return self.parseDate(date, format); });
-                        break;
-                    default:
-                        break;
-                }
-            }
-            else
-                self.config.errorHandler(new Error("Invalid date supplied: " + JSON.stringify(inputDate)));
-            self.selectedDates = dates.filter(function (d) { return d instanceof Date && isEnabled(d, false); });
-            if (self.config.mode === "range")
-                self.selectedDates.sort(function (a, b) { return a.getTime() - b.getTime(); });
-        }
-        function setDate(date, triggerChange, format) {
-            if (triggerChange === void 0) { triggerChange = false; }
-            if (format === void 0) { format = self.config.dateFormat; }
-            if ((date !== 0 && !date) || (date instanceof Array && date.length === 0))
-                return self.clear(triggerChange);
-            setSelectedDate(date, format);
-            self.showTimeInput = self.selectedDates.length > 0;
-            self.latestSelectedDateObj =
-                self.selectedDates[self.selectedDates.length - 1];
-            self.redraw();
-            jumpToDate();
-            setHoursFromDate();
-            if (self.selectedDates.length === 0) {
-                self.clear(false);
-            }
-            updateValue(triggerChange);
-            if (triggerChange)
-                triggerEvent("onChange");
-        }
-        function parseDateRules(arr) {
-            return arr
-                .slice()
-                .map(function (rule) {
-                if (typeof rule === "string" ||
-                    typeof rule === "number" ||
-                    rule instanceof Date) {
-                    return self.parseDate(rule, undefined, true);
-                }
-                else if (rule &&
-                    typeof rule === "object" &&
-                    rule.from &&
-                    rule.to)
-                    return {
-                        from: self.parseDate(rule.from, undefined),
-                        to: self.parseDate(rule.to, undefined)
-                    };
-                return rule;
-            })
-                .filter(function (x) { return x; }); // remove falsy values
-        }
-        function setupDates() {
-            self.selectedDates = [];
-            self.now = self.parseDate(self.config.now) || new Date();
-            // Workaround IE11 setting placeholder as the input's value
-            var preloadedDate = self.config.defaultDate ||
-                ((self.input.nodeName === "INPUT" ||
-                    self.input.nodeName === "TEXTAREA") &&
-                    self.input.placeholder &&
-                    self.input.value === self.input.placeholder
-                    ? null
-                    : self.input.value);
-            if (preloadedDate)
-                setSelectedDate(preloadedDate, self.config.dateFormat);
-            self._initialDate =
-                self.selectedDates.length > 0
-                    ? self.selectedDates[0]
-                    : self.config.minDate &&
-                        self.config.minDate.getTime() > self.now.getTime()
-                        ? self.config.minDate
-                        : self.config.maxDate &&
-                            self.config.maxDate.getTime() < self.now.getTime()
-                            ? self.config.maxDate
-                            : self.now;
-            self.currentYear = self._initialDate.getFullYear();
-            self.currentMonth = self._initialDate.getMonth();
-            if (self.selectedDates.length > 0)
-                self.latestSelectedDateObj = self.selectedDates[0];
-            if (self.config.minTime !== undefined)
-                self.config.minTime = self.parseDate(self.config.minTime, "H:i");
-            if (self.config.maxTime !== undefined)
-                self.config.maxTime = self.parseDate(self.config.maxTime, "H:i");
-            self.minDateHasTime =
-                !!self.config.minDate &&
-                    (self.config.minDate.getHours() > 0 ||
-                        self.config.minDate.getMinutes() > 0 ||
-                        self.config.minDate.getSeconds() > 0);
-            self.maxDateHasTime =
-                !!self.config.maxDate &&
-                    (self.config.maxDate.getHours() > 0 ||
-                        self.config.maxDate.getMinutes() > 0 ||
-                        self.config.maxDate.getSeconds() > 0);
-            Object.defineProperty(self, "showTimeInput", {
-                get: function () { return self._showTimeInput; },
-                set: function (bool) {
-                    self._showTimeInput = bool;
-                    if (self.calendarContainer)
-                        toggleClass(self.calendarContainer, "showTimeInput", bool);
-                    self.isOpen && positionCalendar();
-                }
-            });
-        }
-        function setupInputs() {
-            self.input = self.config.wrap
-                ? element.querySelector("[data-input]")
-                : element;
-            /* istanbul ignore next */
-            if (!self.input) {
-                self.config.errorHandler(new Error("Invalid input element specified"));
-                return;
-            }
-            // hack: store previous type to restore it after destroy()
-            self.input._type = self.input.type;
-            self.input.type = "text";
-            self.input.classList.add("flatpickr-input");
-            self._input = self.input;
-            if (self.config.altInput) {
-                // replicate self.element
-                self.altInput = createElement(self.input.nodeName, self.config.altInputClass);
-                self._input = self.altInput;
-                self.altInput.placeholder = self.input.placeholder;
-                self.altInput.disabled = self.input.disabled;
-                self.altInput.required = self.input.required;
-                self.altInput.tabIndex = self.input.tabIndex;
-                self.altInput.type = "text";
-                self.input.setAttribute("type", "hidden");
-                if (!self.config.static && self.input.parentNode)
-                    self.input.parentNode.insertBefore(self.altInput, self.input.nextSibling);
-            }
-            if (!self.config.allowInput)
-                self._input.setAttribute("readonly", "readonly");
-            self._positionElement = self.config.positionElement || self._input;
-        }
-        function setupMobile() {
-            var inputType = self.config.enableTime
-                ? self.config.noCalendar
-                    ? "time"
-                    : "datetime-local"
-                : "date";
-            self.mobileInput = createElement("input", self.input.className + " flatpickr-mobile");
-            self.mobileInput.step = self.input.getAttribute("step") || "any";
-            self.mobileInput.tabIndex = 1;
-            self.mobileInput.type = inputType;
-            self.mobileInput.disabled = self.input.disabled;
-            self.mobileInput.required = self.input.required;
-            self.mobileInput.placeholder = self.input.placeholder;
-            self.mobileFormatStr =
-                inputType === "datetime-local"
-                    ? "Y-m-d\\TH:i:S"
-                    : inputType === "date"
-                        ? "Y-m-d"
-                        : "H:i:S";
-            if (self.selectedDates.length > 0) {
-                self.mobileInput.defaultValue = self.mobileInput.value = self.formatDate(self.selectedDates[0], self.mobileFormatStr);
-            }
-            if (self.config.minDate)
-                self.mobileInput.min = self.formatDate(self.config.minDate, "Y-m-d");
-            if (self.config.maxDate)
-                self.mobileInput.max = self.formatDate(self.config.maxDate, "Y-m-d");
-            self.input.type = "hidden";
-            if (self.altInput !== undefined)
-                self.altInput.type = "hidden";
-            try {
-                if (self.input.parentNode)
-                    self.input.parentNode.insertBefore(self.mobileInput, self.input.nextSibling);
-            }
-            catch (_a) { }
-            bind(self.mobileInput, "change", function (e) {
-                self.setDate(e.target.value, false, self.mobileFormatStr);
-                triggerEvent("onChange");
-                triggerEvent("onClose");
-            });
-        }
-        function toggle(e) {
-            if (self.isOpen === true)
-                return self.close();
-            self.open(e);
-        }
-        function triggerEvent(event, data) {
-            // If the instance has been destroyed already, all hooks have been removed
-            if (self.config === undefined)
-                return;
-            var hooks = self.config[event];
-            if (hooks !== undefined && hooks.length > 0) {
-                for (var i = 0; hooks[i] && i < hooks.length; i++)
-                    hooks[i](self.selectedDates, self.input.value, self, data);
-            }
-            if (event === "onChange") {
-                self.input.dispatchEvent(createEvent("change"));
-                // many front-end frameworks bind to the input event
-                self.input.dispatchEvent(createEvent("input"));
-            }
-        }
-        function createEvent(name) {
-            var e = document.createEvent("Event");
-            e.initEvent(name, true, true);
-            return e;
-        }
-        function isDateSelected(date) {
-            for (var i = 0; i < self.selectedDates.length; i++) {
-                if (compareDates(self.selectedDates[i], date) === 0)
-                    return "" + i;
-            }
-            return false;
-        }
-        function isDateInRange(date) {
-            if (self.config.mode !== "range" || self.selectedDates.length < 2)
-                return false;
-            return (compareDates(date, self.selectedDates[0]) >= 0 &&
-                compareDates(date, self.selectedDates[1]) <= 0);
-        }
-        function updateNavigationCurrentMonth() {
-            if (self.config.noCalendar || self.isMobile || !self.monthNav)
-                return;
-            self.yearElements.forEach(function (yearElement, i) {
-                var d = new Date(self.currentYear, self.currentMonth, 1);
-                d.setMonth(self.currentMonth + i);
-                if (self.config.showMonths > 1 ||
-                    self.config.monthSelectorType === "static") {
-                    self.monthElements[i].textContent =
-                        monthToStr(d.getMonth(), self.config.shorthandCurrentMonth, self.l10n) + " ";
-                }
-                else {
-                    self.monthsDropdownContainer.value = d.getMonth().toString();
-                }
-                yearElement.value = d.getFullYear().toString();
-            });
-            self._hidePrevMonthArrow =
-                self.config.minDate !== undefined &&
-                    (self.currentYear === self.config.minDate.getFullYear()
-                        ? self.currentMonth <= self.config.minDate.getMonth()
-                        : self.currentYear < self.config.minDate.getFullYear());
-            self._hideNextMonthArrow =
-                self.config.maxDate !== undefined &&
-                    (self.currentYear === self.config.maxDate.getFullYear()
-                        ? self.currentMonth + 1 > self.config.maxDate.getMonth()
-                        : self.currentYear > self.config.maxDate.getFullYear());
-        }
-        function getDateStr(format) {
-            return self.selectedDates
-                .map(function (dObj) { return self.formatDate(dObj, format); })
-                .filter(function (d, i, arr) {
-                return self.config.mode !== "range" ||
-                    self.config.enableTime ||
-                    arr.indexOf(d) === i;
-            })
-                .join(self.config.mode !== "range"
-                ? self.config.conjunction
-                : self.l10n.rangeSeparator);
-        }
-        /**
-         * Updates the values of inputs associated with the calendar
-         */
-        function updateValue(triggerChange) {
-            if (triggerChange === void 0) { triggerChange = true; }
-            if (self.mobileInput !== undefined && self.mobileFormatStr) {
-                self.mobileInput.value =
-                    self.latestSelectedDateObj !== undefined
-                        ? self.formatDate(self.latestSelectedDateObj, self.mobileFormatStr)
-                        : "";
-            }
-            self.input.value = getDateStr(self.config.dateFormat);
-            if (self.altInput !== undefined) {
-                self.altInput.value = getDateStr(self.config.altFormat);
-            }
-            if (triggerChange !== false)
-                triggerEvent("onValueUpdate");
-        }
-        function onMonthNavClick(e) {
-            var isPrevMonth = self.prevMonthNav.contains(e.target);
-            var isNextMonth = self.nextMonthNav.contains(e.target);
-            if (isPrevMonth || isNextMonth) {
-                changeMonth(isPrevMonth ? -1 : 1);
-            }
-            else if (self.yearElements.indexOf(e.target) >= 0) {
-                e.target.select();
-            }
-            else if (e.target.classList.contains("arrowUp")) {
-                self.changeYear(self.currentYear + 1);
-            }
-            else if (e.target.classList.contains("arrowDown")) {
-                self.changeYear(self.currentYear - 1);
-            }
-        }
-        function timeWrapper(e) {
-            e.preventDefault();
-            var isKeyDown = e.type === "keydown", input = e.target;
-            if (self.amPM !== undefined && e.target === self.amPM) {
-                self.amPM.textContent =
-                    self.l10n.amPM[int(self.amPM.textContent === self.l10n.amPM[0])];
-            }
-            var min = parseFloat(input.getAttribute("min")), max = parseFloat(input.getAttribute("max")), step = parseFloat(input.getAttribute("step")), curValue = parseInt(input.value, 10), delta = e.delta ||
-                (isKeyDown ? (e.which === 38 ? 1 : -1) : 0);
-            var newValue = curValue + step * delta;
-            if (typeof input.value !== "undefined" && input.value.length === 2) {
-                var isHourElem = input === self.hourElement, isMinuteElem = input === self.minuteElement;
-                if (newValue < min) {
-                    newValue =
-                        max +
-                            newValue +
-                            int(!isHourElem) +
-                            (int(isHourElem) && int(!self.amPM));
-                    if (isMinuteElem)
-                        incrementNumInput(undefined, -1, self.hourElement);
-                }
-                else if (newValue > max) {
-                    newValue =
-                        input === self.hourElement ? newValue - max - int(!self.amPM) : min;
-                    if (isMinuteElem)
-                        incrementNumInput(undefined, 1, self.hourElement);
-                }
-                if (self.amPM &&
-                    isHourElem &&
-                    (step === 1
-                        ? newValue + curValue === 23
-                        : Math.abs(newValue - curValue) > step)) {
-                    self.amPM.textContent =
-                        self.l10n.amPM[int(self.amPM.textContent === self.l10n.amPM[0])];
-                }
-                input.value = pad(newValue);
-            }
-        }
-        init();
-        return self;
-    }
-    /* istanbul ignore next */
-    function _flatpickr(nodeList, config) {
-        // static list
-        var nodes = Array.prototype.slice
-            .call(nodeList)
-            .filter(function (x) { return x instanceof HTMLElement; });
-        var instances = [];
-        for (var i = 0; i < nodes.length; i++) {
-            var node = nodes[i];
-            try {
-                if (node.getAttribute("data-fp-omit") !== null)
-                    continue;
-                if (node._flatpickr !== undefined) {
-                    node._flatpickr.destroy();
-                    node._flatpickr = undefined;
-                }
-                node._flatpickr = FlatpickrInstance(node, config || {});
-                instances.push(node._flatpickr);
-            }
-            catch (e) {
-                console.error(e);
-            }
-        }
-        return instances.length === 1 ? instances[0] : instances;
-    }
-    /* istanbul ignore next */
-    if (typeof HTMLElement !== "undefined" &&
-        typeof HTMLCollection !== "undefined" &&
-        typeof NodeList !== "undefined") {
-        // browser env
-        HTMLCollection.prototype.flatpickr = NodeList.prototype.flatpickr = function (config) {
-            return _flatpickr(this, config);
-        };
-        HTMLElement.prototype.flatpickr = function (config) {
-            return _flatpickr([this], config);
-        };
-    }
-    /* istanbul ignore next */
-    var flatpickr = function (selector, config) {
-        if (typeof selector === "string") {
-            return _flatpickr(window.document.querySelectorAll(selector), config);
-        }
-        else if (selector instanceof Node) {
-            return _flatpickr([selector], config);
-        }
-        else {
-            return _flatpickr(selector, config);
-        }
-    };
-    /* istanbul ignore next */
-    flatpickr.defaultConfig = {};
-    flatpickr.l10ns = {
-        en: __assign({}, english),
-        "default": __assign({}, english)
-    };
-    flatpickr.localize = function (l10n) {
-        flatpickr.l10ns["default"] = __assign({}, flatpickr.l10ns["default"], l10n);
-    };
-    flatpickr.setDefaults = function (config) {
-        flatpickr.defaultConfig = __assign({}, flatpickr.defaultConfig, config);
-    };
-    flatpickr.parseDate = createDateParser({});
-    flatpickr.formatDate = createDateFormatter({});
-    flatpickr.compareDates = compareDates;
-    /* istanbul ignore next */
-    if (typeof jQuery !== "undefined" && typeof jQuery.fn !== "undefined") {
-        jQuery.fn.flatpickr = function (config) {
-            return _flatpickr(this, config);
-        };
-    }
-    // eslint-disable-next-line @typescript-eslint/camelcase
-    Date.prototype.fp_incr = function (days) {
-        return new Date(this.getFullYear(), this.getMonth(), this.getDate() + (typeof days === "string" ? parseInt(days, 10) : days));
-    };
-    if (typeof window !== "undefined") {
-        window.flatpickr = flatpickr;
-    }
-
-    return flatpickr;
-
-}));
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-flatpickr-component/dist/vue-flatpickr.min.js":
-/*!************************************************************************!*\
-  !*** ./node_modules/vue-flatpickr-component/dist/vue-flatpickr.min.js ***!
-  \************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-!function(t,e){ true?module.exports=e(__webpack_require__(/*! flatpickr */ "./node_modules/flatpickr/dist/flatpickr.js")):undefined}("undefined"!=typeof self?self:this,function(t){return function(t){var e={};function n(r){if(e[r])return e[r].exports;var o=e[r]={i:r,l:!1,exports:{}};return t[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=t,n.c=e,n.d=function(t,e,r){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:r})},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var o in t)n.d(r,o,function(e){return t[e]}.bind(null,o));return r},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=1)}([function(e,n){e.exports=t},function(t,e,n){"use strict";n.r(e);var r=n(0),o=n.n(r),i=["onChange","onClose","onDestroy","onMonthChange","onOpen","onYearChange"];function u(){return(u=Object.assign||function(t){for(var e=1;e<arguments.length;e++){var n=arguments[e];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(t[r]=n[r])}return t}).apply(this,arguments)}var a=function(t){return u({},t)},f=i.concat(["onValueUpdate","onDayCreate","onParseConfig","onReady","onPreCalendarPosition","onKeyDown"]),l=["locale","showMonths"],s={name:"flat-pickr",render:function(t){return t("input",{attrs:{type:"text","data-input":!0},props:{disabled:this.disabled},on:{input:this.onInput}})},props:{value:{default:null,required:!0,validator:function(t){return null===t||t instanceof Date||"string"==typeof t||t instanceof String||t instanceof Array||"number"==typeof t}},config:{type:Object,default:function(){return{wrap:!1,defaultDate:null}}},events:{type:Array,default:function(){return i}},disabled:{type:Boolean,default:!1}},data:function(){return{fp:null}},mounted:function(){var t=this;if(!this.fp){var e=a(this.config);this.events.forEach(function(n){var r,i=o.a.defaultConfig[n]||[];e[n]=(r=e[n]||[],r instanceof Array?r:[r]).concat(i,function(){for(var e=arguments.length,r=new Array(e),o=0;o<e;o++)r[o]=arguments[o];var i;t.$emit.apply(t,[(i=n,i.replace(/([a-z])([A-Z])/g,"$1-$2").toLowerCase())].concat(r))})}),e.defaultDate=this.value||e.defaultDate,this.fp=new o.a(this.getElem(),e),this.fpInput().addEventListener("blur",this.onBlur),this.$watch("disabled",this.watchDisabled,{immediate:!0})}},methods:{getElem:function(){return this.config.wrap?this.$el.parentNode:this.$el},onInput:function(t){var e=this,n=t.target;this.$nextTick(function(){e.$emit("input",n.value)})},fpInput:function(){return this.fp.altInput||this.fp.input},onBlur:function(t){this.$emit("blur",t.target.value)},watchDisabled:function(t){t?this.fpInput().setAttribute("disabled",t):this.fpInput().removeAttribute("disabled")}},watch:{config:{deep:!0,handler:function(t){var e=this,n=a(t);f.forEach(function(t){delete n[t]}),this.fp.set(n),l.forEach(function(t){void 0!==n[t]&&e.fp.set(t,n[t])})}},value:function(t){t!==this.$el.value&&this.fp&&this.fp.setDate(t,!0)}},beforeDestroy:function(){this.fp&&(this.fpInput().removeEventListener("blur",this.onBlur),this.fp.destroy(),this.fp=null)}};n.d(e,"Plugin",function(){return c}),n.d(e,"Component",function(){return s});var c=function(t,e){var n="flat-pickr";"string"==typeof e&&(n=e),t.component(n,s)};s.install=c;e.default=s}]).default});
 
 /***/ })
 

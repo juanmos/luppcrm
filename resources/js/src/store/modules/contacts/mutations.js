@@ -15,9 +15,6 @@ export default {
     SET_CONTACTS(state, contacts) {
         state.contacts = contacts
     },
-    // SET_LABELS(state, labels) {
-    //   state.eventLabels = labels
-    // },
     UPDATE_CONTACT(state, contact) {
         const contactIndex = state.contacts.findIndex((p) => p.id == contact.id)
         Object.assign(state.contacts[contactIndex], contact)

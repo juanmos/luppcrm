@@ -9,6 +9,11 @@
 
 <template>
   <div id="page-user-view">
+    <company-sidebar
+      :isSidebarActive="addNewDataSidebar"
+      @closeSidebar="toggleDataSidebar"
+      :data="sidebarData"
+    />
     <vs-alert color="danger" title="User Not Found" :active.sync="user_not_found">
       <span>Company record with id: {{ $route.params.id }} not found.</span>
       <span>
@@ -41,7 +46,7 @@
               </tr>
               <tr>
                 <td class="font-semibold">{{$t('companyAddress')}}</td>
-                <td>{{ company_data.addres }}</td>
+                <td>{{ company_data.address }}</td>
               </tr>
             </table>
           </div>
@@ -70,15 +75,15 @@
               icon-pack="feather"
               icon="icon-edit"
               class="mr-4"
-              :to="{name: 'app-user-edit', params: { userId: $route.params.userId }}"
+              @click="editData"
             >{{$t('edit')}}</vs-button>
-            <vs-button
+            <!-- <vs-button
               type="border"
               color="danger"
               icon-pack="feather"
               icon="icon-trash"
               @click="confirmDeleteRecord"
-            >{{$t("delete")}}</vs-button>
+            >{{$t("delete")}}</vs-button>-->
           </div>
         </div>
       </vx-card>
@@ -95,7 +100,7 @@
           :label="!isSmallerScreen ? $t('companyContacts') : ''"
         >
           <div class="tab-general md:ml-4 md:mt-0 mt-4 ml-0">
-            <company-contact />
+            <company-contact :companyId="id" />
           </div>
         </vs-tab>
         <vs-tab icon-pack="feather" icon="icon-user" :label="!isSmallerScreen ? $t('Users') : ''">
@@ -132,24 +137,27 @@ import CompanyUsers from "./CompanyUsers.vue";
 import CompanyNotifications from "./CompanyNotifications.vue";
 import CompanyConfigurations from "./CompanyConfigurations.vue";
 import CompanyContact from "./CompanyContact.vue";
+import CompanySidebar from "./CompanySidebar.vue";
 
 export default {
   components: {
     CompanyUsers,
     CompanyNotifications,
     CompanyConfigurations,
-    CompanyContact
+    CompanyContact,
+    CompanySidebar
   },
   data() {
     return {
       //   company_data: null,
+      addNewDataSidebar: false,
+      sidebarData: {},
       user_not_found: false
     };
   },
   props: ["id"],
   computed: {
     company_data() {
-      console.log(this.id);
       return this.$store.getters["companies/getCompany"](this.id);
     },
     userAddress() {
@@ -174,26 +182,15 @@ export default {
         acceptText: "Delete"
       });
     },
-    deleteRecord() {
-      /* Below two lines are just for demo purpose */
-      this.$router.push({ name: "app-user-list" });
-      this.showDeleteSuccess();
-
-      /* UnComment below lines for enabling true flow if deleting user */
-      // this.$store.dispatch("userManagement/removeRecord", this.company_data.id)
-      //   .then(()   => { this.$router.push({name:'app-user-list'}); this.showDeleteSuccess() })
-      //   .catch(err => { console.error(err)       })
+    editData() {
+      this.sidebarData = this.company_data;
+      this.toggleDataSidebar(true);
     },
-    showDeleteSuccess() {
-      this.$vs.notify({
-        color: "success",
-        title: "User Deleted",
-        text: "The selected user was successfully deleted"
-      });
+    toggleDataSidebar(val = false) {
+      this.addNewDataSidebar = val;
     }
   },
   created() {
-    console.log("props", this.id);
     this.user_not_found = false;
     // this.$store
     //   .dispatch("userManagement/fetchUser", userId)
