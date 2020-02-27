@@ -15,7 +15,7 @@ class CompanyController extends Controller
     public function index()
     {
         if (in_array('Empresa', auth('api')->user()->getRoleNames()->toArray())) {
-            abort(404);
+            return response()->json([ 'error'=> 403, 'message'=> 'Forbidden' ], 403);
         }
         $companies = Company::orderBy('company_name')->paginate('50');
         return response()->json(compact('companies'));
@@ -47,7 +47,7 @@ class CompanyController extends Controller
         $data = $request->all();
 
         if (in_array('Empresa', auth('api')->user()->getRoleNames()->toArray()) && auth('api')->user()->company_id!=0) {
-            return response()->json([ 'error'=> 401, 'message'=> 'Not Authorized' ], 401);
+            return response()->json([ 'error'=> 403, 'message'=> 'Forbidden' ], 403);
         } else {
             $company =Company::create($data);
             $company->configuration()->create();
@@ -93,7 +93,7 @@ class CompanyController extends Controller
     public function update(Request $request, Company $company)
     {
         if (in_array('Empresa', auth('api')->user()->getRoleNames()->toArray()) && auth('api')->user()->company_id!=$company->id) {
-            return response()->json([ 'error'=> 401, 'message'=> 'Not Authorized' ], 401);
+            return response()->json([ 'error'=> 403, 'message'=> 'Forbidden' ], 403);
         }
         $request->validate([
             'company_name'=>'required',

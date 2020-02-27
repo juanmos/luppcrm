@@ -148,7 +148,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       default: function _default() {}
     },
     company_id: {
-      type: String,
+      type: Number,
       default: 0
     }
   },

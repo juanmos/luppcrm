@@ -130,7 +130,7 @@ export default {
       default: () => {}
     },
     company_id: {
-      type: String,
+      type: Number,
       default: 0
     }
   },

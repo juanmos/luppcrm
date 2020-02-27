@@ -68549,11 +68549,10 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   {
     path: '/',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! @/layouts/full-page/FullPage.vue */ "./resources/js/src/layouts/full-page/FullPage.vue"));
+      return __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! @/layouts/full-page/FullPage.vue */ "./resources/js/src/layouts/full-page/FullPage.vue"));
     },
     meta: {
-      auth: false,
-      rule: 'public'
+      redirectIfAuthenticated: true
     },
     children: [// =============================================================================
     // PAGES
@@ -68565,7 +68564,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'public'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 9).then(__webpack_require__.bind(null, /*! ./views/auth/Login.vue */ "./resources/js/src/views/auth/Login.vue"));
+        return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ./views/auth/Login.vue */ "./resources/js/src/views/auth/Login.vue"));
       }
     }, {
       path: '/register',
@@ -68574,19 +68573,19 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'public'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! ./views/auth/Register.vue */ "./resources/js/src/views/auth/Register.vue"));
+        return __webpack_require__.e(/*! import() */ 14).then(__webpack_require__.bind(null, /*! ./views/auth/Register.vue */ "./resources/js/src/views/auth/Register.vue"));
       }
     }, {
       path: '/pages/error-404',
       name: 'page-error-404',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 24).then(__webpack_require__.bind(null, /*! @/views/pages/Error404.vue */ "./resources/js/src/views/pages/Error404.vue"));
+        return __webpack_require__.e(/*! import() */ 25).then(__webpack_require__.bind(null, /*! @/views/pages/Error404.vue */ "./resources/js/src/views/pages/Error404.vue"));
       }
     }, {
       path: '/pages/not-authorized',
       name: 'page-not-authorized',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 25).then(__webpack_require__.bind(null, /*! @/views/pages/NotAuthorized.vue */ "./resources/js/src/views/pages/NotAuthorized.vue"));
+        return __webpack_require__.e(/*! import() */ 26).then(__webpack_require__.bind(null, /*! @/views/pages/NotAuthorized.vue */ "./resources/js/src/views/pages/NotAuthorized.vue"));
       },
       meta: {
         rule: 'Empresa'
@@ -68601,17 +68600,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(3), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ./layouts/main/Main.vue */ "./resources/js/src/layouts/main/Main.vue"));
     },
     meta: {
-      auth: true,
-      rule: 'Comun'
-    },
-    beforeEnter: function beforeEnter(to, from, next) {
-      console.log(to);
-      console.log(from);
-      _store_store__WEBPACK_IMPORTED_MODULE_2__["default"].dispatch('auth/tryAutoLogin').then(function () {
-        next();
-      }).catch(function () {
-        next('/login');
-      });
+      requiresAuth: true
     },
     children: [// =============================================================================
     // Theme Routes
@@ -68623,7 +68612,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Comun'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! ./views/Home.vue */ "./resources/js/src/views/Home.vue"));
+        return __webpack_require__.e(/*! import() */ 15).then(__webpack_require__.bind(null, /*! ./views/Home.vue */ "./resources/js/src/views/Home.vue"));
       }
     }, {
       path: 'invoices',
@@ -68632,7 +68621,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 20).then(__webpack_require__.bind(null, /*! ./views/invoices/Invoices.vue */ "./resources/js/src/views/invoices/Invoices.vue"));
+        return __webpack_require__.e(/*! import() */ 21).then(__webpack_require__.bind(null, /*! ./views/invoices/Invoices.vue */ "./resources/js/src/views/invoices/Invoices.vue"));
       }
     }, {
       path: 'payments',
@@ -68641,7 +68630,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 21).then(__webpack_require__.bind(null, /*! ./views/payments/Payments.vue */ "./resources/js/src/views/payments/Payments.vue"));
+        return __webpack_require__.e(/*! import() */ 22).then(__webpack_require__.bind(null, /*! ./views/payments/Payments.vue */ "./resources/js/src/views/payments/Payments.vue"));
       }
     }, {
       path: 'estimates',
@@ -68650,7 +68639,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 17).then(__webpack_require__.bind(null, /*! ./views/estimates/Estimates.vue */ "./resources/js/src/views/estimates/Estimates.vue"));
+        return __webpack_require__.e(/*! import() */ 18).then(__webpack_require__.bind(null, /*! ./views/estimates/Estimates.vue */ "./resources/js/src/views/estimates/Estimates.vue"));
       }
     }, {
       path: 'expenses',
@@ -68659,7 +68648,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 18).then(__webpack_require__.bind(null, /*! ./views/expenses/Expenses.vue */ "./resources/js/src/views/expenses/Expenses.vue"));
+        return __webpack_require__.e(/*! import() */ 19).then(__webpack_require__.bind(null, /*! ./views/expenses/Expenses.vue */ "./resources/js/src/views/expenses/Expenses.vue"));
       }
     }, {
       path: 'deductions',
@@ -68668,7 +68657,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 16).then(__webpack_require__.bind(null, /*! ./views/deductions/Deductions.vue */ "./resources/js/src/views/deductions/Deductions.vue"));
+        return __webpack_require__.e(/*! import() */ 17).then(__webpack_require__.bind(null, /*! ./views/deductions/Deductions.vue */ "./resources/js/src/views/deductions/Deductions.vue"));
       }
     }, {
       path: 'clients',
@@ -68677,7 +68666,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(5), __webpack_require__.e(10)]).then(__webpack_require__.bind(null, /*! ./views/clients/Clients.vue */ "./resources/js/src/views/clients/Clients.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(7), __webpack_require__.e(11)]).then(__webpack_require__.bind(null, /*! ./views/clients/Clients.vue */ "./resources/js/src/views/clients/Clients.vue"));
       }
     }, {
       path: '/help',
@@ -68686,7 +68675,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 19).then(__webpack_require__.bind(null, /*! ./views/help/Help.vue */ "./resources/js/src/views/help/Help.vue"));
+        return __webpack_require__.e(/*! import() */ 20).then(__webpack_require__.bind(null, /*! ./views/help/Help.vue */ "./resources/js/src/views/help/Help.vue"));
       }
     }, {
       path: 'configurations',
@@ -68695,7 +68684,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 15).then(__webpack_require__.bind(null, /*! ./views/configurations/Configurations.vue */ "./resources/js/src/views/configurations/Configurations.vue"));
+        return __webpack_require__.e(/*! import() */ 16).then(__webpack_require__.bind(null, /*! ./views/configurations/Configurations.vue */ "./resources/js/src/views/configurations/Configurations.vue"));
       }
     }]
   }, {
@@ -68707,26 +68696,16 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
       return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(3), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ./layouts/main/Main.vue */ "./resources/js/src/layouts/main/Main.vue"));
     },
     meta: {
-      auth: true,
-      rule: 'Comun'
-    },
-    beforeEnter: function beforeEnter(to, from, next) {
-      console.log(to);
-      console.log(from);
-      _store_store__WEBPACK_IMPORTED_MODULE_2__["default"].dispatch('auth/tryAutoLogin').then(function () {
-        next();
-      }).catch(function () {
-        next('/login');
-      });
+      requiresAuth: true
     },
     children: [{
       path: 'companies',
-      name: 'admin.companies',
+      // name: 'admin.companies',
       meta: {
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 14).then(__webpack_require__.bind(null, /*! ./views/companies/CompanyMain.vue */ "./resources/js/src/views/companies/CompanyMain.vue"));
+        return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ./views/companies/CompanyMain.vue */ "./resources/js/src/views/companies/CompanyMain.vue"));
       },
       children: [{
         path: '',
@@ -68735,7 +68714,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
           rule: 'Empresa'
         },
         component: function component() {
-          return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(7), __webpack_require__.e(28)]).then(__webpack_require__.bind(null, /*! ./views/companies/Companies.vue */ "./resources/js/src/views/companies/Companies.vue"));
+          return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(4), __webpack_require__.e(12)]).then(__webpack_require__.bind(null, /*! ./views/companies/Companies.vue */ "./resources/js/src/views/companies/Companies.vue"));
         }
       }, {
         path: 'details/:id',
@@ -68745,41 +68724,40 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
           rule: 'Empresa'
         },
         component: function component() {
-          return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(23), __webpack_require__.e(1), __webpack_require__.e(7), __webpack_require__.e(27)]).then(__webpack_require__.bind(null, /*! ./views/companies/CompanyDetail.vue */ "./resources/js/src/views/companies/CompanyDetail.vue"));
+          return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(24), __webpack_require__.e(1), __webpack_require__.e(4), __webpack_require__.e(8)]).then(__webpack_require__.bind(null, /*! ./views/companies/CompanyDetail.vue */ "./resources/js/src/views/companies/CompanyDetail.vue"));
         }
       }]
     }, {
       path: 'users',
-      name: 'admin.users',
+      // name: 'admin.users',
       meta: {
         rule: 'Empresa'
       },
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(11)]).then(__webpack_require__.bind(null, /*! ./views/users/Users.vue */ "./resources/js/src/views/users/Users.vue"));
-      }
-    }, {
-      path: 'users/user/:id',
-      props: true,
-      name: 'admin.users.view',
-      component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(22)]).then(__webpack_require__.bind(null, /*! ./views/users/UserView.vue */ "./resources/js/src/views/users/UserView.vue"));
-      }
+        return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ./views/companies/CompanyMain.vue */ "./resources/js/src/views/companies/CompanyMain.vue"));
+      },
+      children: [{
+        path: '',
+        name: 'admin.users.list',
+        component: function component() {
+          return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(13)]).then(__webpack_require__.bind(null, /*! ./views/users/Users.vue */ "./resources/js/src/views/users/Users.vue"));
+        }
+      }, {
+        path: ':id',
+        props: true,
+        name: 'admin.users.view',
+        component: function component() {
+          return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(23)]).then(__webpack_require__.bind(null, /*! ./views/users/UserView.vue */ "./resources/js/src/views/users/UserView.vue"));
+        }
+      }]
     }]
   }, {
     path: '/wizard',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! @/layouts/full-page/FullPage.vue */ "./resources/js/src/layouts/full-page/FullPage.vue"));
+      return __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! @/layouts/full-page/FullPage.vue */ "./resources/js/src/layouts/full-page/FullPage.vue"));
     },
     meta: {
-      auth: false,
-      rule: 'Empresa'
-    },
-    beforeEnter: function beforeEnter(to, from, next) {
-      _store_store__WEBPACK_IMPORTED_MODULE_2__["default"].dispatch('auth/tryAutoLogin').then(function () {
-        next();
-      }).catch(function () {
-        next('/login');
-      });
+      requiresAuth: true
     },
     children: [// =============================================================================
     // PAGES
@@ -68791,7 +68769,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(26), __webpack_require__.e(8)]).then(__webpack_require__.bind(null, /*! ./views/wizard/User.vue */ "./resources/js/src/views/wizard/User.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(27), __webpack_require__.e(9)]).then(__webpack_require__.bind(null, /*! ./views/wizard/User.vue */ "./resources/js/src/views/wizard/User.vue"));
       }
     }]
   }, // Redirect to 404 page, if no match found
@@ -68799,6 +68777,28 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     path: '*',
     redirect: '/pages/error-404'
   }]
+});
+router.beforeEach(function (to, from, next) {
+  //  Redirect if not authenticated on secured routes
+  if (to.matched.some(function (m) {
+    return m.meta.requiresAuth;
+  })) {
+    if (!_store_store__WEBPACK_IMPORTED_MODULE_2__["default"].getters['auth/isAuthenticated']) {
+      return next('/login');
+    }
+  }
+
+  if (to.matched.some(function (m) {
+    return m.meta.redirectIfAuthenticated;
+  }) && _store_store__WEBPACK_IMPORTED_MODULE_2__["default"].getters['auth/isAuthenticated']) {
+    if (_store_store__WEBPACK_IMPORTED_MODULE_2__["default"].getters['auth/getRol'] == 'SuperAdministrador') {
+      return next('/admin/companies');
+    }
+
+    return next('/company/home');
+  }
+
+  return next();
 });
 router.afterEach(function () {
   // Remove initial loading
@@ -68954,10 +68954,10 @@ var getters = {
 
 /***/ }),
 
-/***/ "./resources/js/src/store/modules/auth/index.js":
-/*!******************************************************!*\
-  !*** ./resources/js/src/store/modules/auth/index.js ***!
-  \******************************************************/
+/***/ "./resources/js/src/store/modules/auth/actions.js":
+/*!********************************************************!*\
+  !*** ./resources/js/src/store/modules/auth/actions.js ***!
+  \********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -68968,137 +68968,175 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/router */ "./resources/js/src/router.js");
 
 
- // import acl from '../../../acl/acl';
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  namespaced: true,
-  state: {
-    access_token: null,
-    rol: 'public'
-  },
-  mutations: {
-    authUser: function authUser(state, userData) {
-      state.access_token = userData.token;
-    },
-    clearAuthData: function clearAuthData(state) {
-      state.access_token = null;
-      state.ttl = null;
-    },
-    changeRol: function changeRol(state, rol) {
-      state.rol = rol;
-    }
-  },
-  actions: {
-    signup: function signup(_ref, data) {
-      var commit = _ref.commit,
-          dispatch = _ref.dispatch;
-      return new Promise(function (resolve, reject) {
-        _axios__WEBPACK_IMPORTED_MODULE_0__["default"].post("api/auth/signup", data).then(function (_ref2) {
-          var data = _ref2.data;
-          dispatch('saveTokenData', data);
+  signup: function signup(_ref, data) {
+    var commit = _ref.commit,
+        dispatch = _ref.dispatch;
+    return new Promise(function (resolve, reject) {
+      _axios__WEBPACK_IMPORTED_MODULE_0__["default"].post("api/auth/signup", data).then(function (_ref2) {
+        var data = _ref2.data;
+        dispatch('saveTokenData', data).then(function () {
           resolve(data);
-        }).catch(function (err) {
-          _services_ls__WEBPACK_IMPORTED_MODULE_1__["default"].remove('auth.token');
-          reject(err);
         });
+      }).catch(function (err) {
+        _services_ls__WEBPACK_IMPORTED_MODULE_1__["default"].remove('auth.token');
+        reject(err);
       });
-    },
-    login: function login(_ref3, data) {
-      var commit = _ref3.commit,
-          dispatch = _ref3.dispatch;
-      return new Promise(function (resolve, reject) {
-        _axios__WEBPACK_IMPORTED_MODULE_0__["default"].post("api/auth/login", data).then(function (_ref4) {
-          var data = _ref4.data;
-          dispatch('saveTokenData', data).then(function () {
-            resolve(data);
-          });
-        }).catch(function (err) {
-          _services_ls__WEBPACK_IMPORTED_MODULE_1__["default"].remove('auth.token');
-          reject(err);
+    });
+  },
+  login: function login(_ref3, data) {
+    var commit = _ref3.commit,
+        dispatch = _ref3.dispatch;
+    return new Promise(function (resolve, reject) {
+      _axios__WEBPACK_IMPORTED_MODULE_0__["default"].post("api/auth/login", data).then(function (_ref4) {
+        var data = _ref4.data;
+        dispatch('saveTokenData', data).then(function () {
+          resolve(data);
         });
+      }).catch(function (err) {
+        _services_ls__WEBPACK_IMPORTED_MODULE_1__["default"].remove('auth.token');
+        reject(err);
       });
-    },
-    saveTokenData: function saveTokenData(_ref5, data) {
-      var commit = _ref5.commit,
-          dispatch = _ref5.dispatch;
+    });
+  },
+  saveTokenData: function saveTokenData(_ref5, data) {
+    var commit = _ref5.commit,
+        dispatch = _ref5.dispatch;
+    return new Promise(function (resolve, reject) {
       _services_ls__WEBPACK_IMPORTED_MODULE_1__["default"].set('auth.token', data.token);
       var now = new Date();
       var expirationDate = new Date(now.getTime() + data.expires_in * 1000);
       _services_ls__WEBPACK_IMPORTED_MODULE_1__["default"].set('expirationDate', expirationDate);
-      commit('authUser', data);
-      dispatch('me');
-    },
-    me: function me(_ref6) {
-      var commit = _ref6.commit,
-          dispatch = _ref6.dispatch,
-          state = _ref6.state;
-      _axios__WEBPACK_IMPORTED_MODULE_0__["default"].get('api/auth/me').then(function (_ref7) {
-        var data = _ref7.data;
+      commit('AUTH_USER', data);
+      dispatch('me').then(function () {
+        resolve();
+      }).catch(function () {
+        reject();
+      });
+    });
+  },
+  me: function me(_ref6) {
+    var commit = _ref6.commit,
+        dispatch = _ref6.dispatch,
+        state = _ref6.state;
+    _axios__WEBPACK_IMPORTED_MODULE_0__["default"].get('api/auth/me').then(function (_ref7) {
+      var data = _ref7.data;
+      return new Promise(function (resolve, reject) {
         data.user.role = data.role;
         dispatch('updateUserInfo', data.user, {
           root: true
         });
-        commit('changeRol', data.role);
+        commit('CHANGE_ROL', data.role);
 
         if (data.user.company != null) {
           dispatch('company/setCompanyData', data.user.company, {
             root: true
           });
-        } // if (data.role == 'Empresa') {
-        //     data.user.company != null ?
-        //         router.push("/company/home") :
-        //         router.push("/wizard/company");
-        // } else {
-        //     router.push("/admin/home")
-        // }
-        // console.log(data.role);
-        // acl.change(data.role);
-        // dispatch('updateUserRole', {
-        //     aclChangeRole: acl.change,
-        //     userRole: data.role
-        // }, {
-        //     root: true
-        // })
+        }
 
+        resolve();
       });
-    },
-    tryAutoLogin: function tryAutoLogin(_ref8) {
-      var commit = _ref8.commit,
-          dispatch = _ref8.dispatch;
-      var token = _services_ls__WEBPACK_IMPORTED_MODULE_1__["default"].get('auth.token');
+    });
+  },
+  tryAutoLogin: function tryAutoLogin(_ref8) {
+    var commit = _ref8.commit,
+        dispatch = _ref8.dispatch;
+    var token = _services_ls__WEBPACK_IMPORTED_MODULE_1__["default"].get('auth.token');
 
-      if (!token) {
-        return false;
-      }
+    if (!token) {
+      return false;
+    }
 
-      var expirationDate = _services_ls__WEBPACK_IMPORTED_MODULE_1__["default"].get('expirationDate');
-      var now = new Date();
+    var expirationDate = _services_ls__WEBPACK_IMPORTED_MODULE_1__["default"].get('expirationDate');
+    var now = new Date();
 
-      if (now >= expirationDate) {
-        return false;
-      }
+    if (now >= expirationDate) {
+      return false;
+    }
 
-      commit('authUser', {
-        token: token
-      });
-      dispatch('me'); // if (state.AppActiveUser.first_login) {
-      //     router.push('wizard/company');
-      // }
-    },
-    logoutUser: function logoutUser(_ref9) {
-      var dispatch = _ref9.dispatch,
-          commit = _ref9.commit;
+    commit('AUTH_USER', {
+      token: token
+    });
+    dispatch('me'); // if (state.AppActiveUser.first_login) {
+    //     router.push('wizard/company');
+    // }
+  },
+  logoutUser: function logoutUser(_ref9) {
+    var dispatch = _ref9.dispatch,
+        commit = _ref9.commit;
+    return new Promise(function (resolve, reject) {
       _services_ls__WEBPACK_IMPORTED_MODULE_1__["default"].remove('auth.token');
       _services_ls__WEBPACK_IMPORTED_MODULE_1__["default"].remove('userInfo');
       _services_ls__WEBPACK_IMPORTED_MODULE_1__["default"].remove('expirationDate');
-      commit('clearAuthData');
+      commit('CLEAR_AUTH');
       _router__WEBPACK_IMPORTED_MODULE_2__["default"].replace('/login');
-    }
+      resolve();
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/modules/auth/index.js":
+/*!******************************************************!*\
+  !*** ./resources/js/src/store/modules/auth/index.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _mutations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mutations */ "./resources/js/src/store/modules/auth/mutations.js");
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./actions */ "./resources/js/src/store/modules/auth/actions.js");
+/* harmony import */ var _services_ls__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/services/ls */ "./resources/js/src/services/ls.js");
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  namespaced: true,
+  state: {
+    access_token: _services_ls__WEBPACK_IMPORTED_MODULE_2__["default"].get('auth.token'),
+    rol: 'public',
+    status: ''
   },
+  mutations: _mutations__WEBPACK_IMPORTED_MODULE_0__["default"],
+  actions: _actions__WEBPACK_IMPORTED_MODULE_1__["default"],
   getters: {
     getRol: function getRol(state) {
       return state.rol;
+    },
+    isAuthenticated: function isAuthenticated(state) {
+      return !!state.access_token;
+    },
+    authStatus: function authStatus(state) {
+      return state.status;
     }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/modules/auth/mutations.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/src/store/modules/auth/mutations.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  AUTH_USER: function AUTH_USER(state, userData) {
+    state.access_token = userData.token;
+  },
+  CLEAR_AUTH: function CLEAR_AUTH(state) {
+    state.access_token = null;
+    state.ttl = null;
+    state.rol = null;
+  },
+  CHANGE_ROL: function CHANGE_ROL(state, rol) {
+    state.rol = rol;
   }
 });
 

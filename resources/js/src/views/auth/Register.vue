@@ -103,10 +103,6 @@ export default {
         password_confirmation: this.password_confirmation
       })
         .then(res => {
-          // this.$store.dispatch("updateUserRole", {
-          //   aclChangeRole: this.$acl.change,
-          //   userRole: "Empresa"
-          // });
           this.$router.push("/wizard/company");
         })
         .catch(err => {});

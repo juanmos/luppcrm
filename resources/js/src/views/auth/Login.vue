@@ -75,7 +75,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
+import { mapActions, mapGetters, mapState } from "vuex";
 export default {
   data() {
     return {
@@ -86,7 +86,8 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["userData"])
+    ...mapGetters(["userData"]),
+    ...mapState("auth", ["rol"])
   },
   methods: {
     ...mapActions("auth", ["login"]),
@@ -97,12 +98,10 @@ export default {
         password: this.password
       })
         .then(res => {
-          // console.log(this.$store.state.auth.rol);
-          // this.$acl.change("Empresa");
-          // this.$store.dispatch("updateUserRole", {
-          //   aclChangeRole: this.$acl.change,
-          //   userRole: "Empresa"
-          // });
+          console.log("rol", this.rol);
+          if (this.rol == "SuperAdministrador")
+            this.$router.push("admin/companies");
+          else this.$router.push("company/home");
         })
         .catch(err => {
           this.errorLogin = true;

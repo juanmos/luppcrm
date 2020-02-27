@@ -43,7 +43,7 @@ class CompanyContactController extends Controller
             'company_id'=>'required'
         ]);
         if (in_array('Empresa', auth('api')->user()->getRoleNames()->toArray()) && auth('api')->user()->company_id!=$request->get('company_id')) {
-            return response()->json([ 'error'=> 401, 'message'=> 'Not Authorized' ], 401);
+            return response()->json([ 'error'=> 403, 'message'=> 'Forbidden' ], 403);
         }
         $contact =CompanyContact::create($request->all());
         return response()->json(compact('contact'));
@@ -86,7 +86,7 @@ class CompanyContactController extends Controller
             'company_id'=>'required'
         ]);
         if (in_array('Empresa', auth('api')->user()->getRoleNames()->toArray()) && auth('api')->user()->company_id!=$request->get('company_id')) {
-            return response()->json([ 'error'=> 401, 'message'=> 'Not Authorized' ], 401);
+            return response()->json([ 'error'=> 403, 'message'=> 'Forbidden' ], 403);
         }
         $contact->update($request->all());
         return response()->json(compact('contact'));
@@ -101,7 +101,7 @@ class CompanyContactController extends Controller
     public function destroy(CompanyContact $contact)
     {
         if (in_array('Empresa', auth('api')->user()->getRoleNames()->toArray()) && auth('api')->user()->company_id!=$request->get('company_id')) {
-            return response()->json([ 'error'=> 401, 'message'=> 'Not Authorized' ], 401);
+            return response()->json([ 'error'=> 403, 'message'=> 'Forbidden' ], 403);
         }
         $contact->delete();
         return response()->json(['deleted'=>true]);
