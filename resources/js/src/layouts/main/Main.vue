@@ -182,12 +182,13 @@
 import BackToTop from "vue-backtotop";
 import HNavMenu from "@/layouts/components/horizontal-nav-menu/HorizontalNavMenu.vue";
 import navMenuItems from "@/layouts/components/vertical-nav-menu/navMenuItems.js";
-// import navMenuSuper from "@/layouts/components/vertical-nav-menu/navMenuSuper.js";
+import navMenuSuper from "@/layouts/components/vertical-nav-menu/navMenuSuper.js";
 import TheNavbarHorizontal from "@/layouts/components/navbar/TheNavbarHorizontal.vue";
 import TheNavbarVertical from "@/layouts/components/navbar/TheNavbarVertical.vue";
 import TheFooter from "@/layouts/components/TheFooter.vue";
 import themeConfig from "@/../themeConfig.js";
 import VNavMenu from "@/layouts/components/vertical-nav-menu/VerticalNavMenu.vue";
+import { mapState, mapGetters } from "vuex";
 
 export default {
   components: {
@@ -205,10 +206,8 @@ export default {
       isNavbarDark: false,
       navbarColor: themeConfig.navbarColor || "#fff",
       navbarType: themeConfig.navbarType || "floating",
-      // navMenuItems: this.$acl.check("SuperAdministrador")
-      //   ? navMenuSuper
-      //   : navMenuItems,
-      navMenuItems: navMenuItems,
+
+      // navMenuItems: navMenuItems,
       routerTransition: themeConfig.routerTransition || "none",
       routeTitle: this.$route.meta.pageTitle
     };
@@ -272,9 +271,15 @@ export default {
     },
     windowWidth() {
       return this.$store.state.windowWidth;
+    },
+    navMenuItems() {
+      return this.getRol() == "SuperAdministrador"
+        ? navMenuSuper
+        : navMenuItems;
     }
   },
   methods: {
+    ...mapGetters("auth", ["getRol"]),
     changeRouteTitle(title) {
       this.routeTitle = title;
     },
@@ -313,6 +318,10 @@ export default {
         : this.navbarColor;
     this.updateNavbarColor(color);
     this.setNavMenuVisibility(this.$store.state.mainLayoutType);
+  },
+  beforeMount() {
+    this.$store.dispatch("auth/tryAutoLogin");
+    this.getRol();
   }
 };
 </script>

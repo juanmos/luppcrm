@@ -89,17 +89,5 @@ export default [{
         slug: 'help',
         i18n: "Help",
     },
-    {
-        url: "/admin/companies",
-        name: "Empresas",
-        slug: "companies",
-        icon: "UsersIcon",
-        i18n: "Companies",
-    }, {
-        name: 'Usuarios',
-        url: '/admin/users',
-        icon: 'UserIcon',
-        slug: 'users',
-        i18n: "Users",
-    }
+
 ]

@@ -1575,15 +1575,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -1600,11 +1591,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])("auth", ["logoutUser"]), {
     logout: function logout() {
-      this.logoutUser(); // Change role on logout. Same value as initialRole of acj.js
-
-      this.$acl.change("public"); // This is just for demo Purpose. If user clicks on logout -> redirect
-
-      this.$router.push("/login").catch(function () {});
+      this.logoutUser();
+      this.$router.push("/login").catch(function () {}); // This is just for demo Purpose. If user clicks on logout -> redirect
     }
   })
 });
@@ -2493,11 +2481,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_backtotop__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-backtotop */ "./node_modules/vue-backtotop/src/main.js");
 /* harmony import */ var _layouts_components_horizontal_nav_menu_HorizontalNavMenu_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/layouts/components/horizontal-nav-menu/HorizontalNavMenu.vue */ "./resources/js/src/layouts/components/horizontal-nav-menu/HorizontalNavMenu.vue");
 /* harmony import */ var _layouts_components_vertical_nav_menu_navMenuItems_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/layouts/components/vertical-nav-menu/navMenuItems.js */ "./resources/js/src/layouts/components/vertical-nav-menu/navMenuItems.js");
-/* harmony import */ var _layouts_components_navbar_TheNavbarHorizontal_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/layouts/components/navbar/TheNavbarHorizontal.vue */ "./resources/js/src/layouts/components/navbar/TheNavbarHorizontal.vue");
-/* harmony import */ var _layouts_components_navbar_TheNavbarVertical_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/layouts/components/navbar/TheNavbarVertical.vue */ "./resources/js/src/layouts/components/navbar/TheNavbarVertical.vue");
-/* harmony import */ var _layouts_components_TheFooter_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/layouts/components/TheFooter.vue */ "./resources/js/src/layouts/components/TheFooter.vue");
-/* harmony import */ var _themeConfig_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/../themeConfig.js */ "./resources/js/themeConfig.js");
-/* harmony import */ var _layouts_components_vertical_nav_menu_VerticalNavMenu_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/layouts/components/vertical-nav-menu/VerticalNavMenu.vue */ "./resources/js/src/layouts/components/vertical-nav-menu/VerticalNavMenu.vue");
+/* harmony import */ var _layouts_components_vertical_nav_menu_navMenuSuper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/layouts/components/vertical-nav-menu/navMenuSuper.js */ "./resources/js/src/layouts/components/vertical-nav-menu/navMenuSuper.js");
+/* harmony import */ var _layouts_components_navbar_TheNavbarHorizontal_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/layouts/components/navbar/TheNavbarHorizontal.vue */ "./resources/js/src/layouts/components/navbar/TheNavbarHorizontal.vue");
+/* harmony import */ var _layouts_components_navbar_TheNavbarVertical_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/layouts/components/navbar/TheNavbarVertical.vue */ "./resources/js/src/layouts/components/navbar/TheNavbarVertical.vue");
+/* harmony import */ var _layouts_components_TheFooter_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/layouts/components/TheFooter.vue */ "./resources/js/src/layouts/components/TheFooter.vue");
+/* harmony import */ var _themeConfig_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/../themeConfig.js */ "./resources/js/themeConfig.js");
+/* harmony import */ var _layouts_components_vertical_nav_menu_VerticalNavMenu_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/layouts/components/vertical-nav-menu/VerticalNavMenu.vue */ "./resources/js/src/layouts/components/vertical-nav-menu/VerticalNavMenu.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -2680,7 +2676,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 
- // import navMenuSuper from "@/layouts/components/vertical-nav-menu/navMenuSuper.js";
+
+
 
 
 
@@ -2691,23 +2688,20 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     BackToTop: vue_backtotop__WEBPACK_IMPORTED_MODULE_0__["default"],
     HNavMenu: _layouts_components_horizontal_nav_menu_HorizontalNavMenu_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    TheFooter: _layouts_components_TheFooter_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-    TheNavbarHorizontal: _layouts_components_navbar_TheNavbarHorizontal_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    TheNavbarVertical: _layouts_components_navbar_TheNavbarVertical_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-    VNavMenu: _layouts_components_vertical_nav_menu_VerticalNavMenu_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
+    TheFooter: _layouts_components_TheFooter_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+    TheNavbarHorizontal: _layouts_components_navbar_TheNavbarHorizontal_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    TheNavbarVertical: _layouts_components_navbar_TheNavbarVertical_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+    VNavMenu: _layouts_components_vertical_nav_menu_VerticalNavMenu_vue__WEBPACK_IMPORTED_MODULE_8__["default"]
   },
   data: function data() {
     return {
-      footerType: _themeConfig_js__WEBPACK_IMPORTED_MODULE_6__["default"].footerType || "static",
-      hideScrollToTop: _themeConfig_js__WEBPACK_IMPORTED_MODULE_6__["default"].hideScrollToTop,
+      footerType: _themeConfig_js__WEBPACK_IMPORTED_MODULE_7__["default"].footerType || "static",
+      hideScrollToTop: _themeConfig_js__WEBPACK_IMPORTED_MODULE_7__["default"].hideScrollToTop,
       isNavbarDark: false,
-      navbarColor: _themeConfig_js__WEBPACK_IMPORTED_MODULE_6__["default"].navbarColor || "#fff",
-      navbarType: _themeConfig_js__WEBPACK_IMPORTED_MODULE_6__["default"].navbarType || "floating",
-      // navMenuItems: this.$acl.check("SuperAdministrador")
-      //   ? navMenuSuper
-      //   : navMenuItems,
-      navMenuItems: _layouts_components_vertical_nav_menu_navMenuItems_js__WEBPACK_IMPORTED_MODULE_2__["default"],
-      routerTransition: _themeConfig_js__WEBPACK_IMPORTED_MODULE_6__["default"].routerTransition || "none",
+      navbarColor: _themeConfig_js__WEBPACK_IMPORTED_MODULE_7__["default"].navbarColor || "#fff",
+      navbarType: _themeConfig_js__WEBPACK_IMPORTED_MODULE_7__["default"].navbarType || "floating",
+      // navMenuItems: navMenuItems,
+      routerTransition: _themeConfig_js__WEBPACK_IMPORTED_MODULE_7__["default"].routerTransition || "none",
       routeTitle: this.$route.meta.pageTitle
     };
   },
@@ -2765,9 +2759,12 @@ __webpack_require__.r(__webpack_exports__);
     },
     windowWidth: function windowWidth() {
       return this.$store.state.windowWidth;
+    },
+    navMenuItems: function navMenuItems() {
+      return this.getRol() == "SuperAdministrador" ? _layouts_components_vertical_nav_menu_navMenuSuper_js__WEBPACK_IMPORTED_MODULE_3__["default"] : _layouts_components_vertical_nav_menu_navMenuItems_js__WEBPACK_IMPORTED_MODULE_2__["default"];
     }
   },
-  methods: {
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_9__["mapGetters"])("auth", ["getRol"]), {
     changeRouteTitle: function changeRouteTitle(title) {
       this.routeTitle = title;
     },
@@ -2793,11 +2790,15 @@ __webpack_require__.r(__webpack_exports__);
     toggleHideScrollToTop: function toggleHideScrollToTop(val) {
       this.hideScrollToTop = val;
     }
-  },
+  }),
   created: function created() {
     var color = this.navbarColor == "#fff" && this.isThemeDark ? "#10163a" : this.navbarColor;
     this.updateNavbarColor(color);
     this.setNavMenuVisibility(this.$store.state.mainLayoutType);
+  },
+  beforeMount: function beforeMount() {
+    this.$store.dispatch("auth/tryAutoLogin");
+    this.getRol();
   }
 });
 
@@ -4655,7 +4656,7 @@ var render = function() {
                 _vm._v(_vm._s(_vm.displayName))
               ]),
               _vm._v(" "),
-              _c("small", [_vm._v("Available")])
+              _c("small", [_vm._v(_vm._s(_vm.activeUserInfo.role))])
             ]
           ),
           _vm._v(" "),
@@ -4706,100 +4707,6 @@ var render = function() {
                         }),
                         _vm._v(" "),
                         _c("span", { staticClass: "ml-2" }, [_vm._v("Profile")])
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      {
-                        staticClass:
-                          "flex py-2 px-4 cursor-pointer hover:bg-primary hover:text-white",
-                        on: {
-                          click: function($event) {
-                            _vm.$router.push("/apps/email").catch(function() {})
-                          }
-                        }
-                      },
-                      [
-                        _c("feather-icon", {
-                          attrs: { icon: "MailIcon", svgClasses: "w-4 h-4" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "ml-2" }, [_vm._v("Inbox")])
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      {
-                        staticClass:
-                          "flex py-2 px-4 cursor-pointer hover:bg-primary hover:text-white",
-                        on: {
-                          click: function($event) {
-                            _vm.$router.push("/apps/todo").catch(function() {})
-                          }
-                        }
-                      },
-                      [
-                        _c("feather-icon", {
-                          attrs: {
-                            icon: "CheckSquareIcon",
-                            svgClasses: "w-4 h-4"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "ml-2" }, [_vm._v("Tasks")])
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      {
-                        staticClass:
-                          "flex py-2 px-4 cursor-pointer hover:bg-primary hover:text-white",
-                        on: {
-                          click: function($event) {
-                            _vm.$router.push("/apps/chat").catch(function() {})
-                          }
-                        }
-                      },
-                      [
-                        _c("feather-icon", {
-                          attrs: {
-                            icon: "MessageSquareIcon",
-                            svgClasses: "w-4 h-4"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "ml-2" }, [_vm._v("Chat")])
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      {
-                        staticClass:
-                          "flex py-2 px-4 cursor-pointer hover:bg-primary hover:text-white",
-                        on: {
-                          click: function($event) {
-                            _vm.$router
-                              .push("/apps/eCommerce/wish-list")
-                              .catch(function() {})
-                          }
-                        }
-                      },
-                      [
-                        _c("feather-icon", {
-                          attrs: { icon: "HeartIcon", svgClasses: "w-4 h-4" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "ml-2" }, [
-                          _vm._v("Wish List")
-                        ])
                       ],
                       1
                     ),
@@ -7132,11 +7039,37 @@ __webpack_require__.r(__webpack_exports__);
   icon: 'HelpCircleIcon',
   slug: 'help',
   i18n: "Help"
+}]);
+
+/***/ }),
+
+/***/ "./resources/js/src/layouts/components/vertical-nav-menu/navMenuSuper.js":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/src/layouts/components/vertical-nav-menu/navMenuSuper.js ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/*=========================================================================================
+  File Name: sidebarItems.js
+  Description: Sidebar Items list. Add / Remove menu items from here.
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+/* harmony default export */ __webpack_exports__["default"] = ([{
+  url: "/home",
+  name: "Inicio",
+  slug: "home",
+  icon: "HomeIcon"
 }, {
   url: "/admin/companies",
   name: "Empresas",
   slug: "companies",
-  icon: "UsersIcon",
+  icon: "BriefcaseIcon",
   i18n: "Companies"
 }, {
   name: 'Usuarios',
@@ -7144,6 +7077,11 @@ __webpack_require__.r(__webpack_exports__);
   icon: 'UserIcon',
   slug: 'users',
   i18n: "Users"
+}, {
+  name: 'Ayuda',
+  url: '/help',
+  icon: 'HelpCircleIcon',
+  slug: 'help'
 }]);
 
 /***/ }),

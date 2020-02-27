@@ -33,8 +33,7 @@ const router = new Router({
             component: () =>
                 import ('@/layouts/full-page/FullPage.vue'),
             meta: {
-                auth: false,
-                rule: 'public'
+                redirectIfAuthenticated: true
             },
             children: [
                 // =============================================================================
@@ -83,17 +82,7 @@ const router = new Router({
             component: () =>
                 import ('./layouts/main/Main.vue'),
             meta: {
-                auth: true,
-                rule: 'Comun'
-            },
-            beforeEnter(to, from, next) {
-                console.log(to)
-                console.log(from)
-                store.dispatch('auth/tryAutoLogin').then(() => {
-                    next();
-                }).catch(() => {
-                    next('/login');
-                });
+                requiresAuth: true
             },
             children: [
                 // =============================================================================
@@ -190,21 +179,11 @@ const router = new Router({
             component: () =>
                 import ('./layouts/main/Main.vue'),
             meta: {
-                auth: true,
-                rule: 'Comun'
-            },
-            beforeEnter(to, from, next) {
-                console.log(to)
-                console.log(from)
-                store.dispatch('auth/tryAutoLogin').then(() => {
-                    next();
-                }).catch(() => {
-                    next('/login');
-                });
+                requiresAuth: true
             },
             children: [{
                     path: 'companies',
-                    name: 'admin.companies',
+                    // name: 'admin.companies',
                     meta: {
                         rule: 'Empresa'
                     },
@@ -231,7 +210,7 @@ const router = new Router({
                 },
                 {
                     path: 'users',
-                    name: 'admin.users',
+                    // name: 'admin.users',
                     meta: {
                         rule: 'Empresa'
                     },
@@ -259,15 +238,7 @@ const router = new Router({
             component: () =>
                 import ('@/layouts/full-page/FullPage.vue'),
             meta: {
-                auth: false,
-                rule: 'Empresa'
-            },
-            beforeEnter(to, from, next) {
-                store.dispatch('auth/tryAutoLogin').then(() => {
-                    next();
-                }).catch(() => {
-                    next('/login');
-                });
+                requiresAuth: true
             },
             children: [
                 // =============================================================================
@@ -290,6 +261,24 @@ const router = new Router({
             redirect: '/pages/error-404'
         }
     ],
+})
+
+router.beforeEach((to, from, next) => {
+    //  Redirect if not authenticated on secured routes
+    if (to.matched.some(m => m.meta.requiresAuth)) {
+        if (!store.getters['auth/isAuthenticated']) {
+            return next('/login')
+        }
+    }
+
+    if (to.matched.some(m => m.meta.redirectIfAuthenticated) && store.getters['auth/isAuthenticated']) {
+        if (store.getters['auth/getRol'] == 'SuperAdministrador') {
+            return next('/admin/companies');
+        }
+        return next('/company/home')
+    }
+
+    return next()
 })
 
 router.afterEach(() => {

@@ -15,35 +15,17 @@ export default [{
         icon: "HomeIcon",
     },
     {
-        url: "/companies",
+        url: "/admin/companies",
         name: "Empresas",
         slug: "companies",
-        icon: "UsersIcon",
-    },
-    {
-        url: null,
-        name: 'Adminsitracion',
-        slug: 'administration',
-        icon: 'SettingsIcon',
-        submenu: [{
-                name: 'Configuraciones',
-                url: '/configurations',
-                icon: 'SettingsIcon',
-                slug: 'configurations'
-            },
-            {
-                name: 'Usuarios',
-                url: '/users',
-                icon: 'UserIcon',
-                slug: 'users'
-            }, {
-                name: 'Importar factura',
-                url: '/import-invoice',
-                icon: 'FilePlusIcon',
-                slug: 'import-invoice'
-            }
-
-        ]
+        icon: "BriefcaseIcon",
+        i18n: "Companies",
+    }, {
+        name: 'Usuarios',
+        url: '/admin/users',
+        icon: 'UserIcon',
+        slug: 'users',
+        i18n: "Users",
     },
     {
         name: 'Ayuda',

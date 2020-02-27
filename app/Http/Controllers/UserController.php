@@ -101,7 +101,7 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         if (in_array('Empresa', auth('api')->user()->getRoleNames()->toArray()) && auth('api')->user()->company_id!=$company->id) {
-            return response()->json([ 'error'=> 401, 'message'=> 'Not Authorized' ], 401);
+            return response()->json([ 'error'=> 403, 'message'=> 'Forbidden' ], 403);
         }
         $request->validate([
             'first_name' => ['required', 'string', 'max:255'],
@@ -136,7 +136,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         if (in_array('Empresa', auth('api')->user()->getRoleNames()->toArray()) && auth('api')->user()->company_id!=$company->id) {
-            return response()->json([ 'error'=> 401, 'message'=> 'Not Authorized' ], 401);
+            return response()->json([ 'error'=> 403, 'message'=> 'Forbidden' ], 403);
         }
         $user->delete();
         return response()->json(['deleted'=>true]);
