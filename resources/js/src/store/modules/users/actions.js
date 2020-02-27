@@ -16,7 +16,7 @@ export default {
         return new Promise((resolve, reject) => {
             axios.post("/api/users/", item)
                 .then((response) => {
-                    commit('ADD_USER', Object.assign(item, {
+                    commit('ADD_USER', Object.assign(response.data.user, {
                         id: response.data.id
                     }))
                     resolve(response)

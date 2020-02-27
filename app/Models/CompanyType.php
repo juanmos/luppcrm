@@ -8,7 +8,7 @@ use App\Models\Company;
 class CompanyType extends Model
 {
     protected $fillable=['type'];
-    protected $timestamps =false;
+    public $timestamps =false;
     
     public function companies()
     {

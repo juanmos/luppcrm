@@ -116,4 +116,10 @@ class CompanyController extends Controller
     {
         //
     }
+
+    public function users(Company $company)
+    {
+        $users = $company->users()->get();
+        return response()->json(compact('users'));
+    }
 }

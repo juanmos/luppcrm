@@ -17,7 +17,7 @@ class Company extends Model
         'phone',
         'company_type_id'
     ];
-    protected $with=['configuration'];
+    protected $with=['configuration','companyType'];
 
     
     public function companyType()
@@ -25,7 +25,7 @@ class Company extends Model
         return $this->belongsTo(CompanyType::class, 'company_type_id');
     }
 
-    public function user()
+    public function users()
     {
         return $this->hasMany(User::class, 'company_id');
     }

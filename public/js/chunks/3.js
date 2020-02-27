@@ -146,6 +146,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     data: {
       type: Object,
       default: function _default() {}
+    },
+    company_id: {
+      type: String,
+      default: 0
     }
   },
   watch: {
@@ -218,11 +222,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     initValues: function initValues() {
       if (this.data.id) return;
       this.dataId = null;
-      this.dataName = "";
-      this.dataCategory = null;
-      this.dataOrder_status = "pending";
-      this.dataPrice = 0;
-      this.dataImg = null;
+      this.first_name = "";
+      this.last_name = "";
+      this.identification = "";
+      this.mobile = "";
+      this.role = "Empresa";
+      this.password = "";
+      this.password_confirmation = "";
     },
     submitData: function submitData() {
       var _this = this;
@@ -239,7 +245,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             email: _this.email,
             role: _this.role,
             password: _this.password,
-            password_confirmation: _this.passwordConfirmation
+            password_confirmation: _this.passwordConfirmation,
+            company_id: _this.company_id
           };
 
           if (_this.dataId !== null && _this.dataId >= 0) {

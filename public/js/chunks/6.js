@@ -711,7 +711,7 @@ var render = function() {
                       _c(
                         "span",
                         { staticClass: "ml-2 text-base text-primary" },
-                        [_vm._v("Add New")]
+                        [_vm._v(_vm._s(_vm.$t("addNew")))]
                       )
                     ],
                     1

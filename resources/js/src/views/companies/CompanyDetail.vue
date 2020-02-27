@@ -10,38 +10,38 @@
 <template>
   <div id="page-user-view">
     <vs-alert color="danger" title="User Not Found" :active.sync="user_not_found">
-      <span>User record with id: {{ $route.params.userId }} not found.</span>
+      <span>Company record with id: {{ $route.params.id }} not found.</span>
       <span>
         <span>Check</span>
-        <router-link :to="{name:'page-user-list'}" class="text-inherit underline">All Users</router-link>
+        <router-link :to="{name:'page-user-list'}" class="text-inherit underline">All companies</router-link>
       </span>
     </vs-alert>
 
-    <div id="user-data" v-if="user_data">
-      <vx-card title="Account" class="mb-base">
+    <div id="user-data" v-if="company_data">
+      <vx-card :title="$t('accountCompany')" class="mb-base">
         <!-- Avatar -->
         <div class="vx-row">
           <!-- Avatar Col -->
-          <div class="vx-col" id="avatar-col">
+          <!-- <div class="vx-col" id="avatar-col">
             <div class="img-container mb-4">
-              <img :src="user_data.avatar" class="rounded w-full" />
+              <img :src="company_data.avatar" class="rounded w-full" />
             </div>
-          </div>
+          </div>-->
 
           <!-- Information - Col 1 -->
           <div class="vx-col flex-1" id="account-info-col-1">
             <table>
               <tr>
                 <td class="font-semibold">{{$t('companyName')}}</td>
-                <td>{{ user_data.company_name }}</td>
+                <td>{{ company_data.company_name }}</td>
               </tr>
               <tr>
-                <td class="font-semibold">Name</td>
-                <td>{{ user_data.name }}</td>
+                <td class="font-semibold">{{$t('identification')}}</td>
+                <td>{{ company_data.ruc }}</td>
               </tr>
               <tr>
-                <td class="font-semibold">Email</td>
-                <td>{{ user_data.email }}</td>
+                <td class="font-semibold">{{$t('companyAddress')}}</td>
+                <td>{{ company_data.addres }}</td>
               </tr>
             </table>
           </div>
@@ -51,16 +51,16 @@
           <div class="vx-col flex-1" id="account-info-col-2">
             <table>
               <tr>
-                <td class="font-semibold">Status</td>
-                <td>{{ user_data.status }}</td>
+                <td class="font-semibold">{{$t('companyAlias')}}</td>
+                <td>{{ company_data.company_alias }}</td>
               </tr>
               <tr>
-                <td class="font-semibold">Role</td>
-                <td>{{ user_data.role }}</td>
+                <td class="font-semibold">{{$t('companyType')}}</td>
+                <td>{{ (company_data.company_type!=null)?company_data.company_type.type:$t('noCompanyType') }}</td>
               </tr>
               <tr>
-                <td class="font-semibold">Company</td>
-                <td>{{ user_data.company }}</td>
+                <td class="font-semibold">{{$t('phone')}}</td>
+                <td>{{ company_data.phone }}</td>
               </tr>
             </table>
           </div>
@@ -71,144 +71,96 @@
               icon="icon-edit"
               class="mr-4"
               :to="{name: 'app-user-edit', params: { userId: $route.params.userId }}"
-            >Edit</vs-button>
+            >{{$t('edit')}}</vs-button>
             <vs-button
               type="border"
               color="danger"
               icon-pack="feather"
               icon="icon-trash"
               @click="confirmDeleteRecord"
-            >Delete</vs-button>
+            >{{$t("delete")}}</vs-button>
           </div>
         </div>
       </vx-card>
 
-      <div class="vx-row">
-        <div class="vx-col lg:w-1/2 w-full">
-          <vx-card title="Information" class="mb-base">
-            <table>
-              <tr>
-                <td class="font-semibold">Birth Date</td>
-                <td>{{ user_data.dob }}</td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Mobile</td>
-                <td>{{ user_data.mobile }}</td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Website</td>
-                <td>{{ user_data.website }}</td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Languages</td>
-                <td>{{ user_data.languages_known }}</td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Gender</td>
-                <td>{{ user_data.gender }}</td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Contact</td>
-                <td>{{ user_data.contact_options }}</td>
-              </tr>
-            </table>
-          </vx-card>
-        </div>
-
-        <div class="vx-col lg:w-1/2 w-full">
-          <vx-card title="Social Links" class="mb-base">
-            <table>
-              <tr>
-                <td class="font-semibold">Twitter</td>
-                <td>{{ user_data.social_links }}</td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Facebook</td>
-                <td>{{ user_data.social_links }}</td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Instagram</td>
-                <td>{{ user_data.social_links }}</td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Github</td>
-                <td>{{ user_data.social_links }}</td>
-              </tr>
-              <tr>
-                <td class="font-semibold">CodePen</td>
-                <td>{{ user_data.social_links }}</td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Slack</td>
-                <td>{{ user_data.social_links }}</td>
-              </tr>
-            </table>
-          </vx-card>
-        </div>
-      </div>
-
-      <!-- Permissions -->
-      <vx-card>
-        <div class="vx-row">
-          <div class="vx-col w-full">
-            <div class="flex items-end px-3">
-              <feather-icon svgClasses="w-6 h-6" icon="LockIcon" class="mr-2" />
-              <span class="font-medium text-lg leading-none">Permissions</span>
-            </div>
-            <vs-divider />
+      <vs-tabs
+        :position="isSmallerScreen ? 'top' : 'left'"
+        class="tabs-shadow-none"
+        id="profile-tabs"
+        :key="isSmallerScreen"
+      >
+        <vs-tab
+          icon-pack="feather"
+          icon="icon-user"
+          :label="!isSmallerScreen ? $t('companyContacts') : ''"
+        >
+          <div class="tab-general md:ml-4 md:mt-0 mt-4 ml-0">
+            <company-contact />
           </div>
-        </div>
-
-        <div class="block overflow-x-auto">
-          <table class="w-full permissions-table">
-            <tr>
-              <!--
-                You can also use `Object.keys(Object.values(data_local.permissions)[0])` this logic if you consider,
-                our data structure. You just have to loop over above variable to get table headers.
-                Below we made it simple. So, everyone can understand.
-              -->
-              <th
-                class="font-semibold text-base text-left px-3 py-2"
-                v-for="heading in ['Module', 'Read', 'Write', 'Create', 'Delete']"
-                :key="heading"
-              >{{ heading }}</th>
-            </tr>
-
-            <!-- <tr v-for="(val, name) in user_data.permissions" :key="name">
-              <td class="px-3 py-2">{{ name }}</td>
-              <td v-for="(permission, name) in val" class="px-3 py-2" :key="name+permission">
-                <vs-checkbox v-model="val[name]" class="pointer-events-none" />
-              </td>
-            </tr>-->
-          </table>
-        </div>
-      </vx-card>
+        </vs-tab>
+        <vs-tab icon-pack="feather" icon="icon-user" :label="!isSmallerScreen ? $t('Users') : ''">
+          <div class="tab-general md:ml-4 md:mt-0 mt-4 ml-0">
+            <company-users :companyId="id" />
+          </div>
+        </vs-tab>
+        <vs-tab
+          icon-pack="feather"
+          icon="icon-lock"
+          :label="!isSmallerScreen ? $t('Settings') : ''"
+        >
+          <div class="tab-change-pwd md:ml-4 md:mt-0 mt-4 ml-0">
+            <company-configurations :companyId="id" />
+          </div>
+        </vs-tab>
+        <vs-tab
+          icon-pack="feather"
+          icon="icon-info"
+          :label="!isSmallerScreen ? $t('notifications') : ''"
+        >
+          <div class="tab-info md:ml-4 md:mt-0 mt-4 ml-0">
+            <company-notifications />
+          </div>
+        </vs-tab>
+      </vs-tabs>
     </div>
   </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
+import CompanyUsers from "./CompanyUsers.vue";
+import CompanyNotifications from "./CompanyNotifications.vue";
+import CompanyConfigurations from "./CompanyConfigurations.vue";
+import CompanyContact from "./CompanyContact.vue";
 
 export default {
+  components: {
+    CompanyUsers,
+    CompanyNotifications,
+    CompanyConfigurations,
+    CompanyContact
+  },
   data() {
     return {
-      //   user_data: null,
+      //   company_data: null,
       user_not_found: false
     };
   },
   props: ["id"],
   computed: {
-    user_data() {
+    company_data() {
       console.log(this.id);
       return this.$store.getters["companies/getCompany"](this.id);
     },
     userAddress() {
       let str = "";
-      for (var field in this.user_data.location) {
+      for (var field in this.company_data.location) {
         str += field + " ";
       }
       return str;
+    },
+    isSmallerScreen() {
+      return this.$store.state.windowWidth < 768;
     }
   },
   methods: {
@@ -217,7 +169,7 @@ export default {
         type: "confirm",
         color: "danger",
         title: `Confirm Delete`,
-        text: `You are about to delete "${this.user_data.username}"`,
+        text: `You are about to delete "${this.company_data.username}"`,
         accept: this.deleteRecord,
         acceptText: "Delete"
       });
@@ -228,7 +180,7 @@ export default {
       this.showDeleteSuccess();
 
       /* UnComment below lines for enabling true flow if deleting user */
-      // this.$store.dispatch("userManagement/removeRecord", this.user_data.id)
+      // this.$store.dispatch("userManagement/removeRecord", this.company_data.id)
       //   .then(()   => { this.$router.push({name:'app-user-list'}); this.showDeleteSuccess() })
       //   .catch(err => { console.error(err)       })
     },
@@ -246,7 +198,7 @@ export default {
     // this.$store
     //   .dispatch("userManagement/fetchUser", userId)
     //   .then(res => {
-    //     this.user_data = res.data;
+    //     this.company_data = res.data;
     //   })
     //   .catch(err => {
     //     if (err.response.status === 404) {
@@ -255,6 +207,10 @@ export default {
     //     }
     //     console.error(err);
     //   });
+  },
+  beforeMount() {
+    if (this.$store.state.companies.companies.length == 0)
+      this.$store.dispatch("companies/fetchCompanies");
   }
 };
 </script>

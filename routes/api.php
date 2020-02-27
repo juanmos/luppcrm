@@ -17,6 +17,7 @@ Route::group(['middleware' => 'api'], function () {
     Route::get('/companies', 'CompanyController@index')->name('company.index');
     Route::post('/company', 'CompanyController@store')->name('company.store');
     Route::put('/company/{company}', 'CompanyController@update')->name('company.update');
+    Route::get('company/{company}/users', 'CompanyController@users')->name('company.users');
 
     //USERS
     Route::get('/users', 'UserController@index')->name('user.index');

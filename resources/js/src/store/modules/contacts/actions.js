@@ -10,6 +10,21 @@
 import axios from "@/axios.js"
 
 export default {
+
+    fetchCompanyContact({
+        commit
+    }, companyId) {
+        return new Promise((resolve, reject) => {
+            axios.get("/api/companies")
+                .then((response) => {
+                    commit('SET_COMPANIES', response.data.companies.data)
+                    resolve(response)
+                })
+                .catch((error) => {
+                    reject(error)
+                })
+        })
+    },
     addCompany({
         commit
     }, item) {
@@ -19,20 +34,6 @@ export default {
                     commit('ADD_ITEM', Object.assign(item, {
                         id: response.data.id
                     }))
-                    resolve(response)
-                })
-                .catch((error) => {
-                    reject(error)
-                })
-        })
-    },
-    fetchCompanies({
-        commit
-    }) {
-        return new Promise((resolve, reject) => {
-            axios.get("/api/companies")
-                .then((response) => {
-                    commit('SET_COMPANIES', response.data.companies.data)
                     resolve(response)
                 })
                 .catch((error) => {

@@ -32,7 +32,7 @@
             @click="addNewData"
           >
             <feather-icon icon="PlusIcon" svgClasses="h-4 w-4" />
-            <span class="ml-2 text-base text-primary">Add New</span>
+            <span class="ml-2 text-base text-primary">{{$t('addNew')}}</span>
           </div>
         </div>
 

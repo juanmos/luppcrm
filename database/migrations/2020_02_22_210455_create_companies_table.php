@@ -20,7 +20,7 @@ class CreateCompaniesTable extends Migration
             $table->string('ruc');
             $table->string('address')->nullable();
             $table->string('phone')->nullable();
-            $table->integer('company_type_id')->default(0);
+            $table->integer('company_type_id')->default(1);
             $table->timestamps();
             $table->softDeletes();
         });

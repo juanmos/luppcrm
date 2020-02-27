@@ -128,6 +128,10 @@ export default {
     data: {
       type: Object,
       default: () => {}
+    },
+    company_id: {
+      type: String,
+      default: 0
     }
   },
   watch: {
@@ -205,11 +209,13 @@ export default {
     initValues() {
       if (this.data.id) return;
       this.dataId = null;
-      this.dataName = "";
-      this.dataCategory = null;
-      this.dataOrder_status = "pending";
-      this.dataPrice = 0;
-      this.dataImg = null;
+      this.first_name = "";
+      this.last_name = "";
+      this.identification = "";
+      this.mobile = "";
+      this.role = "Empresa";
+      this.password = "";
+      this.password_confirmation = "";
     },
     submitData() {
       this.$validator.validateAll().then(result => {
@@ -224,7 +230,8 @@ export default {
             email: this.email,
             role: this.role,
             password: this.password,
-            password_confirmation: this.passwordConfirmation
+            password_confirmation: this.passwordConfirmation,
+            company_id: this.company_id
           };
 
           if (this.dataId !== null && this.dataId >= 0) {
