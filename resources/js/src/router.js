@@ -209,7 +209,25 @@ const router = new Router({
                         rule: 'Empresa'
                     },
                     component: () =>
-                        import ('./views/companies/Companies.vue')
+                        import ('./views/companies/CompanyMain.vue'),
+                    children: [{
+                        path: '',
+                        name: 'admin.companies.list',
+                        meta: {
+                            rule: 'Empresa'
+                        },
+                        component: () =>
+                            import ('./views/companies/Companies.vue')
+                    }, {
+                        path: 'details/:id',
+                        props: true,
+                        name: 'admin.companies.details',
+                        meta: {
+                            rule: 'Empresa'
+                        },
+                        component: () =>
+                            import ('./views/companies/CompanyDetail.vue')
+                    }]
                 },
                 {
                     path: 'users',

@@ -17,6 +17,15 @@ Route::group(['middleware' => 'api'], function () {
     Route::get('/companies', 'CompanyController@index')->name('company.index');
     Route::post('/company', 'CompanyController@store')->name('company.store');
     Route::put('/company/{company}', 'CompanyController@update')->name('company.update');
+    Route::get('company/{company}/users', 'CompanyController@users')->name('company.users');
+
+    //CONTACTS
+    Route::get('company/{company}/contacts', 'CompanyContactController@index')->name('contacts.index');
+    Route::post('company/contact', 'CompanyContactController@store')->name('contacts.store');
+    Route::put('company/contact/{contact}', 'CompanyContactController@update')->name('contacts.update');
+    Route::delete('company/contact/{contact}', 'CompanyContactController@destroy')->name('contacts.destroy');
+
+
 
     //USERS
     Route::get('/users', 'UserController@index')->name('user.index');

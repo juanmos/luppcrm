@@ -31,7 +31,7 @@
             @click="addNewData"
           >
             <feather-icon icon="PlusIcon" svgClasses="h-4 w-4" />
-            <span class="ml-2 text-base text-primary">Add New</span>
+            <span class="ml-2 text-base text-primary">{{$t('addNew')}}</span>
           </div>
         </div>
 
@@ -47,9 +47,6 @@
           </div>
           <!-- <vs-button class="btn-drop" type="line" color="primary" icon-pack="feather" icon="icon-chevron-down"></vs-button> -->
           <vs-dropdown-menu>
-            <vs-dropdown-item @click="itemsPerPage=4">
-              <span>4</span>
-            </vs-dropdown-item>
             <vs-dropdown-item @click="itemsPerPage=10">
               <span>10</span>
             </vs-dropdown-item>
@@ -138,7 +135,7 @@ export default {
     return {
       selected: [],
       // products: [],
-      itemsPerPage: 4,
+      itemsPerPage: 10,
       isMounted: false,
 
       // Data Sidebar

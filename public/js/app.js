@@ -68032,13 +68032,9 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_i18n__WEBPACK_IMPORTED_MODULE
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var _en, _es;
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 // en, de, fr, pt
 /* harmony default export */ __webpack_exports__["default"] = ({
-  en: (_en = {
+  en: {
     userData: 'User data',
     companyInfo: 'Company info',
     invoiceConfig: 'Invoicing configuration',
@@ -68063,6 +68059,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     companyPhone: 'Phone',
     companyAddress: 'Address',
     companyType: 'Company type',
+    noCompanyType: 'Without company type',
     noCompany: 'No company selected',
     company: 'Company',
     establishment: 'Establishment #',
@@ -68100,80 +68097,27 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     inactive: 'Inactive',
     information: 'Information',
     account: 'Account',
+    accountCompany: 'Company account',
     delete: 'Delete',
     edit: 'Update',
-    UI: 'UI',
-    DataList: 'Data List',
-    ListView: 'List View',
-    ThumbView: 'Thumb View',
-    Grid: 'Grid',
-    Vuexy: 'Vuexy',
-    Vuesax: 'Vuesax',
-    Tailwind: 'Tailwind',
-    Colors: 'Colors',
-    Card: 'Card',
-    Basic: 'Basic',
-    Statistics: 'Statistics',
-    Analytics: 'Analytics',
-    CardActions: 'Card Actions',
-    CardColors: 'Card Colors',
-    Table: 'Table',
-    agGridTable: 'agGrid Table',
-    Components: 'Components',
-    Alert: 'Alert',
-    Avatar: 'Avatar',
-    Badge: 'Badge',
-    Breadcrumb: 'Breadcrumb',
-    Button: 'Button',
-    ButtonGroup: 'Button Group',
-    Chip: 'Chip',
-    Collapse: 'Collapse',
-    Dialogs: 'Dialogs',
-    Divider: 'Divider',
-    DropDown: 'DropDown',
-    List: 'List',
-    Loading: 'Loading',
-    Navbar: 'Navbar',
-    Notifications: 'Notifications',
-    Pagination: 'Pagination',
-    Popup: 'Popup',
-    Progress: 'Progress',
-    Sidebar: 'Sidebar',
-    Slider: 'Slider',
-    Tabs: 'Tabs',
-    Tooltip: 'Tooltip',
-    Upload: 'Upload',
-    FormsAndTable: 'Forms & Table',
-    FormElements: 'Form Elements',
-    Select: 'Select',
-    Switch: 'Switch',
-    Checkbox: 'Checkbox',
-    Radio: 'Radio',
-    Input: 'Input',
-    NumberInput: 'Number Input',
-    Textarea: 'Textarea',
-    FormLayouts: 'Form Layouts',
-    FormWizard: 'Form Wizard',
-    FormValidation: 'Form Validation',
-    FormInputGroup: 'Form Input Group',
-    Pages: 'Pages',
-    Authentication: 'Authentication',
-    Login: 'Login',
-    Register: 'Register',
-    ForgotPassword: 'Forgot Password',
-    ResetPassword: 'Reset Password',
-    LockScreen: 'Lock Screen',
-    Miscellaneous: 'Miscellaneous',
-    ComingSoon: 'Coming Soon',
+    companyUsers: 'Company users',
+    companyContacts: 'Company contacts',
+    notifications: 'Notifications',
     Error: 'Error',
     404: '404',
     500: '500',
     NotAuthorized: 'Not Authorized',
     Maintenance: 'Maintenance',
     Profile: 'Profile',
-    User: 'User'
-  }, _defineProperty(_en, "List", 'List'), _defineProperty(_en, "View", 'View'), _defineProperty(_en, "Edit", 'Edit'), _defineProperty(_en, "UserSettings", 'User Settings'), _defineProperty(_en, "Invoice", 'Invoice'), _defineProperty(_en, "FAQ", 'FAQ'), _defineProperty(_en, "Search", 'Search'), _defineProperty(_en, "KnowledgeBase", 'Knowledge Base'), _defineProperty(_en, "ChartsAndMaps", 'Charts & Maps'), _defineProperty(_en, "Charts", 'Charts'), _defineProperty(_en, "ApexCharts", 'Apex Charts'), _defineProperty(_en, "chartjs", 'chartjs'), _defineProperty(_en, "echarts", 'echarts'), _defineProperty(_en, "chartist", 'chartist'), _defineProperty(_en, "GoogleMap", 'Google Map'), _defineProperty(_en, "Extensions", 'Extensions'), _defineProperty(_en, "QuillEditor", 'Quill Editor'), _defineProperty(_en, "DragAndDrop", 'Drag & Drop'), _defineProperty(_en, "Datepicker", 'Datepicker'), _defineProperty(_en, "DatetimePicker", 'Datetime Picker'), _defineProperty(_en, "AccessControl", 'Access Control'), _defineProperty(_en, "I18n", 'I18n'), _defineProperty(_en, "Carousel", 'Carousel'), _defineProperty(_en, "Clipboard", 'Clipboard'), _defineProperty(_en, "ContextMenu", 'Context Menu'), _defineProperty(_en, "StarRatings", 'Star Ratings'), _defineProperty(_en, "Autocomplete", 'Autocomplete'), _defineProperty(_en, "Tree", 'Tree'), _defineProperty(_en, "Import", 'Import'), _defineProperty(_en, "Export", 'Export'), _defineProperty(_en, "ExportSelected", "Export Selected"), _defineProperty(_en, "Others", 'Others'), _defineProperty(_en, "MenuLevels", 'Menu Levels'), _defineProperty(_en, "MenuLevel2p1", 'Menu Level 2.1'), _defineProperty(_en, "MenuLevel2p2", 'Menu Level 2.2'), _defineProperty(_en, "MenuLevel3p1", 'Menu Level 3.1'), _defineProperty(_en, "MenuLevel3p2", 'Menu Level 3.2'), _defineProperty(_en, "DisabledMenu", 'Disabled Menu'), _defineProperty(_en, "Support", 'Support'), _defineProperty(_en, "Documentation", 'Documentation'), _defineProperty(_en, "RaiseSupport", 'Raise Support'), _defineProperty(_en, "demoTitle", 'Card Title'), _defineProperty(_en, "demoText", 'Cake sesame snaps cupcake gingerbread danish I love gingerbread. Apple pie pie jujubes chupa chups muffin halvah lollipop. Chocolate cake oat cake tiramisu marzipan sugar plum. Donut sweet pie oat cake dragée fruitcake cotton candy lemon drops.'), _en),
-  es: (_es = {
+    addNew: 'Add new',
+    position: 'Position',
+    newContact: 'New contact',
+    updateContact: 'Update contact',
+    confirmContactDeleteText: 'You are going to delete the contact?',
+    contactDeletedTitle: 'Contact deleted!',
+    contactDeletedText: 'The contact has been deleted'
+  },
+  es: {
     userData: 'Datos de usuario',
     companyInfo: 'Información de la compañia',
     invoiceConfig: 'Configuraciones de facturación',
@@ -68199,6 +68143,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     companyAddress: 'Dirección',
     companyType: 'Tipo de compañia',
     noCompany: 'Sin compañia seleccionada',
+    noCompanyType: 'Sin tipo de compañia',
     company: 'Compañia',
     establishment: 'Establecimiento',
     salePoint: 'Punto de venta',
@@ -68235,79 +68180,26 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     inactive: 'Inactivo',
     information: 'Información',
     account: 'Datos de usuario',
+    accountCompany: 'Datos de la compañia',
     delete: 'Eliminar',
     edit: 'Editar',
-    UI: 'UI',
-    DataList: 'Data List',
-    ListView: 'List View',
-    ThumbView: 'Thumb View',
-    Grid: 'Grid',
-    Vuexy: 'Vuexy',
-    Vuesax: 'Vuesax',
-    Tailwind: 'Tailwind',
-    Colors: 'Colors',
-    Card: 'Card',
-    Basic: 'Basic',
-    Statistics: 'Statistics',
-    Analytics: 'Analytics',
-    CardActions: 'Card Actions',
-    CardColors: 'Card Colors',
-    Table: 'Table',
-    agGridTable: 'agGrid Table',
-    Components: 'Components',
-    Alert: 'Alert',
-    Avatar: 'Avatar',
-    Badge: 'Badge',
-    Breadcrumb: 'Breadcrumb',
-    Button: 'Button',
-    ButtonGroup: 'Button Group',
-    Chip: 'Chip',
-    Collapse: 'Collapse',
-    Dialogs: 'Dialogs',
-    Divider: 'Divider',
-    DropDown: 'DropDown',
-    List: 'List',
-    Loading: 'Loading',
-    Navbar: 'Navbar',
-    Notifications: 'Notifications',
-    Pagination: 'Pagination',
-    Popup: 'Popup',
-    Progress: 'Progress',
-    Sidebar: 'Sidebar',
-    Slider: 'Slider',
-    Tabs: 'Tabs',
-    Tooltip: 'Tooltip',
-    Upload: 'Upload',
-    FormsAndTable: 'Forms & Table',
-    FormElements: 'Form Elements',
-    Select: 'Select',
-    Switch: 'Switch',
-    Checkbox: 'Checkbox',
-    Radio: 'Radio',
-    Input: 'Input',
-    NumberInput: 'Number Input',
-    Textarea: 'Textarea',
-    FormLayouts: 'Form Layouts',
-    FormWizard: 'Form Wizard',
-    FormValidation: 'Form Validation',
-    FormInputGroup: 'Form Input Group',
-    Pages: 'Pages',
-    Authentication: 'Authentication',
-    Login: 'Login',
-    Register: 'Register',
-    ForgotPassword: 'Forgot Password',
-    ResetPassword: 'Reset Password',
-    LockScreen: 'Lock Screen',
-    Miscellaneous: 'Miscellaneous',
-    ComingSoon: 'Coming Soon',
+    companyUsers: 'Usuarios de la compañia',
+    companyContacts: 'Contactos en la compañia',
+    notifications: 'Notificaciones',
     Error: 'Error',
     404: '404',
     500: '500',
-    NotAuthorized: 'Not Authorized',
-    Maintenance: 'Maintenance',
-    Profile: 'Profile',
-    User: 'User'
-  }, _defineProperty(_es, "List", 'List'), _defineProperty(_es, "View", 'View'), _defineProperty(_es, "Edit", 'Edit'), _defineProperty(_es, "UserSettings", 'User Settings'), _defineProperty(_es, "Invoice", 'Invoice'), _defineProperty(_es, "FAQ", 'FAQ'), _defineProperty(_es, "Search", 'Search'), _defineProperty(_es, "KnowledgeBase", 'Knowledge Base'), _defineProperty(_es, "ChartsAndMaps", 'Charts & Maps'), _defineProperty(_es, "Charts", 'Charts'), _defineProperty(_es, "ApexCharts", 'Apex Charts'), _defineProperty(_es, "chartjs", 'chartjs'), _defineProperty(_es, "echarts", 'echarts'), _defineProperty(_es, "chartist", 'chartist'), _defineProperty(_es, "GoogleMap", 'Google Map'), _defineProperty(_es, "Extensions", 'Extensions'), _defineProperty(_es, "QuillEditor", 'Quill Editor'), _defineProperty(_es, "DragAndDrop", 'Drag & Drop'), _defineProperty(_es, "Datepicker", 'Datepicker'), _defineProperty(_es, "DatetimePicker", 'Datetime Picker'), _defineProperty(_es, "AccessControl", 'Access Control'), _defineProperty(_es, "I18n", 'I18n'), _defineProperty(_es, "Carousel", 'Carousel'), _defineProperty(_es, "Clipboard", 'Clipboard'), _defineProperty(_es, "ContextMenu", 'Context Menu'), _defineProperty(_es, "StarRatings", 'Star Ratings'), _defineProperty(_es, "Autocomplete", 'Autocomplete'), _defineProperty(_es, "Tree", 'Tree'), _defineProperty(_es, "Import", 'Import'), _defineProperty(_es, "Export", 'Export'), _defineProperty(_es, "ExportSelected", "Export Selected"), _defineProperty(_es, "Others", 'Others'), _defineProperty(_es, "MenuLevels", 'Menu Levels'), _defineProperty(_es, "MenuLevel2p1", 'Menu Level 2.1'), _defineProperty(_es, "MenuLevel2p2", 'Menu Level 2.2'), _defineProperty(_es, "MenuLevel3p1", 'Menu Level 3.1'), _defineProperty(_es, "MenuLevel3p2", 'Menu Level 3.2'), _defineProperty(_es, "DisabledMenu", 'Disabled Menu'), _defineProperty(_es, "Support", 'Support'), _defineProperty(_es, "Documentation", 'Documentation'), _defineProperty(_es, "RaiseSupport", 'Raise Support'), _defineProperty(_es, "demoTitle", 'Card Title'), _defineProperty(_es, "demoText", 'Cake sesame snaps cupcake gingerbread danish I love gingerbread. Apple pie pie jujubes chupa chups muffin halvah lollipop. Chocolate cake oat cake tiramisu marzipan sugar plum. Donut sweet pie oat cake dragée fruitcake cotton candy lemon drops.'), _es)
+    NotAuthorized: 'No autorizado',
+    Maintenance: 'Mantenimiento',
+    Profile: 'Perfil',
+    addNew: 'Crear nuevo',
+    position: 'Cargo',
+    newContact: 'Nuevo contacto',
+    updateContact: 'Editar contacto',
+    confirmContactDeleteText: 'Vas a eliminar al contacto y no podras recuperarlo?',
+    contactDeletedTitle: 'Contacto eliminado!',
+    contactDeletedText: 'El contacto seleccionado ha sido eliminado'
+  }
 });
 
 /***/ }),
@@ -68657,7 +68549,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   {
     path: '/',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! @/layouts/full-page/FullPage.vue */ "./resources/js/src/layouts/full-page/FullPage.vue"));
+      return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! @/layouts/full-page/FullPage.vue */ "./resources/js/src/layouts/full-page/FullPage.vue"));
     },
     meta: {
       auth: false,
@@ -68673,7 +68565,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'public'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 8).then(__webpack_require__.bind(null, /*! ./views/auth/Login.vue */ "./resources/js/src/views/auth/Login.vue"));
+        return __webpack_require__.e(/*! import() */ 9).then(__webpack_require__.bind(null, /*! ./views/auth/Login.vue */ "./resources/js/src/views/auth/Login.vue"));
       }
     }, {
       path: '/register',
@@ -68682,19 +68574,19 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'public'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ./views/auth/Register.vue */ "./resources/js/src/views/auth/Register.vue"));
+        return __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! ./views/auth/Register.vue */ "./resources/js/src/views/auth/Register.vue"));
       }
     }, {
       path: '/pages/error-404',
       name: 'page-error-404',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 19).then(__webpack_require__.bind(null, /*! @/views/pages/Error404.vue */ "./resources/js/src/views/pages/Error404.vue"));
+        return __webpack_require__.e(/*! import() */ 24).then(__webpack_require__.bind(null, /*! @/views/pages/Error404.vue */ "./resources/js/src/views/pages/Error404.vue"));
       }
     }, {
       path: '/pages/not-authorized',
       name: 'page-not-authorized',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 20).then(__webpack_require__.bind(null, /*! @/views/pages/NotAuthorized.vue */ "./resources/js/src/views/pages/NotAuthorized.vue"));
+        return __webpack_require__.e(/*! import() */ 25).then(__webpack_require__.bind(null, /*! @/views/pages/NotAuthorized.vue */ "./resources/js/src/views/pages/NotAuthorized.vue"));
       },
       meta: {
         rule: 'Empresa'
@@ -68706,7 +68598,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     // =============================================================================
     path: '/company',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(22), __webpack_require__.e(2), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ./layouts/main/Main.vue */ "./resources/js/src/layouts/main/Main.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(3), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ./layouts/main/Main.vue */ "./resources/js/src/layouts/main/Main.vue"));
     },
     meta: {
       auth: true,
@@ -68731,7 +68623,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Comun'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ./views/Home.vue */ "./resources/js/src/views/Home.vue"));
+        return __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! ./views/Home.vue */ "./resources/js/src/views/Home.vue"));
       }
     }, {
       path: 'invoices',
@@ -68740,7 +68632,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 17).then(__webpack_require__.bind(null, /*! ./views/invoices/Invoices.vue */ "./resources/js/src/views/invoices/Invoices.vue"));
+        return __webpack_require__.e(/*! import() */ 20).then(__webpack_require__.bind(null, /*! ./views/invoices/Invoices.vue */ "./resources/js/src/views/invoices/Invoices.vue"));
       }
     }, {
       path: 'payments',
@@ -68749,7 +68641,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 18).then(__webpack_require__.bind(null, /*! ./views/payments/Payments.vue */ "./resources/js/src/views/payments/Payments.vue"));
+        return __webpack_require__.e(/*! import() */ 21).then(__webpack_require__.bind(null, /*! ./views/payments/Payments.vue */ "./resources/js/src/views/payments/Payments.vue"));
       }
     }, {
       path: 'estimates',
@@ -68758,7 +68650,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 14).then(__webpack_require__.bind(null, /*! ./views/estimates/Estimates.vue */ "./resources/js/src/views/estimates/Estimates.vue"));
+        return __webpack_require__.e(/*! import() */ 17).then(__webpack_require__.bind(null, /*! ./views/estimates/Estimates.vue */ "./resources/js/src/views/estimates/Estimates.vue"));
       }
     }, {
       path: 'expenses',
@@ -68767,7 +68659,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 15).then(__webpack_require__.bind(null, /*! ./views/expenses/Expenses.vue */ "./resources/js/src/views/expenses/Expenses.vue"));
+        return __webpack_require__.e(/*! import() */ 18).then(__webpack_require__.bind(null, /*! ./views/expenses/Expenses.vue */ "./resources/js/src/views/expenses/Expenses.vue"));
       }
     }, {
       path: 'deductions',
@@ -68776,7 +68668,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! ./views/deductions/Deductions.vue */ "./resources/js/src/views/deductions/Deductions.vue"));
+        return __webpack_require__.e(/*! import() */ 16).then(__webpack_require__.bind(null, /*! ./views/deductions/Deductions.vue */ "./resources/js/src/views/deductions/Deductions.vue"));
       }
     }, {
       path: 'clients',
@@ -68785,7 +68677,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(4), __webpack_require__.e(9)]).then(__webpack_require__.bind(null, /*! ./views/clients/Clients.vue */ "./resources/js/src/views/clients/Clients.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(5), __webpack_require__.e(10)]).then(__webpack_require__.bind(null, /*! ./views/clients/Clients.vue */ "./resources/js/src/views/clients/Clients.vue"));
       }
     }, {
       path: '/help',
@@ -68794,7 +68686,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 16).then(__webpack_require__.bind(null, /*! ./views/help/Help.vue */ "./resources/js/src/views/help/Help.vue"));
+        return __webpack_require__.e(/*! import() */ 19).then(__webpack_require__.bind(null, /*! ./views/help/Help.vue */ "./resources/js/src/views/help/Help.vue"));
       }
     }, {
       path: 'configurations',
@@ -68803,7 +68695,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! ./views/configurations/Configurations.vue */ "./resources/js/src/views/configurations/Configurations.vue"));
+        return __webpack_require__.e(/*! import() */ 15).then(__webpack_require__.bind(null, /*! ./views/configurations/Configurations.vue */ "./resources/js/src/views/configurations/Configurations.vue"));
       }
     }]
   }, {
@@ -68812,7 +68704,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     // =============================================================================
     path: '/admin',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(22), __webpack_require__.e(2), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ./layouts/main/Main.vue */ "./resources/js/src/layouts/main/Main.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(3), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ./layouts/main/Main.vue */ "./resources/js/src/layouts/main/Main.vue"));
     },
     meta: {
       auth: true,
@@ -68834,8 +68726,28 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(22), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, /*! ./views/companies/Companies.vue */ "./resources/js/src/views/companies/Companies.vue"));
-      }
+        return __webpack_require__.e(/*! import() */ 14).then(__webpack_require__.bind(null, /*! ./views/companies/CompanyMain.vue */ "./resources/js/src/views/companies/CompanyMain.vue"));
+      },
+      children: [{
+        path: '',
+        name: 'admin.companies.list',
+        meta: {
+          rule: 'Empresa'
+        },
+        component: function component() {
+          return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(7), __webpack_require__.e(28)]).then(__webpack_require__.bind(null, /*! ./views/companies/Companies.vue */ "./resources/js/src/views/companies/Companies.vue"));
+        }
+      }, {
+        path: 'details/:id',
+        props: true,
+        name: 'admin.companies.details',
+        meta: {
+          rule: 'Empresa'
+        },
+        component: function component() {
+          return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(23), __webpack_require__.e(1), __webpack_require__.e(7), __webpack_require__.e(27)]).then(__webpack_require__.bind(null, /*! ./views/companies/CompanyDetail.vue */ "./resources/js/src/views/companies/CompanyDetail.vue"));
+        }
+      }]
     }, {
       path: 'users',
       name: 'admin.users',
@@ -68843,20 +68755,20 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(22), __webpack_require__.e(6), __webpack_require__.e(23)]).then(__webpack_require__.bind(null, /*! ./views/users/Users.vue */ "./resources/js/src/views/users/Users.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(11)]).then(__webpack_require__.bind(null, /*! ./views/users/Users.vue */ "./resources/js/src/views/users/Users.vue"));
       }
     }, {
       path: 'users/user/:id',
       props: true,
       name: 'admin.users.view',
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(22), __webpack_require__.e(6), __webpack_require__.e(24)]).then(__webpack_require__.bind(null, /*! ./views/users/UserView.vue */ "./resources/js/src/views/users/UserView.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(22)]).then(__webpack_require__.bind(null, /*! ./views/users/UserView.vue */ "./resources/js/src/views/users/UserView.vue"));
       }
     }]
   }, {
     path: '/wizard',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! @/layouts/full-page/FullPage.vue */ "./resources/js/src/layouts/full-page/FullPage.vue"));
+      return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! @/layouts/full-page/FullPage.vue */ "./resources/js/src/layouts/full-page/FullPage.vue"));
     },
     meta: {
       auth: false,
@@ -68879,7 +68791,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
         rule: 'Empresa'
       },
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e(21), __webpack_require__.e(7)]).then(__webpack_require__.bind(null, /*! ./views/wizard/User.vue */ "./resources/js/src/views/wizard/User.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e(26), __webpack_require__.e(8)]).then(__webpack_require__.bind(null, /*! ./views/wizard/User.vue */ "./resources/js/src/views/wizard/User.vue"));
       }
     }]
   }, // Redirect to 404 page, if no match found
@@ -69169,8 +69081,7 @@ __webpack_require__.r(__webpack_exports__);
       commit('authUser', {
         token: token
       });
-      dispatch('me');
-      console.log('auto'); // if (state.AppActiveUser.first_login) {
+      dispatch('me'); // if (state.AppActiveUser.first_login) {
       //     router.push('wizard/company');
       // }
     },
@@ -69258,21 +69169,20 @@ __webpack_require__.r(__webpack_exports__);
         reject(error);
       });
     });
-  } // eventDragged({ commit }, payload) {
-  //   return new Promise((resolve, reject) => {
-  //     axios.post(`/api/apps/calendar/event/dragged/${payload.event.id}`, {payload: payload})
-  //       .then((response) => {
-  //         // Convert Date String to Date Object
-  //         let event = response.data
-  //         event.startDate = new Date(event.startDate)
-  //         event.endDate = new Date(event.endDate)
-  //         commit('UPDATE_EVENT', event)
-  //         resolve(response)
-  //       })
-  //       .catch((error) => { reject(error) })
-  //   })
-  // },
-
+  },
+  fetchCompanyUsers: function fetchCompanyUsers(_ref5, companyId) {
+    var commit = _ref5.commit;
+    return new Promise(function (resolve, reject) {
+      _axios_js__WEBPACK_IMPORTED_MODULE_0__["default"].get("api/company/".concat(companyId, "/users")).then(function (response) {
+        commit('users/SET_USERS', response.data.users, {
+          root: true
+        });
+        resolve(response);
+      }).catch(function (err) {
+        reject(error);
+      });
+    });
+  }
 });
 
 /***/ }),
@@ -69297,8 +69207,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   companies: function companies(state) {
     return state.companies;
-  } // getItem: state => (productId) => state.products.find((product) => product.id == productId),
-
+  },
+  getCompany: function getCompany(state) {
+    return function (companyId) {
+      return state.companies.find(function (company) {
+        return company.id == companyId;
+      });
+    };
+  }
 });
 
 /***/ }),
@@ -69565,6 +69481,201 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/src/store/modules/contacts/actions.js":
+/*!************************************************************!*\
+  !*** ./resources/js/src/store/modules/contacts/actions.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _axios_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/axios.js */ "./resources/js/src/axios.js");
+/*=========================================================================================
+  File Name: moduleCalendarActions.js
+  Description: Calendar Module Actions
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  fetchCompanyContacts: function fetchCompanyContacts(_ref, companyId) {
+    var commit = _ref.commit;
+    return new Promise(function (resolve, reject) {
+      _axios_js__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/company/".concat(companyId, "/contacts")).then(function (response) {
+        commit('SET_CONTACTS', response.data.contacts);
+        resolve(response);
+      }).catch(function (error) {
+        reject(error);
+      });
+    });
+  },
+  addContact: function addContact(_ref2, item) {
+    var commit = _ref2.commit;
+    return new Promise(function (resolve, reject) {
+      _axios_js__WEBPACK_IMPORTED_MODULE_0__["default"].post("/api/company/contact", item).then(function (response) {
+        commit('ADD_CONTACT', Object.assign(response.data.contact, {
+          id: response.data.id
+        }));
+        resolve(response);
+      }).catch(function (error) {
+        reject(error);
+      });
+    });
+  },
+  updateContact: function updateContact(_ref3, item) {
+    var commit = _ref3.commit;
+    return new Promise(function (resolve, reject) {
+      _axios_js__WEBPACK_IMPORTED_MODULE_0__["default"].put("/api/company/contact/".concat(item.id), item).then(function (response) {
+        commit('UPDATE_CONTACT', response.data.contact);
+        resolve(response);
+      }).catch(function (error) {
+        reject(error);
+      });
+    });
+  },
+  removeContact: function removeContact(_ref4, itemId) {
+    var commit = _ref4.commit;
+    return new Promise(function (resolve, reject) {
+      _axios_js__WEBPACK_IMPORTED_MODULE_0__["default"].delete("/api/company/contact/".concat(itemId)).then(function (response) {
+        commit('REMOVE_CONTACT', itemId);
+        resolve(response);
+      }).catch(function (error) {
+        reject(error);
+      });
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/modules/contacts/getters.js":
+/*!************************************************************!*\
+  !*** ./resources/js/src/store/modules/contacts/getters.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/*=========================================================================================
+  File Name: moduleCalendarGetters.js
+  Description: Calendar Module Getters
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+/* harmony default export */ __webpack_exports__["default"] = ({
+  contacts: function contacts(state) {
+    return state.contacts;
+  } // getCompany: state => (companyId) => state.companies.find((company) => company.id == companyId),
+
+});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/modules/contacts/index.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/src/store/modules/contacts/index.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _state__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./state */ "./resources/js/src/store/modules/contacts/state.js");
+/* harmony import */ var _mutations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mutations */ "./resources/js/src/store/modules/contacts/mutations.js");
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./actions */ "./resources/js/src/store/modules/contacts/actions.js");
+/* harmony import */ var _getters__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getters */ "./resources/js/src/store/modules/contacts/getters.js");
+/*=========================================================================================
+  File Name: moduleDataList.js
+  Description: Calendar Module
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  isRegistered: false,
+  namespaced: true,
+  state: _state__WEBPACK_IMPORTED_MODULE_0__["default"],
+  mutations: _mutations__WEBPACK_IMPORTED_MODULE_1__["default"],
+  actions: _actions__WEBPACK_IMPORTED_MODULE_2__["default"],
+  getters: _getters__WEBPACK_IMPORTED_MODULE_3__["default"]
+});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/modules/contacts/mutations.js":
+/*!**************************************************************!*\
+  !*** ./resources/js/src/store/modules/contacts/mutations.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/*=========================================================================================
+  File Name: moduleCalendarMutations.js
+  Description: Calendar Module Mutations
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+/* harmony default export */ __webpack_exports__["default"] = ({
+  ADD_CONTACT: function ADD_CONTACT(state, item) {
+    state.contacts.unshift(item);
+  },
+  SET_CONTACTS: function SET_CONTACTS(state, contacts) {
+    state.contacts = contacts;
+  },
+  UPDATE_CONTACT: function UPDATE_CONTACT(state, contact) {
+    var contactIndex = state.contacts.findIndex(function (p) {
+      return p.id == contact.id;
+    });
+    Object.assign(state.contacts[contactIndex], contact);
+  },
+  REMOVE_CONTACT: function REMOVE_CONTACT(state, itemId) {
+    var ItemIndex = state.contacts.findIndex(function (p) {
+      return p.id == itemId;
+    });
+    state.contacts.splice(ItemIndex, 1);
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/src/store/modules/contacts/state.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/src/store/modules/contacts/state.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/*=========================================================================================
+  File Name: moduleCalendarState.js
+  Description: Calendar Module State
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+/* harmony default export */ __webpack_exports__["default"] = ({
+  contacts: []
+});
+
+/***/ }),
+
 /***/ "./resources/js/src/store/modules/users/actions.js":
 /*!*********************************************************!*\
   !*** ./resources/js/src/store/modules/users/actions.js ***!
@@ -69589,7 +69700,7 @@ __webpack_require__.r(__webpack_exports__);
     var commit = _ref.commit;
     return new Promise(function (resolve, reject) {
       _axios_js__WEBPACK_IMPORTED_MODULE_0__["default"].post("/api/users/", item).then(function (response) {
-        commit('ADD_USER', Object.assign(item, {
+        commit('ADD_USER', Object.assign(response.data.user, {
           id: response.data.id
         }));
         resolve(response);
@@ -70013,7 +70124,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_company__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/company */ "./resources/js/src/store/modules/company/index.js");
 /* harmony import */ var _modules_companies__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/companies */ "./resources/js/src/store/modules/companies/index.js");
 /* harmony import */ var _modules_configuration__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/configuration */ "./resources/js/src/store/modules/configuration/index.js");
-/* harmony import */ var _modules_users__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/users */ "./resources/js/src/store/modules/users/index.js");
+/* harmony import */ var _modules_contacts__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/contacts */ "./resources/js/src/store/modules/contacts/index.js");
+/* harmony import */ var _modules_users__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/users */ "./resources/js/src/store/modules/users/index.js");
 /*=========================================================================================
   File Name: store.js
   Description: Vuex store
@@ -70022,6 +70134,7 @@ __webpack_require__.r(__webpack_exports__);
   Author: Pixinvent
   Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
+
 
 
 
@@ -70044,7 +70157,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     company: _modules_company__WEBPACK_IMPORTED_MODULE_7__["default"],
     companies: _modules_companies__WEBPACK_IMPORTED_MODULE_8__["default"],
     configuration: _modules_configuration__WEBPACK_IMPORTED_MODULE_9__["default"],
-    users: _modules_users__WEBPACK_IMPORTED_MODULE_10__["default"]
+    contacts: _modules_contacts__WEBPACK_IMPORTED_MODULE_10__["default"],
+    users: _modules_users__WEBPACK_IMPORTED_MODULE_11__["default"]
   },
   strict: "development" !== 'production'
 }));

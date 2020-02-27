@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\CompanyContact;
 use App\Models\CompanyType;
 use App\Models\Configuration;
 use App\Models\User;
@@ -17,7 +18,7 @@ class Company extends Model
         'phone',
         'company_type_id'
     ];
-    protected $with=['configuration'];
+    protected $with=['configuration','companyType'];
 
     
     public function companyType()
@@ -25,11 +26,15 @@ class Company extends Model
         return $this->belongsTo(CompanyType::class, 'company_type_id');
     }
 
-    public function user()
+    public function users()
     {
         return $this->hasMany(User::class, 'company_id');
     }
 
+    public function contacts()
+    {
+        return $this->hasMany(CompanyContact::class, 'company_id');
+    }
     
     public function configuration()
     {

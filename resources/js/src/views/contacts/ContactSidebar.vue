@@ -20,7 +20,7 @@
     v-model="isSidebarActiveLocal"
   >
     <div class="mt-6 flex items-center justify-between px-6">
-      <h4>{{ Object.entries(this.data).length === 0 ? $t('newUser') : $t('updateUser') }}</h4>
+      <h4>{{ Object.entries(this.data).length === 0 ? $t('newContact') : $t('updateContact') }}</h4>
       <feather-icon icon="XIcon" @click.stop="isSidebarActiveLocal = false" class="cursor-pointer"></feather-icon>
     </div>
     <vs-divider class="mb-0"></vs-divider>
@@ -52,59 +52,20 @@
           v-show="errors.has('last_name')"
         >{{ errors.first('last_name') }}</span>
 
-        <vs-input
-          :label="$t('identification')"
-          v-model="identification"
-          class="mt-5 w-full"
-          name="identification"
-          v-validate="'required|integer|min:10'"
-        />
-        <span
-          class="text-danger text-sm"
-          v-show="errors.has('identification')"
-        >{{ errors.first('identification') }}</span>
-
         <vs-input :label="$t('email')" v-model="email" class="mt-5 w-full" name="email" />
         <span class="text-danger text-sm" v-show="errors.has('email')">{{ errors.first('email') }}</span>
-        <div v-if="Object.entries(this.data).length === 0">
-          <vs-input
-            :label="$t('password')"
-            type="password"
-            v-model="password"
-            class="mt-5 w-full"
-            name="password"
-          />
-          <span
-            class="text-danger text-sm"
-            v-show="errors.has('password')"
-          >{{ errors.first('password') }}</span>
 
-          <vs-input
-            :label="$t('passwordConfirmation')"
-            v-model="passwordConfirmation"
-            class="mt-5 w-full"
-            type="password"
-            name="password-confirmation"
-          />
-          <span
-            class="text-danger text-sm"
-            v-show="errors.has('password-confirmation')"
-          >{{ errors.first('password-confirmation') }}</span>
-        </div>
         <vs-input :label="$t('phone')" v-model="phone" class="mt-5 w-full" name="phone" />
         <span class="text-danger text-sm" v-show="errors.has('phone')">{{ errors.first('phone') }}</span>
 
         <vs-input :label="$t('mobile')" v-model="mobile" class="mt-5 w-full" name="mobile" />
         <span class="text-danger text-sm" v-show="errors.has('mobile')">{{ errors.first('mobile') }}</span>
-        <vs-select v-model="role" class="w-full select-large" :label="$t('role')">
-          <vs-select-item
-            :key="index"
-            :value="item"
-            :text="item"
-            v-for="(item,index) in roles"
-            class="w-full"
-          />
-        </vs-select>
+
+        <vs-input :label="$t('position')" v-model="position" class="mt-5 w-full" name="position" />
+        <span
+          class="text-danger text-sm"
+          v-show="errors.has('position')"
+        >{{ errors.first('position') }}</span>
       </div>
     </VuePerfectScrollbar>
 
@@ -148,8 +109,7 @@ export default {
           phone,
           mobile,
           email,
-          identification,
-          role
+          position
         } = JSON.parse(JSON.stringify(this.data));
         this.dataId = id;
         this.first_name = first_name;
@@ -157,8 +117,7 @@ export default {
         this.phone = phone;
         this.mobile = mobile;
         this.email = email;
-        this.identification = identification;
-        this.role = role;
+        this.position = position;
         this.initValues();
       }
       // Object.entries(this.data).length === 0 ? this.initValues() : { this.dataId, this.dataName, this.dataCategory, this.dataOrder_status, this.dataPrice } = JSON.parse(JSON.stringify(this.data))
@@ -170,12 +129,9 @@ export default {
       first_name: "",
       last_name: "",
       email: "",
-      password: "",
-      passwordConfirmation: "",
       phone: "",
       mobile: "",
-      identification: "",
-      role: "Empresa",
+      position: "",
 
       settings: {
         // perfectscrollbar settings
@@ -198,9 +154,7 @@ export default {
       }
     },
     isFormValid() {
-      return (
-        !this.errors.any() && this.first_name && this.last_name && this.email
-      );
+      return !this.errors.any() && this.first_name && this.last_name;
     },
     ...mapState("users", ["roles"])
   },
@@ -211,11 +165,9 @@ export default {
       this.dataId = null;
       this.first_name = "";
       this.last_name = "";
-      this.identification = "";
+      this.position = "";
       this.mobile = "";
-      this.role = "Empresa";
-      this.password = "";
-      this.password_confirmation = "";
+      this.phone = "";
     },
     submitData() {
       this.$validator.validateAll().then(result => {
@@ -224,13 +176,10 @@ export default {
             id: this.dataId,
             first_name: this.first_name,
             last_name: this.last_name,
-            identification: this.identification,
+            position: this.position,
             mobile: this.mobile,
             phone: this.phone,
             email: this.email,
-            role: this.role,
-            password: this.password,
-            password_confirmation: this.passwordConfirmation,
             company_id: this.company_id
           };
 
@@ -238,12 +187,12 @@ export default {
             delete obj.password;
             delete obj.password_confirmation;
 
-            this.$store.dispatch("users/updateUser", obj).catch(err => {
+            this.$store.dispatch("contacts/updateContact", obj).catch(err => {
               console.error(err);
             });
           } else {
             delete obj.id;
-            this.$store.dispatch("users/addUser", obj).catch(err => {
+            this.$store.dispatch("contacts/addContact", obj).catch(err => {
               console.error(err);
             });
           }

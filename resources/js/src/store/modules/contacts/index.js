@@ -1,6 +1,6 @@
 /*=========================================================================================
-  File Name: moduleCalendarGetters.js
-  Description: Calendar Module Getters
+  File Name: moduleDataList.js
+  Description: Calendar Module
   ----------------------------------------------------------------------------------------
   Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
   Author: Pixinvent
@@ -8,7 +8,16 @@
 ==========================================================================================*/
 
 
+import state from './state'
+import mutations from './mutations'
+import actions from './actions'
+import getters from './getters'
+
 export default {
-    companies: state => state.companies,
-    getCompany: state => (companyId) => state.companies.find((company) => company.id == companyId),
+    isRegistered: false,
+    namespaced: true,
+    state: state,
+    mutations: mutations,
+    actions: actions,
+    getters: getters
 }

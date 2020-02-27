@@ -142,6 +142,20 @@ class CompanyTest extends TestCase
         $this->assertEquals('Juanes', $user->fresh()->first_name);
     }
 
+    /** @test */
+    public function testGetCompanyUsers()
+    {
+        $company = factory(Company::class)->create();
+        factory(User::class, 10)->create([
+            'company_id'=>$company->id
+        ]);
+        $response = $this->get('api/company/'.$company->id.'/users');
+        $response->assertOk();
+        $response->assertJsonStructure(['users']);
+        $response->assertJsonCount(10, 'users');
+    }
+    
+
 
     private function companyData()
     {

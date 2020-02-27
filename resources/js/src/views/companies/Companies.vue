@@ -32,7 +32,7 @@
             @click="addNewData"
           >
             <feather-icon icon="PlusIcon" svgClasses="h-4 w-4" />
-            <span class="ml-2 text-base text-primary">Add New</span>
+            <span class="ml-2 text-base text-primary">{{$t('addNew')}}</span>
           </div>
         </div>
 
@@ -98,8 +98,14 @@
 
             <vs-td class="whitespace-no-wrap">
               <feather-icon
+                icon="EyeIcon"
+                svgClasses="w-5 h-5 hover:text-primary stroke-current"
+                @click.stop="viewCompany(tr)"
+              />
+              <feather-icon
                 icon="EditIcon"
                 svgClasses="w-5 h-5 hover:text-primary stroke-current"
+                class="ml-2"
                 @click.stop="editData(tr)"
               />
               <!-- <feather-icon
@@ -165,21 +171,15 @@ export default {
       this.sidebarData = data;
       this.toggleDataSidebar(true);
     },
-    getOrderStatusColor(status) {
-      if (status == "on_hold") return "warning";
-      if (status == "delivered") return "success";
-      if (status == "canceled") return "danger";
-      return "primary";
-    },
-    getPopularityColor(num) {
-      if (num > 90) return "success";
-      if (num > 70) return "primary";
-      if (num >= 50) return "warning";
-      if (num < 50) return "danger";
-      return "primary";
-    },
+
     toggleDataSidebar(val = false) {
       this.addNewDataSidebar = val;
+    },
+    viewCompany(data) {
+      this.$router.push({
+        name: "admin.companies.details",
+        params: { id: data.id }
+      });
     }
   },
   created() {

@@ -17,7 +17,7 @@ class CompanyController extends Controller
         if (in_array('Empresa', auth('api')->user()->getRoleNames()->toArray())) {
             abort(404);
         }
-        $companies = Company::paginate('50');
+        $companies = Company::orderBy('company_name')->paginate('50');
         return response()->json(compact('companies'));
     }
 
@@ -115,5 +115,11 @@ class CompanyController extends Controller
     public function destroy(Company $company)
     {
         //
+    }
+
+    public function users(Company $company)
+    {
+        $users = $company->users()->orderBy('first_name')->get();
+        return response()->json(compact('users'));
     }
 }

@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[6],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[27],{
 
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/views/companies/CompanyConfigurations.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************************************!*\
@@ -370,6 +370,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CompanyNotifications_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CompanyNotifications.vue */ "./resources/js/src/views/companies/CompanyNotifications.vue");
 /* harmony import */ var _CompanyConfigurations_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CompanyConfigurations.vue */ "./resources/js/src/views/companies/CompanyConfigurations.vue");
 /* harmony import */ var _CompanyContact_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./CompanyContact.vue */ "./resources/js/src/views/companies/CompanyContact.vue");
+/* harmony import */ var _CompanySidebar_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./CompanySidebar.vue */ "./resources/js/src/views/companies/CompanySidebar.vue");
 //
 //
 //
@@ -503,6 +504,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 
@@ -513,11 +515,14 @@ __webpack_require__.r(__webpack_exports__);
     CompanyUsers: _CompanyUsers_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     CompanyNotifications: _CompanyNotifications_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     CompanyConfigurations: _CompanyConfigurations_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    CompanyContact: _CompanyContact_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+    CompanyContact: _CompanyContact_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    CompanySidebar: _CompanySidebar_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
   },
   data: function data() {
     return {
       //   company_data: null,
+      addNewDataSidebar: false,
+      sidebarData: {},
       user_not_found: false
     };
   },
@@ -550,23 +555,13 @@ __webpack_require__.r(__webpack_exports__);
         acceptText: "Delete"
       });
     },
-    deleteRecord: function deleteRecord() {
-      /* Below two lines are just for demo purpose */
-      this.$router.push({
-        name: "app-user-list"
-      });
-      this.showDeleteSuccess();
-      /* UnComment below lines for enabling true flow if deleting user */
-      // this.$store.dispatch("userManagement/removeRecord", this.company_data.id)
-      //   .then(()   => { this.$router.push({name:'app-user-list'}); this.showDeleteSuccess() })
-      //   .catch(err => { console.error(err)       })
+    editData: function editData() {
+      this.sidebarData = this.company_data;
+      this.toggleDataSidebar(true);
     },
-    showDeleteSuccess: function showDeleteSuccess() {
-      this.$vs.notify({
-        color: "success",
-        title: "User Deleted",
-        text: "The selected user was successfully deleted"
-      });
+    toggleDataSidebar: function toggleDataSidebar() {
+      var val = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      this.addNewDataSidebar = val;
     }
   },
   created: function created() {
@@ -1063,7 +1058,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     },
     isFormValid: function isFormValid() {
-      return !this.errors.any() && this.first_name && this.last_name && this.email;
+      return !this.errors.any() && this.first_name && this.last_name;
     }
   }, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])("users", ["roles"])),
   methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])("users", ["fetchRoles"]), {
@@ -1878,7 +1873,7 @@ var render = function() {
                               _vm._v(_vm._s(_vm.$t("companyAddress")))
                             ]),
                             _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(_vm.company_data.addres))])
+                            _c("td", [_vm._v(_vm._s(_vm.company_data.address))])
                           ])
                         ])
                       ]
@@ -1942,12 +1937,9 @@ var render = function() {
                             staticClass: "mr-4",
                             attrs: {
                               "icon-pack": "feather",
-                              icon: "icon-edit",
-                              to: {
-                                name: "app-user-edit",
-                                params: { userId: _vm.$route.params.userId }
-                              }
-                            }
+                              icon: "icon-edit"
+                            },
+                            on: { click: _vm.editData }
                           },
                           [_vm._v(_vm._s(_vm.$t("edit")))]
                         )

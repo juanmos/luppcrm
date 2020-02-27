@@ -60,6 +60,7 @@ class UserController extends Controller
         );
         
         $user->assignRole(($request->has('role'))?$request->get('role'):'Empresa');
+        $user=User::find($user->id);
         return response()->json(compact('user'));
     }
 
